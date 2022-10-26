@@ -15,7 +15,7 @@
 			"relationship" : "brother",
 			"default" : "never seen it before"
 		},
-		"Mary" : {
+		"Sam[LOVERS]" : {
 			"where[LIE]" : "[SECURITY CAMERA]home",
 			"where[TRUTH]" : "at the pool{MARY AT POOL}",
 			"relationship" : "cousins",

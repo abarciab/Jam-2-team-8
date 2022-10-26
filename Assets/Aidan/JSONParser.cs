@@ -18,9 +18,10 @@ public class DialogueLineData  {
 }
 
 [System.Serializable]
-public class CharacterScript {
+public class CharacterDialogueData {
 
     public string characterName;
+    public string variant;
     public DialogueLineData defaultResponse;
     public DialogueLineData alibi;
     public DialogueLineData relationship;
@@ -35,8 +36,9 @@ public class JSONParser : MonoBehaviour
 
     public string JSONfilePath = "Assets/Aidan/testJSON.txt";
 
-    public CharacterScript example;
-    public List<List<CharacterScript>> storyData = new List<List<CharacterScript>>();
+    public CharacterDialogueData example;
+    public List<List<CharacterDialogueData>> storyData = new List<List<CharacterDialogueData>>();
+    public event Action onStoryDataRefresh;
 
 
     private void Awake()
@@ -60,30 +62,39 @@ public class JSONParser : MonoBehaviour
     public string GetSubstringByString(string a, string b, string c)
     {
         if (a.Length <= 0 || b.Length <= 0 || c.Length <= 0 || !c.Contains(a) || !c.Contains(b) ) { return ""; }
-
         return c.Substring((c.IndexOf(a) + a.Length), (c.IndexOf(b) - c.IndexOf(a) - a.Length));
     }
 
     void ParseData()
     {
-        print("parsing JSON data...");
+        print("parsing JSON data");
 
-        List<List<CharacterScript>> newData = new List<List<CharacterScript>>();
+        //broadcast that the story data has been loaded/reloaded
+        if (onStoryDataRefresh != null) {
+            onStoryDataRefresh();
+        }
 
+        List<List<CharacterDialogueData>> newData = new List<List<CharacterDialogueData>>();
         string JSONtext = File.ReadAllText(JSONfilePath);
 
         //first, there are the different realities.
         var realityDict = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Dictionary<string, string>>>>(JSONtext);
         foreach (var reality in realityDict) {
 
-            newData.Add(new List<CharacterScript>());
+            newData.Add(new List<CharacterDialogueData>());
 
             //each reality has characters
             var characterDict = reality.Value;
             foreach (var character in characterDict) {
-                CharacterScript newCharacter = new CharacterScript();
+                CharacterDialogueData newCharacter = new CharacterDialogueData();
 
-                newCharacter.characterName = character.Key;
+                string characterName = character.Key;
+                if (character.Key.Contains("[")) {
+                    string variant = GetSubstringByString("[", "]", characterName);
+                    characterName = characterName.Replace(variant, "");
+                    newCharacter.variant = variant;
+                }
+                newCharacter.characterName = characterName;
 
                 //each character has lines
                 foreach (var line in character.Value) {
@@ -95,7 +106,6 @@ public class JSONParser : MonoBehaviour
                     if (line.Key.Contains("[LIE]")) {
                         label = label.Replace("[LIE]", "");
                         string requiredEvidence = GetSubstringByString("[", "]", newLine.text);
-                        print("required evidence: " + requiredEvidence);
                         newLine.text = newLine.text.Replace("[" + requiredEvidence + "]", "");
                         newLine.requiredEvidence = requiredEvidence;
                         newLine.lie = true;
@@ -127,7 +137,6 @@ public class JSONParser : MonoBehaviour
                         newCharacter.defaultResponse = newLine;
                     }
                     else if (!label.Contains("where") && !label.Contains("default") && !label.Contains("relationship") && !label.Contains("[TRUTH]")) {
-                        print(newCharacter.characterName + "'s reaction to " + label + " : " + newLine.text);
                         newCharacter.evidenceResponses.Add(label, newLine);
                     }
                 }
