@@ -1,0 +1,19 @@
+{
+	"core_reality" : [
+		"John" : {
+			"where" : "library",
+			"relationship" : "father",
+			"default" : "idk"
+		},
+		"Sarah" : {
+			"where" : "Gym",
+			"relationship" : "boyfriend",
+			"default" : "no clue"
+		},
+		"Sam" : {
+			"where" : "home",
+			"relationship" : "brother",
+			"default" : "never seen it before"
+		}
+	]
+}
