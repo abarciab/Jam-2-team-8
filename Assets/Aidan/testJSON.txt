@@ -1,5 +1,5 @@
 {
-	"core_reality" : [
+	"core_reality" : {
 		"John" : {
 			"where" : "library",
 			"relationship" : "father",
@@ -14,6 +14,14 @@
 			"where" : "home",
 			"relationship" : "brother",
 			"default" : "never seen it before"
+		},
+		"Mary" : {
+			"where[LIE]" : "[SECURITY CAMERA]home",
+			"where[TRUTH]" : "at the pool{MARY AT POOL}",
+			"relationship" : "cousins",
+			"default" : "never seen before",
+			"baseball bat[LIE]" : "oh, that belongs to Sarah",
+            "baseball bat[TRUTH]" : "it's mine"
 		}
-	]
+	}
 }
