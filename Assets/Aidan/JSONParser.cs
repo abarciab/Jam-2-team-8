@@ -9,7 +9,7 @@ using System;
 using System.Data;
 
 [System.Serializable]
-public class DialogueLine  {
+public class DialogueLineData  {
     public string text;
     public bool lie;
     public string evidenceGained;
@@ -21,10 +21,10 @@ public class DialogueLine  {
 public class CharacterScript {
 
     public string characterName;
-    public DialogueLine defaultResponse;
-    public DialogueLine alibi;
-    public DialogueLine relationship;
-    public Dictionary<string, DialogueLine> evidenceResponses = new Dictionary<string, DialogueLine>();
+    public DialogueLineData defaultResponse;
+    public DialogueLineData alibi;
+    public DialogueLineData relationship;
+    public Dictionary<string, DialogueLineData> evidenceResponses = new Dictionary<string, DialogueLineData>();
 }
 
 [ExecuteAlways]
@@ -87,7 +87,7 @@ public class JSONParser : MonoBehaviour
 
                 //each character has lines
                 foreach (var line in character.Value) {
-                    DialogueLine newLine = new DialogueLine();
+                    DialogueLineData newLine = new DialogueLineData();
                     newLine.text = line.Value;
                     string label = line.Key;
 
