@@ -27,11 +27,6 @@ public class AudioManager : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
-    {
-        PlayHere(3, music);
-    }
-
     private Sound getSoundFromID(int soundID)
     {
         for (int i = 0; i < sounds.Count; i++) {
@@ -60,9 +55,9 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayGlobal(int soundID, float volume = -1)      //play given sound from global audiosource
+    public void PlayGlobal(int soundID, float volume = -1, bool restart = false)      //play given sound from global audiosource
     {
-        PlayHere(soundID, global, volume);
+        PlayHere(soundID, global, volume, restart);
     }
 
     public void PlayHere(int soundID, AudioSource source, float volume = -1, bool restart = false)      //play given sound from given audiosource

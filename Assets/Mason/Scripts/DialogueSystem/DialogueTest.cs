@@ -6,7 +6,7 @@ public class DialogueTest : MonoBehaviour
 {
     public List<DialogueLine> lines = new List<DialogueLine>();
 
-    private void Awake() {
+    private void Start() {
         StartCoroutine(displayLines());
     }
 
