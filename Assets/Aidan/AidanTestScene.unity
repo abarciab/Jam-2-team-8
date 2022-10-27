@@ -236,29 +236,269 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c06f87370cc04246ae9c9288151f546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parse: 0
-  JSONfilePath: Assets/Aidan/testJSON.txt
-  example:
-    characterName: Mary
-    variant: 
-    defaultResponse:
-      text: never seen before
-      lie: 0
-      evidenceGained: 
-      requiredEvidence: 
-      truth: 
-    alibi:
-      text: home
-      lie: 1
-      evidenceGained: MARY AT POOL
-      requiredEvidence: SECURITY CAMERA
-      truth: at the pool
-    relationship:
-      text: cousins
-      lie: 0
-      evidenceGained: 
-      requiredEvidence: 
-      truth: 
+  parseDialogue: 0
+  parseCards: 0
+  JSONDialogueFilePath: Assets/Aidan/testJSON.txt
+  JSONCardDataFilePath: Assets/Aidan/cardJSON.txt
+  storyData:
+  - name: core reality
+    characters:
+    - characterName: john
+      variant: 
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: library
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sarah
+      variant: 
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: gym
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: 
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: LOVERS
+      defaultResponse:
+        text: never seen before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 1
+        evidenceGained: MARY AT POOL
+        requiredEvidence: SECURITY CAMERA
+        truth: at the pool
+      relationship:
+        text: cousins
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: baseball bat
+        line:
+          text: oh, that belongs to Sarah
+          lie: 1
+          evidenceGained: 
+          requiredEvidence: 
+          truth: it's mine
+  - name: john married to sarah
+    characters:
+    - characterName: john
+      variant: 
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sarah
+      variant: 
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: ex-boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: 
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: JELOUS
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+  - name: sarah having affair
+    characters:
+    - characterName: john
+      variant: 
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: beach
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sarah
+      variant: 
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: working
+        lie: 1
+        evidenceGained: 
+        requiredEvidence: SARAH AFFAIR
+        truth: I was at sam's house...
+      relationship:
+        text: boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: 
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: at my home, with sarah {SARAH AFFAIR}
+        lie: 0
+        evidenceGained: SARAH AFFAIR
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+  cardDataList:
+  - cardName: lovers
+    cardEffects:
+    - recipient: john
+      reality: john married to sarah
+      characterEffects:
+      - characterName: sam
+        variant: jelous
+    - recipient: 
+      reality: 
+      characterEffects: []
+    - recipient: 
+      reality: 
+      characterEffects: []
 --- !u!4 &617122380
 Transform:
   m_ObjectHideFlags: 0
@@ -304,8 +544,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardHistory: []
-  baseReality: []
-  currentReality: []
+  allRealities: []
+  baseReality:
+    name: 
+    characters: []
+  currentReality:
+    name: 
+    characters: []
 --- !u!4 &1841622291
 Transform:
   m_ObjectHideFlags: 0

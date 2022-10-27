@@ -7,7 +7,28 @@ using Unity.VisualScripting;
 using System.IO;
 using System;
 using System.Data;
+using JetBrains.Annotations;
 
+//classes for card data
+[System.Serializable]
+public class CardData {
+    public string cardName;         //what card this is
+    public List<CardEffectData> cardEffects = new List<CardEffectData>();
+}
+[System.Serializable]
+public class CardEffectData {
+    public string recipient;        //this data is about the situation in which this card is shown to this character
+    public string reality;         //which reality to shift to. NOTE: this shift is performed before character variants are selected
+    public List<CharacterCardEffectData> characterEffects = new List<CharacterCardEffectData>();        //which variants are active after the shift
+}
+[System.Serializable]
+public class CharacterCardEffectData {
+    public string characterName;
+    public string variant;
+}
+
+
+//classes for dialogue data
 [System.Serializable]
 public class DialogueLineData  {
     public string text;
@@ -16,7 +37,11 @@ public class DialogueLineData  {
     public string requiredEvidence;
     public string truth;
 }
-
+[System.Serializable]
+public class EvidenceResponseData {
+    public string item;
+    public DialogueLineData line;
+}
 [System.Serializable]
 public class CharacterDialogueData {
 
@@ -25,21 +50,28 @@ public class CharacterDialogueData {
     public DialogueLineData defaultResponse;
     public DialogueLineData alibi;
     public DialogueLineData relationship;
-    public Dictionary<string, DialogueLineData> evidenceResponses = new Dictionary<string, DialogueLineData>();
+    public List<EvidenceResponseData> evidenceResponses = new List<EvidenceResponseData>();
+}
+[System.Serializable]
+public class RealityData {
+    public string name;
+    public List<CharacterDialogueData> characters = new List<CharacterDialogueData>();
 }
 
 [ExecuteAlways]
 public class JSONParser : MonoBehaviour
 {
     public static JSONParser instance;
-    public bool parse = false;
+    
+    public bool parseDialogue = false;
+    public bool parseCards = false;
+    public string JSONDialogueFilePath = "Assets/Aidan/testJSON.txt";
+    public string JSONCardDataFilePath = "Assets/Aidan/cardJSON.txt";
 
-    public string JSONfilePath = "Assets/Aidan/testJSON.txt";
-
-    public CharacterDialogueData example;
-    public List<List<CharacterDialogueData>> storyData = new List<List<CharacterDialogueData>>();
+    public List<RealityData> storyData = new List<RealityData>();
+    public List<CardData> cardDataList = new List<CardData>();
+    
     public event Action onStoryDataRefresh;
-
 
     private void Awake()
     {
@@ -48,14 +80,18 @@ public class JSONParser : MonoBehaviour
 
     private void Start()
     {
-        ParseData();
+        ParseDialogueData();
     }
 
     private void Update()
     {
-        if (parse) {
-            parse = false;
-            ParseData();
+        if (parseDialogue) {
+            parseDialogue = false;
+            ParseDialogueData();
+        }
+        if (parseCards) {
+            parseCards = false;
+            ParseCardData();
         }
     }
 
@@ -65,23 +101,63 @@ public class JSONParser : MonoBehaviour
         return c.Substring((c.IndexOf(a) + a.Length), (c.IndexOf(b) - c.IndexOf(a) - a.Length));
     }
 
-    void ParseData()
+    void ParseCardData()
     {
-        print("parsing JSON data");
+        //broadcast that the card data has been loaded/reloaded
+        if (onStoryDataRefresh != null) {
+            onStoryDataRefresh();
+        }
+
+        //read the file
+        string JSONtext = File.ReadAllText(JSONCardDataFilePath);
+        var cardDict = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Dictionary<string, string>>>>(JSONtext);
+
+        List<CardData> newCards = new List<CardData>();
+        //first, there are different cards
+        foreach (var Card in cardDict) {
+            CardData newCard = new CardData();
+            newCard.cardName = Card.Key;
+
+            foreach (var cardEffect in Card.Value) {
+                CardEffectData newCardEffect = new CardEffectData();
+                newCardEffect.recipient = cardEffect.Key;
+
+                foreach (var characterEffect in cardEffect.Value) {
+                    if (characterEffect.Key.ToLower() == "reality") {
+                        newCardEffect.reality = characterEffect.Value;
+                    }
+                    else {
+                        CharacterCardEffectData newCharacterEffect = new CharacterCardEffectData();
+                        newCharacterEffect.characterName = characterEffect.Key;
+                        newCharacterEffect.variant = characterEffect.Value;
+                        newCardEffect.characterEffects.Add(newCharacterEffect);
+                    }
+                }
+                newCard.cardEffects.Add(newCardEffect);
+            }
+            newCards.Add(newCard);
+        }
+        cardDataList = newCards; 
+    }
+
+    void ParseDialogueData()
+    {
+        print("parsing dialogue data");
 
         //broadcast that the story data has been loaded/reloaded
         if (onStoryDataRefresh != null) {
             onStoryDataRefresh();
         }
 
-        List<List<CharacterDialogueData>> newData = new List<List<CharacterDialogueData>>();
-        string JSONtext = File.ReadAllText(JSONfilePath);
+        List<RealityData> newData = new List<RealityData>();
+        string JSONtext = File.ReadAllText(JSONDialogueFilePath);
 
         //first, there are the different realities.
         var realityDict = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Dictionary<string, string>>>>(JSONtext);
         foreach (var reality in realityDict) {
 
-            newData.Add(new List<CharacterDialogueData>());
+            RealityData newReality = new RealityData();
+            newReality.name = reality.Key;
 
             //each reality has characters
             var characterDict = reality.Value;
@@ -91,7 +167,7 @@ public class JSONParser : MonoBehaviour
                 string characterName = character.Key;
                 if (character.Key.Contains("[")) {
                     string variant = GetSubstringByString("[", "]", characterName);
-                    characterName = characterName.Replace(variant, "");
+                    characterName = characterName.Replace("[" + variant + "]", "");
                     newCharacter.variant = variant;
                 }
                 newCharacter.characterName = characterName;
@@ -137,13 +213,15 @@ public class JSONParser : MonoBehaviour
                         newCharacter.defaultResponse = newLine;
                     }
                     else if (!label.Contains("where") && !label.Contains("default") && !label.Contains("relationship") && !label.Contains("[TRUTH]")) {
-                        newCharacter.evidenceResponses.Add(label, newLine);
+                        EvidenceResponseData newEvidenceResponse = new EvidenceResponseData();
+                        newEvidenceResponse.line = newLine;
+                        newEvidenceResponse.item = label;
+                        newCharacter.evidenceResponses.Add(newEvidenceResponse);
                     }
                 }
-
-                example = newCharacter;
-                newData[newData.Count - 1].Add(newCharacter);
+                newReality.characters.Add(newCharacter);
             }
+            newData.Add(newReality);
         }
         storyData = newData;
     }

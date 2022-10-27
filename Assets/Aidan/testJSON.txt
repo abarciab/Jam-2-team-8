@@ -1,27 +1,68 @@
 {
-	"core_reality" : {
-		"John" : {
+	"core reality" : {
+		"john" : {
 			"where" : "library",
 			"relationship" : "father",
 			"default" : "idk"
 		},
-		"Sarah" : {
-			"where" : "Gym",
+		"sarah" : {
+			"where" : "gym",
 			"relationship" : "boyfriend",
 			"default" : "no clue"
 		},
-		"Sam" : {
+		"sam" : {
 			"where" : "home",
 			"relationship" : "brother",
 			"default" : "never seen it before"
 		},
-		"Sam[LOVERS]" : {
+		"sam[LOVERS]" : {
 			"where[LIE]" : "[SECURITY CAMERA]home",
-			"where[TRUTH]" : "at the pool{MARY AT POOL}",
+			"where[TRUTH]" : "at the pool{SAM AT POOL}",
 			"relationship" : "cousins",
 			"default" : "never seen before",
 			"baseball bat[LIE]" : "oh, that belongs to Sarah",
             "baseball bat[TRUTH]" : "it's mine"
 		}
+	},
+	"john married to sarah": {
+		"john" : {
+			"where" : "cafe",
+			"relationship" : "father",
+			"default" : "idk"
+		},
+		"sarah" : {
+			"where" : "cafe",
+			"relationship" : "ex-boyfriend",
+			"default" : "no clue"
+		},
+		"sam" : {
+			"where" : "home",
+			"relationship" : "brother",
+			"default" : "never seen it before"
+		},
+		"sam[JELOUS]" : {
+			"where" : "cafe",
+			"relationship" : "brother",
+			"default" : "never seen it before"
+		}
+	},
+	"sarah having affair": {
+		"john" : {
+			"where" : "beach",
+			"relationship" : "father",
+			"default" : "idk"
+		},
+		"sarah" : {
+			"where[LIE]" : "[SARAH AFFAIR]working",
+			"where[TRUTH]" : "I was at sam's house...",
+			"relationship" : "boyfriend",
+			"default" : "no clue"
+		},
+		"sam" : {
+			"where" : "at my home, with sarah {SARAH AFFAIR}",
+			"relationship" : "brother",
+			"default" : "never seen it before"
+		}
 	}
+
 }
