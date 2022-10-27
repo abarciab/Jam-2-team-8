@@ -327,7 +327,7 @@ MonoBehaviour:
     ID: 0
     clip: {fileID: 8300000, guid: c484961a2d9522745aa3698b358e360c, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     looping: 0
   music: {fileID: 0}
   global: {fileID: 863654614}
