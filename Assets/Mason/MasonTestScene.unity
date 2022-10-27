@@ -199,7 +199,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -216,8 +216,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1007911420}
+  - {fileID: 1019755613}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -290,8 +291,1073 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &273865610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 273865612}
+  - component: {fileID: 273865611}
+  m_Layer: 0
+  m_Name: RealityManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &273865611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273865610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2921e7d2718d949b19d8d72088a441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardHistory: []
+  previousRealities: []
+  allRealities:
+  - name: core reality
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: library
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: john
+      variant: RICH
+      conflicts: []
+      defaultResponse:
+        text: I don't care for your peasantries
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: yatch
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: gym
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: LOVERS
+      conflicts:
+      - character: JOHN
+        variant: RICH
+      defaultResponse:
+        text: never seen before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 1
+        evidenceGained: SAM AT POOL
+        requiredEvidence: SECURITY CAMERA
+        truth: at the pool
+      relationship:
+        text: cousins
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: baseball bat
+        line:
+          text: oh, that belongs to Sarah
+          lie: 1
+          evidenceGained: 
+          requiredEvidence: 
+          truth: it's mine
+  - name: john married to sarah
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: ex-boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: JELOUS
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+  - name: sarah having affair
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: beach
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: working
+        lie: 1
+        evidenceGained: 
+        requiredEvidence: SARAH AFFAIR
+        truth: I was at sam's house...
+      relationship:
+        text: boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: at my home, with sarah {SARAH AFFAIR}
+        lie: 0
+        evidenceGained: SARAH AFFAIR
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+  baseReality:
+    name: core reality
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: library
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: john
+      variant: RICH
+      conflicts: []
+      defaultResponse:
+        text: I don't care for your peasantries
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: yatch
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: gym
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: LOVERS
+      conflicts:
+      - character: JOHN
+        variant: RICH
+      defaultResponse:
+        text: never seen before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 1
+        evidenceGained: SAM AT POOL
+        requiredEvidence: SECURITY CAMERA
+        truth: at the pool
+      relationship:
+        text: cousins
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: baseball bat
+        line:
+          text: oh, that belongs to Sarah
+          lie: 1
+          evidenceGained: 
+          requiredEvidence: 
+          truth: it's mine
+  currentReality:
+    name: core reality
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: library
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: john
+      variant: RICH
+      conflicts: []
+      defaultResponse:
+        text: I don't care for your peasantries
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: yatch
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: gym
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: LOVERS
+      conflicts:
+      - character: JOHN
+        variant: RICH
+      defaultResponse:
+        text: never seen before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 1
+        evidenceGained: SAM AT POOL
+        requiredEvidence: SECURITY CAMERA
+        truth: at the pool
+      relationship:
+        text: cousins
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: baseball bat
+        line:
+          text: oh, that belongs to Sarah
+          lie: 1
+          evidenceGained: 
+          requiredEvidence: 
+          truth: it's mine
+  activeVariants: []
+  allCharacters:
+  - john
+  - sarah
+  - sam
+  testRecipient: john
+  testGetValidCards: 0
+--- !u!4 &273865612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273865610}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &303040922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 303040924}
+  - component: {fileID: 303040923}
+  m_Layer: 0
+  m_Name: JSONparser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &303040923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303040922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c06f87370cc04246ae9c9288151f546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parseDialogue: 0
+  parseCards: 0
+  JSONDialogueFilePath: Assets/Aidan/testJSON.txt
+  JSONCardDataFilePath: Assets/Aidan/cardJSON.txt
+  storyData:
+  - name: core reality
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: library
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: john
+      variant: RICH
+      conflicts: []
+      defaultResponse:
+        text: I don't care for your peasantries
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: yatch
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: gym
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: LOVERS
+      conflicts:
+      - character: JOHN
+        variant: RICH
+      defaultResponse:
+        text: never seen before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 1
+        evidenceGained: SAM AT POOL
+        requiredEvidence: SECURITY CAMERA
+        truth: at the pool
+      relationship:
+        text: cousins
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: baseball bat
+        line:
+          text: oh, that belongs to Sarah
+          lie: 1
+          evidenceGained: 
+          requiredEvidence: 
+          truth: it's mine
+  - name: john married to sarah
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: ex-boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: JELOUS
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+  - name: sarah having affair
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: beach
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: working
+        lie: 1
+        evidenceGained: 
+        requiredEvidence: SARAH AFFAIR
+        truth: I was at sam's house...
+      relationship:
+        text: boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: at my home, with sarah {SARAH AFFAIR}
+        lie: 0
+        evidenceGained: SARAH AFFAIR
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+  cardData:
+  - cardName: The Lovers
+    cardEffects:
+    - recipient: john
+      variant: 
+      reality: john married to sarah
+      characterEffects:
+      - characterName: sam
+        variant: jelous
+    - recipient: john
+      variant: SICK
+      reality: john in debt to sam
+      characterEffects:
+      - characterName: sam
+        variant: greedy
+    - recipient: sam
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: john
+        variant: sad
+    - recipient: sarah
+      variant: 
+      reality: sarah having affair
+      characterEffects: []
+--- !u!4 &303040924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303040922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &449145995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 449145996}
+  - component: {fileID: 449145998}
+  - component: {fileID: 449145997}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &449145996
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449145995}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1.51, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1075942719}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.00004005432}
+  m_SizeDelta: {x: 0, y: -18.137}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &449145997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449145995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Show Evidence
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 10
+  m_fontSizeBase: 10
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 0
+  m_fontSizeMax: 0
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &449145998
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449145995}
+  m_CullTransparentMesh: 1
 --- !u!1 &863654612
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,7 +1544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -125}
+  m_AnchoredPosition: {x: 85, y: -125}
   m_SizeDelta: {x: 161.9, y: 123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1007911421
@@ -530,12 +1596,12 @@ GameObject:
   - component: {fileID: 1017331876}
   - component: {fileID: 1017331875}
   m_Layer: 0
-  m_Name: TestOBJ
+  m_Name: DialogueSystemTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1017331875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,8 +1646,691 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1019755612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1019755613}
+  - component: {fileID: 1019755615}
+  - component: {fileID: 1019755614}
+  - component: {fileID: 1019755616}
+  m_Layer: 5
+  m_Name: ButtonHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1019755613
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019755612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.2251, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1407126285}
+  - {fileID: 1070562427}
+  - {fileID: 1075942719}
+  m_Father: {fileID: 149313434}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -304, y: -125}
+  m_SizeDelta: {x: 100, y: 123}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1019755614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019755612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1019755615
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019755612}
+  m_CullTransparentMesh: 1
+--- !u!114 &1019755616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019755612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ad2c0050efb7a43b04455d86eceedd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: sarah
+--- !u!1 &1070562426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1070562427}
+  - component: {fileID: 1070562431}
+  - component: {fileID: 1070562430}
+  - component: {fileID: 1070562429}
+  - component: {fileID: 1070562428}
+  m_Layer: 5
+  m_Name: RelationshipButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1070562427
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070562426}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1181955656}
+  m_Father: {fileID: 1019755613}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 25, y: 26.85}
+  m_SizeDelta: {x: 41.682, y: 53.7}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1070562428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070562426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3832f35e54701e44d96d13831289c2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueType: relationship
+  characterName: john
+--- !u!114 &1070562429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070562426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1070562430}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1070562430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070562426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1070562431
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070562426}
+  m_CullTransparentMesh: 1
+--- !u!1 &1075942718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1075942719}
+  - component: {fileID: 1075942723}
+  - component: {fileID: 1075942722}
+  - component: {fileID: 1075942721}
+  - component: {fileID: 1075942720}
+  m_Layer: 5
+  m_Name: ShowEvidenceButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1075942719
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075942718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 449145996}
+  m_Father: {fileID: 1019755613}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -26.85}
+  m_SizeDelta: {x: 41.682, y: 53.7}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1075942720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075942718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3832f35e54701e44d96d13831289c2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueType: default
+  characterName: john
+--- !u!114 &1075942721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075942718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1075942722}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1075942722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075942718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1075942723
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075942718}
+  m_CullTransparentMesh: 1
+--- !u!1 &1181955655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1181955656}
+  - component: {fileID: 1181955658}
+  - component: {fileID: 1181955657}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1181955656
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181955655}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1.51, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1070562427}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.00004005432}
+  m_SizeDelta: {x: 0, y: -18.137}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1181955657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181955655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Get Relationship
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 10
+  m_fontSizeBase: 10
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 0
+  m_fontSizeMax: 0
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1181955658
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181955655}
+  m_CullTransparentMesh: 1
+--- !u!1 &1403602943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1403602945}
+  - component: {fileID: 1403602946}
+  m_Layer: 0
+  m_Name: CharacterResponseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1403602945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403602943}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 172.66464, y: 105.09163, z: -7.093559}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1403602946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403602943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131b012d141075d4382eefffd91724be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1407126284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1407126285}
+  - component: {fileID: 1407126289}
+  - component: {fileID: 1407126288}
+  - component: {fileID: 1407126287}
+  - component: {fileID: 1407126286}
+  m_Layer: 5
+  m_Name: AlibiButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1407126285
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407126284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1928979790}
+  m_Father: {fileID: 1019755613}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -25, y: 26.85}
+  m_SizeDelta: {x: 41.682, y: 53.7}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1407126286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407126284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3832f35e54701e44d96d13831289c2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueType: alibi
+  characterName: john
+--- !u!114 &1407126287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407126284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1407126288}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1407126288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407126284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1407126289
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407126284}
+  m_CullTransparentMesh: 1
 --- !u!1 &1694307348
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +2415,141 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1928979789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1928979790}
+  - component: {fileID: 1928979792}
+  - component: {fileID: 1928979791}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1928979790
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928979789}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1.51, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1407126285}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.00004005432}
+  m_SizeDelta: {x: 0, y: -18.137}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1928979791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928979789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Get Alibi
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 12
+  m_fontSizeBase: 12
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 0
+  m_fontSizeMax: 0
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1928979792
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928979789}
+  m_CullTransparentMesh: 1
 --- !u!1 &2063225250
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,3 +2643,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436daddee5ca1254680577c232144f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2099923459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2099923461}
+  - component: {fileID: 2099923460}
+  m_Layer: 0
+  m_Name: CharacterResponseTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &2099923460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099923459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f42d9f5f7b013348b02d942056dab35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: john
+  dialogueType: alibi
+--- !u!4 &2099923461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099923459}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 172.66464, y: 105.09163, z: -7.093559}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

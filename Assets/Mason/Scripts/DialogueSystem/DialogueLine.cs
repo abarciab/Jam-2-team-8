@@ -15,4 +15,13 @@ public class DialogueLine
     [Header("Other Options")]
     public float scrollDelay;
     public int soundID;
+
+    public DialogueLine(string text, Color textColor, Font textFont, bool isNewLine, float scrollDelay, int soundID) {
+        this.text = text;
+        this.textColor = textColor;
+        this.textFont = textFont;
+        this.isNewLine = isNewLine;
+        this.scrollDelay = scrollDelay;
+        this.soundID = soundID;
+    }
 }
