@@ -25,8 +25,8 @@ public class CardEffectData {
 }
 [System.Serializable]
 public class CharacterCardEffectData {
-    public string characterName;
-    public string variant;
+    public string characterName;        //the character this would effect
+    public string variant;              //the variant that will be activated
 }
 
 
@@ -59,6 +59,7 @@ public class CharacterDialogueData {
     public DialogueLineData alibi;
     public DialogueLineData relationship;
     public List<EvidenceResponseData> evidenceResponses = new List<EvidenceResponseData>();
+    public List<string> validRealities = new List<string>();            //all the realities that this character can exist in
 }
 [System.Serializable]
 public class RealityData {
@@ -146,6 +147,7 @@ public class JSONParser : MonoBehaviour
                 }
                 newCard.cardEffects.Add(newCardEffect);
             }
+            //print("adding card to data");
             newCards.Add(newCard);
         }
         cardData = newCards;
@@ -213,6 +215,18 @@ public class JSONParser : MonoBehaviour
                         newVariantConflict.variant = line.Value;
                         newCharacter.conflicts.Add(newVariantConflict);
                         continue;
+                    }
+
+                    //process this variant exsiting in different realities
+                    if (line.Key.ToLower().Contains("realities")) {
+                        List<string> validRealities = new List<string>();
+                        string list = line.Value.ToLower();
+                        if (!list.Contains(newReality.name)) {
+                            validRealities.Add(newReality.name);
+                        }
+                        var strArray = list.Split(", ");
+                        validRealities.AddRange(strArray);
+                        newCharacter.validRealities = validRealities;
                     }
 
                     //mark if a line of dialogue uncovers new evidence in the case

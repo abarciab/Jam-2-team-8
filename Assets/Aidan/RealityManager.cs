@@ -128,9 +128,6 @@ public class RealityManager : MonoBehaviour
             print("character dialogue was requested, but there's no one by that name: " + characterName);
             return null;
         }
-
-        print("error, this shouldn't be possible. requested name: " + characterName);
-        return null;
     }
 
     public bool CardsAvalible(string character)
@@ -176,13 +173,34 @@ public class RealityManager : MonoBehaviour
         }
     }
 
+    CharacterDialogueData GetVariantFromOtherReality (string characterName, string variant) {
+        //check through all realities and return a the variant that can exist in the current or the base reality
+        foreach (var reality in allRealities) {
+            foreach (var character in reality.characters) {
+                if (character.characterName == characterName && character.variant == variant) {
+                    if (character.validRealities.Contains(currentReality.name) || character.validRealities.Contains(baseReality.name)) {
+                        return character;
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
     List<CardData> getValidCards(string characterName)
     {
+        //print("get valid cards");
+
         List<CardData> validCards = JSONParser.instance.cardData;
-        List<CardData> invalidCards = JSONParser.instance.cardData;
+        List<CardData> invalidCards = new List<CardData>();
+
+        //what is the currently active variant of this character
         string variant = getActiveVariantForCharacter(characterName);
 
+        //go through all the cards we have loaded
         foreach (var cardData in validCards) {
+            //print("considering: " + cardData.cardName);
+            //make sure that this character can recieve this card
             CardEffectData effectUnderConsideration = null;
             foreach (var effect in cardData.cardEffects) {
                 if (effect.recipient == characterName && effect.variant == variant) {
@@ -190,14 +208,26 @@ public class RealityManager : MonoBehaviour
                 }
             }
             if (effectUnderConsideration == null) {
-                print("error, no effect found for card: " + cardData.cardName);
-            }
-
-            if (previousRealities.Contains(effectUnderConsideration.reality) && currentReality.name != effectUnderConsideration.reality) {
+                //print("invalided card case 0: " + cardData.cardName);
                 invalidCards.Add(cardData);
-                continue;
+                if (cardData != validCards[validCards.Count - 1])
+                    continue;
+                else
+                    break;
+
             }
 
+            //if it would take us back to a previous reality, it's not valid
+            if (previousRealities.Contains(effectUnderConsideration.reality) && currentReality.name != effectUnderConsideration.reality) {
+                //print("invalided card case 1: " + cardData.cardName);
+                invalidCards.Add(cardData);
+                if (cardData != validCards[validCards.Count - 1])
+                    continue;
+                else
+                    break;
+            }
+
+            //if there's no entry on this card for this character (or if there's no entry for the active variant), it's not valid
             bool validForThisCharacter = false;
             foreach (var effect in cardData.cardEffects) {
                 if (effect.recipient == characterName && effect.variant == variant) {
@@ -206,24 +236,88 @@ public class RealityManager : MonoBehaviour
                 }
             }
             if (!validForThisCharacter) {
+                //print("invalided card case 2: " + cardData.cardName);
                 invalidCards.Add(cardData);
-                continue;
+                if (cardData != validCards[validCards.Count - 1])
+                    continue;
+                else
+                    break;
             }
 
+            //if there's a current variant that exists that has a conflict with a variant that this card would introduce, it's not valid
             foreach (var _characterName in allCharacters) {
                 CharacterDialogueData characterData = getCharacterDialogue(_characterName);
                 foreach (var conflict in characterData.conflicts) {
                     foreach (var effect in effectUnderConsideration.characterEffects) {
                         if (conflict.character == effect.characterName && conflict.variant == effect.variant) {
+                            //print("invalided card case 3: " + cardData.cardName);
                             invalidCards.Add(cardData);
                         }
                     }
                 }
-            }            
-        }
+            }
+            if (invalidCards.Contains(cardData)) {
+                if (cardData != validCards[validCards.Count - 1])
+                    continue;
+                else
+                    break;
+            }
 
-        validCards = validCards.Except(invalidCards).ToList();
-        return validCards;
+            //if the recipient variant for the target character doesn't exist in this reality, it's not valid
+            bool recipientVariantExists = false;
+            string recipientVariant = "";
+            if (effectUnderConsideration.recipient == characterName) {
+                recipientVariant = effectUnderConsideration.variant;
+            }
+            //print("considerationReality: " + effectUnderConsideration.reality);
+            RealityData realityUnderConsideration = (effectUnderConsideration.reality == "") || (effectUnderConsideration.reality == null) ? currentReality : getReality(effectUnderConsideration.reality);
+            //print("reality under consideration: " + realityUnderConsideration.name);
+            foreach (var character in realityUnderConsideration.characters) {
+                if (character.characterName == characterName && (character.variant == recipientVariant || recipientVariant == null)) {
+                    recipientVariantExists = true;
+                }
+            }
+            if (!recipientVariantExists) {
+                //print("invalided card case 4: " + cardData.cardName);
+                invalidCards.Add(cardData);
+                if (cardData != validCards[validCards.Count - 1])
+                    continue;
+                else
+                    break;
+            }
+
+            //if the target variant for the target character doesn't exist in this reality, it's not valid*
+            bool targetVariantExists = false;
+            string targetVariant = "";
+            foreach (var character in effectUnderConsideration.characterEffects) {
+                if (character.characterName == characterName) {
+                    targetVariant = character.variant;
+                }
+            }
+            foreach (var character in realityUnderConsideration.characters) {
+                if (character.characterName == characterName && (character.variant == recipientVariant || recipientVariant == null)) {
+                    targetVariantExists = true;
+                }
+            }
+            if (!targetVariantExists) {
+                // * UNLESS the variant exists in another reality and is allowed to exist in the current or base one
+                if (GetVariantFromOtherReality(characterName, recipientVariant) == null) {
+                    //print("invalided card case 5: " + cardData.cardName);
+                    invalidCards.Add(cardData);
+                    if (cardData != validCards[validCards.Count - 1])
+                        continue;
+                    else
+                        break;
+                }
+            }
+        }
+        /*string _invalidCards = "";
+        foreach (var card in invalidCards) {
+            _invalidCards += (card.cardName + ", ");
+        }*/
+        //print("invalid cards: " + _invalidCards);
+
+        return validCards.Except(invalidCards).ToList();
     }
 
     

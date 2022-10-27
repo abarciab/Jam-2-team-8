@@ -9,10 +9,25 @@
 			"sam" : "greedy"
 		},
 		"sam" : {
+			"sam" : "lovers",
 			"john" : "sad"
 		},
 		"sarah" : {
 			"reality" : "sarah having affair"
+		}
+	},
+	"The Fighter" : {
+		"john" : {
+			"john" : "angry"
+		},
+	},
+	"The Tower" : {
+		"sam" : {
+			"sam" : "worker",
+			"john" : "distracted"
+		},
+		"sam[LOVERS]" : {
+			"sam" : "sad"
 		}
 	}
 }

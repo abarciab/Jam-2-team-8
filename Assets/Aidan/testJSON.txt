@@ -27,7 +27,8 @@
 			"default" : "never seen before",
 			"baseball bat[LIE]" : "oh, that belongs to Sarah",
             "baseball bat[TRUTH]" : "it's mine",
-			"conflict[JOHN]" : "RICH"
+			"conflict[JOHN]" : "RICH",
+			"realities" : "john married to sarah, sarah having affair"
 		}
 	},
 	"john married to sarah": {

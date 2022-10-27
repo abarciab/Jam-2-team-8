@@ -265,6 +265,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses: []
+      validRealities: []
     - characterName: john
       variant: RICH
       conflicts: []
@@ -287,6 +288,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses: []
+      validRealities: []
     - characterName: sarah
       variant: 
       conflicts: []
@@ -309,6 +311,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses: []
+      validRealities: []
     - characterName: sam
       variant: 
       conflicts: []
@@ -331,6 +334,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses: []
+      validRealities: []
     - characterName: sam
       variant: LOVERS
       conflicts:
@@ -362,6 +366,17 @@ MonoBehaviour:
           evidenceGained: 
           requiredEvidence: 
           truth: it's mine
+      - item: realities
+        line:
+          text: john married to sarah, sarah having affair
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+      - john married to sarah
+      - sarah having affair
   - name: john married to sarah
     characters:
     - characterName: john
@@ -386,6 +401,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses: []
+      validRealities: []
     - characterName: sarah
       variant: 
       conflicts: []
@@ -408,6 +424,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses: []
+      validRealities: []
     - characterName: sam
       variant: 
       conflicts: []
@@ -430,6 +447,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses: []
+      validRealities: []
     - characterName: sam
       variant: JELOUS
       conflicts: []
@@ -452,6 +470,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses: []
+      validRealities: []
   - name: sarah having affair
     characters:
     - characterName: john
@@ -476,6 +495,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses: []
+      validRealities: []
     - characterName: sarah
       variant: 
       conflicts: []
@@ -498,6 +518,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses: []
+      validRealities: []
     - characterName: sam
       variant: 
       conflicts: []
@@ -520,7 +541,58 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses: []
-  cardData: []
+      validRealities: []
+  cardData:
+  - cardName: The Lovers
+    cardEffects:
+    - recipient: john
+      variant: 
+      reality: john married to sarah
+      characterEffects:
+      - characterName: sam
+        variant: jelous
+    - recipient: john
+      variant: SICK
+      reality: john in debt to sam
+      characterEffects:
+      - characterName: sam
+        variant: greedy
+    - recipient: sam
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: sam
+        variant: lovers
+      - characterName: john
+        variant: sad
+    - recipient: sarah
+      variant: 
+      reality: sarah having affair
+      characterEffects: []
+  - cardName: The Fighter
+    cardEffects:
+    - recipient: john
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: john
+        variant: angry
+  - cardName: The Tower
+    cardEffects:
+    - recipient: sam
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: sam
+        variant: worker
+      - characterName: john
+        variant: distracted
+    - recipient: sam
+      variant: LOVERS
+      reality: 
+      characterEffects:
+      - characterName: sam
+        variant: sad
 --- !u!4 &617122380
 Transform:
   m_ObjectHideFlags: 0
@@ -567,15 +639,587 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardHistory: []
   previousRealities: []
-  allRealities: []
+  allRealities:
+  - name: core reality
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: library
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: john
+      variant: RICH
+      conflicts: []
+      defaultResponse:
+        text: I don't care for your peasantries
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: yatch
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: gym
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: sam
+      variant: LOVERS
+      conflicts:
+      - character: JOHN
+        variant: RICH
+      defaultResponse:
+        text: never seen before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 1
+        evidenceGained: SAM AT POOL
+        requiredEvidence: SECURITY CAMERA
+        truth: at the pool
+      relationship:
+        text: cousins
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: baseball bat
+        line:
+          text: oh, that belongs to Sarah
+          lie: 1
+          evidenceGained: 
+          requiredEvidence: 
+          truth: it's mine
+      - item: realities
+        line:
+          text: john married to sarah, sarah having affair
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+      - john married to sarah
+      - sarah having affair
+  - name: john married to sarah
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: ex-boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: sam
+      variant: JELOUS
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+  - name: sarah having affair
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: beach
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: working
+        lie: 1
+        evidenceGained: 
+        requiredEvidence: SARAH AFFAIR
+        truth: I was at sam's house...
+      relationship:
+        text: boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: at my home, with sarah {SARAH AFFAIR}
+        lie: 0
+        evidenceGained: SARAH AFFAIR
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
   baseReality:
-    name: 
-    characters: []
+    name: core reality
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: library
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: john
+      variant: RICH
+      conflicts: []
+      defaultResponse:
+        text: I don't care for your peasantries
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: yatch
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: gym
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: sam
+      variant: LOVERS
+      conflicts:
+      - character: JOHN
+        variant: RICH
+      defaultResponse:
+        text: never seen before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 1
+        evidenceGained: SAM AT POOL
+        requiredEvidence: SECURITY CAMERA
+        truth: at the pool
+      relationship:
+        text: cousins
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: baseball bat
+        line:
+          text: oh, that belongs to Sarah
+          lie: 1
+          evidenceGained: 
+          requiredEvidence: 
+          truth: it's mine
+      - item: realities
+        line:
+          text: john married to sarah, sarah having affair
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+      - john married to sarah
+      - sarah having affair
   currentReality:
-    name: 
-    characters: []
+    name: core reality
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: library
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: john
+      variant: RICH
+      conflicts: []
+      defaultResponse:
+        text: I don't care for your peasantries
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: yatch
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: gym
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities: []
+    - characterName: sam
+      variant: LOVERS
+      conflicts:
+      - character: JOHN
+        variant: RICH
+      defaultResponse:
+        text: never seen before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 1
+        evidenceGained: SAM AT POOL
+        requiredEvidence: SECURITY CAMERA
+        truth: at the pool
+      relationship:
+        text: cousins
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: baseball bat
+        line:
+          text: oh, that belongs to Sarah
+          lie: 1
+          evidenceGained: 
+          requiredEvidence: 
+          truth: it's mine
+      - item: realities
+        line:
+          text: john married to sarah, sarah having affair
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+      - john married to sarah
+      - sarah having affair
   activeVariants: []
-  allCharacters: []
+  allCharacters:
+  - john
+  - sarah
+  - sam
   testRecipient: john
   testGetValidCards: 0
 --- !u!4 &1841622291
