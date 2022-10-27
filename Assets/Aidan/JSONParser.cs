@@ -45,10 +45,16 @@ public class EvidenceResponseData {
     public DialogueLineData line;
 }
 [System.Serializable]
+public class variantConflict {
+    public string character;
+    public string variant;
+}
+[System.Serializable]
 public class CharacterDialogueData {
 
     public string characterName;
     public string variant;
+    public List<variantConflict> conflicts = new List<variantConflict>();         //a variant conflict is a rule about card drawing. When one of these conflicts is active, and a drawn card wouldn't change that, but it would activate this variant, that card cannot be drawn
     public DialogueLineData defaultResponse;
     public DialogueLineData alibi;
     public DialogueLineData relationship;
@@ -71,9 +77,9 @@ public class JSONParser : MonoBehaviour
     public string JSONCardDataFilePath = "Assets/Aidan/cardJSON.txt";
 
     public List<RealityData> storyData = new List<RealityData>();
-    public List<CardData> cardDataList = new List<CardData>();
-    
-    public event Action onStoryDataRefresh;
+    public List<CardData> cardData = new List<CardData>();
+
+    public static Action onStoryDataRefresh;
 
     private void Awake()
     {
@@ -83,6 +89,7 @@ public class JSONParser : MonoBehaviour
     private void Start()
     {
         ParseDialogueData();
+        ParseCardData();
     }
 
     private void Update()
@@ -105,11 +112,6 @@ public class JSONParser : MonoBehaviour
 
     void ParseCardData()
     {
-        //broadcast that the card data has been loaded/reloaded
-        if (onStoryDataRefresh != null) {
-            onStoryDataRefresh();
-        }
-
         //read the file
         string JSONtext = File.ReadAllText(JSONCardDataFilePath);
         var cardDict = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Dictionary<string, string>>>>(JSONtext);
@@ -146,17 +148,17 @@ public class JSONParser : MonoBehaviour
             }
             newCards.Add(newCard);
         }
-        cardDataList = newCards; 
+        cardData = newCards;
+
+        //broadcast that the card data has been loaded/reloaded
+        if (onStoryDataRefresh != null) {
+            onStoryDataRefresh();
+        }
     }
 
     void ParseDialogueData()
     {
-        print("parsing dialogue data");
-
-        //broadcast that the story data has been loaded/reloaded
-        if (onStoryDataRefresh != null) {
-            onStoryDataRefresh();
-        }
+        //print("parsing dialogue data");
 
         List<RealityData> newData = new List<RealityData>();
         string JSONtext = File.ReadAllText(JSONDialogueFilePath);
@@ -204,6 +206,15 @@ public class JSONParser : MonoBehaviour
                         }
                     }
 
+                    //proccess variant conflicts
+                    if (line.Key.Contains("conflict")) {
+                        variantConflict newVariantConflict = new variantConflict();
+                        newVariantConflict.character = GetSubstringByString("[", "]", line.Key);
+                        newVariantConflict.variant = line.Value;
+                        newCharacter.conflicts.Add(newVariantConflict);
+                        continue;
+                    }
+
                     //mark if a line of dialogue uncovers new evidence in the case
                     string _evidenceGained = GetSubstringByString("{", "}", line.Value);
                     if (_evidenceGained.Length > 0) {
@@ -233,5 +244,10 @@ public class JSONParser : MonoBehaviour
             newData.Add(newReality);
         }
         storyData = newData;
+
+        //broadcast that the story data has been loaded/reloaded
+        if (onStoryDataRefresh != null) {
+            onStoryDataRefresh();
+        }
     }
 }

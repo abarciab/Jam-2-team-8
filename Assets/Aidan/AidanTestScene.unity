@@ -245,6 +245,7 @@ MonoBehaviour:
     characters:
     - characterName: john
       variant: 
+      conflicts: []
       defaultResponse:
         text: idk
         lie: 0
@@ -264,8 +265,31 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses: []
+    - characterName: john
+      variant: RICH
+      conflicts: []
+      defaultResponse:
+        text: I don't care for your peasantries
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: yatch
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
     - characterName: sarah
       variant: 
+      conflicts: []
       defaultResponse:
         text: no clue
         lie: 0
@@ -287,6 +311,7 @@ MonoBehaviour:
       evidenceResponses: []
     - characterName: sam
       variant: 
+      conflicts: []
       defaultResponse:
         text: never seen it before
         lie: 0
@@ -308,6 +333,9 @@ MonoBehaviour:
       evidenceResponses: []
     - characterName: sam
       variant: LOVERS
+      conflicts:
+      - character: JOHN
+        variant: RICH
       defaultResponse:
         text: never seen before
         lie: 0
@@ -338,6 +366,7 @@ MonoBehaviour:
     characters:
     - characterName: john
       variant: 
+      conflicts: []
       defaultResponse:
         text: idk
         lie: 0
@@ -359,6 +388,7 @@ MonoBehaviour:
       evidenceResponses: []
     - characterName: sarah
       variant: 
+      conflicts: []
       defaultResponse:
         text: no clue
         lie: 0
@@ -380,6 +410,7 @@ MonoBehaviour:
       evidenceResponses: []
     - characterName: sam
       variant: 
+      conflicts: []
       defaultResponse:
         text: never seen it before
         lie: 0
@@ -401,6 +432,7 @@ MonoBehaviour:
       evidenceResponses: []
     - characterName: sam
       variant: JELOUS
+      conflicts: []
       defaultResponse:
         text: never seen it before
         lie: 0
@@ -424,6 +456,7 @@ MonoBehaviour:
     characters:
     - characterName: john
       variant: 
+      conflicts: []
       defaultResponse:
         text: idk
         lie: 0
@@ -445,6 +478,7 @@ MonoBehaviour:
       evidenceResponses: []
     - characterName: sarah
       variant: 
+      conflicts: []
       defaultResponse:
         text: no clue
         lie: 0
@@ -466,6 +500,7 @@ MonoBehaviour:
       evidenceResponses: []
     - characterName: sam
       variant: 
+      conflicts: []
       defaultResponse:
         text: never seen it before
         lie: 0
@@ -485,22 +520,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses: []
-  cardDataList:
-  - cardName: The Lovers
-    cardEffects:
-    - recipient: john
-      reality: john married to sarah
-      characterEffects:
-      - characterName: sam
-        variant: jelous
-    - recipient: sam
-      reality: 
-      characterEffects:
-      - characterName: john
-        variant: sad
-    - recipient: sarah
-      reality: sarah having affair
-      characterEffects: []
+  cardData: []
 --- !u!4 &617122380
 Transform:
   m_ObjectHideFlags: 0
@@ -546,6 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardHistory: []
+  previousRealities: []
   allRealities: []
   baseReality:
     name: 
@@ -554,6 +575,9 @@ MonoBehaviour:
     name: 
     characters: []
   activeVariants: []
+  allCharacters: []
+  testRecipient: john
+  testGetValidCards: 0
 --- !u!4 &1841622291
 Transform:
   m_ObjectHideFlags: 0

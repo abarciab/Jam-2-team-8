@@ -5,6 +5,11 @@
 			"relationship" : "father",
 			"default" : "idk"
 		},
+		"john[RICH]" : {
+			"where" : "yatch",
+			"relationship" : "father",
+			"default" : "I don't care for your peasantries"
+		},
 		"sarah" : {
 			"where" : "gym",
 			"relationship" : "boyfriend",
@@ -21,7 +26,8 @@
 			"relationship" : "cousins",
 			"default" : "never seen before",
 			"baseball bat[LIE]" : "oh, that belongs to Sarah",
-            "baseball bat[TRUTH]" : "it's mine"
+            "baseball bat[TRUTH]" : "it's mine",
+			"conflict[JOHN]" : "RICH"
 		}
 	},
 	"john married to sarah": {
