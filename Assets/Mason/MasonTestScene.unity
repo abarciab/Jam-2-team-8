@@ -435,7 +435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863654612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 4, z: -2.1073768}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 1007911422}
   - component: {fileID: 1007911421}
   m_Layer: 5
-  m_Name: DialogueBox
+  m_Name: DialogueHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -519,6 +519,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007911419}
   m_CullTransparentMesh: 1
+--- !u!1 &1017331874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1017331876}
+  - component: {fileID: 1017331875}
+  m_Layer: 0
+  m_Name: TestOBJ
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1017331875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017331874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4156c0ae27187eb4bb075a0d519593f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - text: Hello There
+    textColor: {r: 1, g: 0, b: 0, a: 1}
+    textFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    isNewLine: 1
+    scrollDelay: 0.01
+    soundID: 0
+  - text: General Kenobi!
+    textColor: {r: 1, g: 0, b: 0, a: 1}
+    textFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    isNewLine: 1
+    scrollDelay: 0.01
+    soundID: 0
+  - text: ' You are a bold one!'
+    textColor: {r: 1, g: 0, b: 0, a: 1}
+    textFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    isNewLine: 0
+    scrollDelay: 0.01
+    soundID: 0
+--- !u!4 &1017331876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017331874}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 655.03125, y: 252.72322, z: -4.955652}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1694307348
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,9 +677,9 @@ GameObject:
   - component: {fileID: 2063225251}
   - component: {fileID: 2063225254}
   - component: {fileID: 2063225253}
-  - component: {fileID: 2063225252}
+  - component: {fileID: 2063225255}
   m_Layer: 5
-  m_Name: Text
+  m_Name: DialogueLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,7 +694,7 @@ RectTransform:
   m_GameObject: {fileID: 2063225250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7632788, y: 1.5657, z: 1.5657}
+  m_LocalScale: {x: 0.7632788, y: 2.2115514, z: 1.5657}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1007911420}
@@ -639,25 +702,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16.3, y: -10.5}
-  m_SizeDelta: {x: 160, y: 83.7}
+  m_AnchoredPosition: {x: -0.00051725, y: -0.000051975}
+  m_SizeDelta: {x: 212.11, y: 55.617}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2063225252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063225250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75788f16e4114654097ee958ec2d69e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  input: Test Test Test
-  textColor: {r: 1, g: 0, b: 0, a: 1}
-  textFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  scrollDelay: 0.1
 --- !u!114 &2063225253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,3 +747,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063225250}
   m_CullTransparentMesh: 1
+--- !u!114 &2063225255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063225250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436daddee5ca1254680577c232144f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
