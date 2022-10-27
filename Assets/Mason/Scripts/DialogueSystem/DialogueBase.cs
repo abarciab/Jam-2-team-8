@@ -11,6 +11,7 @@ namespace DialogueSystem {
             textHolder.font = textFont;
             for(int i = 0; i < input.Length; ++i) {
                 textHolder.text += input[i];
+                //AudioManager.instance.PlayGlobal(0, 1);
                 yield return new WaitForSeconds(delay);
             }
         }
