@@ -8,6 +8,7 @@ using System.IO;
 using System;
 using System.Data;
 using JetBrains.Annotations;
+using UnityEngine.Rendering;
 
 //classes for card data
 [System.Serializable]
@@ -18,6 +19,7 @@ public class CardData {
 [System.Serializable]
 public class CardEffectData {
     public string recipient;        //this data is about the situation in which this card is shown to this character
+    public string variant;          //if not blank, the character must be in this variant to recieve this effect
     public string reality;         //which reality to shift to. NOTE: this shift is performed before character variants are selected
     public List<CharacterCardEffectData> characterEffects = new List<CharacterCardEffectData>();        //which variants are active after the shift
 }
@@ -120,7 +122,14 @@ public class JSONParser : MonoBehaviour
 
             foreach (var cardEffect in Card.Value) {
                 CardEffectData newCardEffect = new CardEffectData();
-                newCardEffect.recipient = cardEffect.Key;
+                string label = cardEffect.Key;
+                if (label.Contains("[")) {
+                    string variant = GetSubstringByString("[", "]", label);
+                    label = label.Replace("[" + variant + "]", "");
+                    newCardEffect.variant = variant;
+                }
+
+                newCardEffect.recipient = label;
 
                 foreach (var characterEffect in cardEffect.Value) {
                     if (characterEffect.Key.ToLower() == "reality") {

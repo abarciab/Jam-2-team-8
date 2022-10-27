@@ -23,6 +23,7 @@ public class RealityManager : MonoBehaviour
     public static RealityManager instance;
 
     public List<CardDrawEvent> cardHistory = new List<CardDrawEvent>();
+    public List<string> previousRealities = new List<string>();
 
     public List<RealityData> allRealities = new List<RealityData>();
     public RealityData baseReality = new RealityData();
@@ -41,9 +42,22 @@ public class RealityManager : MonoBehaviour
         JSONParser.instance.onStoryDataRefresh += InitializeReality;
     }
 
+    RealityData getReality(string _name)
+    {
+        foreach (var reality in allRealities) {
+            if (reality.name.ToLower() == _name.ToLower()) {
+                return reality;
+            }
+        }
+        print("error: tried to get reality, but none exist with that name: " + _name);
+        return null;
+    }
+
     void InitializeReality()
     {
         allRealities = JSONParser.instance.storyData;
+        baseReality = getReality("core reality");
+        currentReality = baseReality;
     }
 
     //use this function to get all the lines for a certain character in a certain reality. if that character isn't present in the current reality, it returns that character from the base reality
@@ -93,8 +107,27 @@ public class RealityManager : MonoBehaviour
         return null;
     }
 
-    public void drawCard()
+    public bool CardsAvalible(string character)
+    {
+        return false;
+    }
+
+    public void drawCard(string character)
+    {
+        //update cardhistory
+    }
+
+    void shiftToNewReality(string realityName)
+    {
+        //update currentReality
+        //if a variant of the same name exists in the new universe, or there is no one by that name in the new universe and a variant by that name exists in the base universe, keep that variant data. othewise, delete it
+        //update previousRealities
+    }
+
+    void getValidCards(string characterName)
     {
 
     }
+
+    
 }

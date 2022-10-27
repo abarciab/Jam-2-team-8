@@ -317,7 +317,7 @@ MonoBehaviour:
       alibi:
         text: home
         lie: 1
-        evidenceGained: MARY AT POOL
+        evidenceGained: SAM AT POOL
         requiredEvidence: SECURITY CAMERA
         truth: at the pool
       relationship:
@@ -486,18 +486,20 @@ MonoBehaviour:
         truth: 
       evidenceResponses: []
   cardDataList:
-  - cardName: lovers
+  - cardName: The Lovers
     cardEffects:
     - recipient: john
       reality: john married to sarah
       characterEffects:
       - characterName: sam
         variant: jelous
-    - recipient: 
+    - recipient: sam
       reality: 
-      characterEffects: []
-    - recipient: 
-      reality: 
+      characterEffects:
+      - characterName: john
+        variant: sad
+    - recipient: sarah
+      reality: sarah having affair
       characterEffects: []
 --- !u!4 &617122380
 Transform:
@@ -551,6 +553,7 @@ MonoBehaviour:
   currentReality:
     name: 
     characters: []
+  activeVariants: []
 --- !u!4 &1841622291
 Transform:
   m_ObjectHideFlags: 0

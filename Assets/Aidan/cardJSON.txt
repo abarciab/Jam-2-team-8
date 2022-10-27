@@ -4,6 +4,10 @@
 			"reality" : "john married to sarah",
 			"sam" : "jelous"
 		},
+		"john[SICK]" : {
+			"reality" : "john in debt to sam",
+			"sam" : "greedy"
+		},
 		"sam" : {
 			"john" : "sad"
 		},
