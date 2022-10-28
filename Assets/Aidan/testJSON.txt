@@ -10,6 +10,11 @@
 			"relationship" : "father",
 			"default" : "I don't care for your peasantries"
 		},
+		"john[SAD]" : {
+			"where" : "sad room",
+			"relationship" : "father",
+			"default" : "I'm too sad to care"
+		},
 		"sarah" : {
 			"where" : "gym",
 			"relationship" : "boyfriend",
@@ -20,15 +25,25 @@
 			"relationship" : "brother",
 			"default" : "never seen it before"
 		},
+		"sam[GREEDY]" : {
+			"where" : "home",
+			"relationship" : "brother",
+			"default" : "never seen it before"
+		},
 		"sam[LOVERS]" : {
 			"where[LIE]" : "[SECURITY CAMERA]home",
 			"where[TRUTH]" : "at the pool{SAM AT POOL}",
 			"relationship" : "cousins",
 			"default" : "never seen before",
-			"baseball bat[LIE]" : "oh, that belongs to Sarah",
+			"baseball bat[LIE]" : "[TEAM PHOTO]oh, that belongs to Sarah",
             "baseball bat[TRUTH]" : "it's mine",
 			"conflict[JOHN]" : "RICH",
 			"realities" : "john married to sarah, sarah having affair"
+		},
+		"john[ANGRY]" : {
+			"where" : "at the gym, being anngy",
+			"relationship" : "father",
+			"default" : "idk"
 		}
 	},
 	"john married to sarah": {
@@ -50,7 +65,8 @@
 		"sam[JELOUS]" : {
 			"where" : "cafe",
 			"relationship" : "brother",
-			"default" : "never seen it before"
+			"default" : "never seen it before",
+			"realities" : "core reality"
 		}
 	},
 	"sarah having affair": {

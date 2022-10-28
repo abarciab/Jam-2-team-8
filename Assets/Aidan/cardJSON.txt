@@ -5,18 +5,18 @@
 			"sam" : "jelous"
 		},
 		"john[SICK]" : {
-			"reality" : "john in debt to sam",
+			"john" : "angry",
 			"sam" : "greedy"
 		},
 		"sam" : {
 			"sam" : "lovers",
 			"john" : "sad"
 		},
-		"sarah" : {
+		"sarah[ANY]" : {
 			"reality" : "sarah having affair"
 		}
 	},
-	"The Fighter" : {
+	"The Emperor" : {
 		"john" : {
 			"john" : "angry"
 		},

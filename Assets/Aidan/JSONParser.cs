@@ -141,7 +141,7 @@ public class JSONParser : MonoBehaviour
                     else {
                         CharacterCardEffectData newCharacterEffect = new CharacterCardEffectData();
                         newCharacterEffect.characterName = characterEffect.Key;
-                        newCharacterEffect.variant = characterEffect.Value;
+                        newCharacterEffect.variant = characterEffect.Value.ToUpper();
                         newCardEffect.characterEffects.Add(newCharacterEffect);
                     }
                 }
@@ -228,6 +228,9 @@ public class JSONParser : MonoBehaviour
                         validRealities.AddRange(strArray);
                         newCharacter.validRealities = validRealities;
                     }
+                    else if (!newCharacter.validRealities.Contains(newReality.name)) {
+                        newCharacter.validRealities.Add(newReality.name);
+                    }
 
                     //mark if a line of dialogue uncovers new evidence in the case
                     string _evidenceGained = GetSubstringByString("{", "}", line.Value);
@@ -246,7 +249,7 @@ public class JSONParser : MonoBehaviour
                     else if (label == "default") {
                         newCharacter.defaultResponse = newLine;
                     }
-                    else if (!label.Contains("where") && !label.Contains("default") && !label.Contains("relationship") && !label.Contains("[TRUTH]")) {
+                    else if (!label.Contains("where") && !label.Contains("default") && !label.Contains("relationship") && !label.Contains("[TRUTH]") && !label.Contains("realities")) {
                         EvidenceResponseData newEvidenceResponse = new EvidenceResponseData();
                         newEvidenceResponse.line = newLine;
                         newEvidenceResponse.item = label;
