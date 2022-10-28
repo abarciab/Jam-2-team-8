@@ -1,9 +1,11 @@
 {
 	"core reality" : {
 		"john" : {
-			"where" : "library",
-			"relationship" : "father",
-			"default" : "idk"
+			"where" : "I was in the library when you say Joe was killed. check the cameras, you'll see",
+			"relationship" : "Joe was my father, but we had a rocky relationship...",
+			"default" : "idk",
+			"gun used to kill joe[LIE]" : "[GUN OWNERSHIP] I've never seen that gun before.",
+			"gun used to kill joe[TRUTH]" : "I hate to say it, but I think that gun belongs to sarah...{SARAH OWNS GUN}"
 		},
 		"john[RICH]" : {
 			"where" : "yatch",
@@ -16,9 +18,12 @@
 			"default" : "I'm too sad to care"
 		},
 		"sarah" : {
-			"where" : "gym",
-			"relationship" : "boyfriend",
-			"default" : "no clue"
+			"where" : "I was home. Alone. No laws against that last time I checked.",
+			"relationship" : "He was my father. He treated all his kids like shit, but he always had a hatred for me in particular.",
+			"default" : "no clue",
+			"gun used to kill joe[LIE]" : "That looks familiar. I think it was Joe's? He has a whole collection of old guns",
+			"gun used to kill joe[TRUTH]" : "It's mine. So what?",
+			"Victim's travel log" : "um.... We were at some of the same events, who cares..."
 		},
 		"sam" : {
 			"where" : "home",

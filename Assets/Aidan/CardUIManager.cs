@@ -17,6 +17,7 @@ public class CardUIManager : MonoBehaviour
     public TextMeshProUGUI evidence1;
     public TextMeshProUGUI evidence2;
     public TextMeshProUGUI evidence3;
+    public GameObject lieIndicator;
 
     public string currentCharacterName = "john";
     public int characterIndex = 0;
@@ -29,6 +30,7 @@ public class CardUIManager : MonoBehaviour
     void UpdateUI()
     {
         //print("updating UI. character: " + currentCharacterName);
+        lieIndicator.SetActive(false);
 
         CharacterDialogueData character = RealityManager.instance.getCharacterDialogue(currentCharacterName);
 
@@ -52,22 +54,42 @@ public class CardUIManager : MonoBehaviour
         variant.text = "variant: " + character.variant;
         
         alibi.text = "alibi: " + character.alibi.text;
+        if (character.alibi.lie) {
+            alibi.text += "*";
+            lieIndicator.SetActive(true);
+        }
         relationship.text = "relationship to the victim: " + character.relationship.text;
+        if (character.relationship.lie) {
+            relationship.text += "*";
+            lieIndicator.SetActive(true);
+        }
 
         evidence1.gameObject.SetActive(false);
         evidence2.gameObject.SetActive(false);
         evidence3.gameObject.SetActive(false);
         if (character.evidenceResponses.Count > 0) {
             evidence1.gameObject.SetActive(true);
-            evidence1.text = "when shown <" + character.evidenceResponses[0].item + ">: '" + character.evidenceResponses[0].line.text + "'";
+            evidence1.text = "when shown the " + character.evidenceResponses[0].item + ": " + character.evidenceResponses[0].line.text;
+            if (character.evidenceResponses[0].line.lie) {
+                evidence1.text += "*";
+                lieIndicator.SetActive(true);
+            }
         }
         if (character.evidenceResponses.Count > 1) {
             evidence2.gameObject.SetActive(true);
-            evidence2.text = "when shown <" + character.evidenceResponses[1].item + ">: '" + character.evidenceResponses[1].line.text + "'";
+            evidence2.text = "when shown the " + character.evidenceResponses[1].item + ": " + character.evidenceResponses[1].line.text;
+            if (character.evidenceResponses[1].line.lie) {
+                evidence2.text += "*";
+                lieIndicator.SetActive(true);
+            }
         }
         if (character.evidenceResponses.Count > 2) {
             evidence3.gameObject.SetActive(true);
-            evidence3.text = "when shown <" + character.evidenceResponses[2].item + ">: '" + character.evidenceResponses[2].line.text + "'";
+            evidence3.text = "when shown the " + character.evidenceResponses[2].item + ": " + character.evidenceResponses[2].line.text;
+            if (character.evidenceResponses[2].line.lie) {
+                evidence3.text += "*";
+                lieIndicator.SetActive(true);
+            }
         }
     }
 
