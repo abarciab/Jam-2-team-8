@@ -16,10 +16,11 @@ public class DialogueLine
     public float scrollDelay;
     public int soundID;
 
-    public DialogueLine(string text, Color textColor, Font textFont, bool isNewLine, float scrollDelay, int soundID) {
+    public DialogueLine(string text, Color? textColor = null, Font? textFont = null, 
+                        bool isNewLine = true, float scrollDelay = 0.01f, int soundID = 0) {
         this.text = text;
-        this.textColor = textColor;
-        this.textFont = textFont;
+        this.textColor = textColor ?? Color.black;
+        this.textFont = textFont ?? Resources.GetBuiltinResource<Font>("Arial.ttf");
         this.isNewLine = isNewLine;
         this.scrollDelay = scrollDelay;
         this.soundID = soundID;

@@ -24,7 +24,10 @@ public class DialogueButtonManager : MonoBehaviour
     public void setCharacter(string newCharacterName) {
         // loop through each button and set the name of the new character
         characterName = newCharacterName;
-        foreach(Transform child in transform)
-            child.GetComponent<DialogueButtons>().characterName = characterName;
+        foreach(Transform child in transform) {
+            DialogueButtons button = child.GetComponent<DialogueButtons>();
+            if(button != null)
+                button.characterName = characterName;
+        }
     }
 }
