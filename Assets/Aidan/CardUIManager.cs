@@ -9,6 +9,7 @@ public class CardUIManager : MonoBehaviour
     public Image drawnCard;
     public Image drawCardButton;
     public TextMeshProUGUI validCards;
+    public TextMeshProUGUI reality;
     public TextMeshProUGUI characterName;
     public TextMeshProUGUI variant;
     public TextMeshProUGUI alibi;
@@ -39,6 +40,8 @@ public class CardUIManager : MonoBehaviour
         else {
             drawCardButton.color = new Color(drawCardButton.color.r, drawCardButton.color.g, drawCardButton.color.b, 1f);
         }
+
+        reality.text = "Reality: " + RealityManager.instance.currentReality.name;
         
         if (string.IsNullOrEmpty(character.variant))
             variant.gameObject.SetActive(false);
