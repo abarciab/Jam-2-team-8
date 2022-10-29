@@ -21,6 +21,7 @@ public class DialogueBase : MonoBehaviour
         }
     }
 
+    // TODO: Disable dialogue buttons while writing dialogue
     public IEnumerator writeText(DialogueLine line) {
         // set text properties
         textHolder.color = line.textColor;

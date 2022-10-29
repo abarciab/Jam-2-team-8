@@ -7,6 +7,7 @@ public class CharacterInteract : MonoBehaviour
 {
     [SerializeField] private string characterName;
     [SerializeField] private string characterGreeting;
+    [SerializeField] private Sprite portraitSprite;
     private Button button;
 
     private void Start() {
@@ -15,9 +16,13 @@ public class CharacterInteract : MonoBehaviour
     }
 
     private void openCharacter() {
-        UIManager.instance.showUI();
-        DialogueButtonManager.instance.setCharacter(characterName);
+        CharacterResponseManager.instance.currentCharacterName = characterName;
+        CharacterResponseManager.instance.portraitSprite = portraitSprite;
+        UIManager.instance.showDialogueUI();
+        //DialogueButtonManager.instance.setCharacter(characterName);
+        
         DialogueLine line = new DialogueLine(characterGreeting);
-        StartCoroutine(DialogueBase.instance.writeText(line));
+        CharacterResponseManager.instance.characterGreeting(line);
+        UIManager.instance.hideCharacters();
     }
 }

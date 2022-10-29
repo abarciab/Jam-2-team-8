@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class UIManager : MonoBehaviour
         if(instance == null) {
             instance = this;                    // makes instance a singleton
             DontDestroyOnLoad(gameObject);      // prevents UIManager from being destroyed when new level loaded
-            hideUI();
+            hideDialogueUI();
         }
         // if duplicates exist
         else if(instance != null && instance != this) {
@@ -19,17 +20,29 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void hideUI() {
+    public void hideDialogueUI() {
         foreach(Transform child in transform) {
-            if(child.tag != "character") {
+            if(child.tag == "dialogue")
                 child.gameObject.SetActive(false);
+            else
+                child.gameObject.SetActive(true);
+        }
+    }
+
+    public void showDialogueUI() {
+        foreach(Transform child in transform) {
+            if(child.tag == "dialogue" || child.tag == "journal") {
+                if(child.tag == "dialogue")
+                    child.Find("CharacterPortrait").GetComponent<Image>().sprite = CharacterResponseManager.instance.portraitSprite;
+                child.gameObject.SetActive(true);
             }
         }
     }
 
-    public void showUI() {
+    public void hideCharacters() {
         foreach(Transform child in transform) {
-            child.gameObject.SetActive(true);
+            if(child.tag == "character")
+                child.gameObject.SetActive(false);
         }
     }
 }

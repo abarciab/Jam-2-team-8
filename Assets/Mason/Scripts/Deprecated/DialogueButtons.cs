@@ -13,8 +13,12 @@ public class DialogueButtons : MonoBehaviour
         button  = GetComponent<Button>();
         button.onClick.AddListener(buttonPressed);
     }
-
+/*
     private void buttonPressed() {
         CharacterResponseManager.instance.writeCharacterDialogue(characterName, dialogueType);
+    }
+*/
+    private void buttonPressed() {
+        CharacterResponseManager.instance.writeCharacterDialogue(dialogueType);
     }
 }

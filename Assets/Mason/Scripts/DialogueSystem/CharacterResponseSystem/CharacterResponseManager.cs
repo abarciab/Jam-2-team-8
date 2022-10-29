@@ -5,6 +5,8 @@ using UnityEngine;
 public class CharacterResponseManager : MonoBehaviour
 {
     public static CharacterResponseManager instance;
+    public string currentCharacterName;
+    public Sprite portraitSprite;
 
     private void Awake() {
         // if no duplicates
@@ -32,19 +34,27 @@ public class CharacterResponseManager : MonoBehaviour
             Debug.LogError("dialogueType " + dialogueType + " not found");
             return;
         }
-        StartCoroutine(DialogueBase.instance.writeText(convertToLine(text)));
+        StartCoroutine(DialogueBase.instance.writeText(new DialogueLine(text)));
     }
 
-    // this will eventuall be replaced when default parameters are set up for other override
-    private DialogueLine convertToLine(string text) {
-        DialogueLine line = new DialogueLine(text, Color.black, 
-                                             Resources.GetBuiltinResource<Font>("Arial.ttf"), true, 0.01f, 0);
-        return line;
+    public void writeCharacterDialogue(string dialogueType) {
+        //this is really unclean for now
+        CharacterDialogueData character = RealityManager.instance.getCharacterDialogue(currentCharacterName);
+        string text;
+        if(dialogueType == "alibi")
+            text = character.alibi.text;
+        else if(dialogueType == "relationship")
+            text = character.relationship.text;
+        else if(dialogueType == "default")
+            text = character.defaultResponse.text;
+        else {
+            Debug.LogError("dialogueType " + dialogueType + " not found");
+            return;
+        }
+        StartCoroutine(DialogueBase.instance.writeText(new DialogueLine(text)));
     }
 
-    // https://stackoverflow.com/questions/2804395/c-sharp-4-0-can-i-use-a-color-as-an-optional-parameter-with-a-default-value
-    private DialogueLine convertToLine(string text, Color textColor, Font textFont, bool isNewLine, float scrollDelay, int soundID) {
-        DialogueLine line = new DialogueLine(text, textColor, textFont, isNewLine, scrollDelay, soundID);
-        return line;
+    public void characterGreeting(DialogueLine greeting) {
+        StartCoroutine(DialogueBase.instance.writeText(greeting));
     }
 }
