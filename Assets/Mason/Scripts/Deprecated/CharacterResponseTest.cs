@@ -10,6 +10,6 @@ public class CharacterResponseTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CharacterResponseManager.instance.writeCharacterDialogue(characterName, dialogueType);
+        //CharacterResponseManager.instance.writeCharacterDialogue(characterName, dialogueType);
     }
 }

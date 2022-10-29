@@ -1,18 +1,21 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueBase : MonoBehaviour
 {
     public static DialogueBase instance;
     public bool finished { get; private set; }
-    private Text textHolder;
+    //private Text textHolder;
+    private TextMeshProUGUI textHolder;
 
     private void Awake() {
         // if no duplicates
         if(instance == null) {
             instance = this;                    // makes instance a singleton
-            textHolder = GetComponent<Text>();  // get the text component
+            //textHolder = GetComponent<Text>();  // get the text component
+            textHolder = GetComponent<TextMeshProUGUI>();
             DontDestroyOnLoad(gameObject);      // prevents DialogueBase from being destroyed when new level loaded
         }
         // if duplicates exist
@@ -37,6 +40,7 @@ public class DialogueBase : MonoBehaviour
             textHolder.text += line.text[i];
             AudioManager.instance.PlayGlobal(line.soundID, 1, true);
             yield return new WaitForSeconds(line.scrollDelay);
+            //AudioManager.instance.StopSoundHere(0, AudioManager.instance.global);
         }
 
         // wait for mouse click to move onto next line
