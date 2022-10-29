@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
 
     public void hideDialogueUI() {
         foreach(Transform child in transform) {
-            if(child.tag == "dialogue")
+            if(child.tag == "dialogue" || child.tag == "evidence")
                 child.gameObject.SetActive(false);
             else
                 child.gameObject.SetActive(true);
@@ -43,6 +43,20 @@ public class UIManager : MonoBehaviour
         foreach(Transform child in transform) {
             if(child.tag == "character")
                 child.gameObject.SetActive(false);
+        }
+    }
+
+    public void hideEvidence() {
+        foreach(Transform child in transform) {
+            if(child.tag == "evidence")
+                child.gameObject.SetActive(false);
+        }
+    }
+
+    public void showEvidence() {
+        foreach(Transform child in transform) {
+            if(child.tag == "evidence")
+                child.gameObject.SetActive(true);
         }
     }
 }

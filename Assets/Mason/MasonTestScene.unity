@@ -219,6 +219,7 @@ RectTransform:
   - {fileID: 1904371159}
   - {fileID: 1837706847}
   - {fileID: 804795110}
+  - {fileID: 1380568120}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -239,6 +240,141 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4859768f100c194479fdfd1b9704f339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &209054850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 209054851}
+  - component: {fileID: 209054853}
+  - component: {fileID: 209054852}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &209054851
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209054850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1104780354}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &209054852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209054850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Exit
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &209054853
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209054850}
+  m_CullTransparentMesh: 1
 --- !u!1 &255158037
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,59 +635,77 @@ MonoBehaviour:
       evidenceResponses:
       - item: gun used to kill joe
         line:
-          text: ' I''ve never seen that gun before.'
+          text: ' Oh, that''s Joe''s'
           lie: 1
           evidenceGained: SARAH OWNS GUN
-          requiredEvidence: GUN OWNERSHIP
+          requiredEvidence: GUN NOT JOE'S
           truth: I hate to say it, but I think that gun belongs to sarah...
       validRealities:
       - core reality
     - characterName: john
-      variant: RICH
+      variant: LOVERS
       conflicts: []
       defaultResponse:
-        text: I don't care for your peasantries
+        text: idk
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: yatch
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
+        text: ' I was with my girlfriend a the time, at her home. You can call her,
+          she''ll confirm it.'
+        lie: 1
+        evidenceGained: JOHN CAMPING WITH SIDEPIECE
+        requiredEvidence: CALLED JOHN'S GF
+        truth: 'I was with another girl, but please don''t tell my gf. The other
+          girl and I went camping in the mountains '
       relationship:
-        text: father
+        text: Joe was my father, but we had a rocky relationship...
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
-      evidenceResponses: []
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
       validRealities:
       - core reality
     - characterName: john
-      variant: SAD
+      variant: RESPECTED FATHER
       conflicts: []
       defaultResponse:
-        text: I'm too sad to care
+        text: idk
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: sad room
+        text: I was in the library when you say Joe was killed. check the cameras,
+          you'll see
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       relationship:
-        text: father
+        text: Joe was my father, and I always admired him. He had his issues, but
+          he always did the right thing in the end.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
-      evidenceResponses: []
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
       validRealities:
       - core reality
     - characterName: sarah
@@ -579,15 +733,61 @@ MonoBehaviour:
       evidenceResponses:
       - item: gun used to kill joe
         line:
-          text: That looks familiar. I think it was Joe's? He has a whole collection
-            of old guns
+          text: I've never seen that gun before
           lie: 1
           evidenceGained: 
-          requiredEvidence: 
+          requiredEvidence: SARAH OWNS GUN
           truth: It's mine. So what?
-      - item: Victim's travel log
+      - item: joe's travel log
         line:
           text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sarah
+      variant: JOE RESPECTED JOHN
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was home. Alone. No laws against that last time I checked.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: He was my father. He treated all his kids like shit, but he always
+          had a hatred for me in particular.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: I've never seen that gun before
+          lie: 1
+          evidenceGained: SARAH ADDMITTED TO OWNING GUN
+          requiredEvidence: SARAH OWNS GUN
+          truth: It's mine. So what?
+      - item: joe's travel log
+        line:
+          text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: john respected joe
+        line:
+          text: I always hated my father, and seeing how he treated my brother made
+            me hate him even more
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -604,49 +804,43 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       alibi:
-        text: home
+        text: I was at a party, actually. Big anniversary for my boss, so he invited
+          the whole office. I'm sure ppl there can back me up
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       relationship:
-        text: brother
+        text: Joe was my brother. We were close when we were younger, but after that
+          busniess with Mary, we haven't spoken much {MARY INCIDENCT}
         lie: 0
-        evidenceGained: 
+        evidenceGained: MARY INCIDENCT
         requiredEvidence: 
         truth: 
-      evidenceResponses: []
-      validRealities:
-      - core reality
-    - characterName: sam
-      variant: GREEDY
-      conflicts: []
-      defaultResponse:
-        text: never seen it before
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      alibi:
-        text: home
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      relationship:
-        text: brother
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      evidenceResponses: []
+      evidenceResponses:
+      - item: mary incident
+        line:
+          text: oh, Mary was a girl he liked, but she didn't feel the same. He got
+            pretty creepy about it and she got a restraining order.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: gun used to kill joe
+        line:
+          text: I don't know who's gun that it, but it defintly wasn't Joe's - he
+            hated pistols. {GUN NOT JOE'S}
+          lie: 0
+          evidenceGained: GUN NOT JOE'S
+          requiredEvidence: 
+          truth: 
       validRealities:
       - core reality
     - characterName: sam
       variant: LOVERS
       conflicts:
       - character: JOHN
-        variant: RICH
+        variant: RESPECTED FATHER
       defaultResponse:
         text: never seen before
         lie: 0
@@ -660,47 +854,25 @@ MonoBehaviour:
         requiredEvidence: SECURITY CAMERA
         truth: at the pool
       relationship:
-        text: cousins
+        text: Joe was my brother in-law. I married his sister. She's been out of
+          town for a school reunion right now. I never liked Joe that much, but it
+          wasn't anything bad.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       evidenceResponses:
-      - item: baseball bat
+      - item: joe's travel log
         line:
-          text: oh, that belongs to Sarah
-          lie: 1
+          text: Oh yeah he would bring that everywhere
+          lie: 0
           evidenceGained: 
-          requiredEvidence: TEAM PHOTO
-          truth: it's mine
+          requiredEvidence: 
+          truth: 
       validRealities:
       - core reality
-      - john married to sarah
-      - sarah having affair
-    - characterName: john
-      variant: ANGRY
-      conflicts: []
-      defaultResponse:
-        text: idk
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      alibi:
-        text: at the gym, being anngy
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      relationship:
-        text: father
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      evidenceResponses: []
-      validRealities:
-      - core reality
+      - 1
+      - 2
   - name: john married to sarah
     characters:
     - characterName: john
@@ -903,59 +1075,77 @@ MonoBehaviour:
       evidenceResponses:
       - item: gun used to kill joe
         line:
-          text: ' I''ve never seen that gun before.'
+          text: ' Oh, that''s Joe''s'
           lie: 1
           evidenceGained: SARAH OWNS GUN
-          requiredEvidence: GUN OWNERSHIP
+          requiredEvidence: GUN NOT JOE'S
           truth: I hate to say it, but I think that gun belongs to sarah...
       validRealities:
       - core reality
     - characterName: john
-      variant: RICH
+      variant: LOVERS
       conflicts: []
       defaultResponse:
-        text: I don't care for your peasantries
+        text: idk
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: yatch
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
+        text: ' I was with my girlfriend a the time, at her home. You can call her,
+          she''ll confirm it.'
+        lie: 1
+        evidenceGained: JOHN CAMPING WITH SIDEPIECE
+        requiredEvidence: CALLED JOHN'S GF
+        truth: 'I was with another girl, but please don''t tell my gf. The other
+          girl and I went camping in the mountains '
       relationship:
-        text: father
+        text: Joe was my father, but we had a rocky relationship...
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
-      evidenceResponses: []
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
       validRealities:
       - core reality
     - characterName: john
-      variant: SAD
+      variant: RESPECTED FATHER
       conflicts: []
       defaultResponse:
-        text: I'm too sad to care
+        text: idk
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: sad room
+        text: I was in the library when you say Joe was killed. check the cameras,
+          you'll see
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       relationship:
-        text: father
+        text: Joe was my father, and I always admired him. He had his issues, but
+          he always did the right thing in the end.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
-      evidenceResponses: []
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
       validRealities:
       - core reality
     - characterName: sarah
@@ -983,15 +1173,61 @@ MonoBehaviour:
       evidenceResponses:
       - item: gun used to kill joe
         line:
-          text: That looks familiar. I think it was Joe's? He has a whole collection
-            of old guns
+          text: I've never seen that gun before
           lie: 1
           evidenceGained: 
-          requiredEvidence: 
+          requiredEvidence: SARAH OWNS GUN
           truth: It's mine. So what?
-      - item: Victim's travel log
+      - item: joe's travel log
         line:
           text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sarah
+      variant: JOE RESPECTED JOHN
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was home. Alone. No laws against that last time I checked.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: He was my father. He treated all his kids like shit, but he always
+          had a hatred for me in particular.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: I've never seen that gun before
+          lie: 1
+          evidenceGained: SARAH ADDMITTED TO OWNING GUN
+          requiredEvidence: SARAH OWNS GUN
+          truth: It's mine. So what?
+      - item: joe's travel log
+        line:
+          text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: john respected joe
+        line:
+          text: I always hated my father, and seeing how he treated my brother made
+            me hate him even more
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -1008,49 +1244,43 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       alibi:
-        text: home
+        text: I was at a party, actually. Big anniversary for my boss, so he invited
+          the whole office. I'm sure ppl there can back me up
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       relationship:
-        text: brother
+        text: Joe was my brother. We were close when we were younger, but after that
+          busniess with Mary, we haven't spoken much {MARY INCIDENCT}
         lie: 0
-        evidenceGained: 
+        evidenceGained: MARY INCIDENCT
         requiredEvidence: 
         truth: 
-      evidenceResponses: []
-      validRealities:
-      - core reality
-    - characterName: sam
-      variant: GREEDY
-      conflicts: []
-      defaultResponse:
-        text: never seen it before
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      alibi:
-        text: home
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      relationship:
-        text: brother
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      evidenceResponses: []
+      evidenceResponses:
+      - item: mary incident
+        line:
+          text: oh, Mary was a girl he liked, but she didn't feel the same. He got
+            pretty creepy about it and she got a restraining order.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: gun used to kill joe
+        line:
+          text: I don't know who's gun that it, but it defintly wasn't Joe's - he
+            hated pistols. {GUN NOT JOE'S}
+          lie: 0
+          evidenceGained: GUN NOT JOE'S
+          requiredEvidence: 
+          truth: 
       validRealities:
       - core reality
     - characterName: sam
       variant: LOVERS
       conflicts:
       - character: JOHN
-        variant: RICH
+        variant: RESPECTED FATHER
       defaultResponse:
         text: never seen before
         lie: 0
@@ -1064,47 +1294,25 @@ MonoBehaviour:
         requiredEvidence: SECURITY CAMERA
         truth: at the pool
       relationship:
-        text: cousins
+        text: Joe was my brother in-law. I married his sister. She's been out of
+          town for a school reunion right now. I never liked Joe that much, but it
+          wasn't anything bad.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       evidenceResponses:
-      - item: baseball bat
+      - item: joe's travel log
         line:
-          text: oh, that belongs to Sarah
-          lie: 1
+          text: Oh yeah he would bring that everywhere
+          lie: 0
           evidenceGained: 
-          requiredEvidence: TEAM PHOTO
-          truth: it's mine
+          requiredEvidence: 
+          truth: 
       validRealities:
       - core reality
-      - john married to sarah
-      - sarah having affair
-    - characterName: john
-      variant: ANGRY
-      conflicts: []
-      defaultResponse:
-        text: idk
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      alibi:
-        text: at the gym, being anngy
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      relationship:
-        text: father
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      evidenceResponses: []
-      validRealities:
-      - core reality
+      - 1
+      - 2
   currentReality:
     name: core reality
     characters:
@@ -1133,59 +1341,77 @@ MonoBehaviour:
       evidenceResponses:
       - item: gun used to kill joe
         line:
-          text: ' I''ve never seen that gun before.'
+          text: ' Oh, that''s Joe''s'
           lie: 1
           evidenceGained: SARAH OWNS GUN
-          requiredEvidence: GUN OWNERSHIP
+          requiredEvidence: GUN NOT JOE'S
           truth: I hate to say it, but I think that gun belongs to sarah...
       validRealities:
       - core reality
     - characterName: john
-      variant: RICH
+      variant: LOVERS
       conflicts: []
       defaultResponse:
-        text: I don't care for your peasantries
+        text: idk
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: yatch
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
+        text: ' I was with my girlfriend a the time, at her home. You can call her,
+          she''ll confirm it.'
+        lie: 1
+        evidenceGained: JOHN CAMPING WITH SIDEPIECE
+        requiredEvidence: CALLED JOHN'S GF
+        truth: 'I was with another girl, but please don''t tell my gf. The other
+          girl and I went camping in the mountains '
       relationship:
-        text: father
+        text: Joe was my father, but we had a rocky relationship...
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
-      evidenceResponses: []
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
       validRealities:
       - core reality
     - characterName: john
-      variant: SAD
+      variant: RESPECTED FATHER
       conflicts: []
       defaultResponse:
-        text: I'm too sad to care
+        text: idk
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: sad room
+        text: I was in the library when you say Joe was killed. check the cameras,
+          you'll see
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       relationship:
-        text: father
+        text: Joe was my father, and I always admired him. He had his issues, but
+          he always did the right thing in the end.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
-      evidenceResponses: []
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
       validRealities:
       - core reality
     - characterName: sarah
@@ -1213,15 +1439,61 @@ MonoBehaviour:
       evidenceResponses:
       - item: gun used to kill joe
         line:
-          text: That looks familiar. I think it was Joe's? He has a whole collection
-            of old guns
+          text: I've never seen that gun before
           lie: 1
           evidenceGained: 
-          requiredEvidence: 
+          requiredEvidence: SARAH OWNS GUN
           truth: It's mine. So what?
-      - item: Victim's travel log
+      - item: joe's travel log
         line:
           text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sarah
+      variant: JOE RESPECTED JOHN
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was home. Alone. No laws against that last time I checked.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: He was my father. He treated all his kids like shit, but he always
+          had a hatred for me in particular.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: I've never seen that gun before
+          lie: 1
+          evidenceGained: SARAH ADDMITTED TO OWNING GUN
+          requiredEvidence: SARAH OWNS GUN
+          truth: It's mine. So what?
+      - item: joe's travel log
+        line:
+          text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: john respected joe
+        line:
+          text: I always hated my father, and seeing how he treated my brother made
+            me hate him even more
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -1238,49 +1510,43 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       alibi:
-        text: home
+        text: I was at a party, actually. Big anniversary for my boss, so he invited
+          the whole office. I'm sure ppl there can back me up
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       relationship:
-        text: brother
+        text: Joe was my brother. We were close when we were younger, but after that
+          busniess with Mary, we haven't spoken much {MARY INCIDENCT}
         lie: 0
-        evidenceGained: 
+        evidenceGained: MARY INCIDENCT
         requiredEvidence: 
         truth: 
-      evidenceResponses: []
-      validRealities:
-      - core reality
-    - characterName: sam
-      variant: GREEDY
-      conflicts: []
-      defaultResponse:
-        text: never seen it before
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      alibi:
-        text: home
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      relationship:
-        text: brother
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      evidenceResponses: []
+      evidenceResponses:
+      - item: mary incident
+        line:
+          text: oh, Mary was a girl he liked, but she didn't feel the same. He got
+            pretty creepy about it and she got a restraining order.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: gun used to kill joe
+        line:
+          text: I don't know who's gun that it, but it defintly wasn't Joe's - he
+            hated pistols. {GUN NOT JOE'S}
+          lie: 0
+          evidenceGained: GUN NOT JOE'S
+          requiredEvidence: 
+          truth: 
       validRealities:
       - core reality
     - characterName: sam
       variant: LOVERS
       conflicts:
       - character: JOHN
-        variant: RICH
+        variant: RESPECTED FATHER
       defaultResponse:
         text: never seen before
         lie: 0
@@ -1294,47 +1560,25 @@ MonoBehaviour:
         requiredEvidence: SECURITY CAMERA
         truth: at the pool
       relationship:
-        text: cousins
+        text: Joe was my brother in-law. I married his sister. She's been out of
+          town for a school reunion right now. I never liked Joe that much, but it
+          wasn't anything bad.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       evidenceResponses:
-      - item: baseball bat
+      - item: joe's travel log
         line:
-          text: oh, that belongs to Sarah
-          lie: 1
+          text: Oh yeah he would bring that everywhere
+          lie: 0
           evidenceGained: 
-          requiredEvidence: TEAM PHOTO
-          truth: it's mine
+          requiredEvidence: 
+          truth: 
       validRealities:
       - core reality
-      - john married to sarah
-      - sarah having affair
-    - characterName: john
-      variant: ANGRY
-      conflicts: []
-      defaultResponse:
-        text: idk
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      alibi:
-        text: at the gym, being anngy
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      relationship:
-        text: father
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      evidenceResponses: []
-      validRealities:
-      - core reality
+      - 1
+      - 2
   activeVariants: []
   allCharacters:
   - john
@@ -1475,59 +1719,77 @@ MonoBehaviour:
       evidenceResponses:
       - item: gun used to kill joe
         line:
-          text: ' I''ve never seen that gun before.'
+          text: ' Oh, that''s Joe''s'
           lie: 1
           evidenceGained: SARAH OWNS GUN
-          requiredEvidence: GUN OWNERSHIP
+          requiredEvidence: GUN NOT JOE'S
           truth: I hate to say it, but I think that gun belongs to sarah...
       validRealities:
       - core reality
     - characterName: john
-      variant: RICH
+      variant: LOVERS
       conflicts: []
       defaultResponse:
-        text: I don't care for your peasantries
+        text: idk
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: yatch
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
+        text: ' I was with my girlfriend a the time, at her home. You can call her,
+          she''ll confirm it.'
+        lie: 1
+        evidenceGained: JOHN CAMPING WITH SIDEPIECE
+        requiredEvidence: CALLED JOHN'S GF
+        truth: 'I was with another girl, but please don''t tell my gf. The other
+          girl and I went camping in the mountains '
       relationship:
-        text: father
+        text: Joe was my father, but we had a rocky relationship...
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
-      evidenceResponses: []
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
       validRealities:
       - core reality
     - characterName: john
-      variant: SAD
+      variant: RESPECTED FATHER
       conflicts: []
       defaultResponse:
-        text: I'm too sad to care
+        text: idk
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: sad room
+        text: I was in the library when you say Joe was killed. check the cameras,
+          you'll see
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       relationship:
-        text: father
+        text: Joe was my father, and I always admired him. He had his issues, but
+          he always did the right thing in the end.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
-      evidenceResponses: []
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
       validRealities:
       - core reality
     - characterName: sarah
@@ -1555,15 +1817,61 @@ MonoBehaviour:
       evidenceResponses:
       - item: gun used to kill joe
         line:
-          text: That looks familiar. I think it was Joe's? He has a whole collection
-            of old guns
+          text: I've never seen that gun before
           lie: 1
           evidenceGained: 
-          requiredEvidence: 
+          requiredEvidence: SARAH OWNS GUN
           truth: It's mine. So what?
-      - item: Victim's travel log
+      - item: joe's travel log
         line:
           text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sarah
+      variant: JOE RESPECTED JOHN
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was home. Alone. No laws against that last time I checked.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: He was my father. He treated all his kids like shit, but he always
+          had a hatred for me in particular.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: I've never seen that gun before
+          lie: 1
+          evidenceGained: SARAH ADDMITTED TO OWNING GUN
+          requiredEvidence: SARAH OWNS GUN
+          truth: It's mine. So what?
+      - item: joe's travel log
+        line:
+          text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: john respected joe
+        line:
+          text: I always hated my father, and seeing how he treated my brother made
+            me hate him even more
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -1580,49 +1888,43 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       alibi:
-        text: home
+        text: I was at a party, actually. Big anniversary for my boss, so he invited
+          the whole office. I'm sure ppl there can back me up
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       relationship:
-        text: brother
+        text: Joe was my brother. We were close when we were younger, but after that
+          busniess with Mary, we haven't spoken much {MARY INCIDENCT}
         lie: 0
-        evidenceGained: 
+        evidenceGained: MARY INCIDENCT
         requiredEvidence: 
         truth: 
-      evidenceResponses: []
-      validRealities:
-      - core reality
-    - characterName: sam
-      variant: GREEDY
-      conflicts: []
-      defaultResponse:
-        text: never seen it before
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      alibi:
-        text: home
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      relationship:
-        text: brother
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      evidenceResponses: []
+      evidenceResponses:
+      - item: mary incident
+        line:
+          text: oh, Mary was a girl he liked, but she didn't feel the same. He got
+            pretty creepy about it and she got a restraining order.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: gun used to kill joe
+        line:
+          text: I don't know who's gun that it, but it defintly wasn't Joe's - he
+            hated pistols. {GUN NOT JOE'S}
+          lie: 0
+          evidenceGained: GUN NOT JOE'S
+          requiredEvidence: 
+          truth: 
       validRealities:
       - core reality
     - characterName: sam
       variant: LOVERS
       conflicts:
       - character: JOHN
-        variant: RICH
+        variant: RESPECTED FATHER
       defaultResponse:
         text: never seen before
         lie: 0
@@ -1636,47 +1938,25 @@ MonoBehaviour:
         requiredEvidence: SECURITY CAMERA
         truth: at the pool
       relationship:
-        text: cousins
+        text: Joe was my brother in-law. I married his sister. She's been out of
+          town for a school reunion right now. I never liked Joe that much, but it
+          wasn't anything bad.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       evidenceResponses:
-      - item: baseball bat
+      - item: joe's travel log
         line:
-          text: oh, that belongs to Sarah
-          lie: 1
+          text: Oh yeah he would bring that everywhere
+          lie: 0
           evidenceGained: 
-          requiredEvidence: TEAM PHOTO
-          truth: it's mine
+          requiredEvidence: 
+          truth: 
       validRealities:
       - core reality
-      - john married to sarah
-      - sarah having affair
-    - characterName: john
-      variant: ANGRY
-      conflicts: []
-      defaultResponse:
-        text: idk
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      alibi:
-        text: at the gym, being anngy
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      relationship:
-        text: father
-        lie: 0
-        evidenceGained: 
-        requiredEvidence: 
-        truth: 
-      evidenceResponses: []
-      validRealities:
-      - core reality
+      - 1
+      - 2
   - name: john married to sarah
     characters:
     - characterName: john
@@ -1956,7 +2236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 229, y: 56}
+  m_AnchoredPosition: {x: 202, y: 61}
   m_SizeDelta: {x: 160, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &442337690
@@ -2484,10 +2764,10 @@ RectTransform:
   m_Father: {fileID: 149313434}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -363.68307, y: 152.67227}
-  m_SizeDelta: {x: 100.6339, y: 40.6555}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: -45}
+  m_SizeDelta: {x: 100.63391, y: 40.655502}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &804795111
 MonoBehaviour:
@@ -2621,7 +2901,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25, y: -60}
+  m_AnchoredPosition: {x: 25, y: -60}
   m_SizeDelta: {x: 41.682, y: 53.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &837603702
@@ -2894,7 +3174,7 @@ GameObject:
   - component: {fileID: 884395924}
   m_Layer: 5
   m_Name: CharacterPortrait
-  m_TagString: Untagged
+  m_TagString: dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2916,7 +3196,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 212.88843, y: 8.572}
+  m_AnchoredPosition: {x: 210, y: 8.572}
   m_SizeDelta: {x: 154.7995, y: 144.144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &884395924
@@ -2970,7 +3250,7 @@ GameObject:
   - component: {fileID: 1007911421}
   m_Layer: 5
   m_Name: DialogueBox
-  m_TagString: Untagged
+  m_TagString: dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2991,9 +3271,9 @@ RectTransform:
   m_Father: {fileID: 1904371159}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 85, y: -125}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 107, y: 70.4}
   m_SizeDelta: {x: 161.9, y: 123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1007911421
@@ -3110,7 +3390,7 @@ GameObject:
   - component: {fileID: 1019755614}
   m_Layer: 5
   m_Name: DialogueButtonHolder
-  m_TagString: Untagged
+  m_TagString: dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3135,9 +3415,9 @@ RectTransform:
   m_Father: {fileID: 1904371159}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -304, y: -93.25}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 134.6, y: 102.15}
   m_SizeDelta: {x: 100, y: 186.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1019755614
@@ -3396,10 +3676,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1403602946}
-        m_TargetAssemblyTypeName: CharacterResponseManager, Assembly-CSharp
-        m_MethodName: writeCharacterDialogue
-        m_Mode: 5
+      - m_Target: {fileID: 149313435}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: showEvidence
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3446,6 +3726,140 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075942718}
   m_CullTransparentMesh: 1
+--- !u!1 &1104780353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1104780354}
+  - component: {fileID: 1104780357}
+  - component: {fileID: 1104780356}
+  - component: {fileID: 1104780355}
+  m_Layer: 5
+  m_Name: ExitEvidenceButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1104780354
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104780353}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 209054851}
+  m_Father: {fileID: 1380568120}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: -45}
+  m_SizeDelta: {x: 100.6339, y: 40.6555}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1104780355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104780353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1104780356}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 149313435}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: hideEvidence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1104780356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104780353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1104780357
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104780353}
+  m_CullTransparentMesh: 1
 --- !u!1 &1171057762
 GameObject:
   m_ObjectHideFlags: 0
@@ -3484,7 +3898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -96, y: 56}
+  m_AnchoredPosition: {x: -91, y: 61}
   m_SizeDelta: {x: 160, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1171057764
@@ -3854,6 +4268,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354138877}
   m_CullTransparentMesh: 1
+--- !u!1 &1380568119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1380568120}
+  m_Layer: 5
+  m_Name: EvidenceHolder
+  m_TagString: evidence
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1380568120
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380568119}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1830176477}
+  - {fileID: 1104780354}
+  m_Father: {fileID: 149313434}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 440.2, y: -195.4}
+  m_SizeDelta: {x: 880.4, y: 390.8}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1403602943
 GameObject:
   m_ObjectHideFlags: 0
@@ -3898,6 +4350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 131b012d141075d4382eefffd91724be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonHolder: {fileID: 1019755613}
   currentCharacterName: 
   portraitSprite: {fileID: 0}
 --- !u!1 &1407126284
@@ -4253,6 +4706,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1830176476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1830176477}
+  - component: {fileID: 1830176479}
+  - component: {fileID: 1830176478}
+  m_Layer: 5
+  m_Name: EvidenceBG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1830176477
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830176476}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1380568120}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.7294}
+  m_SizeDelta: {x: 876.066, y: 387.3778}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1830176478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830176476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.07625906, g: 0.036027018, b: 0.8679245, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1830176479
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830176476}
+  m_CullTransparentMesh: 1
 --- !u!1 &1837706846
 GameObject:
   m_ObjectHideFlags: 0
@@ -4286,10 +4815,10 @@ RectTransform:
   m_Father: {fileID: 149313434}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 440.2, y: -195.4}
+  m_SizeDelta: {x: 880.4, y: 390.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1904371158
 GameObject:
@@ -4325,10 +4854,10 @@ RectTransform:
   m_Father: {fileID: 149313434}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 440.2, y: -195.4}
+  m_SizeDelta: {x: 880.4, y: 390.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1928979789
 GameObject:
@@ -4636,8 +5165,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00051725, y: -0.000051975}
-  m_SizeDelta: {x: 212.11, y: 55.617}
+  m_AnchoredPosition: {x: 0.0000015488476, y: -0.00000047658614}
+  m_SizeDelta: {x: 212.11, y: 55.617004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2063225253
 MonoBehaviour:

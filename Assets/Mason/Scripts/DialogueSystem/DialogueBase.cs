@@ -21,11 +21,11 @@ public class DialogueBase : MonoBehaviour
         }
     }
 
-    // TODO: Disable dialogue buttons while writing dialogue
     public IEnumerator writeText(DialogueLine line) {
         // set text properties
         textHolder.color = line.textColor;
         textHolder.font = line.textFont;
+        CharacterResponseManager.instance.toggleButtons(false, Color.gray);
 
         // reset text if line is a new line
         if(line.isNewLine)
@@ -40,6 +40,7 @@ public class DialogueBase : MonoBehaviour
         }
 
         // wait for mouse click to move onto next line
+        CharacterResponseManager.instance.toggleButtons(true, Color.white);
         yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
         finished = true;
     }
