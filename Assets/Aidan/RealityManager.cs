@@ -168,11 +168,9 @@ public class RealityManager : MonoBehaviour
     //don't use this function just to check if there are any valid cards - use CardsAvaliable() to do that
     public int NumValidCards(string characterName)
     {
-        //print("getting valid cards for: " + characterName);
         if (allCharacters.Contains(characterName))
             return getValidCards(characterName).Count;
         else {
-            //print("we don't know that person");
             return 0;
         }
     }

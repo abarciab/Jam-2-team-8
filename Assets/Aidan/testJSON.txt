@@ -4,51 +4,56 @@
 			"where" : "I was in the library when you say Joe was killed. check the cameras, you'll see",
 			"relationship" : "Joe was my father, but we had a rocky relationship...",
 			"default" : "idk",
-			"gun used to kill joe[LIE]" : "[GUN OWNERSHIP] I've never seen that gun before.",
+			"gun used to kill joe[LIE]" : "[GUN NOT JOE'S] Oh, that's Joe's",
 			"gun used to kill joe[TRUTH]" : "I hate to say it, but I think that gun belongs to sarah...{SARAH OWNS GUN}"
 		},
-		"john[RICH]" : {
-			"where" : "yatch",
-			"relationship" : "father",
-			"default" : "I don't care for your peasantries"
+		"john[LOVERS]" : {
+			"where[LIE]" : "[CALLED JOHN'S GF] I was with my girlfriend a the time, at her home. You can call her, she'll confirm it.",
+			"where[TRUTH]" : "I was with another girl, but please don't tell my gf. The other girl and I went camping in the mountains {JOHN CAMPING WITH SIDEPIECE}",
+			"relationship" : "Joe was my father, but we had a rocky relationship...",
+			"default" : "idk",
+			"gun used to kill joe[LIE]" : "[GUN NOT JOE'S] Oh, that's Joe's",
+			"gun used to kill joe[TRUTH]" : "I hate to say it, but I think that gun belongs to sarah...{SARAH OWNS GUN}"
 		},
-		"john[SAD]" : {
-			"where" : "sad room",
-			"relationship" : "father",
-			"default" : "I'm too sad to care"
+		"john[RESPECTED FATHER]" : {
+			"where" : "I was in the library when you say Joe was killed. check the cameras, you'll see",
+			"relationship" : "Joe was my father, and I always admired him. He had his issues, but he always did the right thing in the end.",
+			"default" : "idk",
+			"gun used to kill joe[LIE]" : "[GUN NOT JOE'S] Oh, that's Joe's",
+			"gun used to kill joe[TRUTH]" : "I hate to say it, but I think that gun belongs to sarah...{SARAH OWNS GUN}"
 		},
 		"sarah" : {
 			"where" : "I was home. Alone. No laws against that last time I checked.",
 			"relationship" : "He was my father. He treated all his kids like shit, but he always had a hatred for me in particular.",
 			"default" : "no clue",
-			"gun used to kill joe[LIE]" : "That looks familiar. I think it was Joe's? He has a whole collection of old guns",
+			"gun used to kill joe[LIE]" : "[SARAH OWNS GUN]I've never seen that gun before",
 			"gun used to kill joe[TRUTH]" : "It's mine. So what?",
-			"Victim's travel log" : "um.... We were at some of the same events, who cares..."
+			"joe's travel log" : "um.... We were at some of the same events, who cares..."
+		},
+		"sarah[JOE RESPECTED JOHN]" : {
+			"where" : "I was home. Alone. No laws against that last time I checked.",
+			"relationship" : "He was my father. He treated all his kids like shit, but he always had a hatred for me in particular.",
+			"default" : "no clue",
+			"gun used to kill joe[LIE]" : "[SARAH OWNS GUN]I've never seen that gun before",
+			"gun used to kill joe[TRUTH]" : "It's mine. So what?{SARAH ADDMITTED TO OWNING GUN}",
+			"joe's travel log" : "um.... We were at some of the same events, who cares...",
+			"john respected joe" : "I always hated my father, and seeing how he treated my brother made me hate him even more"
 		},
 		"sam" : {
-			"where" : "home",
-			"relationship" : "brother",
-			"default" : "never seen it before"
-		},
-		"sam[GREEDY]" : {
-			"where" : "home",
-			"relationship" : "brother",
-			"default" : "never seen it before"
+			"where" : "I was at a party, actually. Big anniversary for my boss, so he invited the whole office. I'm sure ppl there can back me up",
+			"relationship" : "Joe was my brother. We were close when we were younger, but after that busniess with Mary, we haven't spoken much {MARY INCIDENCT}",
+			"default" : "never seen it before",
+			"mary incident" : "oh, Mary was a girl he liked, but she didn't feel the same. He got pretty creepy about it and she got a restraining order.",
+			"gun used to kill joe" : "I don't know who's gun that it, but it defintly wasn't Joe's - he hated pistols. {GUN NOT JOE'S}"
 		},
 		"sam[LOVERS]" : {
 			"where[LIE]" : "[SECURITY CAMERA]home",
 			"where[TRUTH]" : "at the pool{SAM AT POOL}",
-			"relationship" : "cousins",
+			"relationship" : "Joe was my brother in-law. I married his sister. She's been out of town for a school reunion right now. I never liked Joe that much, but it wasn't anything bad.",
 			"default" : "never seen before",
-			"baseball bat[LIE]" : "[TEAM PHOTO]oh, that belongs to Sarah",
-            "baseball bat[TRUTH]" : "it's mine",
-			"conflict[JOHN]" : "RICH",
-			"realities" : "john married to sarah, sarah having affair"
-		},
-		"john[ANGRY]" : {
-			"where" : "at the gym, being anngy",
-			"relationship" : "father",
-			"default" : "idk"
+			"joe's travel log" : "Oh yeah he would bring that everywhere",
+			"conflict[JOHN]" : "RESPECTED FATHER",
+			"realities" : "1, 2"
 		}
 	},
 	"john married to sarah": {
