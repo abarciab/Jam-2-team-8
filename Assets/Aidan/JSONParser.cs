@@ -10,6 +10,29 @@ using System.Data;
 using JetBrains.Annotations;
 using UnityEngine.Rendering;
 
+
+[System.Serializable]
+public class AccusationData {
+    public string murderer;
+    public List<EvidenceData> meansEvidence = new List<EvidenceData>();
+    public List<EvidenceData> motiveEvidence = new List<EvidenceData>();
+}
+
+//classes for evidence data
+[System.Serializable]
+public class EvidenceData {
+    public string name;
+    public string description;
+    public List<string> allowedRealities = new List<string>();
+    public StringCharacterPairData means;        //"with poison", or "by pushing him off a roof", for example
+    public StringCharacterPairData motive;       //"owed him money", or "discovered he was having an affair", for example
+}
+[System.Serializable]
+public class StringCharacterPairData {
+    public string name;
+    public List<CharacterCardEffectData> applicableCharacter = new List<CharacterCardEffectData>();
+}
+
 //classes for card data
 [System.Serializable]
 public class CardData {
@@ -74,11 +97,16 @@ public class JSONParser : MonoBehaviour
     
     public bool parseDialogue = false;
     public bool parseCards = false;
+    public bool parseAccusations = false;
+    public bool parseEvidence = false;
     public string JSONDialogueFilePath = "Assets/Aidan/testJSON.txt";
     public string JSONCardDataFilePath = "Assets/Aidan/cardJSON.txt";
+    public string JSONAccusationDataFilePath = "Assets/Aidan/JSON/evidence.json";
+    public string JSONEvidenceDataFilePath = "Assets/Aidan/JSON/accusations.json";
 
     public List<RealityData> storyData = new List<RealityData>();
     public List<CardData> cardData = new List<CardData>();
+    public List<EvidenceData> evidenceData = new List<EvidenceData>();
 
     public static Action onStoryDataRefresh;
 
