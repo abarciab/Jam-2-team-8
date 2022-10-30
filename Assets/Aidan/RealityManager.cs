@@ -160,6 +160,35 @@ public class RealityManager : MonoBehaviour
         }
     }
 
+    public void ActivateVariant(string characterName, string variant)
+    {
+        
+        if (GetVariantFromOtherReality(characterName, variant) != null) {
+            VariantEntry newVariant = new VariantEntry();
+            newVariant.name = characterName;
+            newVariant.variant = variant;
+            activeVariants.Add(newVariant);
+            print("Activated " + variant + " variant of " + " " + characterName + " manually. be careful, as this method doesn't take into account conflicts with already existing variants, so dialogue might not align completely");
+        }
+        else {
+            print("could not add " + variant + " variant of " + " " + characterName + ", as no variants by that name are allowed to exist in the current or base reality.");
+        }
+    }
+
+    public void DeactivateVariant(string characterName, string variant)
+    {
+        List<VariantEntry> toRemove = new List<VariantEntry>();
+        foreach (var _variant in activeVariants) {
+            if (_variant.name == characterName && _variant.variant == variant) {
+                toRemove.Add(_variant);
+            }
+        }
+        foreach (var _variant in toRemove) {
+            activeVariants.Remove(_variant);
+            print("variant deactivated");
+        }
+    }
+
     public bool CardsAvalible(string characterName)
     {
         return getValidCards(characterName).Count != 0; 
