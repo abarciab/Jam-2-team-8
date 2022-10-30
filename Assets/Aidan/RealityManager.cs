@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -39,6 +40,7 @@ public class RealityManager : MonoBehaviour
     public List<string> previousRealities = new List<string>();
     public RealityData baseReality = new RealityData();
     public RealityData currentReality = new RealityData();
+    public static Action onRealityRefresh;
 
     [Header("character Data")]
     public List<VariantEntry> activeVariants = new List<VariantEntry>();
@@ -212,7 +214,7 @@ public class RealityManager : MonoBehaviour
             print("Tried to draw a card without checking if there were valid cards avaliable first. next time check with the CardsAvalible function");
             return null;
         }
-        CardData selectedCard = validCards[Random.Range(0, validCards.Count)];
+        CardData selectedCard = validCards[UnityEngine.Random.Range(0, validCards.Count)];
 
         return DrawCardManually(characterName, selectedCard.cardName);
     }
@@ -289,6 +291,10 @@ public class RealityManager : MonoBehaviour
         }
         activeVariants = activeVariants.Except(variantsToDeactivate).ToList();
         updateListOfCharacters();
+
+        if (onRealityRefresh != null) {
+            onRealityRefresh();
+        }
     }
 
     bool CheckVariantExistsInReality(string characterName, string variant, string realityName, bool includeBase = true)

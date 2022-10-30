@@ -22,6 +22,7 @@ public class AccusationData {
 [System.Serializable]
 public class EvidenceData {
     public string name;
+    public string displayName;
     public string description;
     public List<string> allowedRealities = new List<string>();
     public StringCharacterPairData means;        //"with poison", or "by pushing him off a roof", for example
@@ -295,4 +296,8 @@ public class JSONParser : MonoBehaviour
             onStoryDataRefresh();
         }
     }
+
+
+
+
 }
