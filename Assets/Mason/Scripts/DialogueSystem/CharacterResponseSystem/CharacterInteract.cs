@@ -16,13 +16,15 @@ public class CharacterInteract : MonoBehaviour
     }
 
     private void openCharacter() {
+        // determine which character will be interacted with
         CharacterResponseManager.instance.currentCharacterName = characterName;
         CharacterResponseManager.instance.portraitSprite = portraitSprite;
         UIManager.instance.showDialogueUI();
         //DialogueButtonManager.instance.setCharacter(characterName);
         
+        // have character greet player and hide clickable characters
         DialogueLine line = new DialogueLine(characterGreeting);
         CharacterResponseManager.instance.characterGreeting(line);
-        UIManager.instance.hideCharacters();
+        UIManager.instance.hideUIElement("character");
     }
 }

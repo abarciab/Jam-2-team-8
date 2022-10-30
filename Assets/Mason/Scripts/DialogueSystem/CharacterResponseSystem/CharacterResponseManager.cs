@@ -39,16 +39,24 @@ public class CharacterResponseManager : MonoBehaviour
         StartCoroutine(DialogueBase.instance.writeText(new DialogueLine(text)));
     }
 */
+    // get the dialogue type from the character and display the text for it
     public void writeCharacterDialogue(string dialogueType) {
         //this is really unclean for now
         CharacterDialogueData character = RealityManager.instance.getCharacterDialogue(currentCharacterName);
         string text;
-        if(dialogueType == "alibi")
+        string evidenceGained;
+        if(dialogueType == "alibi") {
             text = character.alibi.text;
-        else if(dialogueType == "relationship")
+            evidenceGained = character.alibi.evidenceGained;
+        }
+        else if(dialogueType == "relationship") {
             text = character.relationship.text;
-        else if(dialogueType == "default")
+            evidenceGained = character.relationship.evidenceGained;
+        }
+        else if(dialogueType == "default") {
             text = character.defaultResponse.text;
+            evidenceGained = character.defaultResponse.evidenceGained;
+        }
         else {
             Debug.LogError("dialogueType " + dialogueType + " not found");
             return;
@@ -60,6 +68,7 @@ public class CharacterResponseManager : MonoBehaviour
         StartCoroutine(DialogueBase.instance.writeText(greeting));
     }
 
+    // enables or disables buttons
     public void toggleButtons(bool interactable, Color buttonColor) {
         foreach(Transform dialogueButton in buttonHolder) {
             Button button = dialogueButton.GetComponent<Button>();

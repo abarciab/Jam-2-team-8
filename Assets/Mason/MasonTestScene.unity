@@ -1824,8 +1824,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parseDialogue: 0
   parseCards: 0
-  JSONDialogueFilePath: Assets/Aidan/testJSON.txt
-  JSONCardDataFilePath: Assets/Aidan/cardJSON.txt
+  parseAccusations: 1
+  parseEvidence: 1
+  JSONDialogueFilePath: Assets/Aidan/JSON/test.json
+  JSONCardDataFilePath: Assets/Aidan/JSON/card.json
+  JSONAccusationDataFilePath: Assets/Aidan/JSON/evidence.json
+  JSONEvidenceDataFilePath: Assets/Aidan/JSON/accusations.json
   storyData:
   - name: core reality
     characters:
@@ -2318,6 +2322,7 @@ MonoBehaviour:
       characterEffects:
       - characterName: sam
         variant: SAD
+  evidenceData: []
 --- !u!4 &303040924
 Transform:
   m_ObjectHideFlags: 0
@@ -4024,14 +4029,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 149313435}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: showEvidence
-        m_Mode: 1
+        m_MethodName: showUIElement
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: default
+          m_StringArgument: evidence
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1075942722
@@ -4158,14 +4163,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 149313435}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: hideEvidence
-        m_Mode: 1
+        m_MethodName: hideUIElement
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: evidence
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1104780356
@@ -4381,7 +4386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c645f626482e7040991d7b3e8fbeddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: John
+  characterName: john
   characterGreeting: Hi I John :)
   portraitSprite: {fileID: 21300000, guid: abbc66d868ec71e45af3396e53e69d1d, type: 3}
 --- !u!114 &1171057765

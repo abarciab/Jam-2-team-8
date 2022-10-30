@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    // reset screen back to normal gameplay
     public void hideDialogueUI() {
         foreach(Transform child in transform) {
             if(child.tag == "dialogue" || child.tag == "evidence")
@@ -29,6 +30,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    // start dialogue with character
     public void showDialogueUI() {
         foreach(Transform child in transform) {
             if(child.tag == "dialogue" || child.tag == "journal") {
@@ -39,23 +41,18 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void hideCharacters() {
+    // hide a specific UI element
+    public void hideUIElement(string itemTag) {
         foreach(Transform child in transform) {
-            if(child.tag == "character")
+            if(child.tag == itemTag)
                 child.gameObject.SetActive(false);
         }
     }
 
-    public void hideEvidence() {
+    // show a specific UI element
+    public void showUIElement(string itemTag) {
         foreach(Transform child in transform) {
-            if(child.tag == "evidence")
-                child.gameObject.SetActive(false);
-        }
-    }
-
-    public void showEvidence() {
-        foreach(Transform child in transform) {
-            if(child.tag == "evidence")
+            if(child.tag == itemTag)
                 child.gameObject.SetActive(true);
         }
     }
