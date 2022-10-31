@@ -865,17 +865,17 @@ MonoBehaviour:
         truth: 
       alibi:
         text: I was in the library when you say Joe was killed. check the cameras,
-          you'll see
+          you'll see{EVIDENCE}
         lie: 0
-        evidenceGained: 
+        evidenceGained: EVIDENCE
         requiredEvidence: 
         truth: 
       relationship:
         text: Joe was my father, but we had a rocky relationship...
-        lie: 0
+        lie: 1
         evidenceGained: 
-        requiredEvidence: 
-        truth: 
+        requiredEvidence: EVIDENCE
+        truth: I didnt know him at all
       evidenceResponses:
       - item: gun used to kill joe
         line:
@@ -1305,17 +1305,17 @@ MonoBehaviour:
         truth: 
       alibi:
         text: I was in the library when you say Joe was killed. check the cameras,
-          you'll see
+          you'll see{EVIDENCE}
         lie: 0
-        evidenceGained: 
+        evidenceGained: EVIDENCE
         requiredEvidence: 
         truth: 
       relationship:
         text: Joe was my father, but we had a rocky relationship...
-        lie: 0
+        lie: 1
         evidenceGained: 
-        requiredEvidence: 
-        truth: 
+        requiredEvidence: EVIDENCE
+        truth: I didnt know him at all
       evidenceResponses:
       - item: gun used to kill joe
         line:
@@ -1571,17 +1571,17 @@ MonoBehaviour:
         truth: 
       alibi:
         text: I was in the library when you say Joe was killed. check the cameras,
-          you'll see
+          you'll see{EVIDENCE}
         lie: 0
-        evidenceGained: 
+        evidenceGained: EVIDENCE
         requiredEvidence: 
         truth: 
       relationship:
         text: Joe was my father, but we had a rocky relationship...
-        lie: 0
+        lie: 1
         evidenceGained: 
-        requiredEvidence: 
-        truth: 
+        requiredEvidence: EVIDENCE
+        truth: I didnt know him at all
       evidenceResponses:
       - item: gun used to kill joe
         line:
@@ -1825,9 +1825,24 @@ MonoBehaviour:
       - 2
   activeVariants: []
   allCharacters:
-  - john
-  - sarah
-  - sam
+  - characterName: 
+    characterPortrait: {fileID: 0}
+    pronoun: he
+  - characterName: 
+    characterPortrait: {fileID: 0}
+    pronoun: he
+  - characterName: 
+    characterPortrait: {fileID: 0}
+    pronoun: he
+  - characterName: john
+    characterPortrait: {fileID: 0}
+    pronoun: he
+  - characterName: sarah
+    characterPortrait: {fileID: 0}
+    pronoun: he
+  - characterName: sam
+    characterPortrait: {fileID: 0}
+    pronoun: he
   allCards:
   - cardName: The Lovers
     cardEffects:
@@ -1931,10 +1946,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c06f87370cc04246ae9c9288151f546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parseDialogue: 0
-  parseCards: 0
-  parseAccusations: 0
-  parseEvidence: 0
   JSONDialogueFilePath: Assets/Aidan/JSON/test.json
   JSONCardDataFilePath: Assets/Aidan/JSON/card.json
   JSONAccusationDataFilePath: Assets/Aidan/JSON/evidence.json
@@ -1953,17 +1964,17 @@ MonoBehaviour:
         truth: 
       alibi:
         text: I was in the library when you say Joe was killed. check the cameras,
-          you'll see
+          you'll see{EVIDENCE}
         lie: 0
-        evidenceGained: 
+        evidenceGained: EVIDENCE
         requiredEvidence: 
         truth: 
       relationship:
         text: Joe was my father, but we had a rocky relationship...
-        lie: 0
+        lie: 1
         evidenceGained: 
-        requiredEvidence: 
-        truth: 
+        requiredEvidence: EVIDENCE
+        truth: I didnt know him at all
       evidenceResponses:
       - item: gun used to kill joe
         line:
@@ -2431,7 +2442,78 @@ MonoBehaviour:
       characterEffects:
       - characterName: sam
         variant: SAD
-  evidenceData: []
+  evidenceData:
+  - name: core reality
+    displayName: 
+    description: 
+    allowedRealities: []
+    means:
+    - name: SARAH OWNS GUN
+      applicableCharacters:
+      - ANY
+    - name: SECURITY CAMERAS
+      applicableCharacters:
+      - ANY
+    - name: SARAH FINGERPRINTS ON GUN
+      applicableCharacters:
+      - ANY
+    motive:
+    - name: GAMBLING DEBTS
+      applicableCharacters:
+      - any
+  - name: sarah having affair
+    displayName: 
+    description: 
+    allowedRealities: []
+    means:
+    - name: JOHN FINGERPRINTS ON GUN
+      applicableCharacters:
+      - ANY
+    motive:
+    - name: JOHN PROTECT SARAH
+      applicableCharacters:
+      - any
+  evidenceSprites:
+  - characterName: core reality
+    characterPortrait: {fileID: 0}
+    pronoun: he
+  - characterName: sarah having affair
+    characterPortrait: {fileID: 0}
+    pronoun: he
+  accusationData:
+  - reality: GUN USED TO KILL JOE
+    murderer: 
+    means: []
+    motive: []
+  - reality: GAMBLING DEBTS
+    murderer: 
+    means: []
+    motive: []
+  - reality: SARAH FINGERPRINTS ON GUN
+    murderer: 
+    means: []
+    motive: []
+  - reality: JOHN FINGERPRINTS ON GUN
+    murderer: 
+    means: []
+    motive: []
+  - reality: SECURITY CAMERAS
+    murderer: 
+    means: []
+    motive: []
+  - reality: SARAH OWNS GUN
+    murderer: 
+    means: []
+    motive: []
+  - reality: JOHN PROTECT SARAH
+    murderer: 
+    means: []
+    motive: []
+  parseAll: 0
+  parseDialogue: 0
+  parseCards: 0
+  parseAccusations: 0
+  parseEvidence: 0
 --- !u!4 &303040924
 Transform:
   m_ObjectHideFlags: 0
