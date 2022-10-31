@@ -54,7 +54,7 @@ public class EvidenceManager : MonoBehaviour
     private void Update() {
         if(add) {
             //printList();
-            addEvidence("test");
+            addEvidence("gun used to kill joe");
             add = false;
         }
     }

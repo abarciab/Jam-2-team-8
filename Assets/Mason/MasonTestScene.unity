@@ -1933,8 +1933,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parseDialogue: 0
   parseCards: 0
-  parseAccusations: 1
-  parseEvidence: 1
+  parseAccusations: 0
+  parseEvidence: 0
   JSONDialogueFilePath: Assets/Aidan/JSON/test.json
   JSONCardDataFilePath: Assets/Aidan/JSON/card.json
   JSONAccusationDataFilePath: Assets/Aidan/JSON/evidence.json

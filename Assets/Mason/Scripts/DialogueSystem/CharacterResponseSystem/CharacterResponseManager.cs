@@ -43,8 +43,8 @@ public class CharacterResponseManager : MonoBehaviour
     public void writeCharacterDialogue(string dialogueType) {
         //this is really unclean for now
         CharacterDialogueData character = RealityManager.instance.getCharacterDialogue(currentCharacterName);
-        string text;
-        string evidenceGained;
+        string text = "";
+        string evidenceGained = "";
         if(dialogueType == "alibi") {
             text = character.alibi.text;
             evidenceGained = character.alibi.evidenceGained;
@@ -58,8 +58,19 @@ public class CharacterResponseManager : MonoBehaviour
             evidenceGained = character.defaultResponse.evidenceGained;
         }
         else {
-            Debug.LogError("dialogueType " + dialogueType + " not found");
-            return;
+            bool found = false;
+            foreach(EvidenceResponseData response in character.evidenceResponses) {
+                if(response.item == dialogueType) {
+                    text = response.line.text;
+                    evidenceGained = response.line.evidenceGained;
+                    found = true;
+                    break;
+                }
+            }
+            if(!found) {
+                text = character.defaultResponse.text;
+                evidenceGained = character.defaultResponse.evidenceGained;
+            }
         }
         StartCoroutine(DialogueBase.instance.writeText(new DialogueLine(text)));
     }
