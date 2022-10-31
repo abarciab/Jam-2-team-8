@@ -40,5 +40,10 @@
 		"description" : "these documents show that john was trying to protect sarah",
 		"realities" : "sarah having affair",
 		"motive" : "to protect sarah[JOHN]"
+	},
+	"EVIDENCE" : {
+		"displayName" : "a piece of evidence",
+		"description" : "john said this",
+		"realities" : "core reality"
 	}
 }
