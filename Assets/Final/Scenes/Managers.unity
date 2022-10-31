@@ -123,3 +123,1825 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &616399784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 616399786}
+  - component: {fileID: 616399785}
+  m_Layer: 0
+  m_Name: RealityManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &616399785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616399784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2921e7d2718d949b19d8d72088a441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allRealities:
+  - name: core reality
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was in the library when you say Joe was killed. check the cameras,
+          you'll see{EVIDENCE}
+        lie: 0
+        evidenceGained: EVIDENCE
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Joe was my father, but we had a rocky relationship...
+        lie: 1
+        evidenceGained: 
+        requiredEvidence: EVIDENCE
+        truth: I didnt know him at all
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
+      validRealities:
+      - core reality
+    - characterName: john
+      variant: LOVERS
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: ' I was with my girlfriend a the time, at her home. You can call her,
+          she''ll confirm it.'
+        lie: 1
+        evidenceGained: JOHN CAMPING WITH SIDEPIECE
+        requiredEvidence: CALLED JOHN'S GF
+        truth: 'I was with another girl, but please don''t tell my gf. The other
+          girl and I went camping in the mountains '
+      relationship:
+        text: Joe was my father, but we had a rocky relationship...
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
+      validRealities:
+      - core reality
+    - characterName: john
+      variant: RESPECTED FATHER
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was in the library when you say Joe was killed. check the cameras,
+          you'll see
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Joe was my father, and I always admired him. He had his issues, but
+          he always did the right thing in the end.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
+      validRealities:
+      - core reality
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was home. Alone. No laws against that last time I checked.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: He was my father. He treated all his kids like shit, but he always
+          had a hatred for me in particular.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: I've never seen that gun before
+          lie: 1
+          evidenceGained: 
+          requiredEvidence: SARAH OWNS GUN
+          truth: It's mine. So what?
+      - item: joe's travel log
+        line:
+          text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sarah
+      variant: JOE RESPECTED JOHN
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was home. Alone. No laws against that last time I checked.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: He was my father. He treated all his kids like shit, but he always
+          had a hatred for me in particular.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: I've never seen that gun before
+          lie: 1
+          evidenceGained: SARAH ADDMITTED TO OWNING GUN
+          requiredEvidence: SARAH OWNS GUN
+          truth: It's mine. So what?
+      - item: joe's travel log
+        line:
+          text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: john respected joe
+        line:
+          text: I always hated my father, and seeing how he treated my brother made
+            me hate him even more
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at a party, actually. Big anniversary for my boss, so he invited
+          the whole office. I'm sure ppl there can back me up
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Joe was my brother. We were close when we were younger, but after that
+          busniess with Mary, we haven't spoken much {MARY INCIDENCT}
+        lie: 0
+        evidenceGained: MARY INCIDENCT
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: mary incident
+        line:
+          text: oh, Mary was a girl he liked, but she didn't feel the same. He got
+            pretty creepy about it and she got a restraining order.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: gun used to kill joe
+        line:
+          text: I don't know who's gun that it, but it defintly wasn't Joe's - he
+            hated pistols. {GUN NOT JOE'S}
+          lie: 0
+          evidenceGained: GUN NOT JOE'S
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sam
+      variant: LOVERS
+      conflicts:
+      - character: JOHN
+        variant: RESPECTED FATHER
+      defaultResponse:
+        text: never seen before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 1
+        evidenceGained: SAM AT POOL
+        requiredEvidence: SECURITY CAMERA
+        truth: at the pool
+      relationship:
+        text: Joe was my brother in-law. I married his sister. She's been out of
+          town for a school reunion right now. I never liked Joe that much, but it
+          wasn't anything bad.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: joe's travel log
+        line:
+          text: Oh yeah he would bring that everywhere
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+      - 1
+      - 2
+  - name: john married to sarah
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities:
+      - john married to sarah
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: ex-boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities:
+      - john married to sarah
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities:
+      - john married to sarah
+    - characterName: sam
+      variant: JELOUS
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities:
+      - john married to sarah
+      - core reality
+  - name: sarah having affair
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: beach
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities:
+      - sarah having affair
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: working
+        lie: 1
+        evidenceGained: 
+        requiredEvidence: SARAH AFFAIR
+        truth: I was at sam's house...
+      relationship:
+        text: boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities:
+      - sarah having affair
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: at my home, with sarah {SARAH AFFAIR}
+        lie: 0
+        evidenceGained: SARAH AFFAIR
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities:
+      - sarah having affair
+  previousRealities: []
+  baseReality:
+    name: core reality
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was in the library when you say Joe was killed. check the cameras,
+          you'll see{EVIDENCE}
+        lie: 0
+        evidenceGained: EVIDENCE
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Joe was my father, but we had a rocky relationship...
+        lie: 1
+        evidenceGained: 
+        requiredEvidence: EVIDENCE
+        truth: I didnt know him at all
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
+      validRealities:
+      - core reality
+    - characterName: john
+      variant: LOVERS
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: ' I was with my girlfriend a the time, at her home. You can call her,
+          she''ll confirm it.'
+        lie: 1
+        evidenceGained: JOHN CAMPING WITH SIDEPIECE
+        requiredEvidence: CALLED JOHN'S GF
+        truth: 'I was with another girl, but please don''t tell my gf. The other
+          girl and I went camping in the mountains '
+      relationship:
+        text: Joe was my father, but we had a rocky relationship...
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
+      validRealities:
+      - core reality
+    - characterName: john
+      variant: RESPECTED FATHER
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was in the library when you say Joe was killed. check the cameras,
+          you'll see
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Joe was my father, and I always admired him. He had his issues, but
+          he always did the right thing in the end.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
+      validRealities:
+      - core reality
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was home. Alone. No laws against that last time I checked.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: He was my father. He treated all his kids like shit, but he always
+          had a hatred for me in particular.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: I've never seen that gun before
+          lie: 1
+          evidenceGained: 
+          requiredEvidence: SARAH OWNS GUN
+          truth: It's mine. So what?
+      - item: joe's travel log
+        line:
+          text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sarah
+      variant: JOE RESPECTED JOHN
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was home. Alone. No laws against that last time I checked.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: He was my father. He treated all his kids like shit, but he always
+          had a hatred for me in particular.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: I've never seen that gun before
+          lie: 1
+          evidenceGained: SARAH ADDMITTED TO OWNING GUN
+          requiredEvidence: SARAH OWNS GUN
+          truth: It's mine. So what?
+      - item: joe's travel log
+        line:
+          text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: john respected joe
+        line:
+          text: I always hated my father, and seeing how he treated my brother made
+            me hate him even more
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at a party, actually. Big anniversary for my boss, so he invited
+          the whole office. I'm sure ppl there can back me up
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Joe was my brother. We were close when we were younger, but after that
+          busniess with Mary, we haven't spoken much {MARY INCIDENCT}
+        lie: 0
+        evidenceGained: MARY INCIDENCT
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: mary incident
+        line:
+          text: oh, Mary was a girl he liked, but she didn't feel the same. He got
+            pretty creepy about it and she got a restraining order.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: gun used to kill joe
+        line:
+          text: I don't know who's gun that it, but it defintly wasn't Joe's - he
+            hated pistols. {GUN NOT JOE'S}
+          lie: 0
+          evidenceGained: GUN NOT JOE'S
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sam
+      variant: LOVERS
+      conflicts:
+      - character: JOHN
+        variant: RESPECTED FATHER
+      defaultResponse:
+        text: never seen before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 1
+        evidenceGained: SAM AT POOL
+        requiredEvidence: SECURITY CAMERA
+        truth: at the pool
+      relationship:
+        text: Joe was my brother in-law. I married his sister. She's been out of
+          town for a school reunion right now. I never liked Joe that much, but it
+          wasn't anything bad.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: joe's travel log
+        line:
+          text: Oh yeah he would bring that everywhere
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+      - 1
+      - 2
+  currentReality:
+    name: core reality
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was in the library when you say Joe was killed. check the cameras,
+          you'll see{EVIDENCE}
+        lie: 0
+        evidenceGained: EVIDENCE
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Joe was my father, but we had a rocky relationship...
+        lie: 1
+        evidenceGained: 
+        requiredEvidence: EVIDENCE
+        truth: I didnt know him at all
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
+      validRealities:
+      - core reality
+    - characterName: john
+      variant: LOVERS
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: ' I was with my girlfriend a the time, at her home. You can call her,
+          she''ll confirm it.'
+        lie: 1
+        evidenceGained: JOHN CAMPING WITH SIDEPIECE
+        requiredEvidence: CALLED JOHN'S GF
+        truth: 'I was with another girl, but please don''t tell my gf. The other
+          girl and I went camping in the mountains '
+      relationship:
+        text: Joe was my father, but we had a rocky relationship...
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
+      validRealities:
+      - core reality
+    - characterName: john
+      variant: RESPECTED FATHER
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was in the library when you say Joe was killed. check the cameras,
+          you'll see
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Joe was my father, and I always admired him. He had his issues, but
+          he always did the right thing in the end.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
+      validRealities:
+      - core reality
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was home. Alone. No laws against that last time I checked.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: He was my father. He treated all his kids like shit, but he always
+          had a hatred for me in particular.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: I've never seen that gun before
+          lie: 1
+          evidenceGained: 
+          requiredEvidence: SARAH OWNS GUN
+          truth: It's mine. So what?
+      - item: joe's travel log
+        line:
+          text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sarah
+      variant: JOE RESPECTED JOHN
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was home. Alone. No laws against that last time I checked.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: He was my father. He treated all his kids like shit, but he always
+          had a hatred for me in particular.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: I've never seen that gun before
+          lie: 1
+          evidenceGained: SARAH ADDMITTED TO OWNING GUN
+          requiredEvidence: SARAH OWNS GUN
+          truth: It's mine. So what?
+      - item: joe's travel log
+        line:
+          text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: john respected joe
+        line:
+          text: I always hated my father, and seeing how he treated my brother made
+            me hate him even more
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at a party, actually. Big anniversary for my boss, so he invited
+          the whole office. I'm sure ppl there can back me up
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Joe was my brother. We were close when we were younger, but after that
+          busniess with Mary, we haven't spoken much {MARY INCIDENCT}
+        lie: 0
+        evidenceGained: MARY INCIDENCT
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: mary incident
+        line:
+          text: oh, Mary was a girl he liked, but she didn't feel the same. He got
+            pretty creepy about it and she got a restraining order.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: gun used to kill joe
+        line:
+          text: I don't know who's gun that it, but it defintly wasn't Joe's - he
+            hated pistols. {GUN NOT JOE'S}
+          lie: 0
+          evidenceGained: GUN NOT JOE'S
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sam
+      variant: LOVERS
+      conflicts:
+      - character: JOHN
+        variant: RESPECTED FATHER
+      defaultResponse:
+        text: never seen before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 1
+        evidenceGained: SAM AT POOL
+        requiredEvidence: SECURITY CAMERA
+        truth: at the pool
+      relationship:
+        text: Joe was my brother in-law. I married his sister. She's been out of
+          town for a school reunion right now. I never liked Joe that much, but it
+          wasn't anything bad.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: joe's travel log
+        line:
+          text: Oh yeah he would bring that everywhere
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+      - 1
+      - 2
+  activeVariants: []
+  allCharacters:
+  - characterName: john
+    characterPortrait: {fileID: 21300000, guid: bbc2087cbf38c9841a8d5da321d8cb76, type: 3}
+    pronoun: he
+  - characterName: sam
+    characterPortrait: {fileID: 21300000, guid: 0fd6ba8385ae29247b537baae8a849c9, type: 3}
+    pronoun: he
+  - characterName: sarah
+    characterPortrait: {fileID: 21300000, guid: 9179735080e5c6e43827d014f4980097, type: 3}
+    pronoun: she
+  allCards:
+  - cardName: The Lovers
+    cardEffects:
+    - recipient: john
+      variant: 
+      reality: john married to sarah
+      characterEffects:
+      - characterName: sam
+        variant: JELOUS
+    - recipient: john
+      variant: SICK
+      reality: 
+      characterEffects:
+      - characterName: john
+        variant: ANGRY
+      - characterName: sam
+        variant: GREEDY
+    - recipient: sam
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: sam
+        variant: LOVERS
+      - characterName: john
+        variant: SAD
+    - recipient: sarah
+      variant: ANY
+      reality: sarah having affair
+      characterEffects: []
+  - cardName: The Emperor
+    cardEffects:
+    - recipient: john
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: john
+        variant: ANGRY
+  - cardName: The Tower
+    cardEffects:
+    - recipient: sam
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: sam
+        variant: WORKER
+      - characterName: john
+        variant: DISTRACTED
+    - recipient: sam
+      variant: LOVERS
+      reality: 
+      characterEffects:
+      - characterName: sam
+        variant: SAD
+  cardHistory: []
+  cards:
+  - cardName: The Lovers
+    description: lovers all day yay romance
+    sprite: {fileID: 21300000, guid: 87a275aebd5569249873d0a2b193e2fd, type: 3}
+  - cardName: The Emperor
+    description: ooh damn v cool dude
+    sprite: {fileID: 21300000, guid: fd743ce15da0ffb4c98d7d151d19322f, type: 3}
+  - cardName: The Tower
+    description: Boom!
+    sprite: {fileID: 21300000, guid: efdd85f6e40fe794daf90f57bb529869, type: 3}
+  testRecipient: john
+  testCard: The Fighter
+  testDrawCard: 0
+  testGetValidCards: 0
+--- !u!4 &616399786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616399784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &727807394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 727807396}
+  - component: {fileID: 727807395}
+  m_Layer: 0
+  m_Name: JSONparser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &727807395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727807394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c06f87370cc04246ae9c9288151f546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JSONDialogueFilePath: Assets/Aidan/JSON/test.json
+  JSONCardDataFilePath: Assets/Aidan/JSON/card.json
+  JSONAccusationDataFilePath: Assets/Aidan/JSON/accusations.json
+  JSONEvidenceDataFilePath: Assets/Aidan/JSON/evidence.json
+  storyData:
+  - name: core reality
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was in the library when you say Joe was killed. check the cameras,
+          you'll see
+        lie: 0
+        evidenceGained: EVIDENCE
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Joe was my father, but we had a rocky relationship...
+        lie: 1
+        evidenceGained: 
+        requiredEvidence: EVIDENCE
+        truth: I didnt know him at all
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
+      validRealities:
+      - core reality
+    - characterName: john
+      variant: LOVERS
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: ' I was with my girlfriend a the time, at her home. You can call her,
+          she''ll confirm it.'
+        lie: 1
+        evidenceGained: JOHN CAMPING WITH SIDEPIECE
+        requiredEvidence: CALLED JOHN'S GF
+        truth: 'I was with another girl, but please don''t tell my gf. The other
+          girl and I went camping in the mountains '
+      relationship:
+        text: Joe was my father, but we had a rocky relationship...
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
+      validRealities:
+      - core reality
+    - characterName: john
+      variant: RESPECTED FATHER
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was in the library when you say Joe was killed. check the cameras,
+          you'll see
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Joe was my father, and I always admired him. He had his issues, but
+          he always did the right thing in the end.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: ' Oh, that''s Joe''s'
+          lie: 1
+          evidenceGained: SARAH OWNS GUN
+          requiredEvidence: GUN NOT JOE'S
+          truth: I hate to say it, but I think that gun belongs to sarah...
+      validRealities:
+      - core reality
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was home. Alone. No laws against that last time I checked.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: He was my father. He treated all his kids like shit, but he always
+          had a hatred for me in particular.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: I've never seen that gun before
+          lie: 1
+          evidenceGained: 
+          requiredEvidence: SARAH OWNS GUN
+          truth: It's mine. So what?
+      - item: joe's travel log
+        line:
+          text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sarah
+      variant: JOE RESPECTED JOHN
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was home. Alone. No laws against that last time I checked.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: He was my father. He treated all his kids like shit, but he always
+          had a hatred for me in particular.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: gun used to kill joe
+        line:
+          text: I've never seen that gun before
+          lie: 1
+          evidenceGained: SARAH ADDMITTED TO OWNING GUN
+          requiredEvidence: SARAH OWNS GUN
+          truth: It's mine. So what?
+      - item: joe's travel log
+        line:
+          text: um.... We were at some of the same events, who cares...
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: john respected joe
+        line:
+          text: I always hated my father, and seeing how he treated my brother made
+            me hate him even more
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at a party, actually. Big anniversary for my boss, so he invited
+          the whole office. I'm sure ppl there can back me up
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: 'Joe was my brother. We were close when we were younger, but after
+          that busniess with Mary, we haven''t spoken much '
+        lie: 0
+        evidenceGained: MARY INCIDENCT
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: mary incident
+        line:
+          text: oh, Mary was a girl he liked, but she didn't feel the same. He got
+            pretty creepy about it and she got a restraining order.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: gun used to kill joe
+        line:
+          text: 'I don''t know who''s gun that it, but it defintly wasn''t Joe''s
+            - he hated pistols. '
+          lie: 0
+          evidenceGained: GUN NOT JOE'S
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+    - characterName: sam
+      variant: LOVERS
+      conflicts:
+      - character: JOHN
+        variant: RESPECTED FATHER
+      defaultResponse:
+        text: never seen before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 1
+        evidenceGained: SAM AT POOL
+        requiredEvidence: SECURITY CAMERA
+        truth: at the pool
+      relationship:
+        text: Joe was my brother in-law. I married his sister. She's been out of
+          town for a school reunion right now. I never liked Joe that much, but it
+          wasn't anything bad.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: joe's travel log
+        line:
+          text: Oh yeah he would bring that everywhere
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - core reality
+      - 1
+      - 2
+  - name: john married to sarah
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities:
+      - john married to sarah
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: ex-boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities:
+      - john married to sarah
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: home
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities:
+      - john married to sarah
+    - characterName: sam
+      variant: JELOUS
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: cafe
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities:
+      - john married to sarah
+      - core reality
+  - name: sarah having affair
+    characters:
+    - characterName: john
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: idk
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: beach
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: father
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities:
+      - sarah having affair
+    - characterName: sarah
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: no clue
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: working
+        lie: 1
+        evidenceGained: 
+        requiredEvidence: SARAH AFFAIR
+        truth: I was at sam's house...
+      relationship:
+        text: boyfriend
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities:
+      - sarah having affair
+    - characterName: sam
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: never seen it before
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: 'at my home, with sarah '
+        lie: 0
+        evidenceGained: SARAH AFFAIR
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: brother
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities:
+      - sarah having affair
+  cardData:
+  - cardName: The Lovers
+    cardEffects:
+    - recipient: john
+      variant: 
+      reality: john married to sarah
+      characterEffects:
+      - characterName: sam
+        variant: JELOUS
+    - recipient: john
+      variant: SICK
+      reality: 
+      characterEffects:
+      - characterName: john
+        variant: ANGRY
+      - characterName: sam
+        variant: GREEDY
+    - recipient: sam
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: sam
+        variant: LOVERS
+      - characterName: john
+        variant: SAD
+    - recipient: sarah
+      variant: ANY
+      reality: sarah having affair
+      characterEffects: []
+  - cardName: The Emperor
+    cardEffects:
+    - recipient: john
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: john
+        variant: ANGRY
+  - cardName: The Tower
+    cardEffects:
+    - recipient: sam
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: sam
+        variant: WORKER
+      - characterName: john
+        variant: DISTRACTED
+    - recipient: sam
+      variant: LOVERS
+      reality: 
+      characterEffects:
+      - characterName: sam
+        variant: SAD
+  evidenceData:
+  - name: GUN USED TO KILL JOE
+    displayName: Pistol
+    description: This pistol is small and light, and it was wiped clean of fingerprints
+    allowedRealities:
+    - core reality
+    - john married to sarah
+    means:
+    - name: shot Joe with a gun
+      applicableCharacters:
+      - ANY
+    - name: blugeoned him to death with a pistol
+      applicableCharacters:
+      - JOHN
+    motive: []
+  - name: GAMBLING DEBTS
+    displayName: Gambling debt
+    description: these documents show that sarah owed her father a lot of money
+    allowedRealities:
+    - core reality
+    means: []
+    motive:
+    - name: because {THEY} couldn't afford to pay joe back
+      applicableCharacters:
+      - any
+  - name: SARAH FINGERPRINTS ON GUN
+    displayName: Fingerprints
+    description: Fingerprints were found on the gun to kill Joe. they match his daughter,
+      sarah
+    allowedRealities:
+    - core reality
+    means:
+    - name: shot him with his own gun
+      applicableCharacters:
+      - ANY
+    motive: []
+  - name: JOHN FINGERPRINTS ON GUN
+    displayName: Fingerprints
+    description: Fingerprints were found on the gun to kill Joe. they match his son,
+      john
+    allowedRealities:
+    - sarah having affair
+    means:
+    - name: shot him with his own gun
+      applicableCharacters:
+      - ANY
+    motive: []
+  - name: SECURITY CAMERAS
+    displayName: security camera footage
+    description: the cameras managed to capture a female figure shooting joe in the
+      head
+    allowedRealities:
+    - core reality
+    means:
+    - name: 'shot joe in the head - on camera - '
+      applicableCharacters:
+      - ANY
+    motive: []
+  - name: SARAH OWNS GUN
+    displayName: Gambling debt
+    description: these documents show that sarah owed her father a lot of money
+    allowedRealities:
+    - core reality
+    means:
+    - name: '{THEY} couldn''t afford to pay joe back'
+      applicableCharacters:
+      - ANY
+    motive: []
+  - name: JOHN PROTECT SARAH
+    displayName: emails from sarah to john
+    description: these documents show that john was trying to protect sarah
+    allowedRealities:
+    - sarah having affair
+    means: []
+    motive:
+    - name: to protect sarah
+      applicableCharacters:
+      - JOHN
+  - name: EVIDENCE
+    displayName: a piece of evidence
+    description: john said this
+    allowedRealities:
+    - core reality
+    means: []
+    motive: []
+  evidenceSprites:
+  - characterName: GUN USED TO KILL JOE
+    characterPortrait: {fileID: 21300000, guid: 522543331b026c94b98b58d14a58d857, type: 3}
+    pronoun: he
+  - characterName: GAMBLING DEBTS
+    characterPortrait: {fileID: 21300000, guid: af18806e84cd9c14f956eea2563aad96, type: 3}
+    pronoun: he
+  - characterName: SARAH FINGERPRINTS ON GUN
+    characterPortrait: {fileID: 0}
+    pronoun: he
+  - characterName: JOHN FINGERPRINTS ON GUN
+    characterPortrait: {fileID: 0}
+    pronoun: he
+  - characterName: SECURITY CAMERAS
+    characterPortrait: {fileID: 0}
+    pronoun: he
+  - characterName: SARAH OWNS GUN
+    characterPortrait: {fileID: 0}
+    pronoun: he
+  - characterName: JOHN PROTECT SARAH
+    characterPortrait: {fileID: 0}
+    pronoun: he
+  - characterName: EVIDENCE
+    characterPortrait: {fileID: 0}
+    pronoun: he
+  accusationData:
+  - reality: core reality
+    murderer: sarah
+    means:
+    - name: SARAH OWNS GUN
+      displayName: Gambling debt
+      description: these documents show that sarah owed her father a lot of money
+      allowedRealities:
+      - core reality
+      means:
+      - name: '{THEY} couldn''t afford to pay joe back'
+        applicableCharacters:
+        - ANY
+      motive: []
+    - name: SECURITY CAMERAS
+      displayName: security camera footage
+      description: the cameras managed to capture a female figure shooting joe in
+        the head
+      allowedRealities:
+      - core reality
+      means:
+      - name: 'shot joe in the head - on camera - '
+        applicableCharacters:
+        - ANY
+      motive: []
+    - name: SARAH FINGERPRINTS ON GUN
+      displayName: Fingerprints
+      description: Fingerprints were found on the gun to kill Joe. they match his
+        daughter, sarah
+      allowedRealities:
+      - core reality
+      means:
+      - name: shot him with his own gun
+        applicableCharacters:
+        - ANY
+      motive: []
+    motive:
+    - name: GAMBLING DEBTS
+      displayName: Gambling debt
+      description: these documents show that sarah owed her father a lot of money
+      allowedRealities:
+      - core reality
+      means: []
+      motive:
+      - name: because {THEY} couldn't afford to pay joe back
+        applicableCharacters:
+        - any
+  - reality: sarah having affair
+    murderer: john
+    means:
+    - name: JOHN FINGERPRINTS ON GUN
+      displayName: Fingerprints
+      description: Fingerprints were found on the gun to kill Joe. they match his
+        son, john
+      allowedRealities:
+      - sarah having affair
+      means:
+      - name: shot him with his own gun
+        applicableCharacters:
+        - ANY
+      motive: []
+    motive:
+    - name: JOHN PROTECT SARAH
+      displayName: emails from sarah to john
+      description: these documents show that john was trying to protect sarah
+      allowedRealities:
+      - sarah having affair
+      means: []
+      motive:
+      - name: to protect sarah
+        applicableCharacters:
+        - JOHN
+  parseAll: 0
+  parseDialogue: 0
+  parseCards: 0
+  parseAccusations: 0
+  parseEvidence: 0
+--- !u!4 &727807396
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727807394}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -18,9 +18,12 @@ public class MainMenuManager : MonoBehaviour
     {
         if (startImmediatly) {
             startImmediatly = false;
-            SceneManager.LoadScene(managerSceneName, LoadSceneMode.Additive);
-            SceneManager.LoadScene(coreSceneName, LoadSceneMode.Additive);
-            SceneManager.LoadScene(journalSceneName, LoadSceneMode.Additive);
+            if (!SceneManager.GetSceneByName(managerSceneName).isLoaded)
+                SceneManager.LoadScene(managerSceneName, LoadSceneMode.Additive);
+            if (!SceneManager.GetSceneByName(coreSceneName).isLoaded)
+                SceneManager.LoadScene(coreSceneName, LoadSceneMode.Additive);
+            if (!SceneManager.GetSceneByName(journalSceneName).isLoaded)
+                SceneManager.LoadScene(journalSceneName, LoadSceneMode.Additive);
             loadedOtherScenes = true; 
         }
         if (loadedOtherScenes) {
