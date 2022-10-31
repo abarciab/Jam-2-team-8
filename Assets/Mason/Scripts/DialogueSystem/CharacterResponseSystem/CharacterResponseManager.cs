@@ -72,6 +72,10 @@ public class CharacterResponseManager : MonoBehaviour
                 evidenceGained = character.defaultResponse.evidenceGained;
             }
         }
+
+        if(!string.IsNullOrEmpty(evidenceGained)) 
+            EvidenceManager.instance.addEvidence(evidenceGained);
+
         StartCoroutine(DialogueBase.instance.writeText(new DialogueLine(text)));
     }
 
