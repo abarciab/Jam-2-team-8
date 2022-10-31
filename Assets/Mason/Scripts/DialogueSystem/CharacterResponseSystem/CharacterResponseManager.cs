@@ -77,6 +77,9 @@ public class CharacterResponseManager : MonoBehaviour
             EvidenceManager.instance.addEvidence(evidenceGained);
 
         StartCoroutine(DialogueBase.instance.writeText(new DialogueLine(text)));
+
+        //record dialogue lines in the journal:
+        JournalManager.instance.dialogueLog.RecordDialogue(dialogueType, character);
     }
 
     public void characterGreeting(DialogueLine greeting) {

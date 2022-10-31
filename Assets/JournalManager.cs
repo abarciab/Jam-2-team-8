@@ -11,6 +11,8 @@ public class JournalManager : MonoBehaviour
     public GameObject EvidenceTab;
     public GameObject AccusationTab;
 
+    public DialogueLog dialogueLog;
+
     private void Awake()
     {
         instance = this;
