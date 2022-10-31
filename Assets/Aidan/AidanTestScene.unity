@@ -2370,15 +2370,15 @@ MonoBehaviour:
         text: I was in the library when you say Joe was killed. check the cameras,
           you'll see
         lie: 0
-        evidenceGained: 
+        evidenceGained: EVIDENCE
         requiredEvidence: 
         truth: 
       relationship:
         text: Joe was my father, but we had a rocky relationship...
-        lie: 0
+        lie: 1
         evidenceGained: 
-        requiredEvidence: 
-        truth: 
+        requiredEvidence: EVIDENCE
+        truth: I didnt know him at all
       evidenceResponses:
       - item: gun used to kill joe
         line:
@@ -2558,8 +2558,8 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       relationship:
-        text: Joe was my brother. We were close when we were younger, but after that
-          busniess with Mary, we haven't spoken much {MARY INCIDENCT}
+        text: 'Joe was my brother. We were close when we were younger, but after
+          that busniess with Mary, we haven''t spoken much '
         lie: 0
         evidenceGained: MARY INCIDENCT
         requiredEvidence: 
@@ -2575,8 +2575,8 @@ MonoBehaviour:
           truth: 
       - item: gun used to kill joe
         line:
-          text: I don't know who's gun that it, but it defintly wasn't Joe's - he
-            hated pistols. {GUN NOT JOE'S}
+          text: 'I don''t know who''s gun that it, but it defintly wasn''t Joe''s
+            - he hated pistols. '
           lie: 0
           evidenceGained: GUN NOT JOE'S
           requiredEvidence: 
@@ -2779,7 +2779,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       alibi:
-        text: at my home, with sarah {SARAH AFFAIR}
+        text: 'at my home, with sarah '
         lie: 0
         evidenceGained: SARAH AFFAIR
         requiredEvidence: 
@@ -2868,7 +2868,7 @@ MonoBehaviour:
     - core reality
     means: []
     motive:
-    - name: '{THEY} couldn''t afford to pay joe back'
+    - name: because {THEY} couldn't afford to pay joe back
       applicableCharacters:
       - any
   - name: SARAH FINGERPRINTS ON GUN
@@ -2924,6 +2924,13 @@ MonoBehaviour:
     - name: to protect sarah
       applicableCharacters:
       - JOHN
+  - name: EVIDENCE
+    displayName: a piece of evidence
+    description: john said this
+    allowedRealities:
+    - core reality
+    means: []
+    motive: []
   evidenceSprites:
   - characterName: GUN USED TO KILL JOE
     characterPortrait: {fileID: 21300000, guid: 522543331b026c94b98b58d14a58d857, type: 3}
@@ -2944,6 +2951,9 @@ MonoBehaviour:
     characterPortrait: {fileID: 0}
     pronoun: he
   - characterName: JOHN PROTECT SARAH
+    characterPortrait: {fileID: 0}
+    pronoun: he
+  - characterName: EVIDENCE
     characterPortrait: {fileID: 0}
     pronoun: he
   accusationData:
@@ -2990,7 +3000,7 @@ MonoBehaviour:
       - core reality
       means: []
       motive:
-      - name: '{THEY} couldn''t afford to pay joe back'
+      - name: because {THEY} couldn't afford to pay joe back
         applicableCharacters:
         - any
   - reality: sarah having affair
@@ -6567,17 +6577,17 @@ MonoBehaviour:
         truth: 
       alibi:
         text: I was in the library when you say Joe was killed. check the cameras,
-          you'll see
+          you'll see{EVIDENCE}
         lie: 0
-        evidenceGained: 
+        evidenceGained: EVIDENCE
         requiredEvidence: 
         truth: 
       relationship:
         text: Joe was my father, but we had a rocky relationship...
-        lie: 0
+        lie: 1
         evidenceGained: 
-        requiredEvidence: 
-        truth: 
+        requiredEvidence: EVIDENCE
+        truth: I didnt know him at all
       evidenceResponses:
       - item: gun used to kill joe
         line:
@@ -7007,17 +7017,17 @@ MonoBehaviour:
         truth: 
       alibi:
         text: I was in the library when you say Joe was killed. check the cameras,
-          you'll see
+          you'll see{EVIDENCE}
         lie: 0
-        evidenceGained: 
+        evidenceGained: EVIDENCE
         requiredEvidence: 
         truth: 
       relationship:
         text: Joe was my father, but we had a rocky relationship...
-        lie: 0
+        lie: 1
         evidenceGained: 
-        requiredEvidence: 
-        truth: 
+        requiredEvidence: EVIDENCE
+        truth: I didnt know him at all
       evidenceResponses:
       - item: gun used to kill joe
         line:
@@ -7273,17 +7283,17 @@ MonoBehaviour:
         truth: 
       alibi:
         text: I was in the library when you say Joe was killed. check the cameras,
-          you'll see
+          you'll see{EVIDENCE}
         lie: 0
-        evidenceGained: 
+        evidenceGained: EVIDENCE
         requiredEvidence: 
         truth: 
       relationship:
         text: Joe was my father, but we had a rocky relationship...
-        lie: 0
+        lie: 1
         evidenceGained: 
-        requiredEvidence: 
-        truth: 
+        requiredEvidence: EVIDENCE
+        truth: I didnt know him at all
       evidenceResponses:
       - item: gun used to kill joe
         line:

@@ -427,7 +427,7 @@ public class JSONParser : MonoBehaviour
                     //mark if a line of dialogue uncovers new evidence in the case
                     string _evidenceGained = GetSubstringByString("{", "}", line.Value);
                     if (_evidenceGained.Length > 0) {
-                        newLine.text.Replace("{" + _evidenceGained + "}", "");
+                        newLine.text = newLine.text.Replace("{" + _evidenceGained + "}", "");
                         newLine.evidenceGained = _evidenceGained;
                     }
 
