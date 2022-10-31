@@ -5,10 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Aidan/AidanTestScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Carter/Scene1.unity
-    guid: 22f8aec7964154e19a2e891bc7025ec7
+    path: Assets/Final/Scenes/Main Menu.unity
+    guid: 59459b59806858e44b363fb94e6dc868
+  - enabled: 1
+    path: Assets/Final/Scenes/Managers.unity
+    guid: 4ae5501d0f9edc64bb22595266185c85
+  - enabled: 1
+    path: Assets/Final/Scenes/Core.unity
+    guid: d7e8e05deb9c9a64bb467f96f417dcc4
+  - enabled: 1
+    path: Assets/Final/Scenes/Journal.unity
+    guid: 73b904ffcb66b77469e737b54d8be34c
   m_configObjects: {}
