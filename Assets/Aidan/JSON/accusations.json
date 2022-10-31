@@ -1,0 +1,12 @@
+{
+	"core reality" : {
+		"murderer" : "sarah",
+		"means" : "SARAH OWNS GUN, SECURITY CAMERAS, SARAH FINGERPRINTS ON GUN",
+		"motive" : "GAMBLING DEBTS"
+	},
+	"sarah having affair" : {
+		"murderer" : "john",
+		"means" : "JOHN FINGERPRINTS ON GUN",
+		"motive" : "JOHN PROTECT SARAH"
+	}
+}

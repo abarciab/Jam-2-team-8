@@ -1,8 +1,9 @@
 {
 	"core reality" : {
 		"john" : {
-			"where" : "I was in the library when you say Joe was killed. check the cameras, you'll see",
-			"relationship" : "Joe was my father, but we had a rocky relationship...",
+			"where" : "I was in the library when you say Joe was killed. check the cameras, you'll see{EVIDENCE}",
+			"relationship[LIE]" : "[EVIDENCE]Joe was my father, but we had a rocky relationship...",
+			"relationship[TRUTH]" : "I didnt know him at all",
 			"default" : "idk",
 			"gun used to kill joe[LIE]" : "[GUN NOT JOE'S] Oh, that's Joe's",
 			"gun used to kill joe[TRUTH]" : "I hate to say it, but I think that gun belongs to sarah...{SARAH OWNS GUN}"

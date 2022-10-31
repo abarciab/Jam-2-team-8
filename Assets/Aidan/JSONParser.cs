@@ -9,13 +9,15 @@ using System;
 using System.Data;
 using JetBrains.Annotations;
 using UnityEngine.Rendering;
-
+using System.Linq;
+using UnityEditor;
 
 [System.Serializable]
 public class AccusationData {
+    public string reality;
     public string murderer;
-    public List<EvidenceData> meansEvidence = new List<EvidenceData>();
-    public List<EvidenceData> motiveEvidence = new List<EvidenceData>();
+    public List<EvidenceData> means = new List<EvidenceData>();
+    public List<EvidenceData> motive = new List<EvidenceData>();
 }
 
 //classes for evidence data
@@ -25,13 +27,13 @@ public class EvidenceData {
     public string displayName;
     public string description;
     public List<string> allowedRealities = new List<string>();
-    public StringCharacterPairData means;        //"with poison", or "by pushing him off a roof", for example
-    public StringCharacterPairData motive;       //"owed him money", or "discovered he was having an affair", for example
+    public List<StringPairData> means = new List<StringPairData>();        //"with poison", or "by pushing him off a roof", for example
+    public List <StringPairData> motive = new List<StringPairData>();       //"owed him money", or "discovered he was having an affair", for example
 }
 [System.Serializable]
-public class StringCharacterPairData {
+public class StringPairData {
     public string name;
-    public List<CharacterCardEffectData> applicableCharacter = new List<CharacterCardEffectData>();
+    public List<string> applicableCharacters = new List<string>();
 }
 
 //classes for card data
@@ -96,10 +98,7 @@ public class JSONParser : MonoBehaviour
 {
     public static JSONParser instance;
     
-    public bool parseDialogue = false;
-    public bool parseCards = false;
-    public bool parseAccusations = false;
-    public bool parseEvidence = false;
+    
     public string JSONDialogueFilePath = "Assets/Aidan/testJSON.txt";
     public string JSONCardDataFilePath = "Assets/Aidan/cardJSON.txt";
     public string JSONAccusationDataFilePath = "Assets/Aidan/JSON/evidence.json";
@@ -108,8 +107,16 @@ public class JSONParser : MonoBehaviour
     public List<RealityData> storyData = new List<RealityData>();
     public List<CardData> cardData = new List<CardData>();
     public List<EvidenceData> evidenceData = new List<EvidenceData>();
-
+    public List<RealityManager.characterData> evidenceSprites = new List<RealityManager.characterData>();
+    public List<AccusationData> accusationData = new List<AccusationData>();
     public static Action onStoryDataRefresh;
+
+    [Header("testing")]
+    public bool parseAll;
+    public bool parseDialogue;
+    public bool parseCards;
+    public bool parseAccusations;
+    public bool parseEvidence;
 
     private void Awake()
     {
@@ -118,12 +125,21 @@ public class JSONParser : MonoBehaviour
 
     private void Start()
     {
-        ParseDialogueData();
-        ParseCardData();
+        if (Application.isPlaying) {
+            parseAll = true;
+        }
     }
 
     private void Update()
     {
+        if (parseAll) {
+            parseAll = false;
+            ParseDialogueData();
+            ParseCardData();
+            ParseEvidenceData();
+            ParseAccusationData();
+        }
+
         if (parseDialogue) {
             parseDialogue = false;
             ParseDialogueData();
@@ -132,12 +148,159 @@ public class JSONParser : MonoBehaviour
             parseCards = false;
             ParseCardData();
         }
+        if (parseEvidence) {
+            parseEvidence = false;
+            ParseEvidenceData();
+        }
+        if (parseAccusations) {
+            parseAccusations = false;
+            ParseAccusationData();
+        }
     }
 
-    public string GetSubstringByString(string a, string b, string c)
+    public EvidenceData GetEvidenceByName(string name)
+    {
+        for (int i = 0; i < evidenceData.Count; i++) {
+            if (evidenceData[i].name == name) {
+                return evidenceData[i];
+            }
+        }
+
+        print(name + " is not listed in evidence database");
+        return null;
+    }
+
+    string GetSubstringByString(string a, string b, string c)
     {
         if (a.Length <= 0 || b.Length <= 0 || c.Length <= 0 || !c.Contains(a) || !c.Contains(b) ) { return ""; }
         return c.Substring((c.IndexOf(a) + a.Length), (c.IndexOf(b) - c.IndexOf(a) - a.Length));
+    }
+
+    void ParseAccusationData()
+    {
+        //read the file
+        string JSONtext = File.ReadAllText(JSONAccusationDataFilePath);
+        var accusationDict = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(JSONtext);
+
+        List<AccusationData> newAccusationList = new List<AccusationData>();
+        foreach (var accusation in accusationDict) {
+            AccusationData newEvidence = new AccusationData();
+            newEvidence.reality = accusation.Key;
+
+            foreach (var detail in accusation.Value) {
+                if (detail.Key == "murderer") {
+                    newEvidence.murderer = detail.Value;
+                }
+                if (detail.Key == "means") {
+                    var meansList = detail.Value.Split(", ").ToList();
+                    foreach (var means in meansList) {
+                        var evidence = GetEvidenceByName(means);
+                        if (evidence != null) 
+                            newEvidence.means.Add(evidence);
+                    }
+                }
+                if (detail.Key == "motive") {
+                    var motivesList = detail.Value.Split(", ").ToList();
+                    foreach (var motive in motivesList) {
+                        var evidence = GetEvidenceByName(motive);
+                        if (evidence != null)
+                            newEvidence.motive.Add(evidence);
+                    }
+                }
+            }
+            newAccusationList.Add(newEvidence);
+        }
+        accusationData = newAccusationList;
+
+        //broadcast that the card data has been loaded/reloaded
+        if (onStoryDataRefresh != null) {
+            onStoryDataRefresh();
+        }
+    }
+
+    public Sprite getEvidenceSpriteByName(string evidenceName)
+    {
+        foreach (var evidence in evidenceSprites) {
+            if (evidence.characterName == evidenceName) {
+                return evidence.characterPortrait;
+            }
+        }
+        print("there's no sprite for " + evidenceName);
+        return null;
+    }
+
+    bool EvidenceInSpriteList(string evidenceName)
+    {
+        foreach (var evidence in evidenceSprites) {
+            if (evidence.characterName == evidenceName) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    void ParseEvidenceData()
+    {
+        //read the file
+        string JSONtext = File.ReadAllText(JSONEvidenceDataFilePath);
+        var evidenceDict = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(JSONtext);
+
+        List<EvidenceData> newEvidenceList = new List<EvidenceData>();
+        //first, there are different pieces of evidence
+        foreach (var evidence in evidenceDict) {
+            EvidenceData newEvidence = new EvidenceData();
+            newEvidence.name = evidence.Key;
+
+            if (!EvidenceInSpriteList(newEvidence.name)) {
+                var newEvidenceSprite = new RealityManager.characterData();
+                newEvidenceSprite.characterName = newEvidence.name;
+                evidenceSprites.Add(newEvidenceSprite);
+            }
+
+            foreach (var detail in evidence.Value) {
+                if (detail.Key == "displayName") {
+                    newEvidence.displayName = detail.Value;
+                }
+                if (detail.Key == "description") {
+                    newEvidence.description = detail.Value;
+                }
+                if (detail.Key == "realities") {
+                    var strArray = detail.Value.Split(", ").ToList();
+                    newEvidence.allowedRealities = strArray;
+                }
+                if (detail.Key == "means") {
+                    var meansList = detail.Value.Split(", ").ToList();
+                    for (int i = 0; i < meansList.Count; i++) {
+                        StringPairData newMeans = new StringPairData();
+                        var characterListString = GetSubstringByString("[", "]", meansList[i]);
+                        var characterList = characterListString.Split(", ").ToList();
+                        if (characterList.Count == 0 || string.IsNullOrEmpty(characterList[0])) { newMeans.applicableCharacters.Add("ANY");  }
+                        else { newMeans.applicableCharacters.AddRange(characterList); }
+                        newMeans.name = meansList[i].Replace("[" + characterListString + "]", "");
+                        newEvidence.means.Add(newMeans);
+                    }
+                }
+                if (detail.Key == "motive") {
+                    var motiveList = detail.Value.Split(", ").ToList();
+                    for (int i = 0; i < motiveList.Count; i++) {
+                        StringPairData newMotive = new StringPairData();
+                        var characterListString = GetSubstringByString("[", "]", motiveList[i]);
+                        var characterList = characterListString.Split(", ").ToList();
+                        if (characterList.Count == 0 || string.IsNullOrEmpty(characterList[0])) { newMotive.applicableCharacters.Add("any"); }
+                        else { newMotive.applicableCharacters.AddRange(characterList); }
+                        newMotive.name = motiveList[i].Replace("[" + characterListString + "]", "");
+                        newEvidence.motive.Add(newMotive);
+                    }
+                }
+            }
+            newEvidenceList.Add(newEvidence);
+        }
+        evidenceData = newEvidenceList;
+
+        //broadcast that the card data has been loaded/reloaded
+        if (onStoryDataRefresh != null) {
+            onStoryDataRefresh();
+        }
     }
 
     void ParseCardData()

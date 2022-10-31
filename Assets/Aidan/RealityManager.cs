@@ -11,6 +11,14 @@ using UnityEngine.TextCore.Text;
 [ExecuteAlways]
 public class RealityManager : MonoBehaviour
 {
+    [System.Serializable]
+    public class characterData
+    {
+        public string characterName;
+        public Sprite characterPortrait;
+        public string pronoun = "he";
+    }
+
     //classes
     [System.Serializable]
     public class CardDrawEvent
@@ -44,7 +52,7 @@ public class RealityManager : MonoBehaviour
 
     [Header("character Data")]
     public List<VariantEntry> activeVariants = new List<VariantEntry>();
-    public List<string> allCharacters = new List<string>();
+    public List<characterData> allCharacters = new List<characterData>();
 
     [Header("Card Data")]
     public List<CardData> allCards = new List<CardData>();
@@ -84,17 +92,53 @@ public class RealityManager : MonoBehaviour
         updateListOfCharacters();
     }
 
+    bool characterInAllCharacters (string characterName)
+    {
+        foreach (var character in allCharacters) {
+            if (character.characterName == characterName) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Sprite getCharacterPortraitByName(string characterName)
+    {
+        foreach (var character in allCharacters) {
+            if (character.characterName == characterName) {
+                return character.characterPortrait;
+            }
+        }
+        print("no characters found with that name: " + characterName);
+        return null;
+    }
+
+    public string getCharacterPronounByName(string characterName)
+    {
+        foreach (var character in allCharacters) {
+            if (character.characterName == characterName) {
+                return character.pronoun;
+            }
+        }
+        print("no characters found with that name: " + characterName);
+        return null;
+    }
+
     void updateListOfCharacters()
     {
-        allCharacters.Clear();
+        //allCharacters.Clear();
         foreach (var character in currentReality.characters) {
-            if (!allCharacters.Contains(character.characterName)) {
-                allCharacters.Add(character.characterName);
+            if (!characterInAllCharacters(character.characterName)) {
+                var newCharacter = new characterData();
+                newCharacter.characterName = character.characterName;
+                allCharacters.Add(newCharacter);
             }
         }
         foreach (var character in baseReality.characters) {
-            if (!allCharacters.Contains(character.characterName)) {
-                allCharacters.Add(character.characterName);
+            if (!characterInAllCharacters(character.characterName)) {
+                var newCharacter = new characterData();
+                newCharacter.characterName = character.characterName;
+                allCharacters.Add(newCharacter);
             }
         }
     }
@@ -199,7 +243,7 @@ public class RealityManager : MonoBehaviour
     //don't use this function just to check if there are any valid cards - use CardsAvaliable() to do that
     public int NumValidCards(string characterName)
     {
-        if (allCharacters.Contains(characterName))
+        if (characterInAllCharacters(characterName))
             return getValidCards(characterName).Count;
         else {
             return 0;
@@ -326,23 +370,14 @@ public class RealityManager : MonoBehaviour
     {
         if (currentReality == default) { InitializeReality(); }
 
-
         if (testDrawCard) {
             testDrawCard = false;
             DrawCardManually(testRecipient, testCard);
         }
 
         if (testGetValidCards) {
-            //if (currentReality == default) { InitializeReality(); print("initialized"); }
-
             testGetValidCards = false;
             print("there are " + NumValidCards(testRecipient) + " valid cards: ");
-            /*List<CardData> validCards = getValidCards(testRecipient);
-            string cardNames = "";
-            foreach (var card in validCards) {
-                cardNames += card.cardName + ", ";
-            }
-            print(cardNames);*/
         }
     }
 
@@ -422,8 +457,8 @@ public class RealityManager : MonoBehaviour
             }
 
             //if there's a current variant that exists that has a conflict with a variant that this card would introduce, it's not valid
-            foreach (var _characterName in allCharacters) {
-                CharacterDialogueData characterData = getCharacterDialogue(_characterName);
+            foreach (var _character in allCharacters) {
+                CharacterDialogueData characterData = getCharacterDialogue(_character.characterName);
                 foreach (var conflict in characterData.conflicts) {
                     foreach (var effect in effectUnderConsideration.characterEffects) {
                         if (conflict.character == effect.characterName && conflict.variant == effect.variant) {

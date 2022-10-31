@@ -112,7 +112,7 @@ public class CardUIManager : MonoBehaviour
         if (characterIndex >= RealityManager.instance.allCharacters.Count) {
             characterIndex = 0;
         }
-        currentCharacterName = RealityManager.instance.allCharacters[characterIndex];
+        currentCharacterName = RealityManager.instance.allCharacters[characterIndex].characterName;
         UpdateUI();
         drawnCard.gameObject.SetActive(false);        
     }
@@ -123,7 +123,7 @@ public class CardUIManager : MonoBehaviour
         if (characterIndex <= 0) {
             characterIndex = RealityManager.instance.allCharacters.Count - 1;
         }
-        currentCharacterName = RealityManager.instance.allCharacters[characterIndex];
+        currentCharacterName = RealityManager.instance.allCharacters[characterIndex].characterName;
         UpdateUI();
         drawnCard.gameObject.SetActive(false);
     }
