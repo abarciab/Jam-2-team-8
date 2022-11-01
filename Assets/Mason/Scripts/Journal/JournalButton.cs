@@ -19,12 +19,14 @@ public class JournalButton : MonoBehaviour
             journalOpen = false;
             print("Journal is now closed");
             // switch sprite to journal button
+            JournalManager.instance.CloseJournal();
             GetComponentInChildren<TextMeshProUGUI>().SetText("Journal");
         }
         else {
             journalOpen = true;
             print("Journal is now open");
             // switch sprite to the an exit button
+            JournalManager.instance.OpenJournal();
             GetComponentInChildren<TextMeshProUGUI>().SetText("Exit");
         }
     }
