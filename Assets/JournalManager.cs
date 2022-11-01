@@ -6,6 +6,9 @@ public class JournalManager : MonoBehaviour
 {
     public static JournalManager instance;
 
+    public GameObject bookmarks;
+    public GameObject book;
+
     public GameObject mapTab;
     public GameObject peopleTab;
     public GameObject EvidenceTab;
@@ -16,6 +19,18 @@ public class JournalManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    public void OpenJournal()
+    {
+        book.SetActive(true);
+        bookmarks.SetActive(true);
+    }
+
+    public void CloseJournal()
+    {
+        book.SetActive(false);
+        bookmarks.SetActive(false);
     }
 
     public void OpenPeopleTab()
