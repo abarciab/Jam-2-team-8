@@ -17,15 +17,23 @@ public class DialogueLog : MonoBehaviour
     public GameObject rightPageParent;
     public GameObject nextPageButton;
     public GameObject previousPageButton;
+    public GameObject personSelector;
+    public GameObject contentGridPersonSelector;
 
     [Header("misc")]
     public string currentlySelectedCharacter;
     public int currentPage;         //this is a counter for page flips, not for actual pages. so left side + right side is all page 0.
     public float currentTotalPrefferedHeight;  //this heigh gets reset every half-page, and is a sum of all the elements in each layout group so far
-    public float currentTotalPrefferedHeightv2;
     public float totalHeightAllowed = 800;
-    int currentIndex;
+    public float totalHeightAllowedpg0 = 800;
+    public float rightPageHandicapp = 550;
+
+    public int currentIndex;
     string currentCharacter;
+    RecordedLines currentLines;
+    public int currentPageIndexCount;
+    Dictionary<int, int> pagesToIndex = new Dictionary<int, int>();
+    //public int previousPageIndexCount;
 
     [Header("testing")]
     public bool testCreateText;
@@ -56,9 +64,27 @@ public class DialogueLog : MonoBehaviour
 
     private void OnEnable()
     {
-        //CreateText(characterLines[0]);
+        for (int i = 0; i < contentGridPersonSelector.transform.childCount; i++) {
+            contentGridPersonSelector.transform.GetChild(i).gameObject.SetActive(false);
+            for (int j = 0; j < characterLines.Count; j++) {
+                if (contentGridPersonSelector.transform.GetChild(i).name == characterLines[j].speaker) {
+                    contentGridPersonSelector.transform.GetChild(i).gameObject.SetActive(true);
+                }
+            }
+        }
+        personSelector.SetActive(true);
+        CreateText(characterLines[0]);
         previousPageButton.SetActive(false);
         nextPageButton.SetActive(false);
+    }
+
+    public void SelectPerson(string name)
+    {
+        for (int i = 0; i < characterLines.Count; i++) {
+            if (characterLines[i].speaker == name) {
+                CreateText(characterLines[i]);
+            }
+        }
     }
 
     void clearLeftPage()
@@ -75,19 +101,26 @@ public class DialogueLog : MonoBehaviour
         }
     }
 
-    void CreateText(RecordedLines characterLines, int _currentPage = 0)
+    void CreateText(RecordedLines characterLines = null)
     {
+        if (characterLines == null) {
+            characterLines = currentLines;
+        }
+        currentLines = characterLines;
+
         if (characterLines.speaker != currentCharacter) {
             currentIndex = 0;
             currentPage = 0;
             nextPageButton.SetActive(false);
             previousPageButton.SetActive(false);
+            pagesToIndex = new Dictionary<int, int>();
         }
         currentCharacter = characterLines.speaker;
 
         clearRightPage();
         clearLeftPage();
 
+        currentTotalPrefferedHeight = 0;
         if (currentPage == 0) {
             var portrait = Instantiate(characterPortraitPrefab, leftPageParent.transform);
             portrait.GetComponent<Image>().sprite = RealityManager.instance.getCharacterPortraitByName(characterLines.speaker);
@@ -95,47 +128,73 @@ public class DialogueLog : MonoBehaviour
             currentTotalPrefferedHeight += LayoutUtility.GetPreferredHeight(portrait.GetComponent<RectTransform>());
         }
 
-        
+        currentPageIndexCount = 0;
         GameObject currentPageParent = leftPageParent;
         float spacing = currentPageParent.GetComponent<VerticalLayoutGroup>().spacing;
-        //foreach (var line in characterLines.lines) {
+
         for (int i = currentIndex; i < characterLines.lines.Count; i++) {
             var line = characterLines.lines[i];
-            currentIndex = i;
-            if (currentTotalPrefferedHeight >= totalHeightAllowed && currentPageParent == leftPageParent) { 
-                currentPageParent = rightPageParent;
-                currentTotalPrefferedHeight = 0;
-            }
-            else if (currentTotalPrefferedHeight >= totalHeightAllowed && currentPageParent == rightPageParent) {
-                nextPageButton.SetActive(true);
-                break;
-            }
 
             var question = Instantiate(detectivePrefab, currentPageParent.transform);
             question.GetComponent<TextMeshProUGUI>().text = line.question;
             currentTotalPrefferedHeight += LayoutUtility.GetPreferredHeight(question.GetComponent<RectTransform>());
-            
 
             var answer = Instantiate(suspectDialoguePrefab, currentPageParent.transform);
             answer.GetComponent<TextMeshProUGUI>().text = line.line;
             currentTotalPrefferedHeight += LayoutUtility.GetPreferredHeight(answer.GetComponent<RectTransform>());
+            
             currentTotalPrefferedHeight += spacing * 2;
             LayoutRebuilder.ForceRebuildLayoutImmediate(currentPageParent.GetComponent<RectTransform>());
-        }
-        
+            currentPageIndexCount += 1;
+            currentIndex += 1;
 
-        //line by line, determine if the line belongs to the detective or the suspect
-        //based on that, 
+            if (currentTotalPrefferedHeight >= (currentPage == 0 ? totalHeightAllowedpg0 : totalHeightAllowed) && currentPageParent == leftPageParent) {
+                currentPageParent = rightPageParent;
+                currentTotalPrefferedHeight = (currentPage == 0) ? rightPageHandicapp : 0;
+                nextPageButton.SetActive(false);
+            }
+            else if (currentTotalPrefferedHeight >= (currentPage == 0 ? totalHeightAllowedpg0 : totalHeightAllowed) && currentPageParent == rightPageParent) {
+                break;
+            }
+        }
+
+        if (!pagesToIndex.ContainsKey(currentPage))
+            pagesToIndex.Add(currentPage, currentPageIndexCount);
+
+        if (characterLines.lines.Count > currentIndex) {
+            nextPageButton.SetActive(true);
+        }
+        else {
+            nextPageButton.SetActive(false);
+        }
+
+        if (currentPage > 0) {
+            previousPageButton.SetActive(true);
+        }
+        else {
+            previousPageButton.SetActive(false);
+        }
     }
 
     public void NextPage()
     {
-
+        if (!gameObject.activeInHierarchy) { return; }
+        clearLeftPage();
+        clearRightPage();
+        currentTotalPrefferedHeight = 0;
+        currentPage += 1;
+        CreateText();
     }
 
     public void previousPage()
     {
-
+        if (!gameObject.activeInHierarchy) { return; }
+        clearLeftPage();
+        clearRightPage();
+        currentTotalPrefferedHeight = 0;
+        currentIndex -= (currentPageIndexCount + pagesToIndex[ (currentPage-1) ]);
+        currentPage -= 1;
+        CreateText();
     }
 
 

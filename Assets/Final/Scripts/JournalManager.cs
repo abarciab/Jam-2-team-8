@@ -56,8 +56,10 @@ public class JournalManager : MonoBehaviour
     void SwitchTabs(int index)
     {
         peopleTab.SetActive(index == 0 ? true : false);
+        peopleTab.GetComponent<DialogueLog>().personSelector.SetActive(index == 0 ? true : false);
         EvidenceTab.SetActive(index == 1 ? true : false);
         mapTab.SetActive(index == 2 ? true : false);
         AccusationTab.SetActive(index == 3 ? true : false);
+        
     }
 }
