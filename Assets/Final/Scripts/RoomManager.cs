@@ -49,6 +49,10 @@ public class RoomManager : MonoBehaviour
     }
 
     private void fitSpriteToScreen(Sprite spr) {
+        transform.localScale = new Vector3(Screen.width / (spr.bounds.extents.x * spr.pixelsPerUnit * 2),
+                                           Screen.height / (spr.bounds.extents.y * spr.pixelsPerUnit * 2), 
+                                           transform.localScale.z);
+        transform.position = Vector3.zero;
         return;
     }
 
@@ -62,16 +66,15 @@ public class RoomManager : MonoBehaviour
     }
 
     public void setRoom(string roomName) {
-        print(roomName);
-        Room newRoom = getRoomByName(roomName);
-        //Room currentRoom = rooms[currentRoomNumber];
-
+        // disable characters every room
         foreach(Room room in rooms)
             toggleCharacters(room.characterNames, false);
 
-        //toggleCharacters(currentRoom.characterNames, false);
+        // get new room, activate it's characters, and set background
+        Room newRoom = getRoomByName(roomName);
         toggleCharacters(newRoom.characterNames, true);
         setBackground(newRoom.background);
+        fitSpriteToScreen(newRoom.background);
         currentRoomName = newRoom.name;
     }
 
