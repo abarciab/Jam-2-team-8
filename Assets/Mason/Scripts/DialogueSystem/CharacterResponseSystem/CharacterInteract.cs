@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CharacterInteract : MonoBehaviour
 {
-    [SerializeField] private string characterName;
+    public string characterName;
     [SerializeField] private string characterGreeting;
     [SerializeField] private Sprite portraitSprite;
     private Button button;
