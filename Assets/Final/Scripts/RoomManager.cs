@@ -86,6 +86,7 @@ public class RoomManager : MonoBehaviour
 
     public IEnumerator startRoomTransition(string roomName) {
         // begin fade transition
+        UIManager.instance.hideDialogueUI();
         fade.gameObject.SetActive(true);
         fade.GetComponent<Animator>().SetTrigger("fade");
 
