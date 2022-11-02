@@ -125,6 +125,22 @@ public class RoomManager : MonoBehaviour
         setRoom(roomName);
     }
 
+    public void goOutside() {
+        StartCoroutine(startRoomTransition("outside"));
+    }
+    public void goHallway() {
+        StartCoroutine(startRoomTransition("hallway"));
+    }
+    public void goBallroom() {
+        StartCoroutine(startRoomTransition("ballroom"));
+    }
+    public void goOffice() {
+        StartCoroutine(startRoomTransition("office"));
+    }
+    public void goSecurity() {
+        StartCoroutine(startRoomTransition("security"));
+    }
+
     private void Update() {
         if(!transitioning) {
             if(Input.GetKeyDown(KeyCode.Alpha1)) {
