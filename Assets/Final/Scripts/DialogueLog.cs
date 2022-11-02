@@ -73,13 +73,15 @@ public class DialogueLog : MonoBehaviour
             }
         }
         personSelector.SetActive(true);
-        CreateText(characterLines[0]);
+        //CreateText(characterLines[0]);
         previousPageButton.SetActive(false);
         nextPageButton.SetActive(false);
     }
 
     public void SelectPerson(string name)
     {
+        currentIndex = 0;
+        currentPage = 0;
         for (int i = 0; i < characterLines.Count; i++) {
             if (characterLines[i].speaker == name) {
                 CreateText(characterLines[i]);

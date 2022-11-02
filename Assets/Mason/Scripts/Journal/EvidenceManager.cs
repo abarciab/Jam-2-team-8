@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class EvidenceManager : MonoBehaviour
 {
+    public bool add = false;
+
     public static EvidenceManager instance;
     public List<EvidenceData> evidenceList = new List<EvidenceData>();
     public List<EvidenceData> discardedEvidence = new List<EvidenceData>();
 
-    public bool add = false;
 
     private void Awake() {
         // if no duplicates

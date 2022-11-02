@@ -1438,7 +1438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2748154824735843125, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
       propertyPath: m_Name
-      value: evidenceEntry (2)
+      value: evidenceEntry 3
       objectReference: {fileID: 0}
     - target: {fileID: 4478638452607145094, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1453,6 +1453,11 @@ PrefabInstance:
 --- !u!224 &253767311 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1048055286898148757, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
+  m_PrefabInstance: {fileID: 253767310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &253767312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2748154824735843125, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
   m_PrefabInstance: {fileID: 253767310}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &286043523
@@ -2528,7 +2533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2748154824735843125, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
       propertyPath: m_Name
-      value: evidenceEntry (5)
+      value: evidenceEntry 6
       objectReference: {fileID: 0}
     - target: {fileID: 4478638452607145094, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2543,6 +2548,11 @@ PrefabInstance:
 --- !u!224 &421593185 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1048055286898148757, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
+  m_PrefabInstance: {fileID: 421593184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &421593186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2748154824735843125, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
   m_PrefabInstance: {fileID: 421593184}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &489471635
@@ -2833,7 +2843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2748154824735843125, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
       propertyPath: m_Name
-      value: evidenceEntry (1)
+      value: evidenceEntry 2
       objectReference: {fileID: 0}
     - target: {fileID: 4478638452607145094, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2848,6 +2858,11 @@ PrefabInstance:
 --- !u!224 &512957707 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1048055286898148757, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
+  m_PrefabInstance: {fileID: 512957706}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &512957708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2748154824735843125, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
   m_PrefabInstance: {fileID: 512957706}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &519239602
@@ -4153,7 +4168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &727714919
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4192,14 +4207,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10190ab98fe15474ba4b270fb62db070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidenceEntry1: {fileID: 0}
-  evidenceEntry2: {fileID: 0}
-  evidenceEntry3: {fileID: 0}
-  evidenceEntry4: {fileID: 0}
-  evidenceEntry5: {fileID: 0}
-  evidenceEntry6: {fileID: 0}
+  evidenceEntry1: {fileID: 4605213330898109273}
+  evidenceEntry2: {fileID: 512957708}
+  evidenceEntry3: {fileID: 253767312}
+  evidenceEntry4: {fileID: 2072734618}
+  evidenceEntry5: {fileID: 1939718944}
+  evidenceEntry6: {fileID: 421593186}
+  previousPageButton: {fileID: 1815223109}
+  nextPageButton: {fileID: 1999312042}
   currentPage: 0
-  currentIndex: 0
+  currentEvidenceIndex: 0
 --- !u!1 &733404799
 GameObject:
   m_ObjectHideFlags: 0
@@ -9267,6 +9284,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 727714920}
+        m_TargetAssemblyTypeName: evidenceDisplay, Assembly-CSharp
+        m_MethodName: PreviousPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1815223112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10021,7 +10050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2748154824735843125, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
       propertyPath: m_Name
-      value: evidenceEntry (4)
+      value: evidenceEntry 5
       objectReference: {fileID: 0}
     - target: {fileID: 4478638452607145094, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -10036,6 +10065,11 @@ PrefabInstance:
 --- !u!224 &1939718943 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1048055286898148757, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
+  m_PrefabInstance: {fileID: 1939718942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1939718944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2748154824735843125, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
   m_PrefabInstance: {fileID: 1939718942}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1985794180
@@ -10515,6 +10549,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1639568232}
         m_TargetAssemblyTypeName: DialogueLog, Assembly-CSharp
+        m_MethodName: NextPage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 727714920}
+        m_TargetAssemblyTypeName: evidenceDisplay, Assembly-CSharp
         m_MethodName: NextPage
         m_Mode: 1
         m_Arguments:
@@ -11039,7 +11085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2748154824735843125, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
       propertyPath: m_Name
-      value: evidenceEntry (3)
+      value: evidenceEntry 4
       objectReference: {fileID: 0}
     - target: {fileID: 4478638452607145094, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -11054,6 +11100,11 @@ PrefabInstance:
 --- !u!224 &2072734617 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1048055286898148757, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
+  m_PrefabInstance: {fileID: 2072734616}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2072734618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2748154824735843125, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
   m_PrefabInstance: {fileID: 2072734616}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2082318594
@@ -11586,7 +11637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2748154824735843125, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
       propertyPath: m_Name
-      value: evidenceEntry
+      value: evidenceEntry 1
       objectReference: {fileID: 0}
     - target: {fileID: 4478638452607145094, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -11601,5 +11652,10 @@ PrefabInstance:
 --- !u!224 &4605213330898109272 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1048055286898148757, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
+  m_PrefabInstance: {fileID: 4605213330898109271}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4605213330898109273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2748154824735843125, guid: 5a0d4ded4f86a9b41b5e0b0b7866af09, type: 3}
   m_PrefabInstance: {fileID: 4605213330898109271}
   m_PrefabAsset: {fileID: 0}
