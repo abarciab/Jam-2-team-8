@@ -18,6 +18,8 @@ public class AccusationEvidenceSelector : MonoBehaviour
     public Image evidenceImg;
     public accusationUI UIScript;
 
+    bool setUp;
+
     public void MakeSelection()
     {
         switch (accusationComponent) {
@@ -31,15 +33,27 @@ public class AccusationEvidenceSelector : MonoBehaviour
                 UIScript.SelectMotive(evidenceName, SelectedName);
                 break;
         }
+        UIScript.moveEndPoint(gameObject);
+    }
+
+    private void Update()
+    {
+        if (!setUp) {
+            OnEnable();
+        }
     }
 
     private void OnEnable()
     {
+        if (string.IsNullOrEmpty(nameInSelectorList)) { print("i need a name"); return; }
         if (accusationComponent == AccusationComponent.motive || accusationComponent == AccusationComponent.murderer) 
             evidenceNameText.text = SelectedName.Replace("{THEY}", RealityManager.instance.getCharacterPronounByName(UIScript.selectedMurderer));
         else 
             evidenceNameText.text = nameInSelectorList.Replace("{THEY}", RealityManager.instance.getCharacterPronounByName(UIScript.selectedMurderer));
 
+        if (evidenceSprite == null) { print("i need a sprite"); return; }
         evidenceImg.sprite = evidenceSprite;
+
+        setUp = true;
     }
 }

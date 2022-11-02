@@ -71,6 +71,7 @@ public class RoomManager : MonoBehaviour
         Room newRoom = getRoomByName(roomName);
         toggleCharacters(newRoom.characterNames, true);
         setBackground(newRoom.background);
+        if (newRoom.background == null) { return; }
         fitSpriteToScreen(newRoom.background);
         currentRoomName = newRoom.name;
     }

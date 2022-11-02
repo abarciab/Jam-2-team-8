@@ -11,6 +11,11 @@ public class EvidenceManager : MonoBehaviour
     public List<EvidenceData> discardedEvidence = new List<EvidenceData>();
     public List<string> charactersInteractedWith = new List<string>();
 
+    private void Start()
+    {
+        //print("testing with intial evidence, remove when done!");
+        //add = true;
+    }
 
     private void Awake() {
         // if no duplicates
