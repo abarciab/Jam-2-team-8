@@ -8,6 +8,7 @@ public class Room {
     public string name;
     public Sprite background;
     public List<string> characterNames = new List<string>();
+    public List<string> evidenceNames = new List<string>();
 }
 
 public class RoomManager : MonoBehaviour
@@ -18,6 +19,7 @@ public class RoomManager : MonoBehaviour
     public List<Room> rooms = new List<Room>();
     public Transform characterHolder;
     public Transform fade;
+    public Transform evidencePickups;
     public Camera cam;
     public bool transitioning = false;
     public bool setNewRoom = false;
@@ -55,6 +57,29 @@ public class RoomManager : MonoBehaviour
         }
     }
 
+    private void toggleEvidencePickups(List<string> evidenceNames, bool active) {
+        if(evidenceNames.Count <= 0)
+            return;
+
+        // loop through all evidence
+        foreach(Transform child in evidencePickups) {
+            EvidencePickup pickup = child.GetComponent<EvidencePickup>();
+            
+            // if activating evidence
+            if(active == true){
+                // activate if pickup should be in the room and is not already collected
+                if(evidenceNames.Contains(pickup.evidenceName) && !pickup.collected)
+                    child.gameObject.SetActive(true);
+            }
+            // if deactivating evidence
+            else {
+                // deactivate if pickup is in room
+                if(evidenceNames.Contains(pickup.evidenceName))
+                    child.gameObject.SetActive(false);
+            }
+        }
+    }
+
     private void fitSpriteToScreen(Sprite spr) {
         transform.localScale = new Vector3(Screen.width / (spr.bounds.extents.x * spr.pixelsPerUnit * 2),
                                            Screen.height / (spr.bounds.extents.y * spr.pixelsPerUnit * 2), 
@@ -64,12 +89,15 @@ public class RoomManager : MonoBehaviour
 
     private void setRoom(string roomName) {
         // disable characters every room
-        foreach(Room room in rooms)
+        foreach(Room room in rooms) {
             toggleCharacters(room.characterNames, false);
+            toggleEvidencePickups(room.evidenceNames, false);
+        }
 
-        // get new room, activate it's characters, and set background
+        // get new room, activate it's characters and evidence, and set background
         Room newRoom = getRoomByName(roomName);
         toggleCharacters(newRoom.characterNames, true);
+        toggleEvidencePickups(newRoom.evidenceNames, true);
         setBackground(newRoom.background);
         if (newRoom.background == null) { return; }
         fitSpriteToScreen(newRoom.background);

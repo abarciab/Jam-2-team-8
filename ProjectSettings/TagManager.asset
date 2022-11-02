@@ -9,6 +9,7 @@ TagManager:
   - dialogue
   - evidence
   - fade
+  - pickups
   layers:
   - Default
   - TransparentFX
