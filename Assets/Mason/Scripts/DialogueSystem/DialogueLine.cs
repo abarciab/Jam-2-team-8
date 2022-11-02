@@ -21,7 +21,7 @@ public class DialogueLine
     public DialogueLine(string text, Color? textColor = null, TMP_FontAsset textFont = default,
                         bool isNewLine = true, float scrollDelay = 0.01f, int soundID = 0) {
         this.text = text;
-        this.textColor = textColor ?? Color.black;
+        this.textColor = textColor ?? Color.white;
         this.textFont = textFont;
         this.isNewLine = isNewLine;
         this.scrollDelay = scrollDelay;

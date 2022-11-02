@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 7f60d27e4a8ec5047910f18c2f31b19b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4530,7 +4530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1543881912}
   m_Layer: 5
-  m_Name: EvidenceHolder
+  m_Name: ShowEvidenceHolder
   m_TagString: evidence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5537,22 +5537,22 @@ MonoBehaviour:
   currentRoomName: outside
   rooms:
   - name: outside
-    background: {fileID: 21300000, guid: 30f8bc2f379625d47bd75768ac16d92a, type: 3}
+    background: {fileID: 21300000, guid: 928045efc71f23747a536bfaa3e9178f, type: 3}
     characterNames:
     - sarah
     - john
   - name: hallway
-    background: {fileID: 21300000, guid: 5fbe0fd0c6aa7c74b9d9eb579dcfb405, type: 3}
+    background: {fileID: 21300000, guid: 4549b7da560d2144fb6aeb09f4431b07, type: 3}
     characterNames:
     - sam
   - name: ballroom
-    background: {fileID: 21300000, guid: 4dc9b2487c8550447b257b0f680ed118, type: 3}
+    background: {fileID: 21300000, guid: ae32703b37a2eb340be5b9b415be640a, type: 3}
     characterNames: []
   - name: office
-    background: {fileID: 21300000, guid: c9da3459dabd0154eae95eca8174d4e0, type: 3}
+    background: {fileID: 21300000, guid: dd7b544e163d73e449529b38dc8448d5, type: 3}
     characterNames: []
   - name: security
-    background: {fileID: 21300000, guid: aabda5d7010ad604ca843df7610ae43e, type: 3}
+    background: {fileID: 21300000, guid: 0f899f937d04fb04d9608422ab07fd7e, type: 3}
     characterNames: []
   characterHolder: {fileID: 1989852020}
   fade: {fileID: 739792104}
