@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
         if(instance == null) {
             instance = this;                    // makes instance a singleton
             DontDestroyOnLoad(gameObject);      // prevents UIManager from being destroyed when new level loaded
-            hideDialogueUI();
+            hideDialogueUI(true);
         }
         // if duplicates exist
         else if(instance != null && instance != this) {
@@ -21,9 +21,9 @@ public class UIManager : MonoBehaviour
     }
 
     // reset screen back to normal gameplay
-    public void hideDialogueUI() {
+    public void hideDialogueUI(bool showFade) {
         foreach(Transform child in transform) {
-            if(child.tag == "dialogue" || child.tag == "evidence" || child.tag == "fade")
+            if(child.tag == "dialogue" || child.tag == "evidence" || (!showFade && child.tag == "fade"))
                 child.gameObject.SetActive(false);
             else
                 child.gameObject.SetActive(true);

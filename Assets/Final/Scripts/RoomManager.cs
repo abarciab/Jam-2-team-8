@@ -29,7 +29,7 @@ public class RoomManager : MonoBehaviour
     {
         if(instance == null) {
             instance = this;                    // makes instance a singleton
-            fade.gameObject.SetActive(false);
+            fade.gameObject.SetActive(true);
             sprRenderer = GetComponent<SpriteRenderer>();
         }
         // if duplicates exist
@@ -115,7 +115,7 @@ public class RoomManager : MonoBehaviour
 
     public IEnumerator startRoomTransition(string roomName) {
         // begin fade transition
-        UIManager.instance.hideDialogueUI();
+        UIManager.instance.hideDialogueUI(false);
         fade.gameObject.SetActive(true);
         fade.GetComponent<Animator>().SetTrigger("fade");
 
