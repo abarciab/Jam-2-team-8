@@ -706,7 +706,9 @@ MonoBehaviour:
   add: 0
   evidenceList: []
   discardedEvidence: []
-  charactersInteractedWith: []
+  charactersInteractedWith:
+  - denise gold
+  - roy gold
 --- !u!4 &231820197
 Transform:
   m_ObjectHideFlags: 0

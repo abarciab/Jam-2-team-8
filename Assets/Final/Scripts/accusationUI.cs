@@ -7,11 +7,11 @@ using UnityEditor;
 
 public class accusationUI : MonoBehaviour
 {
-    public Image murdererSprite;
+    //public Image murdererSprite;
     public TextMeshProUGUI murdererText;
-    public Image meansSprite;
+    //public Image meansSprite;
     public TextMeshProUGUI meansText;
-    public Image motiveSprite;
+    //public Image motiveSprite;
     public TextMeshProUGUI motiveText;
 
     public string selectedMurderer = "sarah";
@@ -20,11 +20,25 @@ public class accusationUI : MonoBehaviour
     public string selectedMotive = "GAMBLING DEBTS";
     string motiveEvidence;
 
-    public GameObject murdererSelectionMenu;
-    public GameObject murdererGridContent;
-    public GameObject meansSelectionMenu;
+    
+
+    [Header("line")]
+    public GameObject lineStart;
+    public GameObject lineEnd;
+    public Vector3 murdererLineStart;
+    public Vector3 meansLineStart;
+    public Vector3 motiveLineStart; 
+    [Header("offsets")]
+    public Vector3 murdererPinOffset;
+    public Vector3 meansPinOffset;
+    public Vector3 motivePinOffset;
+
+    [Header("references")]
+    public GameObject suspectSelectionPage;
+    //public GameObject murdererGridContent;
+    public GameObject meansSelectionPage;
     public GameObject meansGridContent;
-    public GameObject motiveSelectionMenu;
+    public GameObject motiveSelectionPage;
     public GameObject motiveGridContent;
     public GameObject listElementPrefab;
 
@@ -49,30 +63,30 @@ public class accusationUI : MonoBehaviour
     void UpdateUI()
     {
         murdererText.text = selectedMurderer;
-        murdererSprite.sprite = RealityManager.instance.getCharacterPortraitByName(selectedMurderer);
+        //murdererSprite.sprite = RealityManager.instance.getCharacterPortraitByName(selectedMurderer);
 
         meansText.text = selectedMeans;
-        meansSprite.sprite = JSONParser.instance.getEvidenceSpriteByName(meansEvidence);
+        //meansSprite.sprite = JSONParser.instance.getEvidenceSpriteByName(meansEvidence);
 
-        motiveText.text = selectedMotive.Replace("{THEY}", RealityManager.instance.getCharacterPronounByName(selectedMurderer));
-        motiveSprite.sprite = JSONParser.instance.getEvidenceSpriteByName(motiveEvidence);
+        //motiveText.text = selectedMotive.Replace("{THEY}", RealityManager.instance.getCharacterPronounByName(selectedMurderer));
+        //motiveSprite.sprite = JSONParser.instance.getEvidenceSpriteByName(motiveEvidence);
     }
 
     public void OpenMurdererSelection()
     {
-        for (int i = 0; i < murdererGridContent.transform.childCount; i++) {
-            Destroy(murdererGridContent.transform.GetChild(i).gameObject);
+        for (int i = 0; i < suspectSelectionPage.transform.childCount; i++) {
+            for (int j = 0; j < EvidenceManager.instance.charactersInteractedWith.Count; j++) {
+                if (suspectSelectionPage.transform.GetChild(i).GetComponent<TextMeshProUGUI>().text.ToLower().Contains(EvidenceManager.instance.charactersInteractedWith[j].ToLower())) {
+                    suspectSelectionPage.transform.GetChild(i).gameObject.SetActive(true);
+                }
+            }
         }
+        lineStart.GetComponent<RectTransform>().localPosition = murdererLineStart; 
+        lineEnd.GetComponent<RectTransform>().localPosition = murdererLineStart; 
 
-        foreach (var character in RealityManager.instance.allCharacters) {
-            var newListItem = Instantiate(listElementPrefab, murdererGridContent.transform);
-            var selectorScript = newListItem.GetComponent<AccusationEvidenceSelector>();
-            selectorScript.SelectedName = character.characterName;
-            selectorScript.evidenceSprite = RealityManager.instance.getCharacterPortraitByName(character.characterName);
-            selectorScript.UIScript = this;
-        }
-
-        murdererSelectionMenu.SetActive(true);
+        meansSelectionPage.SetActive(false);
+        motiveSelectionPage.SetActive(false);
+        suspectSelectionPage.SetActive(true);
     }
 
     public void OpenMeansSelection()
@@ -81,7 +95,7 @@ public class accusationUI : MonoBehaviour
             Destroy(meansGridContent.transform.GetChild(i).gameObject);
         }
 
-        foreach (var evidence in JSONParser.instance.evidenceData) {
+        foreach (var evidence in EvidenceManager.instance.evidenceList) {
             if (evidence.means.Count > 0) {
                 foreach (var means in evidence.means) {
                     if (means.applicableCharacters.Contains("ANY") || means.applicableCharacters.Contains(selectedMurderer.ToUpper())) {
@@ -99,7 +113,13 @@ public class accusationUI : MonoBehaviour
                 }
             }
         }
-        meansSelectionMenu.SetActive(true);
+
+        lineStart.GetComponent<RectTransform>().localPosition = meansLineStart;
+        lineEnd.GetComponent<RectTransform>().localPosition = meansLineStart;
+
+        suspectSelectionPage.SetActive(false);
+        motiveSelectionPage.SetActive(false);
+        meansSelectionPage.SetActive(true);
     }
     public void OpenMotiveSelection()
     {
@@ -123,13 +143,30 @@ public class accusationUI : MonoBehaviour
                 }
             }
         }
-        motiveSelectionMenu.SetActive(true);
+        suspectSelectionPage.SetActive(false);
+        meansSelectionPage.SetActive(false);
+        motiveSelectionPage.SetActive(true);
+    }
+
+    public void moveEndPoint(GameObject newEnd)
+    {
+        Vector3 offset = Vector3.zero;
+        if (suspectSelectionPage.activeInHierarchy) {
+            offset = murdererPinOffset;
+        }
+        else if (meansSelectionPage.activeInHierarchy) {
+            offset = meansPinOffset;
+        }
+        else if (motiveSelectionPage.activeInHierarchy) {
+            offset = motivePinOffset;
+        }
+        lineEnd.transform.position = newEnd.transform.position + offset;
     }
 
     public void SelectMurderer(string characterName)
     {
         selectedMurderer = characterName;
-        murdererSelectionMenu.SetActive(false);
+        //suspectSelectionPage.SetActive(false);
         UpdateUI();
     }
 
@@ -137,7 +174,7 @@ public class accusationUI : MonoBehaviour
     {
         selectedMeans = means;
         meansEvidence = evidence;
-        meansSelectionMenu.SetActive(false);
+        //meansSelectionPage.SetActive(false);
         UpdateUI();
     }
 
@@ -145,7 +182,7 @@ public class accusationUI : MonoBehaviour
     {
         motiveEvidence = evidence;
         selectedMotive = motive;
-        motiveSelectionMenu.SetActive(false);
+        //motiveSelectionPage.SetActive(false);
         UpdateUI();
     }
 
