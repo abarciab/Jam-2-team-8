@@ -9,6 +9,7 @@ public class EvidenceManager : MonoBehaviour
     public static EvidenceManager instance;
     public List<EvidenceData> evidenceList = new List<EvidenceData>();
     public List<EvidenceData> discardedEvidence = new List<EvidenceData>();
+    public List<string> charactersInteractedWith = new List<string>();
 
 
     private void Awake() {
@@ -44,6 +45,11 @@ public class EvidenceManager : MonoBehaviour
                 evidenceList.Remove(evidence);
             }
         }
+    }
+
+    public void addCharacter(string characterName) {
+        if(!charactersInteractedWith.Contains(characterName))
+            charactersInteractedWith.Add(characterName);
     }
 
     // write displayName into UI
