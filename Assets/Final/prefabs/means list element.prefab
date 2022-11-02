@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 2653836189608126871}
   - component: {fileID: 2653836189608126868}
   m_Layer: 5
-  m_Name: evidence for stringboard accusation
+  m_Name: means list element
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -34,13 +34,18 @@ public class accusationUI : MonoBehaviour
     public Vector3 motivePinOffset;
 
     [Header("references")]
+    public GameObject previousPageButton;
+    public GameObject NextPageButton;
     public GameObject suspectSelectionPage;
     //public GameObject murdererGridContent;
     public GameObject meansSelectionPage;
     public GameObject meansGridContent;
     public GameObject motiveSelectionPage;
     public GameObject motiveGridContent;
-    public GameObject listElementPrefab;
+    public GameObject meansListElementPrefab;
+    public GameObject motiveListElementPrefab;
+    public GameObject accusationSucsessPage;
+    public GameObject accusationFailurePage;
 
     [Header("testing")]
     public bool updateUI;
@@ -48,6 +53,8 @@ public class accusationUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        previousPageButton.SetActive(false);
+        NextPageButton.SetActive(false);
         UpdateUI();
     }
 
@@ -60,6 +67,15 @@ public class accusationUI : MonoBehaviour
         }
     }
 
+    void closePages()
+    {
+        meansSelectionPage.SetActive(false);
+        motiveSelectionPage.SetActive(false);
+        suspectSelectionPage.SetActive(false);
+        accusationSucsessPage.SetActive(false);
+        accusationFailurePage.SetActive(false);
+    }
+
     void UpdateUI()
     {
         murdererText.text = selectedMurderer;
@@ -68,7 +84,7 @@ public class accusationUI : MonoBehaviour
         meansText.text = selectedMeans;
         //meansSprite.sprite = JSONParser.instance.getEvidenceSpriteByName(meansEvidence);
 
-        //motiveText.text = selectedMotive.Replace("{THEY}", RealityManager.instance.getCharacterPronounByName(selectedMurderer));
+        motiveText.text = selectedMotive.Replace("{THEY}", RealityManager.instance.getCharacterPronounByName(selectedMurderer));
         //motiveSprite.sprite = JSONParser.instance.getEvidenceSpriteByName(motiveEvidence);
     }
 
@@ -82,10 +98,9 @@ public class accusationUI : MonoBehaviour
             }
         }
         lineStart.GetComponent<RectTransform>().localPosition = murdererLineStart; 
-        lineEnd.GetComponent<RectTransform>().localPosition = murdererLineStart; 
+        lineEnd.GetComponent<RectTransform>().localPosition = murdererLineStart;
 
-        meansSelectionPage.SetActive(false);
-        motiveSelectionPage.SetActive(false);
+        closePages();
         suspectSelectionPage.SetActive(true);
     }
 
@@ -100,7 +115,7 @@ public class accusationUI : MonoBehaviour
                 foreach (var means in evidence.means) {
                     if (means.applicableCharacters.Contains("ANY") || means.applicableCharacters.Contains(selectedMurderer.ToUpper())) {
                         
-                        var newListItem = Instantiate(listElementPrefab, meansGridContent.transform);
+                        var newListItem = Instantiate(meansListElementPrefab, meansGridContent.transform);
                         var selectorScript = newListItem.GetComponent<AccusationEvidenceSelector>();
                         selectorScript.accusationComponent = AccusationEvidenceSelector.AccusationComponent.means;
                         selectorScript.UIScript = this;
@@ -113,12 +128,10 @@ public class accusationUI : MonoBehaviour
                 }
             }
         }
-
         lineStart.GetComponent<RectTransform>().localPosition = meansLineStart;
         lineEnd.GetComponent<RectTransform>().localPosition = meansLineStart;
 
-        suspectSelectionPage.SetActive(false);
-        motiveSelectionPage.SetActive(false);
+        closePages();
         meansSelectionPage.SetActive(true);
     }
     public void OpenMotiveSelection()
@@ -127,24 +140,26 @@ public class accusationUI : MonoBehaviour
             Destroy(motiveGridContent.transform.GetChild(i).gameObject);
         }
 
-        foreach (var evidence in JSONParser.instance.evidenceData) {
+        foreach (var evidence in EvidenceManager.instance.evidenceList) {
             if (evidence.motive.Count > 0) {
                 foreach (var motive in evidence.motive) {
                     if (motive.applicableCharacters.Contains("any") || motive.applicableCharacters.Contains(selectedMurderer)) {
-                        var newListItem = Instantiate(listElementPrefab, motiveGridContent.transform);
+                        var newListItem = Instantiate(motiveListElementPrefab, motiveGridContent.transform);
                         var selectorScript = newListItem.GetComponent<AccusationEvidenceSelector>();
                         selectorScript.accusationComponent = AccusationEvidenceSelector.AccusationComponent.motive;
                         selectorScript.UIScript = this;
                         selectorScript.evidenceName = evidence.name;
                         selectorScript.nameInSelectorList = evidence.displayName;
                         selectorScript.SelectedName = motive.name;
-                        selectorScript.evidenceSprite = JSONParser.instance.getEvidenceSpriteByName(evidence.name);
+                        newListItem.SetActive(true);
                     }
                 }
             }
         }
-        suspectSelectionPage.SetActive(false);
-        meansSelectionPage.SetActive(false);
+        lineStart.GetComponent<RectTransform>().localPosition = motiveLineStart;
+        lineEnd.GetComponent<RectTransform>().localPosition = motiveLineStart;
+
+        closePages();
         motiveSelectionPage.SetActive(true);
     }
 
@@ -184,6 +199,39 @@ public class accusationUI : MonoBehaviour
         selectedMotive = motive;
         //motiveSelectionPage.SetActive(false);
         UpdateUI();
+    }
+
+    public void MakeAccusation()
+    {
+        closePages();
+        if (correctAccusation()) {
+            accusationSucsessPage.SetActive(true);
+        }
+        else {
+            accusationFailurePage.SetActive(true);
+        }
+    }
+
+    bool correctAccusation()
+    {
+        foreach (var explanation in JSONParser.instance.accusationData) {
+            if (explanation.reality == RealityManager.instance.currentReality.name) {
+                if (explanation.murderer.ToLower() == selectedMurderer.ToLower()) {
+                    foreach (var means in explanation.means) {
+                        if (means.name.ToLower() == meansEvidence) {
+                            foreach (var motive in explanation.motive) {
+                                if (motive.name.ToLower() == motiveEvidence) {
+                                    return true;
+                                }
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
 }

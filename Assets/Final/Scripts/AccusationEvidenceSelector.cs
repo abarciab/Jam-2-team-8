@@ -45,13 +45,18 @@ public class AccusationEvidenceSelector : MonoBehaviour
 
     private void OnEnable()
     {
-        if (string.IsNullOrEmpty(nameInSelectorList)) { print("i need a name"); return; }
-        if (accusationComponent == AccusationComponent.motive || accusationComponent == AccusationComponent.murderer) 
+        if ((string.IsNullOrEmpty(nameInSelectorList) && accusationComponent == AccusationComponent.means) || (string.IsNullOrEmpty(SelectedName) && accusationComponent == AccusationComponent.motive)) { return; }
+        if (accusationComponent == AccusationComponent.motive || accusationComponent == AccusationComponent.murderer) {
             evidenceNameText.text = SelectedName.Replace("{THEY}", RealityManager.instance.getCharacterPronounByName(UIScript.selectedMurderer));
-        else 
+        }
+        else
             evidenceNameText.text = nameInSelectorList.Replace("{THEY}", RealityManager.instance.getCharacterPronounByName(UIScript.selectedMurderer));
 
-        if (evidenceSprite == null) { print("i need a sprite"); return; }
+        if (evidenceImg == null) {
+            setUp = true;
+        }
+
+        if (evidenceSprite == null) { return; }
         evidenceImg.sprite = evidenceSprite;
 
         setUp = true;

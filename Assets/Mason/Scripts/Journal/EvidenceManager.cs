@@ -67,6 +67,8 @@ public class EvidenceManager : MonoBehaviour
         if(add) {
             //printList();
             addEvidence("gun used to kill joe");
+            addEvidence("gambling debts");
+            addEvidence("john protect sarah");
             add = false;
         }
     }

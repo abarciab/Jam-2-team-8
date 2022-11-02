@@ -166,7 +166,7 @@ MonoBehaviour:
         truth: 
       alibi:
         text: I was in the library when you say Joe was killed. check the cameras,
-          you'll see{EVIDENCE}
+          you'll see
         lie: 0
         evidenceGained: EVIDENCE
         requiredEvidence: 
@@ -356,8 +356,8 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       relationship:
-        text: Joe was my brother. We were close when we were younger, but after that
-          busniess with Mary, we haven't spoken much {MARY INCIDENCT}
+        text: 'Joe was my brother. We were close when we were younger, but after
+          that busniess with Mary, we haven''t spoken much '
         lie: 0
         evidenceGained: MARY INCIDENCT
         requiredEvidence: 
@@ -373,8 +373,8 @@ MonoBehaviour:
           truth: 
       - item: gun used to kill joe
         line:
-          text: I don't know who's gun that it, but it defintly wasn't Joe's - he
-            hated pistols. {GUN NOT JOE'S}
+          text: 'I don''t know who''s gun that it, but it defintly wasn''t Joe''s
+            - he hated pistols. '
           lie: 0
           evidenceGained: GUN NOT JOE'S
           requiredEvidence: 
@@ -577,7 +577,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       alibi:
-        text: at my home, with sarah {SARAH AFFAIR}
+        text: 'at my home, with sarah '
         lie: 0
         evidenceGained: SARAH AFFAIR
         requiredEvidence: 
@@ -606,7 +606,7 @@ MonoBehaviour:
         truth: 
       alibi:
         text: I was in the library when you say Joe was killed. check the cameras,
-          you'll see{EVIDENCE}
+          you'll see
         lie: 0
         evidenceGained: EVIDENCE
         requiredEvidence: 
@@ -796,8 +796,8 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       relationship:
-        text: Joe was my brother. We were close when we were younger, but after that
-          busniess with Mary, we haven't spoken much {MARY INCIDENCT}
+        text: 'Joe was my brother. We were close when we were younger, but after
+          that busniess with Mary, we haven''t spoken much '
         lie: 0
         evidenceGained: MARY INCIDENCT
         requiredEvidence: 
@@ -813,8 +813,8 @@ MonoBehaviour:
           truth: 
       - item: gun used to kill joe
         line:
-          text: I don't know who's gun that it, but it defintly wasn't Joe's - he
-            hated pistols. {GUN NOT JOE'S}
+          text: 'I don''t know who''s gun that it, but it defintly wasn''t Joe''s
+            - he hated pistols. '
           lie: 0
           evidenceGained: GUN NOT JOE'S
           requiredEvidence: 
@@ -872,7 +872,7 @@ MonoBehaviour:
         truth: 
       alibi:
         text: I was in the library when you say Joe was killed. check the cameras,
-          you'll see{EVIDENCE}
+          you'll see
         lie: 0
         evidenceGained: EVIDENCE
         requiredEvidence: 
@@ -1062,8 +1062,8 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       relationship:
-        text: Joe was my brother. We were close when we were younger, but after that
-          busniess with Mary, we haven't spoken much {MARY INCIDENCT}
+        text: 'Joe was my brother. We were close when we were younger, but after
+          that busniess with Mary, we haven''t spoken much '
         lie: 0
         evidenceGained: MARY INCIDENCT
         requiredEvidence: 
@@ -1079,8 +1079,8 @@ MonoBehaviour:
           truth: 
       - item: gun used to kill joe
         line:
-          text: I don't know who's gun that it, but it defintly wasn't Joe's - he
-            hated pistols. {GUN NOT JOE'S}
+          text: 'I don''t know who''s gun that it, but it defintly wasn''t Joe''s
+            - he hated pistols. '
           lie: 0
           evidenceGained: GUN NOT JOE'S
           requiredEvidence: 
@@ -1135,6 +1135,12 @@ MonoBehaviour:
   - characterName: sarah
     characterPortrait: {fileID: 21300000, guid: 9179735080e5c6e43827d014f4980097, type: 3}
     pronoun: she
+  - characterName: denise gold
+    characterPortrait: {fileID: 21300000, guid: 9179735080e5c6e43827d014f4980097, type: 3}
+    pronoun: she
+  - characterName: roy gold
+    characterPortrait: {fileID: 21300000, guid: bbc2087cbf38c9841a8d5da321d8cb76, type: 3}
+    pronoun: he
   allCards:
   - cardName: The Lovers
     cardEffects:
@@ -1820,7 +1826,7 @@ MonoBehaviour:
     motive:
     - name: to protect sarah
       applicableCharacters:
-      - JOHN
+      - any
   - name: EVIDENCE
     displayName: a piece of evidence
     description: john said this
@@ -1924,7 +1930,7 @@ MonoBehaviour:
       motive:
       - name: to protect sarah
         applicableCharacters:
-        - JOHN
+        - any
   parseAll: 0
   parseDialogue: 0
   parseCards: 0

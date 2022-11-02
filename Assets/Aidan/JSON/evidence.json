@@ -39,7 +39,7 @@
 		"displayName" : "emails from sarah to john",
 		"description" : "these documents show that john was trying to protect sarah",
 		"realities" : "sarah having affair",
-		"motive" : "to protect sarah[JOHN]"
+		"motive" : "to protect sarah"
 	},
 	"EVIDENCE" : {
 		"displayName" : "a piece of evidence",

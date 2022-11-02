@@ -33,9 +33,9 @@ public class evidenceDisplay : MonoBehaviour
 
     public void PreviousPage() {
         if (!isActiveAndEnabled || currentPage == 0) { return; }
-        print("currentpage index count" + pageToEvidenceCount[currentPage]);
+        //print("currentpage index count" + pageToEvidenceCount[currentPage]);
         currentEvidenceIndex -= (pageToEvidenceCount[currentPage] + 6);
-        print("previous page. currentIndex: " + currentEvidenceIndex);
+        //print("previous page. currentIndex: " + currentEvidenceIndex);
         currentPage -= 1;
         DisplayEvidence();
     }
@@ -51,7 +51,7 @@ public class evidenceDisplay : MonoBehaviour
 
     void DisplayEvidence(int evidenceIndex = -1)
     {
-        print("displaying evidence. currentIndex: " + currentEvidenceIndex);
+        //print("displaying evidence. currentIndex: " + currentEvidenceIndex);
         clearPages();
         if (evidenceIndex == -1) {
             evidenceIndex = currentEvidenceIndex;
@@ -103,7 +103,7 @@ public class evidenceDisplay : MonoBehaviour
             currentEvidenceIndex += 1;
 
             if (currentPos > 6) {
-                print("breaking bc currentPos is 6");
+                //print("breaking bc currentPos is 6");
                 break;
             }
         }
@@ -116,7 +116,7 @@ public class evidenceDisplay : MonoBehaviour
         }
         if (EvidenceManager.instance.evidenceList.Count > currentEvidenceIndex && EvidenceManager.instance.evidenceList.Count > 0) {
             nextPageButton.SetActive(true);
-            print("current latest index: " + currentEvidenceIndex + ", count: " + EvidenceManager.instance.evidenceList.Count);
+            //print("current latest index: " + currentEvidenceIndex + ", count: " + EvidenceManager.instance.evidenceList.Count);
         }
         else {
             nextPageButton.SetActive(false);
