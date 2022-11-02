@@ -62,6 +62,19 @@ public class RoomManager : MonoBehaviour
         transform.position = Vector3.zero;
     }
 
+    private void setRoom(string roomName) {
+        // disable characters every room
+        foreach(Room room in rooms)
+            toggleCharacters(room.characterNames, false);
+
+        // get new room, activate it's characters, and set background
+        Room newRoom = getRoomByName(roomName);
+        toggleCharacters(newRoom.characterNames, true);
+        setBackground(newRoom.background);
+        fitSpriteToScreen(newRoom.background);
+        currentRoomName = newRoom.name;
+    }
+
     public Room getRoomByName(string roomName) {
         foreach(Room room in rooms) {
             if(room.name == roomName)
@@ -80,19 +93,6 @@ public class RoomManager : MonoBehaviour
         yield return new WaitUntil(() => setNewRoom == true);
         setNewRoom = false;
         setRoom(roomName);
-    }
-
-    public void setRoom(string roomName) {
-        // disable characters every room
-        foreach(Room room in rooms)
-            toggleCharacters(room.characterNames, false);
-
-        // get new room, activate it's characters, and set background
-        Room newRoom = getRoomByName(roomName);
-        toggleCharacters(newRoom.characterNames, true);
-        setBackground(newRoom.background);
-        fitSpriteToScreen(newRoom.background);
-        currentRoomName = newRoom.name;
     }
 
     private void Update() {
