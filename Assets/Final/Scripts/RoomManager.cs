@@ -17,13 +17,17 @@ public class RoomManager : MonoBehaviour
     public string currentRoomName;
     public List<Room> rooms = new List<Room>();
     public Transform characterHolder;
+    public Transform fade;
     public Camera cam;
+    public bool transitioning = false;
+    public bool setNewRoom = false;
     private SpriteRenderer sprRenderer;
 
     private void Awake()
     {
         if(instance == null) {
             instance = this;                    // makes instance a singleton
+            fade.gameObject.SetActive(false);
             sprRenderer = GetComponent<SpriteRenderer>();
         }
         // if duplicates exist
@@ -41,6 +45,9 @@ public class RoomManager : MonoBehaviour
     }
 
     private void toggleCharacters(List<string> names, bool active) {
+        if(names.Count <= 0)
+            return;
+
         foreach(Transform child in characterHolder) {
             if(names.Contains(child.GetComponent<CharacterInteract>().characterName)) {
                 child.gameObject.SetActive(active);
@@ -53,19 +60,9 @@ public class RoomManager : MonoBehaviour
                                            Screen.height / (spr.bounds.extents.y * spr.pixelsPerUnit * 2), 
                                            transform.localScale.z);
         transform.position = Vector3.zero;
-        return;
     }
 
-    public Room getRoomByName(string roomName) {
-        foreach(Room room in rooms) {
-            if(room.name == roomName)
-                return room;
-        }
-        Debug.LogError("Room " + roomName + " does not exist");
-        return null;
-    }
-
-    public void setRoom(string roomName) {
+    private void setRoom(string roomName) {
         // disable characters every room
         foreach(Room room in rooms)
             toggleCharacters(room.characterNames, false);
@@ -78,12 +75,44 @@ public class RoomManager : MonoBehaviour
         currentRoomName = newRoom.name;
     }
 
-    private void Update() {
-        if(Input.GetKeyDown(KeyCode.LeftArrow)) {
-            setRoom("room2");
+    public Room getRoomByName(string roomName) {
+        foreach(Room room in rooms) {
+            if(room.name == roomName)
+                return room;
         }
-        if(Input.GetKeyDown(KeyCode.RightArrow)) {
-            setRoom("room1");
+        Debug.LogError("Room " + roomName + " does not exist");
+        return null;
+    }
+
+    public IEnumerator startRoomTransition(string roomName) {
+        // begin fade transition
+        UIManager.instance.hideDialogueUI();
+        fade.gameObject.SetActive(true);
+        fade.GetComponent<Animator>().SetTrigger("fade");
+
+        // when fade is done, set new room
+        yield return new WaitUntil(() => setNewRoom == true);
+        setNewRoom = false;
+        setRoom(roomName);
+    }
+
+    private void Update() {
+        if(!transitioning) {
+            if(Input.GetKeyDown(KeyCode.Alpha1)) {
+                StartCoroutine(startRoomTransition("outside"));
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha2)) {
+                StartCoroutine(startRoomTransition("hallway"));
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha3)) {
+                StartCoroutine(startRoomTransition("ballroom"));
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha4)) {
+                StartCoroutine(startRoomTransition("office"));
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha5)) {
+                StartCoroutine(startRoomTransition("security"));
+            }
         }
         
     }

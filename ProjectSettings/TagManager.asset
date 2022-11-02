@@ -8,6 +8,7 @@ TagManager:
   - journal
   - dialogue
   - evidence
+  - fade
   layers:
   - Default
   - TransparentFX

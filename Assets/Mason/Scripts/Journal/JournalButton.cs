@@ -6,6 +6,8 @@ using TMPro;
 
 public class JournalButton : MonoBehaviour
 {
+    [SerializeField] private Sprite journalSprite;
+    [SerializeField] private Sprite exitSprite;
     private Button button;
     private bool journalOpen = false;
 
@@ -15,19 +17,19 @@ public class JournalButton : MonoBehaviour
     }
 
     private void toggleJournal() {
+        // close journal if open
         if(journalOpen) {
-            journalOpen = false;
             print("Journal is now closed");
-            // switch sprite to journal button
+            journalOpen = false;
             JournalManager.instance.CloseJournal();
-            GetComponentInChildren<TextMeshProUGUI>().SetText("Journal");
+            button.image.sprite = journalSprite;
         }
+        // open journal if closed
         else {
-            journalOpen = true;
             print("Journal is now open");
-            // switch sprite to the an exit button
+            journalOpen = true;
             JournalManager.instance.OpenJournal();
-            GetComponentInChildren<TextMeshProUGUI>().SetText("Exit");
+            button.image.sprite = exitSprite;
         }
     }
 }

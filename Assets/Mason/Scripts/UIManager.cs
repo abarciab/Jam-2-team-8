@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     // reset screen back to normal gameplay
     public void hideDialogueUI() {
         foreach(Transform child in transform) {
-            if(child.tag == "dialogue" || child.tag == "evidence")
+            if(child.tag == "dialogue" || child.tag == "evidence" || child.tag == "fade")
                 child.gameObject.SetActive(false);
             else
                 child.gameObject.SetActive(true);

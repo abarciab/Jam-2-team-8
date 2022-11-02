@@ -73,8 +73,10 @@ public class CharacterResponseManager : MonoBehaviour
             }
         }
 
-        if(!string.IsNullOrEmpty(evidenceGained)) 
+        // log evidence and character name in evidence manager
+        if(!string.IsNullOrEmpty(evidenceGained))
             EvidenceManager.instance.addEvidence(evidenceGained);
+        EvidenceManager.instance.addCharacter(currentCharacterName);
 
         StartCoroutine(DialogueBase.instance.writeText(new DialogueLine(text)));
 
