@@ -110,7 +110,16 @@ public class RealityManager : MonoBehaviour
                 return character.characterPortrait;
             }
         }
-        print("no characters found with that name: " + characterName);
+        return null;
+    }
+
+    public Sprite getCharacterFullBodyByName(string characterName)
+    {
+        foreach (var character in allCharacters) {
+            if (character.characterName == characterName) {
+                return character.characterFullBody;
+            }
+        }
         return null;
     }
 
