@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class statementDropdown : MonoBehaviour
+public class StatementDropdown : MonoBehaviour
 {
     private TMP_Dropdown menu;
-    private List<string> statements;     // holds back-end names of evidence
+    private List<string> statements;     // holds back-end statements
+    public List<bool> statementsAreLies { get; private set; }  // holds whether statements are lies or not
 
     private void Awake() {
         menu = GetComponent<TMP_Dropdown>();
         statements = new List<string>();
+        statementsAreLies = new List<bool>();
     }
 
     private void OnEnable() {
@@ -29,32 +31,26 @@ public class statementDropdown : MonoBehaviour
         TMP_Dropdown.OptionData defaultOption = new TMP_Dropdown.OptionData();
         defaultOption.text = "[Select Statement]";
         
-        // clear menu and statements for remaking
+        // clear menu and lists for remaking
         menu.options.Clear();
         statements.Clear();
+        statementsAreLies.Clear();
 
         // remake menu and statements
         menu.options.Add(defaultOption);
         statements.Add("BUFFER");        // added to keep indices consistent
+        statementsAreLies.Add(false);
         foreach(var line in JournalManager.instance.dialogueLog.characterLines) {
             if(line.speaker == CharacterResponseManager.instance.currentCharacterName) {
                 foreach(var dialogue in line.lines) {
                     TMP_Dropdown.OptionData data = new TMP_Dropdown.OptionData();
-                    //data.text = dialogue.line.Length < 15 ? dialogue.line : dialogue.line.Substring(0, 15) + "...";
                     data.text = dialogue.line;
                     menu.options.Add(data);
                     statements.Add(dialogue.line);
+                    statementsAreLies.Add(true);   // this will be changed to log if a statement is a lie or not
+                    // might need another list for the required evidence
                 }
             }
         }
-    }
-
-    public void submitEvidence() {
-        // if "[Select Evidence]" is not selected
-        if(menu.value != 0) {
-            // write evidence response and hide evidence screen
-            CharacterResponseManager.instance.writeCharacterDialogue(statements[menu.value]);
-            UIManager.instance.hideUIElement("evidence");
-        }        
     }
 }
