@@ -13,6 +13,17 @@ public class MainMenuManager : MonoBehaviour
     public string managerSceneName;
     public string mainMenuSceneName;
 
+    public Transform menuFade;
+
+    public void startMenuTransition() {
+        menuFade.gameObject.SetActive(true);
+        menuFade.GetComponent<Animator>().SetTrigger("startFade");
+    }
+
+    public void startGame() {
+        startImmediatly = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
