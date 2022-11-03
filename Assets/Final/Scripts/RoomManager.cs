@@ -126,19 +126,19 @@ public class RoomManager : MonoBehaviour
     }
 
     public void goOutside() {
-        StartCoroutine(startRoomTransition("outside"));
+        setRoom("outside");
     }
     public void goHallway() {
-        StartCoroutine(startRoomTransition("hallway"));
+        setRoom("hallway");
     }
     public void goBallroom() {
-        StartCoroutine(startRoomTransition("ballroom"));
+        setRoom("ballroom");
     }
     public void goOffice() {
-        StartCoroutine(startRoomTransition("office"));
+        setRoom("office");
     }
     public void goSecurity() {
-        StartCoroutine(startRoomTransition("security"));
+        setRoom("security");
     }
 
     private void Update() {
