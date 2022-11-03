@@ -50,11 +50,11 @@ public class DialogueLog : MonoBehaviour
     {
         public string speaker;
         public List<lineDetails> lines = new List<lineDetails>();
-        public DialogueLineData lineData;
 
         [System.Serializable]
         public class lineDetails
-        {   
+        {
+            public DialogueLineData lineData;
             public string question;
             public string line;
         }
@@ -268,7 +268,7 @@ public class DialogueLog : MonoBehaviour
             newLine.question = "I " + "[VERB] " + speaker  + " ARTICLE " + evidence;
         }
         newLine.line = line.text;
-        newRecordedLine.lineData = line;
+        newLine.lineData = line;
         newRecordedLine.lines.Add(newLine);
 
         for (int i = 0; i < characterLines.Count; i++) {
