@@ -22,7 +22,7 @@ public class cardDrawInterface : MonoBehaviour
             return;
         }
         cardFront.sprite = drawnCard.sprite;
-        //cardParent.SetActive(true);
+        cardParent.SetActive(true);
     }
 
     private void Update()
