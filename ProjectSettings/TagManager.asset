@@ -10,6 +10,7 @@ TagManager:
   - evidence
   - fade
   - pickups
+  - lying
   layers:
   - Default
   - TransparentFX
