@@ -1128,18 +1128,35 @@ MonoBehaviour:
   allCharacters:
   - characterName: john
     characterPortrait: {fileID: 21300000, guid: bbc2087cbf38c9841a8d5da321d8cb76, type: 3}
+    characterFullBody: {fileID: 0}
     pronoun: he
   - characterName: sam
     characterPortrait: {fileID: 21300000, guid: 0fd6ba8385ae29247b537baae8a849c9, type: 3}
+    characterFullBody: {fileID: 0}
     pronoun: he
   - characterName: sarah
     characterPortrait: {fileID: 21300000, guid: 9179735080e5c6e43827d014f4980097, type: 3}
+    characterFullBody: {fileID: 0}
     pronoun: she
   - characterName: denise gold
-    characterPortrait: {fileID: 21300000, guid: 9179735080e5c6e43827d014f4980097, type: 3}
+    characterPortrait: {fileID: 21300000, guid: bb20df529bf3aa14aa3404be715a1e31, type: 3}
+    characterFullBody: {fileID: 21300000, guid: a91f011896902cc42a2e1cac426e987d, type: 3}
     pronoun: she
   - characterName: roy gold
     characterPortrait: {fileID: 21300000, guid: bbc2087cbf38c9841a8d5da321d8cb76, type: 3}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: melissa
+    characterPortrait: {fileID: 21300000, guid: 53629f9d67efdca4bba38135c375a45f, type: 3}
+    characterFullBody: {fileID: 21300000, guid: 8da1af4fa516b7c4d9175db9532a23e7, type: 3}
+    pronoun: she
+  - characterName: joseph
+    characterPortrait: {fileID: 21300000, guid: 7556c38d276bba649ac2f5f96840b587, type: 3}
+    characterFullBody: {fileID: 21300000, guid: de76fa18458d33f459f44e6482273ffb, type: 3}
+    pronoun: he
+  - characterName: guards
+    characterPortrait: {fileID: 21300000, guid: 440ca84846595ee4982ece0c995de981, type: 3}
+    characterFullBody: {fileID: 21300000, guid: ed76f162c389c514ea72cb8b81ff1141, type: 3}
     pronoun: he
   allCards:
   - cardName: The Lovers
@@ -1837,27 +1854,35 @@ MonoBehaviour:
   evidenceSprites:
   - characterName: GUN USED TO KILL JOE
     characterPortrait: {fileID: 21300000, guid: 522543331b026c94b98b58d14a58d857, type: 3}
+    characterFullBody: {fileID: 0}
     pronoun: he
   - characterName: GAMBLING DEBTS
     characterPortrait: {fileID: 21300000, guid: af18806e84cd9c14f956eea2563aad96, type: 3}
+    characterFullBody: {fileID: 0}
     pronoun: he
   - characterName: SARAH FINGERPRINTS ON GUN
     characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
     pronoun: he
   - characterName: JOHN FINGERPRINTS ON GUN
     characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
     pronoun: he
   - characterName: SECURITY CAMERAS
     characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
     pronoun: he
   - characterName: SARAH OWNS GUN
     characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
     pronoun: he
   - characterName: JOHN PROTECT SARAH
     characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
     pronoun: he
   - characterName: EVIDENCE
     characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
     pronoun: he
   accusationData:
   - reality: core reality

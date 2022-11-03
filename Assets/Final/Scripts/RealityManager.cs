@@ -16,6 +16,7 @@ public class RealityManager : MonoBehaviour
     {
         public string characterName;
         public Sprite characterPortrait;
+        public Sprite characterFullBody;
         public string pronoun = "he";
     }
 
