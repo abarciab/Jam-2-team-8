@@ -11,13 +11,20 @@ public class SubmitAccusation : MonoBehaviour
     public void submit() {
         // if "[Select Statement]" and "[Select Evidence]" is not selected
         if(statementMenu.value != 0 && evidenceMenu.value != 0) {
-            // if statement is a lie and evidence is evidence required
             StatementDropdown sDropdown = statementMenu.GetComponent<StatementDropdown>();
-            EvidenceDropdown eDropdon = evidenceMenu.GetComponent<EvidenceDropdown>();
-            if(sDropdown.statementsAreLies[statementMenu.value]) {
-                UIManager.instance.hideUIElement("lying");
-                CharacterResponseManager.instance.writeCharacterDialogue("test");
+            EvidenceDropdown eDropdown = evidenceMenu.GetComponent<EvidenceDropdown>();
+
+            // if statement is a lie and evidence is evidence required
+            if(sDropdown.lineData[statementMenu.value].lie && 
+              (eDropdown.evidenceNames[evidenceMenu.value] == sDropdown.lineData[statementMenu.value].requiredEvidence)) {
+                // switch the lie to the truth statement and write it out
+                sDropdown.lineData[statementMenu.value].switchTextToTruth();
+                CharacterResponseManager.instance.writeCharacterDialogue(sDropdown.dialogueTypes[statementMenu.value]);
             }
+            else {
+                // play some sort of error sound
+            }
+            UIManager.instance.hideUIElement("lying");
         }
     }
 }

@@ -29,8 +29,20 @@ public class EvidenceManager : MonoBehaviour
         }
     }
 
+    private bool checkDuplicate(string evidenceName) {
+        foreach(EvidenceData evidence in evidenceList) {
+            if(evidence.name.ToLower() == evidenceName.ToLower()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     // lookup evidence from JSON Parser and add it to evidence list
     public void addEvidence(string evidenceName) {
+        if(checkDuplicate(evidenceName))
+            return;
+
         // loop through all parsed evidence
         foreach(EvidenceData evidence in JSONParser.instance.evidenceData) {
             // if evidence is found, add to list
@@ -79,4 +91,5 @@ public class EvidenceManager : MonoBehaviour
             print(evidence.name);
         }
     }
+    
 }

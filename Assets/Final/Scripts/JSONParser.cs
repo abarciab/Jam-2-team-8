@@ -64,6 +64,13 @@ public class DialogueLineData  {
     public string evidenceGained;
     public string requiredEvidence;
     public string truth;
+
+    public void switchTextToTruth() {
+        string temp = text;
+        text = truth;
+        truth = temp;
+        lie = !lie;
+    }
 }
 [System.Serializable]
 public class EvidenceResponseData {

@@ -57,6 +57,7 @@ public class DialogueLog : MonoBehaviour
             public DialogueLineData lineData;
             public string question;
             public string line;
+            public string dialogueType;
         }
     }
 
@@ -260,9 +261,11 @@ public class DialogueLog : MonoBehaviour
         RecordedLines.lineDetails newLine = new RecordedLines.lineDetails();
         if (alibi) {
             newLine.question = alibiQuestion;
+            newLine.dialogueType = "alibi";
         }
         else if (relationship) {
             newLine.question = relationshipQuestion;
+            newLine.dialogueType = "relationship";
         }
         else if (!string.IsNullOrEmpty(evidence)) {
             newLine.question = "I " + "[VERB] " + speaker  + " ARTICLE " + evidence;
