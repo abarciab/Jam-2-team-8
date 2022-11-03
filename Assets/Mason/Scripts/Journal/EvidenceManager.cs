@@ -21,7 +21,7 @@ public class EvidenceManager : MonoBehaviour
         // if no duplicates
         if(instance == null) {
             instance = this;                    // makes instance a singleton
-            DontDestroyOnLoad(gameObject);      // prevents EvidenceManager from being destroyed when new level loaded
+            //DontDestroyOnLoad(gameObject);      // prevents EvidenceManager from being destroyed when new level loaded
         }
         // if duplicates exist
         else if(instance != null && instance != this) {

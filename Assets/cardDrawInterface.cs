@@ -13,6 +13,7 @@ public class cardDrawInterface : MonoBehaviour
 
     public void DrawCard()
     {
+        print("drawcard");
         RealityManager.CardRef drawnCard = new RealityManager.CardRef();
         if (RealityManager.instance.CardsAvalible(CharacterResponseManager.instance.currentCharacterName)) {
             drawnCard = RealityManager.instance.drawCard(CharacterResponseManager.instance.currentCharacterName);
@@ -21,7 +22,7 @@ public class cardDrawInterface : MonoBehaviour
             return;
         }
         cardFront.sprite = drawnCard.sprite;
-        cardParent.SetActive(true);
+        //cardParent.SetActive(true);
     }
 
     private void Update()

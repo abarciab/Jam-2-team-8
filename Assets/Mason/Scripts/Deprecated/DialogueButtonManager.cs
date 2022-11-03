@@ -12,7 +12,7 @@ public class DialogueButtonManager : MonoBehaviour
         if(instance == null) {
             instance = this;                    // makes instance a singleton
             setCharacter(characterName);        // set initial character
-            DontDestroyOnLoad(gameObject);      // prevents DialogueButtonManager from being destroyed when new level loaded
+            //DontDestroyOnLoad(gameObject);      // prevents DialogueButtonManager from being destroyed when new level loaded
         }
         // if duplicates exist
         else if(instance != null && instance != this) {

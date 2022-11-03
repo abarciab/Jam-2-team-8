@@ -16,7 +16,7 @@ public class EvidenceDropdown : MonoBehaviour
 
     private void OnEnable() {
         try {
-            print("start running");
+            //print("start running");
             refreshDropdown();
             menu.value = 0;
         }

@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
         // if no duplicates
         if(instance == null) {
             instance = this;                    // makes instance a singleton
-            DontDestroyOnLoad(gameObject);      // prevents UIManager from being destroyed when new level loaded
+            //DontDestroyOnLoad(gameObject);      // prevents UIManager from being destroyed when new level loaded
             hideDialogueUI(true);
         }
         // if duplicates exist

@@ -16,7 +16,7 @@ public class DialogueBase : MonoBehaviour
             instance = this;                    // makes instance a singleton
             //textHolder = GetComponent<Text>();  // get the text component
             textHolder = GetComponent<TextMeshProUGUI>();
-            DontDestroyOnLoad(gameObject);      // prevents DialogueBase from being destroyed when new level loaded
+            //DontDestroyOnLoad(gameObject);      // prevents DialogueBase from being destroyed when new level loaded
         }
         // if duplicates exist
         else if(instance != null && instance != this) {
