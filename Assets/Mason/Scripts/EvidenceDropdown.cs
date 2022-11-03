@@ -52,12 +52,4 @@ public class EvidenceDropdown : MonoBehaviour
             UIManager.instance.hideUIElement("evidence");
         }        
     }
-
-    private void Update() {
-        if(Input.GetKeyDown(KeyCode.Alpha0)) {
-            foreach(var line in evidenceNames) {
-                print(line);
-            }
-        }
-    }
 }

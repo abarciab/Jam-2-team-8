@@ -17,13 +17,14 @@ public class SubmitAccusation : MonoBehaviour
             // if statement is a lie and evidence is evidence required
             if(sDropdown.lineData[statementMenu.value].lie && 
               (eDropdown.evidenceNames[evidenceMenu.value] == sDropdown.lineData[statementMenu.value].requiredEvidence)) {
-                UIManager.instance.hideUIElement("lying");
-                CharacterResponseManager.instance.writeCharacterDialogue("test");
+                // switch the lie to the truth statement and write it out
+                sDropdown.lineData[statementMenu.value].switchTextToTruth();
+                CharacterResponseManager.instance.writeCharacterDialogue(sDropdown.dialogueTypes[statementMenu.value]);
             }
             else {
-                UIManager.instance.hideUIElement("lying");
                 // play some sort of error sound
             }
+            UIManager.instance.hideUIElement("lying");
         }
     }
 }
