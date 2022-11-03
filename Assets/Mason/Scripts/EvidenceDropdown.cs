@@ -7,7 +7,7 @@ using TMPro;
 public class EvidenceDropdown : MonoBehaviour
 {
     private TMP_Dropdown menu;
-    private List<string> evidenceNames;     // holds back-end names of evidence
+    public List<string> evidenceNames {get; private set; }     // holds back-end names of evidence
 
     private void Awake() {
         menu = GetComponent<TMP_Dropdown>();
@@ -16,7 +16,6 @@ public class EvidenceDropdown : MonoBehaviour
 
     private void OnEnable() {
         try {
-            //print("start running");
             refreshDropdown();
             menu.value = 0;
         }
@@ -52,5 +51,13 @@ public class EvidenceDropdown : MonoBehaviour
             CharacterResponseManager.instance.writeCharacterDialogue(evidenceNames[menu.value]);
             UIManager.instance.hideUIElement("evidence");
         }        
+    }
+
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.Alpha0)) {
+            foreach(var line in evidenceNames) {
+                print(line);
+            }
+        }
     }
 }
