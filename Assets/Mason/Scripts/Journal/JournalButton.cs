@@ -22,14 +22,14 @@ public class JournalButton : MonoBehaviour
             //print("Journal is now closed");
             journalOpen = false;
             JournalManager.instance.CloseJournal();
-            button.image.sprite = journalSprite;
+            transform.GetChild(0).gameObject.SetActive(false);
         }
         // open journal if closed
         else {
-            //print("Journal is now open");
             journalOpen = true;
             JournalManager.instance.OpenJournal();
-            button.image.sprite = exitSprite;
+            //button.image.sprite = exitSprite;
+            transform.GetChild(0).gameObject.SetActive(true);
         }
     }
 }

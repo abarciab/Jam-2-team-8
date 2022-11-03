@@ -11,16 +11,24 @@ public class CharacterInteract : MonoBehaviour
     [SerializeField] private Sprite fullBodySprite;
     private Button button;
 
-    private void OnEnable()
-    {
-        portraitSprite = RealityManager.instance.getCharacterPortraitByName(characterName);
-        fullBodySprite = RealityManager.instance.getCharacterFullBodyByName(characterName);
-        GetComponent<Image>().sprite = fullBodySprite;
-    }
 
     private void Start() {
         button = GetComponent<Button>();
         button.onClick.AddListener(openCharacter);
+    }
+
+    private void Update()
+    {
+        if (portraitSprite == null && RealityManager.instance != null) {
+            Initialize();
+        }
+    }
+
+    void Initialize()
+    {
+        portraitSprite = RealityManager.instance.getCharacterPortraitByName(characterName);
+        fullBodySprite = RealityManager.instance.getCharacterFullBodyByName(characterName);
+        GetComponent<Image>().sprite = fullBodySprite;
     }
 
     private void openCharacter() {

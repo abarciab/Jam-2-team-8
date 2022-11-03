@@ -38,7 +38,7 @@ public class DialogueBase : MonoBehaviour
         finished = false;
         for(int i = 0; i < line.text.Length; ++i) {
             textHolder.text += line.text[i];
-            AudioManager.instance.PlayGlobal(line.soundID, 1, false);
+            AudioManager.instance.PlayGlobal(line.soundID, 1, restart:false);
             yield return new WaitForSeconds(line.scrollDelay);
         }
 
