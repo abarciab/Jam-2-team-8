@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -20,6 +21,10 @@ public class DialogueLog : MonoBehaviour
     public GameObject personSelector;
     public GameObject contentGridPersonSelector;
 
+    [Header("questions")]
+    public string alibiQuestion;
+    public string relationshipQuestion;
+
     [Header("misc")]
     public string currentlySelectedCharacter;
     public int currentPage;         //this is a counter for page flips, not for actual pages. so left side + right side is all page 0.
@@ -34,6 +39,8 @@ public class DialogueLog : MonoBehaviour
     public int currentPageIndexCount;
     Dictionary<int, int> pagesToIndex = new Dictionary<int, int>();
     //public int previousPageIndexCount;
+
+    public static Action onDialogueLineAdded;
 
     [Header("testing")]
     public bool testCreateText;
@@ -73,9 +80,11 @@ public class DialogueLog : MonoBehaviour
             }
         }
         personSelector.SetActive(true);
-        //CreateText(characterLines[0]);
         previousPageButton.SetActive(false);
         nextPageButton.SetActive(false);
+        print("enanbled");
+        clearLeftPage();
+        clearRightPage();
     }
 
     public void SelectPerson(string name)
@@ -203,6 +212,7 @@ public class DialogueLog : MonoBehaviour
 
     public void RecordDialogue(string dialogueType, CharacterDialogueData character)
     {
+        print("added dialog");
         switch (dialogueType) {
             case "alibi":
                 JournalManager.instance.dialogueLog.RecordDialogue(character.alibi, character.characterName, alibi: true);
@@ -223,8 +233,49 @@ public class DialogueLog : MonoBehaviour
     public void RecordDialogue(DialogueLineData line, string speaker, bool alibi = false, bool relationship = false, string evidence = null)
     {
         var newRecordedLine = new RecordedLines();
+        foreach (var _speaker in characterLines) {
+            if (_speaker.speaker == speaker) {
+                
+                for (int i = 0; i < _speaker.lines.Count; i++) {
+                    if (_speaker.lines[i].question == alibiQuestion && alibi) {
+                        _speaker.lines.RemoveAt(i);
+                        break;
+                    }
+                    else if (_speaker.lines[i].question == relationshipQuestion && relationship) {
+                        _speaker.lines.RemoveAt(i);
+                        break;
+                    }
+                    else if (!string.IsNullOrEmpty(evidence) && _speaker.lines[i].question.Contains(evidence)) {
+                        _speaker.lines.RemoveAt(i);
+                        break;
+                    }
+                }
+                newRecordedLine = _speaker;
+            }
+        }
+
+
         newRecordedLine.speaker = speaker;
-        
+        RecordedLines.lineDetails newLine = new RecordedLines.lineDetails();
+        if (alibi) {
+            newLine.question = alibiQuestion;
+        }
+        else if (relationship) {
+            newLine.question = relationshipQuestion;
+        }
+        else if (!string.IsNullOrEmpty(evidence)) {
+            newLine.question = "I " + "[VERB] " + speaker  + " ARTICLE " + evidence;
+        }
+        newLine.line = line.text;
+        newRecordedLine.lines.Add(newLine);
+
+        for (int i = 0; i < characterLines.Count; i++) {
+            if (characterLines[i].speaker == speaker) {
+                characterLines[i] = newRecordedLine;
+                return;
+            }
+        }
+        characterLines.Add(newRecordedLine);
     }
 
 }

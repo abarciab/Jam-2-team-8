@@ -1253,10 +1253,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c06f87370cc04246ae9c9288151f546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JSONDialogueFilePath: Assets/Aidan/JSON/test.json
-  JSONCardDataFilePath: Assets/Aidan/JSON/card.json
-  JSONAccusationDataFilePath: Assets/Aidan/JSON/accusations.json
-  JSONEvidenceDataFilePath: Assets/Aidan/JSON/evidence.json
+  JSONDialogueFilePath: Assets/Final/JSON/test.json
+  JSONCardDataFilePath: Assets/Final/JSON/card.json
+  JSONAccusationDataFilePath: Assets/Final/JSON/accusations.json
+  JSONEvidenceDataFilePath: Assets/Final/JSON/evidence.json
   storyData:
   - name: core reality
     characters:

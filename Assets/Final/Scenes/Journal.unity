@@ -11188,6 +11188,8 @@ MonoBehaviour:
   previousPageButton: {fileID: 1815223109}
   personSelector: {fileID: 698346121}
   contentGridPersonSelector: {fileID: 1328107370}
+  alibiQuestion: Where were you when the victim was killed?
+  relationshipQuestion: How did you know Garrett Gold?
   currentlySelectedCharacter: 
   currentPage: 0
   currentTotalPrefferedHeight: 0
@@ -11197,70 +11199,7 @@ MonoBehaviour:
   currentIndex: 0
   currentPageIndexCount: 0
   testCreateText: 0
-  characterLines:
-  - speaker: john
-    lines:
-    - question: question 3
-      line: 'answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 answer
-        3 answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 answer 3
-        answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 answer
-        3 answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 answer 3
-        answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 answer
-        3 answer 3 answer 3 answer 3 answer 3 answer 3 answer 3 '
-    - question: question 0
-      line: answer 0
-    - question: question 1
-      line: answer 1
-    - question: question 2
-      line: answer 2
-    - question: question 4
-      line: answer 4
-    - question: question 5
-      line: answer 5
-    - question: question 6
-      line: answer 6
-    - question: question 7
-      line: answer 7
-    - question: question 8
-      line: answer 8
-    - question: question 9
-      line: answer 9
-    - question: question 10
-      line: answer 10
-    - question: question 10
-      line: answer 10
-    - question: question 10
-      line: answer 10
-    - question: question 10
-      line: answer 10
-    - question: question 10
-      line: answer 10
-    - question: question 10
-      line: answer 10
-    - question: question 10 8
-      line: answer 10
-    - question: question 10 7
-      line: answer 10
-    - question: question 10 6
-      line: answer 10
-    - question: question 10 5
-      line: answer 10
-    - question: question 10 4
-      line: answer 10
-    - question: question 10 3
-      line: answer 10
-    - question: question 10 2
-      line: answer 10
-    - question: question 10 1
-      line: answer 10
-  - speaker: sam
-    lines:
-    - question: who are you?
-      line: I'm Sam! how's it going???
-  - speaker: sarah
-    lines:
-    - question: yoyoyo I hear that you're Sarah!
-      line: yep, that's me!
+  characterLines: []
 --- !u!1 &1678277152
 GameObject:
   m_ObjectHideFlags: 0

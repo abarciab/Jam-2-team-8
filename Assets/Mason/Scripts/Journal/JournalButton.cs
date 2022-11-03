@@ -19,14 +19,14 @@ public class JournalButton : MonoBehaviour
     private void toggleJournal() {
         // close journal if open
         if(journalOpen) {
-            print("Journal is now closed");
+            //print("Journal is now closed");
             journalOpen = false;
             JournalManager.instance.CloseJournal();
             button.image.sprite = journalSprite;
         }
         // open journal if closed
         else {
-            print("Journal is now open");
+            //print("Journal is now open");
             journalOpen = true;
             JournalManager.instance.OpenJournal();
             button.image.sprite = exitSprite;

@@ -120,7 +120,7 @@ public class RealityManager : MonoBehaviour
                 return character.pronoun;
             }
         }
-        print("no characters found with that name: " + characterName);
+        //print("no characters found with that name: " + characterName);
         return null;
     }
 
@@ -146,7 +146,7 @@ public class RealityManager : MonoBehaviour
     //use this function to get all the lines for a certain character in a certain reality. if that character isn't present in the current reality, it returns that character from the base reality
     public CharacterDialogueData getCharacterDialogue(string characterName, RealityData realityToCheck = null)
     {
-        print("trying to get data for character: " + characterName);
+        //print("trying to get data for character: " + characterName);
         bool showDebugInfo = true;
 
         if (currentReality == default) { InitializeReality();  }
@@ -165,11 +165,11 @@ public class RealityManager : MonoBehaviour
         }
         else if (matches.Count > 1) {
             if (showDebugInfo) {
-                print("found multiple matches: ");
+                //print("found multiple matches: ");
                 foreach (var match in matches) {
-                    print(match.characterName + ": " + match.variant);
+                    //print(match.characterName + ": " + match.variant);
                 }
-                print("\n");
+                //print("\n");
             }
 
             bool variantSelected = false;
