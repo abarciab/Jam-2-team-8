@@ -82,7 +82,7 @@ public class DialogueLog : MonoBehaviour
         personSelector.SetActive(true);
         previousPageButton.SetActive(false);
         nextPageButton.SetActive(false);
-        print("enanbled");
+        //print("enanbled");
         clearLeftPage();
         clearRightPage();
     }
@@ -212,7 +212,7 @@ public class DialogueLog : MonoBehaviour
 
     public void RecordDialogue(string dialogueType, CharacterDialogueData character)
     {
-        print("added dialog");
+        //print("added dialog");
         switch (dialogueType) {
             case "alibi":
                 JournalManager.instance.dialogueLog.RecordDialogue(character.alibi, character.characterName, alibi: true);

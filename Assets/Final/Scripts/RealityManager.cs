@@ -197,11 +197,11 @@ public class RealityManager : MonoBehaviour
             return null;
         }
         else if (realityToCheck != baseReality) {
-            print("does this ever happen?");
+            //print("does this ever happen?");
             return getCharacterDialogue(characterName, baseReality);
         }
         else {
-            print("character dialogue was requested, but there's no one by that name: " + characterName);
+            //print("character dialogue was requested, but there's no one by that name: " + characterName);
             return null;
         }
     }
@@ -459,12 +459,14 @@ public class RealityManager : MonoBehaviour
             //if there's a current variant that exists that has a conflict with a variant that this card would introduce, it's not valid
             foreach (var _character in allCharacters) {
                 CharacterDialogueData characterData = getCharacterDialogue(_character.characterName);
-                foreach (var conflict in characterData.conflicts) {
-                    foreach (var effect in effectUnderConsideration.characterEffects) {
-                        if (conflict.character == effect.characterName && conflict.variant == effect.variant) {
-                            if (displayDebugInfo)
-                                print("invalided card case 3: " + cardData.cardName);
-                            invalidCards.Add(cardData);
+                if (characterData != null) {
+                    foreach (var conflict in characterData.conflicts) {
+                        foreach (var effect in effectUnderConsideration.characterEffects) {
+                            if (conflict.character == effect.characterName && conflict.variant == effect.variant) {
+                                if (displayDebugInfo)
+                                    print("invalided card case 3: " + cardData.cardName);
+                                invalidCards.Add(cardData);
+                            }
                         }
                     }
                 }

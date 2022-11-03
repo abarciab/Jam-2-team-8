@@ -9,6 +9,7 @@ public class cardDrawInterface : MonoBehaviour
     public Button drawCardButton;
     public GameObject cardParent;
     public Image cardFront;
+    string currentCharacter;
 
     public void DrawCard()
     {
@@ -25,12 +26,19 @@ public class cardDrawInterface : MonoBehaviour
 
     private void Update()
     {
-        if (string.IsNullOrEmpty(CharacterResponseManager.instance.currentCharacterName) || RealityManager.instance.CardsAvalible(CharacterResponseManager.instance.currentCharacterName)) {
-            drawCardButton.enabled = false;
+        if (string.IsNullOrEmpty(CharacterResponseManager.instance.currentCharacterName) || CharacterResponseManager.instance.currentCharacterName != currentCharacter) {
+            currentCharacter = CharacterResponseManager.instance.currentCharacterName;
+
+            if (string.IsNullOrEmpty(CharacterResponseManager.instance.currentCharacterName) || RealityManager.instance.CardsAvalible(CharacterResponseManager.instance.currentCharacterName)) {
+                drawCardButton.enabled = false;
+            }
+            else {
+                drawCardButton.enabled = true;
+            }
+
+
         }
-        else {
-            drawCardButton.enabled = true;
-        }
+        
     }
 
 }
