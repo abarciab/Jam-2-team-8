@@ -8,7 +8,15 @@ public class CharacterInteract : MonoBehaviour
     public string characterName;
     [SerializeField] private string characterGreeting;
     [SerializeField] private Sprite portraitSprite;
+    [SerializeField] private Sprite fullBodySprite;
     private Button button;
+
+    private void OnEnable()
+    {
+        portraitSprite = RealityManager.instance.getCharacterPortraitByName(characterName);
+        fullBodySprite = RealityManager.instance.getCharacterFullBodyByName(characterName);
+        GetComponent<Image>().sprite = fullBodySprite;
+    }
 
     private void Start() {
         button = GetComponent<Button>();

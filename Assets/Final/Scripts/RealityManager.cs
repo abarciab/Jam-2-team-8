@@ -110,6 +110,9 @@ public class RealityManager : MonoBehaviour
                 return character.characterPortrait;
             }
         }
+        if (getCharacterPortraitByName("unknown") != null) {
+            return getCharacterPortraitByName("unknown");
+        }
         return null;
     }
 
@@ -119,6 +122,9 @@ public class RealityManager : MonoBehaviour
             if (character.characterName == characterName) {
                 return character.characterFullBody;
             }
+        }
+        if (getCharacterFullBodyByName("unknown") != null) {
+            return getCharacterFullBodyByName("unknown");
         }
         return null;
     }

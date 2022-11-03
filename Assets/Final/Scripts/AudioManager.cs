@@ -60,6 +60,11 @@ public class AudioManager : MonoBehaviour
         PlayHere(soundID, global, volume, restart);
     }
 
+    public void PlayMusic(int soundID, float volume = -1, bool restart = false)      //play given sound from global audiosource
+    {
+        PlayHere(soundID, music, volume, restart);
+    }
+
     public void PlayHere(int soundID, AudioSource source, float volume = -1, bool restart = false)      //play given sound from given audiosource
     {
         Sound toPlay = getSoundFromID(soundID);
