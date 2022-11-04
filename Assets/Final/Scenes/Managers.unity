@@ -3218,18 +3218,6 @@ MonoBehaviour:
       - core reality
   activeVariants: []
   allCharacters:
-  - characterName: john
-    characterPortrait: {fileID: 21300000, guid: bbc2087cbf38c9841a8d5da321d8cb76, type: 3}
-    characterFullBody: {fileID: 0}
-    pronoun: he
-  - characterName: sam
-    characterPortrait: {fileID: 21300000, guid: 0fd6ba8385ae29247b537baae8a849c9, type: 3}
-    characterFullBody: {fileID: 0}
-    pronoun: he
-  - characterName: sarah
-    characterPortrait: {fileID: 21300000, guid: 9179735080e5c6e43827d014f4980097, type: 3}
-    characterFullBody: {fileID: 0}
-    pronoun: she
   - characterName: denise gold
     characterPortrait: {fileID: 21300000, guid: bb20df529bf3aa14aa3404be715a1e31, type: 3}
     characterFullBody: {fileID: 21300000, guid: a91f011896902cc42a2e1cac426e987d, type: 3}
@@ -3251,8 +3239,8 @@ MonoBehaviour:
     characterFullBody: {fileID: 21300000, guid: 440ca84846595ee4982ece0c995de981, type: 3}
     pronoun: he
   - characterName: alexander norman
-    characterPortrait: {fileID: 0}
-    characterFullBody: {fileID: 0}
+    characterPortrait: {fileID: 21300000, guid: 2a7638b59ddae984da8775bab2d80fbe, type: 3}
+    characterFullBody: {fileID: 21300000, guid: 65cf7c99074439d48813b2670fc20636, type: 3}
     pronoun: he
   - characterName: lawrence edgar
     characterPortrait: {fileID: 0}
@@ -3262,79 +3250,93 @@ MonoBehaviour:
     characterPortrait: {fileID: 0}
     characterFullBody: {fileID: 0}
     pronoun: he
-  - characterName: 'nathan colt '
-    characterPortrait: {fileID: 0}
-    characterFullBody: {fileID: 0}
-    pronoun: he
-  - characterName: joseph stewart
-    characterPortrait: {fileID: 0}
-    characterFullBody: {fileID: 0}
-    pronoun: he
-  - characterName: melissa bailey
-    characterPortrait: {fileID: 0}
-    characterFullBody: {fileID: 0}
-    pronoun: he
   - characterName: kevin shepherd
-    characterPortrait: {fileID: 0}
-    characterFullBody: {fileID: 0}
+    characterPortrait: {fileID: 21300000, guid: 794c3cdbb5a6e3e4c9adf526da58414f, type: 3}
+    characterFullBody: {fileID: 21300000, guid: 2f98de1f3cc24674b9d1811f236927fd, type: 3}
     pronoun: he
   - characterName: unknown
     characterPortrait: {fileID: 21300000, guid: 91f57bb72d0d41349956c16271463c30, type: 3}
     characterFullBody: {fileID: 21300000, guid: 8c5c9dfe6b4039d4aa23f991dd30fd3b, type: 3}
     pronoun: '{THEY}'
+  - characterName: 'nathan colt '
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
   allCards:
+  - cardName: The Basilisk
+    cardEffects:
+    - recipient: denise
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: denise
+        variant: BASILISK
+    - recipient: nathan
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: nathan
+        variant: BASILISK
+  - cardName: The Vengeance
+    cardEffects:
+    - recipient: roy
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: roy
+        variant: VENGEANCE
+    - recipient: kevin
+      variant: 
+      reality: revenge reality
+      characterEffects: []
+  - cardName: The Scoundrel
+    cardEffects:
+    - recipient: alexander
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: alexander
+        variant: SCOUNDREL
+    - recipient: roy
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: roy
+        variant: SCOUNDREL
+  - cardName: The Accomplice
+    cardEffects:
+    - recipient: kevin
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: kevin
+        variant: ACCOMPLICE
+    - recipient: joseph
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: joseph
+        variant: ACCOMPLICE
   - cardName: The Lovers
     cardEffects:
-    - recipient: john
+    - recipient: melissa
       variant: 
-      reality: john married to sarah
-      characterEffects:
-      - characterName: sam
-        variant: JELOUS
-    - recipient: john
-      variant: SICK
-      reality: 
-      characterEffects:
-      - characterName: john
-        variant: ANGRY
-      - characterName: sam
-        variant: GREEDY
-    - recipient: sam
-      variant: 
-      reality: 
-      characterEffects:
-      - characterName: sam
-        variant: LOVERS
-      - characterName: john
-        variant: SAD
-    - recipient: sarah
-      variant: ANY
-      reality: sarah having affair
+      reality: affair reality
       characterEffects: []
-  - cardName: The Emperor
-    cardEffects:
-    - recipient: john
+    - recipient: kevin
       variant: 
       reality: 
       characterEffects:
-      - characterName: john
-        variant: ANGRY
-  - cardName: The Tower
+      - characterName: kevin
+        variant: LOVERS
+  - cardName: The Thief
     cardEffects:
-    - recipient: sam
+    - recipient: nathan
       variant: 
       reality: 
       characterEffects:
-      - characterName: sam
-        variant: WORKER
-      - characterName: john
-        variant: DISTRACTED
-    - recipient: sam
-      variant: LOVERS
-      reality: 
-      characterEffects:
-      - characterName: sam
-        variant: SAD
+      - characterName: nathan
+        variant: THIEF
   cardHistory: []
   cards:
   - cardName: The Lovers
@@ -3395,7 +3397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JSONDialogueFilePath: Assets/Final/JSON/dialogue.json
-  JSONCardDataFilePath: Assets/Final/JSON/card.json
+  JSONCardDataFilePath: Assets/Final/JSON/cards.json
   JSONAccusationDataFilePath: Assets/Final/JSON/accusations.json
   JSONEvidenceDataFilePath: Assets/Final/JSON/evidence.json
   storyData:
@@ -4420,58 +4422,80 @@ MonoBehaviour:
       validRealities:
       - core reality
   cardData:
+  - cardName: The Basilisk
+    cardEffects:
+    - recipient: denise
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: denise
+        variant: BASILISK
+    - recipient: nathan
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: nathan
+        variant: BASILISK
+  - cardName: The Vengeance
+    cardEffects:
+    - recipient: roy
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: roy
+        variant: VENGEANCE
+    - recipient: kevin
+      variant: 
+      reality: revenge reality
+      characterEffects: []
+  - cardName: The Scoundrel
+    cardEffects:
+    - recipient: alexander
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: alexander
+        variant: SCOUNDREL
+    - recipient: roy
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: roy
+        variant: SCOUNDREL
+  - cardName: The Accomplice
+    cardEffects:
+    - recipient: kevin
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: kevin
+        variant: ACCOMPLICE
+    - recipient: joseph
+      variant: 
+      reality: 
+      characterEffects:
+      - characterName: joseph
+        variant: ACCOMPLICE
   - cardName: The Lovers
     cardEffects:
-    - recipient: john
+    - recipient: melissa
       variant: 
-      reality: john married to sarah
-      characterEffects:
-      - characterName: sam
-        variant: JELOUS
-    - recipient: john
-      variant: SICK
-      reality: 
-      characterEffects:
-      - characterName: john
-        variant: ANGRY
-      - characterName: sam
-        variant: GREEDY
-    - recipient: sam
-      variant: 
-      reality: 
-      characterEffects:
-      - characterName: sam
-        variant: LOVERS
-      - characterName: john
-        variant: SAD
-    - recipient: sarah
-      variant: ANY
-      reality: sarah having affair
+      reality: affair reality
       characterEffects: []
-  - cardName: The Emperor
-    cardEffects:
-    - recipient: john
+    - recipient: kevin
       variant: 
       reality: 
       characterEffects:
-      - characterName: john
-        variant: ANGRY
-  - cardName: The Tower
+      - characterName: kevin
+        variant: LOVERS
+  - cardName: The Thief
     cardEffects:
-    - recipient: sam
+    - recipient: nathan
       variant: 
       reality: 
       characterEffects:
-      - characterName: sam
-        variant: WORKER
-      - characterName: john
-        variant: DISTRACTED
-    - recipient: sam
-      variant: LOVERS
-      reality: 
-      characterEffects:
-      - characterName: sam
-        variant: SAD
+      - characterName: nathan
+        variant: THIEF
   evidenceData:
   - name: GUN USED TO KILL JOE
     displayName: Pistol

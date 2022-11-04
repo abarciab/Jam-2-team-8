@@ -1,0 +1,50 @@
+{
+    "The Basilisk" : {
+        "denise" : {
+            "denise" : "basilisk"
+        },
+        "nathan" : {
+            "nathan" : "basilisk"
+        }
+    },
+    "The Vengeance" : {
+        "roy" : {
+            "roy" : "vengeance"
+        },
+        "kevin" : {
+            "reality" : "revenge reality"
+        }
+    },
+    "The Scoundrel" : {
+        "alexander" : {
+            "alexander" : "scoundrel"
+        },
+        "roy" : {
+            "roy" : "scoundrel"
+        }
+    },
+    "The Accomplice" : {
+        "kevin" : {
+            "kevin" : "accomplice"
+        },
+        "joseph" : {
+            "joseph" : "accomplice"
+        }
+    },
+    "The Lovers" : {
+        "melissa" : {
+            "reality" : "affair reality"
+        },
+        "kevin" : {
+            "kevin" : "lovers"
+        }
+    },
+    "The Thief" : {
+        "nathan" : {
+            "nathan" : "thief"
+        }
+    }
+}
+
+
+
