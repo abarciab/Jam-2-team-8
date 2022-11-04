@@ -7522,7 +7522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3465240451238414753, guid: 97a00ffe45a45bf4f9c7fcc6030e79e4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: kevin shepard
+      value: kevin shepherd
       objectReference: {fileID: 0}
     - target: {fileID: 3465240451238414766, guid: 97a00ffe45a45bf4f9c7fcc6030e79e4, type: 3}
       propertyPath: m_Pivot.x
@@ -7610,7 +7610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3465240451238414767, guid: 97a00ffe45a45bf4f9c7fcc6030e79e4, type: 3}
       propertyPath: m_Name
-      value: kevin shepard
+      value: kevin shepherd
       objectReference: {fileID: 0}
     - target: {fileID: 3465240451929197234, guid: 97a00ffe45a45bf4f9c7fcc6030e79e4, type: 3}
       propertyPath: m_Sprite
