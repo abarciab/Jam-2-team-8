@@ -10353,6 +10353,7 @@ MonoBehaviour:
   cam: {fileID: 2053012406}
   transitioning: 0
   setNewRoom: 0
+  journalButton: {fileID: 30018438}
 --- !u!212 &1939576046
 SpriteRenderer:
   m_ObjectHideFlags: 0

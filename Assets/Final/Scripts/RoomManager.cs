@@ -23,6 +23,7 @@ public class RoomManager : MonoBehaviour
     public Camera cam;
     public bool transitioning = false;
     public bool setNewRoom = false;
+    public Transform journalButton;
     private SpriteRenderer sprRenderer;
 
     private void Awake()
@@ -104,6 +105,10 @@ public class RoomManager : MonoBehaviour
         if (newRoom.background == null) { return; }
         fitSpriteToScreen(newRoom.background);
         currentRoomName = newRoom.name;
+    }
+
+    public void resetJournalButton() {
+        journalButton.GetComponent<JournalButton>().toggleJournal();
     }
 
     public Room getRoomByName(string roomName) {

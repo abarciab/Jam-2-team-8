@@ -16,7 +16,7 @@ public class JournalButton : MonoBehaviour
         button.onClick.AddListener(toggleJournal);
     }
 
-    private void toggleJournal() {
+    public void toggleJournal() {
         // close journal if open
         if(journalOpen) {
             //print("Journal is now closed");
