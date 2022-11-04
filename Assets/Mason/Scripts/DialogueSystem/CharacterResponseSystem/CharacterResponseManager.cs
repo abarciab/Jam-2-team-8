@@ -60,11 +60,14 @@ public class CharacterResponseManager : MonoBehaviour
         else {
             bool found = false;
             foreach(EvidenceResponseData response in character.evidenceResponses) {
-                if(response.item == dialogueType) {
+                if(response.item.ToUpper() == dialogueType.ToUpper()) {
                     text = response.line.text;
                     evidenceGained = response.line.evidenceGained;
                     found = true;
                     break;
+                }
+                else {
+                    print(response.item.ToUpper() + " != " + dialogueType.ToUpper());
                 }
             }
             if(!found) {

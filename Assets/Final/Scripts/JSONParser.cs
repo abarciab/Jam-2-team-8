@@ -403,7 +403,7 @@ public class JSONParser : MonoBehaviour
                         string evidenceGained = GetSubstringByString("{", "}", newLine.truth);
                         if (evidenceGained.Length > 0) {
                             newLine.truth = newLine.truth.Replace("{" + evidenceGained + "}", "");
-                            newLine.evidenceGained = evidenceGained;
+                            newLine.evidenceGained = evidenceGained.ToUpper();
                         }
                     }
 
@@ -435,7 +435,7 @@ public class JSONParser : MonoBehaviour
                     string _evidenceGained = GetSubstringByString("{", "}", line.Value);
                     if (_evidenceGained.Length > 0) {
                         newLine.text = newLine.text.Replace("{" + _evidenceGained + "}", "");
-                        newLine.evidenceGained = _evidenceGained;
+                        newLine.evidenceGained = _evidenceGained.ToUpper();
                     }
 
                     //sort the data into the correct place

@@ -3417,7 +3417,7 @@ MonoBehaviour:
       relationship:
         text: Garrett was my husband. That's it.
         lie: 0
-        evidenceGained: garrett's marriage
+        evidenceGained: GARRETT'S MARRIAGE
         requiredEvidence: 
         truth: 
       evidenceResponses:
@@ -3426,7 +3426,7 @@ MonoBehaviour:
           text: Don't stick your nose in my affairs. I know, go ask Melissa how she
             killed Garrett. I know she did it.
           lie: 0
-          evidenceGained: denise accuses melissa
+          evidenceGained: DENISE ACCUSES MELISSA
           requiredEvidence: 
           truth: 
       - item: roy calls garrett by first name
@@ -3470,7 +3470,7 @@ MonoBehaviour:
           text: He should've gotten rid of that thing. I know, go ask Alexander how
             he feels being the previous owner of the murder weapon.
           lie: 0
-          evidenceGained: denise accuses alexander
+          evidenceGained: DENISE ACCUSES ALEXANDER
           requiredEvidence: 
           truth: 
       validRealities:
@@ -3502,7 +3502,7 @@ MonoBehaviour:
           text: Melissa destroyed everything. Go ask her how she killed Garrett,
             who else would?
           lie: 0
-          evidenceGained: denise accuses melissa
+          evidenceGained: DENISE ACCUSES MELISSA
           requiredEvidence: 
           truth: 
       - item: roy calls garrett by first name
@@ -3526,7 +3526,7 @@ MonoBehaviour:
           text: ' Detective, don''t listen to them, listen to me. I saw Melissa chase
             after Garrett. I know she wanted to kill him.'
           lie: 1
-          evidenceGained: melissa chased garrett
+          evidenceGained: MELISSA CHASED GARRETT
           requiredEvidence: melissa did not chase garrett
           truth: Fine, listen to them. It's true, I didn't see Melissa leave the
             party. But you want to make the mistake of trusting the witch and her
@@ -3550,7 +3550,7 @@ MonoBehaviour:
         line:
           text: This thing. Go ask Alexander about the blood on his hands.
           lie: 0
-          evidenceGained: denise accuses alexander
+          evidenceGained: DENISE ACCUSES ALEXANDER
           requiredEvidence: 
           truth: 
       validRealities:
@@ -3574,7 +3574,7 @@ MonoBehaviour:
       relationship:
         text: Garrett was my father.
         lie: 0
-        evidenceGained: roy calls garrett by first name
+        evidenceGained: ROY CALLS GARRETT BY FIRST NAME
         requiredEvidence: 
         truth: 
       evidenceResponses:
@@ -3650,7 +3650,7 @@ MonoBehaviour:
       relationship:
         text: 'Garrett was my father. '
         lie: 0
-        evidenceGained: roy calls garrett by first name
+        evidenceGained: ROY CALLS GARRETT BY FIRST NAME
         requiredEvidence: 
         truth: 
       evidenceResponses:
@@ -3783,7 +3783,7 @@ MonoBehaviour:
       alibi:
         text: I arrived early to the party, first guest to grace the ballroom floor!
         lie: 1
-        evidenceGained: alexander was early
+        evidenceGained: ALEXANDER WAS EARLY
         requiredEvidence: alexander was late
         truth: I can hear them stifling their laughter! Let it be known that I was
           late to the party, but only because the devil of traffic would not let
@@ -3857,7 +3857,7 @@ MonoBehaviour:
           that reporter nosing around. He ruined the mood, so I called the guards
           to throw that trash out! If anyone killed my best friend, it was him.
         lie: 1
-        evidenceGained: lawrence accuses nathan
+        evidenceGained: LAWRENCE ACCUSES NATHAN
         requiredEvidence: roy accuses lawrence
         truth: My greatest apologies, Detective. I did spend some time alone with
           Garrett during the party to talk business, to take his company to the next
@@ -3877,7 +3877,7 @@ MonoBehaviour:
             son. Hates his dad, wouldn't miss seeing him gone. Probably wanted his
             inheritance early.
           lie: 1
-          evidenceGained: lawrence accuses roy
+          evidenceGained: LAWRENCE ACCUSES ROY
           requiredEvidence: lawrence's documents
           truth: That's impossible, how did you find those! I thought I got rid of
             them!
@@ -3886,7 +3886,7 @@ MonoBehaviour:
           text: He went to his office. Hey, I bet that gardener jumped into his office
             through an open window.
           lie: 0
-          evidenceGained: kevin jumped down
+          evidenceGained: KEVIN JUMPED DOWN
           requiredEvidence: 
           truth: 
       - item: kevin did not jump down
@@ -3925,7 +3925,7 @@ MonoBehaviour:
           text: This thing's expensive. I've never seen it before in my life! I couldn't
             stand to get blood on my hands.
           lie: 1
-          evidenceGained: lawrence threw away his gloves
+          evidenceGained: LAWRENCE THREW AWAY HIS GLOVES
           requiredEvidence: lawrence's gloves
           truth: How did you find my gloves, I thought I got rid of them! That damn
             gardener didn't do his job right!
@@ -3951,7 +3951,7 @@ MonoBehaviour:
         text: I never knew him personally, but I heard rumors that he's a terrible
           person. Ask the others about that.
         lie: 0
-        evidenceGained: rumors about garrett
+        evidenceGained: RUMORS ABOUT GARRETT
         requiredEvidence: 
         truth: 
       evidenceResponses:
@@ -3991,7 +3991,7 @@ MonoBehaviour:
           text: This isn't the first murder I've seen, but this is a grisly one.
             I'm throwing a wild guess but maybe that gardener was involved.
           lie: 0
-          evidenceGained: nathan accuses kevin
+          evidenceGained: NATHAN ACCUSES KEVIN
           requiredEvidence: 
           truth: 
       - item: sword
@@ -4023,7 +4023,7 @@ MonoBehaviour:
         text: I never knew him, and I don't want to. He's a terrible person connected
           to terrible people, ask the others.
         lie: 0
-        evidenceGained: rumors about garrett
+        evidenceGained: RUMORS ABOUT GARRETT
         requiredEvidence: 
         truth: 
       evidenceResponses:
@@ -4031,7 +4031,7 @@ MonoBehaviour:
         line:
           text: He's right. Take a look at this.
           lie: 0
-          evidenceGained: lawrence's documents
+          evidenceGained: LAWRENCE'S DOCUMENTS
           requiredEvidence: 
           truth: 
       - item: kevin jumped down
@@ -4063,7 +4063,7 @@ MonoBehaviour:
           text: ...Detective, this is out of the blue, but I have a feeling that
             the gardener was involved.
           lie: 0
-          evidenceGained: nathan accuses kevin
+          evidenceGained: NATHAN ACCUSES KEVIN
           requiredEvidence: 
           truth: 
       - item: sword
@@ -4112,7 +4112,7 @@ MonoBehaviour:
           text: That vixen should keep her claws away from Melissa. Tell her to stop
             with these baseless accusations.
           lie: 0
-          evidenceGained: denise stand down
+          evidenceGained: DENISE STAND DOWN
           requiredEvidence: 
           truth: 
       - item: melissa chased garrett
@@ -4120,7 +4120,7 @@ MonoBehaviour:
           text: Outrageous! Melissa stayed at the party while I went looking for
             the master. That woman is overstepping her boundaries.
           lie: 0
-          evidenceGained: melissa did not chase garrett
+          evidenceGained: MELISSA DID NOT CHASE GARRETT
           requiredEvidence: 
           truth: 
       - item: kevin jumped down
@@ -4128,7 +4128,7 @@ MonoBehaviour:
           text: The window was sealed completely shut in the office when I found
             the master's body. Mr. Edgar will have to concoct another fantasy.
           lie: 0
-          evidenceGained: kevin did not jump down
+          evidenceGained: KEVIN DID NOT JUMP DOWN
           requiredEvidence: 
           truth: 
       - item: alexander was early
@@ -4178,7 +4178,7 @@ MonoBehaviour:
         text: I was at the party, serving food and drinks to all the guests. That's
           when I caught a glance of the master leaving the party.
         lie: 0
-        evidenceGained: garrett left the party
+        evidenceGained: GARRETT LEFT THE PARTY
         requiredEvidence: 
         truth: 
       relationship:
@@ -4289,7 +4289,7 @@ MonoBehaviour:
           text: Mr. Norman, early? If he tells you that he's early, that means that
             he's late. I saw him sneaking through the front door late into the party.
           lie: 0
-          evidenceGained: alexander was late
+          evidenceGained: ALEXANDER WAS LATE
           requiredEvidence: 
           truth: 
       - item: rumors about garrett
@@ -4345,7 +4345,7 @@ MonoBehaviour:
           text: Impossible, how did you know? Mr. Edgar promised me a suitcase of
             cash for burying his gloves. Here, I still have them.
           lie: 0
-          evidenceGained: lawrence's gloves
+          evidenceGained: LAWRENCE'S GLOVES
           requiredEvidence: 
           truth: 
       - item: rumors about garrett
