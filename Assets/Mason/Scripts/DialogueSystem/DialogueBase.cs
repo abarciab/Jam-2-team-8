@@ -34,12 +34,18 @@ public class DialogueBase : MonoBehaviour
         // reset text if line is a new line
         if(line.isNewLine)
             textHolder.text = "";
+        
+        int soundIdNum;
+        if(RealityManager.instance.getCharacterPronounByName(CharacterResponseManager.instance.currentCharacterName) == "he")
+            soundIdNum = 4;
+        else
+            soundIdNum = 5;
 
         // loop through each letter in text and add it to text
         finished = false;
         for(int i = 0; i < line.text.Length; ++i) {
             textHolder.text += line.text[i];
-            AudioManager.instance.PlayGlobal(line.soundID, 1, restart:false);
+            AudioManager.instance.PlayGlobal(soundIdNum, 1, restart:false);
             yield return new WaitForSeconds(line.scrollDelay);
         }
 

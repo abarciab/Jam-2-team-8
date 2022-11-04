@@ -7895,6 +7895,54 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     looping: 1
+  - name: maleSpeak
+    ID: 4
+    clip: {fileID: 8300000, guid: 0d6a30bf670441c4f8f2fe5ff7699a91, type: 3}
+    volume: 1
+    pitch: 1
+    looping: 0
+  - name: femaleSpeak
+    ID: 5
+    clip: {fileID: 8300000, guid: e84893466e5fdf94cadc9577f395236e, type: 3}
+    volume: 1
+    pitch: 1
+    looping: 0
+  - name: accusationSuccess
+    ID: 6
+    clip: {fileID: 8300000, guid: a0033205bc208cc44b93230ee6542ef5, type: 3}
+    volume: 1
+    pitch: 1
+    looping: 0
+  - name: accusationFail
+    ID: 7
+    clip: {fileID: 8300000, guid: 2f962f48e52eb674ab802a385149eee3, type: 3}
+    volume: 1
+    pitch: 1
+    looping: 0
+  - name: footsteps
+    ID: 8
+    clip: {fileID: 8300000, guid: f8d46e5dcda59ec4ea4924b6029e1b65, type: 3}
+    volume: 1
+    pitch: 1
+    looping: 0
+  - name: openJournal
+    ID: 9
+    clip: {fileID: 8300000, guid: dadc05318cd8e3846be9667c9f43fa07, type: 3}
+    volume: 1
+    pitch: 1
+    looping: 0
+  - name: turnPage
+    ID: 10
+    clip: {fileID: 8300000, guid: 20fb34f91d75ed44a8adcf50fa8fb859, type: 3}
+    volume: 1
+    pitch: 1
+    looping: 0
+  - name: whoosh
+    ID: 11
+    clip: {fileID: 8300000, guid: 205b28e5b6fbe0146b4610fd2986711c, type: 3}
+    volume: 1
+    pitch: 1
+    looping: 0
   music: {fileID: 2053012408}
   global: {fileID: 1335348939}
 --- !u!82 &1335348939
