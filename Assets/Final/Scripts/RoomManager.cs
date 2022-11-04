@@ -107,10 +107,6 @@ public class RoomManager : MonoBehaviour
         currentRoomName = newRoom.name;
     }
 
-    public void resetJournalButton() {
-        journalButton.GetComponent<JournalButton>().toggleJournal();
-    }
-
     public Room getRoomByName(string roomName) {
         foreach(Room room in rooms) {
             if(room.name == roomName)
@@ -132,43 +128,11 @@ public class RoomManager : MonoBehaviour
         // when fade is done, set new room
         yield return new WaitUntil(() => setNewRoom == true);
         setNewRoom = false;
+        //print("so what about here?");
         setRoom(roomName);
     }
 
-    public void goOutside() {
-        setRoom("outside");
-    }
-    public void goHallway() {
-        setRoom("hallway");
-    }
-    public void goBallroom() {
-        setRoom("ballroom");
-    }
-    public void goOffice() {
-        setRoom("office");
-    }
-    public void goSecurity() {
-        setRoom("security");
-    }
-
-    private void Update() {
-        if(!transitioning) {
-            if(Input.GetKeyDown(KeyCode.Alpha1)) {
-                StartCoroutine(startRoomTransition("outside"));
-            }
-            if(Input.GetKeyDown(KeyCode.Alpha2)) {
-                StartCoroutine(startRoomTransition("hallway"));
-            }
-            if(Input.GetKeyDown(KeyCode.Alpha3)) {
-                StartCoroutine(startRoomTransition("ballroom"));
-            }
-            if(Input.GetKeyDown(KeyCode.Alpha4)) {
-                StartCoroutine(startRoomTransition("office"));
-            }
-            if(Input.GetKeyDown(KeyCode.Alpha5)) {
-                StartCoroutine(startRoomTransition("security"));
-            }
-        }
-        
+    public void transitionCoroutine(string roomName) {
+        StartCoroutine(startRoomTransition(roomName));
     }
 }
