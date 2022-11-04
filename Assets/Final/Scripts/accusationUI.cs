@@ -205,9 +205,11 @@ public class accusationUI : MonoBehaviour
     {
         closePages();
         if (correctAccusation()) {
+            AudioManager.instance.PlayGlobal(6, 1, false);
             accusationSucsessPage.SetActive(true);
         }
         else {
+            AudioManager.instance.PlayGlobal(7, 1, false);
             accusationFailurePage.SetActive(true);
         }
     }
