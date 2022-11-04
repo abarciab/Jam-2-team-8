@@ -68,8 +68,10 @@ public class RoomManager : MonoBehaviour
             // if activating evidence
             if(active == true){
                 // activate if pickup should be in the room and is not already collected
-                if(evidenceNames.Contains(pickup.evidenceName) && !pickup.collected)
+                if(evidenceNames.Contains(pickup.evidenceName) && !pickup.collected && 
+                   pickup.allowedRealities.Contains(RealityManager.instance.currentReality.name))
                     child.gameObject.SetActive(true);
+                print(RealityManager.instance.currentReality.name);
             }
             // if deactivating evidence
             else {

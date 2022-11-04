@@ -5,6 +5,7 @@ using UnityEngine;
 public class EvidencePickup : MonoBehaviour
 {
     public string evidenceName;
+    public List<string> allowedRealities;
     public bool collected { get; private set;}
 
     private void Awake() {

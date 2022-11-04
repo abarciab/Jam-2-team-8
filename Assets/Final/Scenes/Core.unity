@@ -9845,6 +9845,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidenceName: GUN USED TO KILL JOE
+  allowedRealities:
+  - core reality
 --- !u!114 &1890154882
 MonoBehaviour:
   m_ObjectHideFlags: 0
