@@ -3375,7 +3375,7 @@ GameObject:
   - component: {fileID: 606033979}
   m_Layer: 5
   m_Name: card
-  m_TagString: Untagged
+  m_TagString: card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4227,7 +4227,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1269822095}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7986,8 +7986,8 @@ RectTransform:
   - {fileID: 1543881912}
   - {fileID: 455802437}
   - {fileID: 606033977}
-  - {fileID: 739792104}
   - {fileID: 2014736632}
+  - {fileID: 739792104}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12989,7 +12989,7 @@ GameObject:
   - component: {fileID: 2014736633}
   m_Layer: 5
   m_Name: cardHolder
-  m_TagString: lying
+  m_TagString: card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13012,7 +13012,7 @@ RectTransform:
   - {fileID: 343847637}
   - {fileID: 1399549478}
   m_Father: {fileID: 1269822095}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
