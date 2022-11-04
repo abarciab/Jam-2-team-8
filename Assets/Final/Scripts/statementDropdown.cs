@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class StatementDropdown : MonoBehaviour
+public class statementDropdown : MonoBehaviour
 {
     private TMP_Dropdown menu;
     public List<string> dialogueTypes { get; private set; }

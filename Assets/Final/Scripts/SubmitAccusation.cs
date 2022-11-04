@@ -11,7 +11,7 @@ public class SubmitAccusation : MonoBehaviour
     public void submit() {
         // if "[Select Statement]" and "[Select Evidence]" is not selected
         if(statementMenu.value != 0 && evidenceMenu.value != 0) {
-            StatementDropdown sDropdown = statementMenu.GetComponent<StatementDropdown>();
+            statementDropdown sDropdown = statementMenu.GetComponent<statementDropdown>();
             EvidenceDropdown eDropdown = evidenceMenu.GetComponent<EvidenceDropdown>();
 
             // if statement is a lie and evidence is evidence required
