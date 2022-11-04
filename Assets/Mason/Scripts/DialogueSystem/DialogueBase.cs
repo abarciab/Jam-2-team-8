@@ -7,6 +7,7 @@ public class DialogueBase : MonoBehaviour
 {
     public static DialogueBase instance;
     public bool finished { get; private set; }
+    public TMP_FontAsset textFont = default;
     //private Text textHolder;
     private TextMeshProUGUI textHolder;
 
@@ -27,7 +28,7 @@ public class DialogueBase : MonoBehaviour
     public IEnumerator writeText(DialogueLine line) {
         // set text properties
         textHolder.color = line.textColor;
-        textHolder.font = line.textFont;
+        textHolder.font = textFont;
         CharacterResponseManager.instance.toggleButtons(false, Color.gray);
 
         // reset text if line is a new line
