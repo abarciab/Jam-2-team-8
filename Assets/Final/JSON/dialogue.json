@@ -98,7 +98,7 @@
             "photograph 1" : "This isn't the first murder I've seen, but this is a grisly one. I'm throwing a wild guess but maybe that gardener was involved.{nathan accuses kevin}",
             "sword" : "This is the murder weapon? Awful."
         },
-        "nathan colt [THIEF]" : {
+        "nathan colt[THIEF]" : {
             "where" : "I was at the party the entire time. But then Mr. Edgar and his henchmen sent me out the front door.",
             "relationship" : "I never knew him, and I don't want to. He's a terrible person connected to terrible people, ask the others.{rumors about garrett}",
             "default" : "What's this? Doesn't look like something I can write about.",

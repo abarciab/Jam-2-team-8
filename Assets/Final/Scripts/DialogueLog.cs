@@ -79,6 +79,9 @@ public class DialogueLog : MonoBehaviour
                 if (contentGridPersonSelector.transform.GetChild(i).name == characterLines[j].speaker) {
                     contentGridPersonSelector.transform.GetChild(i).gameObject.SetActive(true);
                 }
+                else {
+                    print(contentGridPersonSelector.transform.GetChild(i).name + " != " + characterLines[j].speaker);
+                }
             }
         }
         personSelector.SetActive(true);

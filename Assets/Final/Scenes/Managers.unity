@@ -759,7 +759,7 @@ MonoBehaviour:
           truth: 
       validRealities:
       - core reality
-    - characterName: 'nathan colt '
+    - characterName: nathan colt
       variant: THIEF
       conflicts: []
       defaultResponse:
@@ -1781,7 +1781,7 @@ MonoBehaviour:
           truth: 
       validRealities:
       - core reality
-    - characterName: 'nathan colt '
+    - characterName: nathan colt
       variant: THIEF
       conflicts: []
       defaultResponse:
@@ -2802,7 +2802,7 @@ MonoBehaviour:
           truth: 
       validRealities:
       - core reality
-    - characterName: 'nathan colt '
+    - characterName: nathan colt
       variant: THIEF
       conflicts: []
       defaultResponse:
@@ -3223,8 +3223,8 @@ MonoBehaviour:
     characterFullBody: {fileID: 21300000, guid: a91f011896902cc42a2e1cac426e987d, type: 3}
     pronoun: she
   - characterName: roy gold
-    characterPortrait: {fileID: 21300000, guid: bbc2087cbf38c9841a8d5da321d8cb76, type: 3}
-    characterFullBody: {fileID: 0}
+    characterPortrait: {fileID: 21300000, guid: a79bfcf9add93f34d9fbfea27e2e8fd8, type: 3}
+    characterFullBody: {fileID: 21300000, guid: 54af7e0fd91333c4a8c45aa7156d7088, type: 3}
     pronoun: he
   - characterName: melissa bailey
     characterPortrait: {fileID: 21300000, guid: 53629f9d67efdca4bba38135c375a45f, type: 3}
@@ -3243,12 +3243,12 @@ MonoBehaviour:
     characterFullBody: {fileID: 21300000, guid: 65cf7c99074439d48813b2670fc20636, type: 3}
     pronoun: he
   - characterName: lawrence edgar
-    characterPortrait: {fileID: 0}
-    characterFullBody: {fileID: 0}
+    characterPortrait: {fileID: 21300000, guid: b1c10e5a1c96d8848a9d9da44b833bef, type: 3}
+    characterFullBody: {fileID: 21300000, guid: 79c6de11f295bfc498eeae37b8c16aa6, type: 3}
     pronoun: he
   - characterName: nathan colt
-    characterPortrait: {fileID: 0}
-    characterFullBody: {fileID: 0}
+    characterPortrait: {fileID: 21300000, guid: f82f0bd6a6a295749857a25c865e99e6, type: 3}
+    characterFullBody: {fileID: 21300000, guid: fbb6c4d5dd682b44481a76bcd109fff8, type: 3}
     pronoun: he
   - characterName: kevin shepherd
     characterPortrait: {fileID: 21300000, guid: 794c3cdbb5a6e3e4c9adf526da58414f, type: 3}
@@ -3258,10 +3258,6 @@ MonoBehaviour:
     characterPortrait: {fileID: 21300000, guid: 91f57bb72d0d41349956c16271463c30, type: 3}
     characterFullBody: {fileID: 21300000, guid: 8c5c9dfe6b4039d4aa23f991dd30fd3b, type: 3}
     pronoun: '{THEY}'
-  - characterName: 'nathan colt '
-    characterPortrait: {fileID: 0}
-    characterFullBody: {fileID: 0}
-    pronoun: he
   allCards:
   - cardName: The Basilisk
     cardEffects:
@@ -4007,7 +4003,7 @@ MonoBehaviour:
           truth: 
       validRealities:
       - core reality
-    - characterName: 'nathan colt '
+    - characterName: nathan colt
       variant: THIEF
       conflicts: []
       defaultResponse:
@@ -4497,193 +4493,496 @@ MonoBehaviour:
       - characterName: nathan
         variant: THIEF
   evidenceData:
-  - name: GUN USED TO KILL JOE
-    displayName: Pistol
-    description: This pistol is small and light, and it was wiped clean of fingerprints
+  - name: SWORD
+    displayName: Sword
+    description: An ornamental sword found stabbed through the victim's heart.
     allowedRealities:
     - core reality
-    - john married to sarah
     means:
-    - name: shot Joe with a gun
+    - name: stabbed Garrett
       applicableCharacters:
       - ANY
-    - name: blugeoned him to death with a pistol
-      applicableCharacters:
-      - JOHN
     motive: []
-  - name: GAMBLING DEBTS
-    displayName: Gambling debt
-    description: these documents show that sarah owed her father a lot of money
+  - name: PHOTOGRAPH 1
+    displayName: Scene photograph
+    description: This is a photograph of the scene of the crime. The victim was found
+      dead, stabbed with a sword.
+    allowedRealities:
+    - core reality
+    means: []
+    motive: []
+  - name: LAWRENCE'S GLOVES
+    displayName: Gloves
+    description: Lawrence's gloves stamped with his name, covered in blood.
+    allowedRealities:
+    - core reality
+    means:
+    - name: stabbed Garrett
+      applicableCharacters:
+      - ANY
+    motive: []
+  - name: LAWRENCE'S DOCUMENTS
+    displayName: Documents
+    description: Lawrence's documents outlining a plan to seize Garrett's company.
     allowedRealities:
     - core reality
     means: []
     motive:
-    - name: because {THEY} couldn't afford to pay joe back
+    - name: to seize Garrett's company.
       applicableCharacters:
       - any
-  - name: SARAH FINGERPRINTS ON GUN
-    displayName: Fingerprints
-    description: Fingerprints were found on the gun to kill Joe. they match his daughter,
-      sarah
+  - name: LAWRENCE WAS WITH GARRETT
+    displayName: Memo
+    description: Some notes you wrote about Lawrence being with Garrett.
     allowedRealities:
     - core reality
     means:
-    - name: shot him with his own gun
+    - name: stabbed Garrett
       applicableCharacters:
       - ANY
     motive: []
-  - name: JOHN FINGERPRINTS ON GUN
-    displayName: Fingerprints
-    description: Fingerprints were found on the gun to kill Joe. they match his son,
-      john
-    allowedRealities:
-    - sarah having affair
-    means:
-    - name: shot him with his own gun
-      applicableCharacters:
-      - ANY
-    motive: []
-  - name: SECURITY CAMERAS
-    displayName: security camera footage
-    description: the cameras managed to capture a female figure shooting joe in the
-      head
+  - name: ROY CALLS GARRETT BY FIRST NAME
+    displayName: Father-son troubles
+    description: Roy and Garrett don't have the best father-son relationship.
     allowedRealities:
     - core reality
-    means:
-    - name: 'shot joe in the head - on camera - '
-      applicableCharacters:
-      - ANY
+    - affair reality
+    - revenge reality
+    means: []
     motive: []
-  - name: SARAH OWNS GUN
-    displayName: Gambling debt
-    description: these documents show that sarah owed her father a lot of money
+  - name: GARRETT LEFT THE PARTY
+    displayName: Garrett leaves
+    description: It seems that Garrett left the party early.
     allowedRealities:
     - core reality
+    means: []
+    motive: []
+  - name: DENISE STAND DOWN
+    displayName: Family drama
+    description: Denise seems to have calmed down after falsely accusing Melissa
+      of the murder.
+    allowedRealities:
+    - core reality
+    means: []
+    motive: []
+  - name: RUMORS ABOUT GARRETT
+    displayName: Rumors
+    description: There seem to be rumors that depict Garrett as an evil individual.
+    allowedRealities:
+    - core reality
+    means: []
+    motive: []
+  - name: DENISE ACCUSES MELISSA
+    displayName: Denise's accusation for Melissa
+    description: Denise accused Melissa of involvement with the murder.
+    allowedRealities:
+    - core reality
+    means: []
+    motive: []
+  - name: DENISE ACCUSES ALEXANDER
+    displayName: Denise's accusation for Alexander
+    description: Denise accused Alexander of involvement with the murder.
+    allowedRealities:
+    - core reality
+    means: []
+    motive: []
+  - name: LAWRENCE ACCUSES ROY
+    displayName: Lawrence's accusation for Roy
+    description: Lawrence accused Roy of involvement with the murder.
+    allowedRealities:
+    - core reality
+    means: []
+    motive: []
+  - name: ROY ACCUSES LAWRENCE
+    displayName: Roy's accusation for Lawrence
+    description: Roy accused Lawrence of being alone with Garrett outside the party.
+    allowedRealities:
+    - core reality
+    means: []
+    motive: []
+  - name: LAWRENCE ACCUSES NATHAN
+    displayName: Lawrence's accusation for Nathan
+    description: Lawrence accused Nathan of involvement with the murder.
+    allowedRealities:
+    - core reality
+    means: []
+    motive: []
+  - name: NATHAN ACCUSES KEVIN
+    displayName: Nathan's accusation for Kevin
+    description: Nathan accused Kevin of involvement with the murder.
+    allowedRealities:
+    - core reality
+    means: []
+    motive: []
+  - name: ALEXANDER WAS LATE
+    displayName: Alexander was early
+    description: Alexander claims to be early to the party.
+    allowedRealities:
+    - core reality
+    means: []
+    motive: []
+  - name: ALEXANDER WAS EARLY
+    displayName: Alexander was late
+    description: Alexander was in fact late to the party.
+    allowedRealities:
+    - core reality
+    - affair reality
+    means: []
+    motive: []
+  - name: KEVIN JUMPED DOWN
+    displayName: Kevin jumped out
+    description: Lawrence claims that Kevin jumped out of the office through a window.
+    allowedRealities:
+    - core reality
+    means: []
+    motive: []
+  - name: KEVIN DID NOT JUMP DOWN
+    displayName: Kevin did not jump out
+    description: Multiple sources have confirmed that the window was in fact closed,
+      and that Kevin did not jump out.
+    allowedRealities:
+    - core reality
+    - affair reality
+    means: []
+    motive: []
+  - name: MELISSA DID NOT CHASE GARRETT
+    displayName: Melissa did not chase Garrett
+    description: You don't know why you've been involved in this silly family drama.
+    allowedRealities:
+    - core reality
+    means: []
+    motive: []
+  - name: MELISSA CHASED GARRETT
+    displayName: Melissa chased Garrett
+    description: Denise claims that Melissa chased after Garrett.
+    allowedRealities:
+    - core reality
+    means: []
+    motive: []
+  - name: GARRETT'S MARRIAGE
+    displayName: Marriage
+    description: Denise and Garrett seemed to have a troubled marriage.
+    allowedRealities:
+    - core reality
+    - affair reality
+    means: []
+    motive: []
+  - name: PHOTOGRAPH 2
+    displayName: Photograph
+    description: This is a photograph of the scene of the crime. The victim was found
+      dead with a poisoned glass.
+    allowedRealities:
+    - affair reality
+    means: []
+    motive: []
+  - name: GLASS
+    displayName: Glass
+    description: The glass that contained the poison that killed the victim.
+    allowedRealities:
+    - affair reality
     means:
-    - name: '{THEY} couldn''t afford to pay joe back'
+    - name: stabbed Garrett
       applicableCharacters:
       - ANY
     motive: []
-  - name: JOHN PROTECT SARAH
-    displayName: emails from sarah to john
-    description: these documents show that john was trying to protect sarah
+  - name: FAKE GLASS
+    displayName: Glass
+    description: The poisoned glass that Melissa did not originally enter the party
+      with.
     allowedRealities:
-    - sarah having affair
+    - affair reality
+    means: []
+    motive: []
+  - name: REAL GLASS
+    displayName: Second Glass
+    description: The actual glass that Melissa was going to bring to Garrett.
+    allowedRealities:
+    - affair reality
+    means: []
+    motive: []
+  - name: DENISE'S GLOVES
+    displayName: Denise's gloves
+    description: Denise's gloves, coated in poison.
+    allowedRealities:
+    - affair reality
+    means:
+    - name: poisoned Garrett by touch
+      applicableCharacters:
+      - ANY
+    motive: []
+  - name: DENISE'S WILL
+    displayName: Denise's will
+    description: Denise's will describing how she she and Garrett would go together.
+    allowedRealities:
+    - affair reality
     means: []
     motive:
-    - name: to protect sarah
+    - name: to die with Garrett.
       applicableCharacters:
       - any
-  - name: EVIDENCE
-    displayName: a piece of evidence
-    description: john said this
+  - name: CAMERA FOOTAGE
+    displayName: Footage
+    description: A recording from the mansion's security cameras.
     allowedRealities:
-    - core reality
+    - affair reality
+    means: []
+    motive: []
+  - name: WEDDING RING
+    displayName: Wedding ring
+    description: A wedding ring that Garrett gave to Melissa.
+    allowedRealities:
+    - affair reality
+    means: []
+    motive:
+    - name: because Garrett had an affair.
+      applicableCharacters:
+      - any
+  - name: RECEIPT
+    displayName: Receipt
+    description: A recent receipt for a wedding ring, signed with Garrett's signature.
+    allowedRealities:
+    - affair reality
+    means: []
+    motive: []
+  - name: DIVORCE PAPERS
+    displayName: Divorce papers
+    description: Documents detailing Denise's planned divorce.
+    allowedRealities:
+    - affair reality
+    means: []
+    motive:
+    - name: because Garrett had an affair.
+      applicableCharacters:
+      - any
+  - name: TRASH BAG
+    displayName: Trash bag
+    description: A mysterious trash bag thrown away earlier.
+    allowedRealities:
+    - affair reality
+    means: []
+    motive: []
+  - name: POISONED LETTER
+    displayName: Letter
+    description: A poisoned letter found on the victim, belonging to Denise.
+    allowedRealities:
+    - affair reality
+    means:
+    - name: poisoned Garrett with a letter
+      applicableCharacters:
+      - ANY
+    motive: []
+  - name: DENISE'S LETTER
+    displayName: Letter
+    description: A letter found on the victim, belonging to Denise.
+    allowedRealities:
+    - affair reality
+    means: []
+    motive: []
+  - name: LETTER
+    displayName: Letter
+    description: A letter found on the victim.
+    allowedRealities:
+    - affair reality
     means: []
     motive: []
   evidenceSprites:
-  - characterName: GUN USED TO KILL JOE
-    characterPortrait: {fileID: 21300000, guid: 522543331b026c94b98b58d14a58d857, type: 3}
-    characterFullBody: {fileID: 0}
-    pronoun: he
-  - characterName: GAMBLING DEBTS
-    characterPortrait: {fileID: 21300000, guid: af18806e84cd9c14f956eea2563aad96, type: 3}
-    characterFullBody: {fileID: 0}
-    pronoun: he
-  - characterName: SARAH FINGERPRINTS ON GUN
+  - characterName: SWORD
     characterPortrait: {fileID: 0}
     characterFullBody: {fileID: 0}
     pronoun: he
-  - characterName: JOHN FINGERPRINTS ON GUN
+  - characterName: PHOTOGRAPH 1
     characterPortrait: {fileID: 0}
     characterFullBody: {fileID: 0}
     pronoun: he
-  - characterName: SECURITY CAMERAS
+  - characterName: LAWRENCE'S GLOVES
     characterPortrait: {fileID: 0}
     characterFullBody: {fileID: 0}
     pronoun: he
-  - characterName: SARAH OWNS GUN
+  - characterName: LAWRENCE'S DOCUMENTS
     characterPortrait: {fileID: 0}
     characterFullBody: {fileID: 0}
     pronoun: he
-  - characterName: JOHN PROTECT SARAH
+  - characterName: LAWRENCE WAS WITH GARRETT
     characterPortrait: {fileID: 0}
     characterFullBody: {fileID: 0}
     pronoun: he
-  - characterName: EVIDENCE
+  - characterName: ROY CALLS GARRETT BY FIRST NAME
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: GARRETT LEFT THE PARTY
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: DENISE STAND DOWN
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: RUMORS ABOUT GARRETT
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: DENISE ACCUSES MELISSA
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: DENISE ACCUSES ALEXANDER
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: LAWRENCE ACCUSES ROY
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: ROY ACCUSES LAWRENCE
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: LAWRENCE ACCUSES NATHAN
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: NATHAN ACCUSES KEVIN
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: ALEXANDER WAS LATE
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: ALEXANDER WAS EARLY
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: KEVIN JUMPED DOWN
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: KEVIN DID NOT JUMP DOWN
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: MELISSA DID NOT CHASE GARRETT
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: MELISSA CHASED GARRETT
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: GARRETT'S MARRIAGE
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: PHOTOGRAPH 2
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: GLASS
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: FAKE GLASS
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: REAL GLASS
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: DENISE'S GLOVES
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: DENISE'S WILL
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: CAMERA FOOTAGE
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: WEDDING RING
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: RECEIPT
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: DIVORCE PAPERS
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: TRASH BAG
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: POISONED LETTER
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: DENISE'S LETTER
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: LETTER
     characterPortrait: {fileID: 0}
     characterFullBody: {fileID: 0}
     pronoun: he
   accusationData:
   - reality: core reality
-    murderer: sarah
+    murderer: lawrence
     means:
-    - name: SARAH OWNS GUN
-      displayName: Gambling debt
-      description: these documents show that sarah owed her father a lot of money
+    - name: SWORD
+      displayName: Sword
+      description: An ornamental sword found stabbed through the victim's heart.
       allowedRealities:
       - core reality
       means:
-      - name: '{THEY} couldn''t afford to pay joe back'
+      - name: stabbed Garrett
         applicableCharacters:
         - ANY
       motive: []
-    - name: SECURITY CAMERAS
-      displayName: security camera footage
-      description: the cameras managed to capture a female figure shooting joe in
-        the head
+    - name: LAWRENCE'S GLOVES
+      displayName: Gloves
+      description: Lawrence's gloves stamped with his name, covered in blood.
       allowedRealities:
       - core reality
       means:
-      - name: 'shot joe in the head - on camera - '
+      - name: stabbed Garrett
         applicableCharacters:
         - ANY
       motive: []
-    - name: SARAH FINGERPRINTS ON GUN
-      displayName: Fingerprints
-      description: Fingerprints were found on the gun to kill Joe. they match his
-        daughter, sarah
-      allowedRealities:
-      - core reality
-      means:
-      - name: shot him with his own gun
-        applicableCharacters:
-        - ANY
-      motive: []
-    motive:
-    - name: GAMBLING DEBTS
-      displayName: Gambling debt
-      description: these documents show that sarah owed her father a lot of money
+    - name: LAWRENCE'S DOCUMENTS
+      displayName: Documents
+      description: Lawrence's documents outlining a plan to seize Garrett's company.
       allowedRealities:
       - core reality
       means: []
       motive:
-      - name: because {THEY} couldn't afford to pay joe back
+      - name: to seize Garrett's company.
         applicableCharacters:
         - any
-  - reality: sarah having affair
-    murderer: john
-    means:
-    - name: JOHN FINGERPRINTS ON GUN
-      displayName: Fingerprints
-      description: Fingerprints were found on the gun to kill Joe. they match his
-        son, john
+    - name: LAWRENCE WAS WITH GARRETT
+      displayName: Memo
+      description: Some notes you wrote about Lawrence being with Garrett.
       allowedRealities:
-      - sarah having affair
+      - core reality
       means:
-      - name: shot him with his own gun
+      - name: stabbed Garrett
         applicableCharacters:
         - ANY
       motive: []
     motive:
-    - name: JOHN PROTECT SARAH
-      displayName: emails from sarah to john
-      description: these documents show that john was trying to protect sarah
+    - name: LAWRENCE'S DOCUMENTS
+      displayName: Documents
+      description: Lawrence's documents outlining a plan to seize Garrett's company.
       allowedRealities:
-      - sarah having affair
+      - core reality
       means: []
       motive:
-      - name: to protect sarah
+      - name: to seize Garrett's company.
         applicableCharacters:
         - any
   parseAll: 0

@@ -1,49 +1,201 @@
 {
-	"GUN USED TO KILL JOE" : {
-		"displayName" : "Pistol",
-		"description" : "This pistol is small and light, and it was wiped clean of fingerprints",
-		"realities" : "core reality, john married to sarah",
-		"means" : "shot Joe with a gun, blugeoned him to death with a pistol[JOHN]"
-	},
-	"GAMBLING DEBTS" : {
-		"displayName" : "Gambling debt",
-		"description" : "these documents show that sarah owed her father a lot of money",
-		"realities" : "core reality",
-		"motive" : "because {THEY} couldn't afford to pay joe back"
-	},
-	"SARAH FINGERPRINTS ON GUN" : {
-		"displayName" : "Fingerprints",
-		"description" : "Fingerprints were found on the gun to kill Joe. they match his daughter, sarah",
-		"realities" : "core reality",
-		"means" : "shot him with his own gun"
-	},
-	"JOHN FINGERPRINTS ON GUN" : {
-		"displayName" : "Fingerprints",
-		"description" : "Fingerprints were found on the gun to kill Joe. they match his son, john",
-		"realities" : "sarah having affair",
-		"means" : "shot him with his own gun"
-	},
-	"SECURITY CAMERAS" : {
-		"displayName" : "security camera footage",
-		"description" : "the cameras managed to capture a female figure shooting joe in the head",
-		"realities" : "core reality",
-		"means" : "shot joe in the head - on camera - "
-	},
-	"SARAH OWNS GUN" : {
-		"displayName" : "Gambling debt",
-		"description" : "these documents show that sarah owed her father a lot of money",
-		"realities" : "core reality",
-		"means" : "{THEY} couldn't afford to pay joe back"
-	},
-	"JOHN PROTECT SARAH" : {
-		"displayName" : "emails from sarah to john",
-		"description" : "these documents show that john was trying to protect sarah",
-		"realities" : "sarah having affair",
-		"motive" : "to protect sarah"
-	},
-	"EVIDENCE" : {
-		"displayName" : "a piece of evidence",
-		"description" : "john said this",
-		"realities" : "core reality"
-	}
+    "SWORD" : {
+        "displayName" : "Sword",
+        "description" : "An ornamental sword found stabbed through the victim's heart.",
+        "realities" : "core reality",
+        "means" : "stabbed Garrett"
+    },
+    "PHOTOGRAPH 1" : {
+        "displayName" : "Scene photograph",
+        "description" : "This is a photograph of the scene of the crime. The victim was found dead, stabbed with a sword.",
+        "realities" : "core reality",
+    },
+    "LAWRENCE'S GLOVES" : {
+        "displayName" : "Gloves",
+        "description" : "Lawrence's gloves stamped with his name, covered in blood.",
+        "realities" : "core reality",
+        "means" : "stabbed Garrett"
+    },
+    "LAWRENCE'S DOCUMENTS" : {
+        "displayName" : "Documents",
+        "description" : "Lawrence's documents outlining a plan to seize Garrett's company.",
+        "realities" : "core reality",
+        "motive" : "to seize Garrett's company."
+    },
+    "LAWRENCE WAS WITH GARRETT" : {
+        "displayName" : "Memo",
+        "description" : "Some notes you wrote about Lawrence being with Garrett.",
+        "realities" : "core reality",
+        "means" : "stabbed Garrett"
+    },
+    "ROY CALLS GARRETT BY FIRST NAME" : {
+        "displayName" : "Father-son troubles",
+        "description" : "Roy and Garrett don't have the best father-son relationship.",
+        "realities" : "core reality, affair reality, revenge reality",
+    },
+    "GARRETT LEFT THE PARTY" : {
+        "displayName" : "Garrett leaves",
+        "description" : "It seems that Garrett left the party early.",
+        "realities" : "core reality",
+    },
+    "DENISE STAND DOWN" : {
+        "displayName" : "Family drama",
+"description" : "Denise seems to have calmed down after falsely accusing Melissa of the murder.",
+        "realities" : "core reality",
+    },
+    "RUMORS ABOUT GARRETT" : {
+        "displayName" : "Rumors",
+        "description" : "There seem to be rumors that depict Garrett as an evil individual.",
+        "realities" : "core reality",
+    },
+    "DENISE ACCUSES MELISSA" : {
+        "displayName" : "Denise's accusation for Melissa",
+        "description" : "Denise accused Melissa of involvement with the murder.",
+        "realities" : "core reality",
+    },
+    "DENISE ACCUSES ALEXANDER" : {
+        "displayName" : "Denise's accusation for Alexander",
+        "description" : "Denise accused Alexander of involvement with the murder.",
+        "realities" : "core reality",
+    },
+    "LAWRENCE ACCUSES ROY" : {
+        "displayName" : "Lawrence's accusation for Roy",
+        "description" : "Lawrence accused Roy of involvement with the murder.",
+        "realities" : "core reality",
+    },
+    "ROY ACCUSES LAWRENCE" : {
+        "displayName" : "Roy's accusation for Lawrence",
+        "description" : "Roy accused Lawrence of being alone with Garrett outside the party.",
+        "realities" : "core reality",
+    },
+    "LAWRENCE ACCUSES NATHAN" : {
+        "displayName" : "Lawrence's accusation for Nathan",
+        "description" : "Lawrence accused Nathan of involvement with the murder.",
+        "realities" : "core reality",
+    },
+    "NATHAN ACCUSES KEVIN" : {
+        "displayName" : "Nathan's accusation for Kevin",
+        "description" : "Nathan accused Kevin of involvement with the murder.",
+        "realities" : "core reality",
+    },
+    "ALEXANDER WAS LATE" : {
+        "displayName" : "Alexander was early",
+        "description" : "Alexander claims to be early to the party.",
+        "realities" : "core reality",
+    },
+    "ALEXANDER WAS EARLY" : {
+        "displayName" : "Alexander was late",
+        "description" : "Alexander was in fact late to the party.",
+        "realities" : "core reality, affair reality",
+    },
+    "KEVIN JUMPED DOWN" : {
+        "displayName" : "Kevin jumped out",
+        "description" : "Lawrence claims that Kevin jumped out of the office through a window.",
+        "realities" : "core reality",
+    },
+    "KEVIN DID NOT JUMP DOWN" : {
+        "displayName" : "Kevin did not jump out",
+        "description" : "Multiple sources have confirmed that the window was in fact closed, and that Kevin did not jump out.",
+        "realities" : "core reality, affair reality",
+    },
+    "MELISSA DID NOT CHASE GARRETT" : {
+        "displayName" : "Melissa did not chase Garrett",
+        "description" : "You don't know why you've been involved in this silly family drama.",
+        "realities" : "core reality",
+    },
+    "MELISSA CHASED GARRETT" : {
+        "displayName" : "Melissa chased Garrett",
+        "description" : "Denise claims that Melissa chased after Garrett.",
+        "realities" : "core reality",
+    },
+    "GARRETT'S MARRIAGE" : {
+        "displayName" : "Marriage",
+        "description" : "Denise and Garrett seemed to have a troubled marriage.",
+        "realities" : "core reality, affair reality",
+    },
+    "PHOTOGRAPH 2" : {
+        "displayName" : "Photograph",
+        "description" : "This is a photograph of the scene of the crime. The victim was found dead with a poisoned glass.",
+        "realities" : "affair reality"
+    },
+    "GLASS" : {
+        "displayName" : "Glass",
+        "description" : "The glass that contained the poison that killed the victim.",
+        "realities" : "affair reality",
+        "means" : "stabbed Garrett"
+    },
+    "FAKE GLASS" : {
+        "displayName" : "Glass",
+        "description" : "The poisoned glass that Melissa did not originally enter the party with.",
+        "realities" : "affair reality",
+    },
+    "REAL GLASS" : {
+        "displayName" : "Glass",
+        "description" : "The glass that Denise had poisoned and swapped with Garrett's.",
+        "realities" : "core reality",
+        "means" : "poisoned Garrett's drink"
+    },
+    "DENISE'S GLOVES" : {
+        "displayName" : "Denise's gloves",
+        "description" : "Denise's gloves, coated in poison.",
+        "realities" : "affair reality",
+        "means" : "poisoned Garrett by touch"
+    },
+    "DENISE'S WILL" : {
+        "displayName" : "Denise's will",
+        "description" : "Denise's will describing how she she and Garrett would go together.",
+        "realities" : "affair reality",
+        "motive" : "to die with Garrett."
+    },
+    "CAMERA FOOTAGE" : {
+        "displayName" : "Footage",
+        "description" : "A recording from the mansion's security cameras.",
+        "realities" : "affair reality"
+    },
+    "REAL GLASS" : {
+        "displayName" : "Second Glass",
+        "description" : "The actual glass that Melissa was going to bring to Garrett.",
+        "realities" : "affair reality",
+    },
+    "WEDDING RING" : {
+        "displayName" : "Wedding ring",
+        "description" : "A wedding ring that Garrett gave to Melissa.",
+        "realities" : "affair reality",
+        "motive" : "because Garrett had an affair."
+    },
+    "RECEIPT" : {
+        "displayName" : "Receipt",
+        "description" : "A recent receipt for a wedding ring, signed with Garrett's signature.",
+        "realities" : "affair reality"
+    },
+    "DIVORCE PAPERS" : {
+        "displayName" : "Divorce papers",
+        "description" : "Documents detailing Denise's planned divorce.",
+        "realities" : "affair reality",
+        "motive" : "because Garrett had an affair."
+    },
+    "TRASH BAG" : {
+        "displayName" : "Trash bag",
+        "description" : "A mysterious trash bag thrown away earlier.",
+        "realities" : "affair reality"
+    },
+    "POISONED LETTER" : {
+        "displayName" : "Letter",
+        "description" : "A poisoned letter found on the victim, belonging to Denise.",
+        "realities" : "affair reality",
+        "means" : "poisoned Garrett with a letter"
+    },
+    "DENISE'S LETTER" : {
+        "displayName" : "Letter",
+        "description" : "A letter found on the victim, belonging to Denise.",
+        "realities" : "affair reality"
+    },
+    "LETTER" : {
+        "displayName" : "Letter",
+        "description" : "A letter found on the victim.",
+        "realities" : "affair reality"
+    }
 }
+
+
+
