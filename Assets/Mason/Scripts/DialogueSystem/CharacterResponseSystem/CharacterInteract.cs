@@ -42,6 +42,6 @@ public class CharacterInteract : MonoBehaviour
         DialogueLine line = new DialogueLine(characterGreeting);
         CharacterResponseManager.instance.characterGreeting(line);
         UIManager.instance.hideUIElement("character");
-        AudioManager.instance.PlayGlobal(11, 1, false);
+        AudioManager.instance.PlayGlobal(11, restart: false);
     }
 }

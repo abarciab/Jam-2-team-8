@@ -20,11 +20,11 @@ public class SubmitAccusation : MonoBehaviour
                 // switch the lie to the truth statement and write it out
                 sDropdown.lineData[statementMenu.value].switchTextToTruth();
                 CharacterResponseManager.instance.writeCharacterDialogue(sDropdown.dialogueTypes[statementMenu.value]);
-                AudioManager.instance.PlayGlobal(6, 1, false);
+                AudioManager.instance.PlayGlobal(6, restart: false);
             }
             else {
                 // play some sort of error sound
-                AudioManager.instance.PlayGlobal(7, 1, false);
+                AudioManager.instance.PlayGlobal(7, restart: false);
             }
             UIManager.instance.hideUIElement("lying");
         }

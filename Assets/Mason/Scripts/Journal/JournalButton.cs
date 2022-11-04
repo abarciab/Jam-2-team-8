@@ -31,6 +31,6 @@ public class JournalButton : MonoBehaviour
             //button.image.sprite = exitSprite;
             transform.GetChild(0).gameObject.SetActive(true);
         }
-        AudioManager.instance.PlayGlobal(9, 1, false);
+        AudioManager.instance.PlayGlobal(9, restart: false);
     }
 }
