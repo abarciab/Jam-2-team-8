@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class cardDrawInterface : MonoBehaviour
 {
     public GameObject drawCardButtonObj;
-    public Button drawCardButton;
+    public GameObject drawCardText;
+    public GameObject cardsunavaliableText;
+    public GameObject cardHolder;
     public GameObject cardParent;
     public Image cardFront;
     string currentCharacter;
@@ -14,33 +18,30 @@ public class cardDrawInterface : MonoBehaviour
     public void DrawCard()
     {
         
-        RealityManager.CardRef drawnCard = new RealityManager.CardRef();
-        if (RealityManager.instance.CardsAvalible(CharacterResponseManager.instance.currentCharacterName)) {
-            drawnCard = RealityManager.instance.drawCard(CharacterResponseManager.instance.currentCharacterName);
-        }
-        else {
+        RealityManager.CardRef drawnCard = RealityManager.instance.drawCard(CharacterResponseManager.instance.currentCharacterName);
+        //print("drawcard");
+        if (drawnCard == null) {
+            print("null??");
             return;
         }
-        print("drawcard");
         cardFront.sprite = drawnCard.sprite;
+        cardFront.GetComponentInChildren<TextMeshProUGUI>().text = drawnCard.cardName;
         cardParent.SetActive(true);
+        cardHolder.SetActive(false);
     }
 
     private void Update()
     {
-        if (string.IsNullOrEmpty(CharacterResponseManager.instance.currentCharacterName) || CharacterResponseManager.instance.currentCharacterName != currentCharacter) {
-            currentCharacter = CharacterResponseManager.instance.currentCharacterName;
+        //print("valid cards: " + RealityManager.instance.NumValidCards(CharacterResponseManager.instance.currentCharacterName));
 
-            if (string.IsNullOrEmpty(CharacterResponseManager.instance.currentCharacterName) || RealityManager.instance.CardsAvalible(CharacterResponseManager.instance.currentCharacterName)) {
-                drawCardButton.enabled = false;
-            }
-            else {
-                drawCardButton.enabled = true;
-            }
-
-
-        }
-        
+        cardsunavaliableText.SetActive(true);
+        drawCardText.SetActive(false);
+        drawCardButtonObj.SetActive(false);
+        if (RealityManager.instance.NumValidCards(CharacterResponseManager.instance.currentCharacterName) > 0) {
+            cardsunavaliableText.SetActive(false);
+            drawCardText.SetActive(true);
+            drawCardButtonObj.SetActive(true);
+        }      
     }
 
 }

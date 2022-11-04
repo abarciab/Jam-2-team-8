@@ -1,4 +1,4 @@
-{
+{ 
     "core reality" : {
         "denise gold" : {
             "where" : "I never left the party, all thanks to Garrett's personal circus.",
@@ -12,7 +12,7 @@
             "photograph 1" : "So, that's how he died... I told him to get rid of that sword, but he'd never let go of it.",
             "sword" : "He should've gotten rid of that thing. I know, go ask Alexander how he feels being the previous owner of the murder weapon.{denise accuses alexander}"
         },
-        "denise gold[TAUNT]" : {
+        "denise gold[BASILISK]" : {
             "where" : "I never left the party, all thanks to that witch Melissa.",
             "relationship" : "Garrett was my husband, until he was seduced by Melissa.",
             "default" : "Shouldn't you be looking into Melissa?",
@@ -23,7 +23,8 @@
             "denise stand down[TRUTH]" : "Fine, listen to them. It's true, I didn't see Melissa leave the party. But you want to make the mistake of trusting the witch and her crow? Go ahead.",
             "rumors about garrett" : "They forgot to mention Melissa.",
             "photograph 1" : "I told him to get rid of that thing. Melissa must've convinced him to hold onto it.",
-            "sword" : "This thing. Go ask Alexander about the blood on his hands.{denise accuses alexander}"
+            "sword" : "This thing. Go ask Alexander about the blood on his hands.{denise accuses alexander}",
+            "realities" : "core reality"
         },
         "roy gold" : {
             "where" : "I was sitting in that corner of the room during the party. I was playing games the whole time. Didn't really see anything.",
@@ -39,7 +40,7 @@
         },
         "roy gold[VENGEANCE]" : {
             "where [LIE]" : "[lawrence accuses roy]I was here playing games the whole time. Didn't see or talk to anyone.",
-            "where [TRUTH]" : "That little... Let me tell you the truth. I was in my room, I didn't want to attend Garrett's party. I heard a commotion, and saw Lawrence with Garrett entering the office. Lawrence had to be the murderer.{roy accuses lawrence}",
+            "where [TRUTH]" : "That little… Let me tell you the truth. I was in my room, I didn't want to attend Garrett's party. I heard a commotion, and saw Lawrence with Garrett entering the office. Lawrence had to be the murderer.{roy accuses lawrence}",
             "relationship" : "Garrett was my father. {roy calls garrett by first name}",
             "default" : "Never seen this in my life.",
             "roy calls garrett by first name" : "Sure, look at the blood and we're related. But I get sick every time I have to call that man my father.",
@@ -47,7 +48,8 @@
             "garrett's marriage" : "I'd call their marriage a nightmare that never ends.",
             "rumors about garrett" : "Where can I read more of these? They're pretty accurate.",
             "photograph 1" : "He deserved it.",
-            "sword" : "He cared more about that thing than his own family."
+            "sword" : "He cared more about that thing than his own family.",
+            "realities" : "core reality"
         },
         "alexander norman" : {
             "where" : "I arrived a tad bit late to the party, traffic is quite the devil.",
@@ -70,7 +72,8 @@
             "garrett's marriage" : "A crash course with emphasis on crash.",
             "rumors about garrett" : "I've enjoyed the kinder experiences with him. A luxury, to be sure.",
             "photograph 1" : "Poor Garrett. It shouldn't have been like this.",
-            "sword" : "Ah, this. I sold this fine sword to Garrett many years ago. I never predicted it would take his life."
+            "sword" : "Ah, this. I sold this fine sword to Garrett many years ago. I never predicted it would take his life.",
+            "realities" : "core reality"
         },
         "lawrence edgar" : {
             "where[LIE]" : "[roy accuses lawrence]I was having a fantastic time at the party, and that's when I noticed that reporter nosing around. He ruined the mood, so I called the guards to throw that trash out! If anyone killed my best friend, it was him.{lawrence accuses nathan}",
@@ -78,14 +81,14 @@
             "relationship" : "Garrett was my business partner, my best friend even! We've known each other since high school! I was the one who funded his company.",
             "default" : "Never seen this. Can I pay you to take this away?",
             "lawrence accuses nathan[LIE]" : "[lawrence's documents]Oh come on, you know it has to be that reporter. Why else would he be snooping around here? If you want another idea, I'll give you the son. Hates his dad, wouldn't miss seeing him gone. Probably wanted his inheritance early.{lawrence accuses roy}",
-            "lawrence accuses nathan[TRUTH]": "That's impossible, how did you find those! I thought I got rid of them!{lawrence hid the documents}",
+            "lawrence accuses nathan[TRUTH]": "That's impossible, how did you find those! I thought I got rid of them!",
             "garrett left the party" : "He went to his office. Hey, I bet that gardener jumped into his office through an open window.{kevin jumped down}",
             "kevin did not jump down" : "Okay, so the gardener didn't jump into the office. I was just trying to help, throw some random ideas out there.",
             "garrett's marriage" : "I keep telling him to find a different partner! Ditch the woman, ditch the son too!",
             "rumors about garrett" : "Can you tell me the names of the people talking ill of my best friend?",
             "photograph 1" : "Wow. That's an awful sight, I'm sorry for what happened to him. I hope his death was painless.",
             "sword[LIE]" : "[lawrence's gloves]This thing's expensive. I've never seen it before in my life! I couldn't stand to get blood on my hands.",
-            "sword[TRUTH]" : "How did you find my gloves, I thought I got rid of them! That damn gardener didn't do his job right!{lawrence threw away his gloves}"
+            "sword[TRUTH]" : "How did you find my gloves, I thought I got rid of them! That damn gardener didn't do his job right! Hey, you can't take that!{lawrence's documents}"
         },
         "nathan colt" : {
             "where" : "I was at the party the entire time. Well, until Mr. Edgar and his henchmen tossed me out the front door.",
@@ -98,16 +101,17 @@
             "photograph 1" : "This isn't the first murder I've seen, but this is a grisly one. I'm throwing a wild guess but maybe that gardener was involved.{nathan accuses kevin}",
             "sword" : "This is the murder weapon? Awful."
         },
-        "nathan colt[THIEF]" : {
+        "nathan colt [THIEF]" : {
             "where" : "I was at the party the entire time. But then Mr. Edgar and his henchmen sent me out the front door.",
             "relationship" : "I never knew him, and I don't want to. He's a terrible person connected to terrible people, ask the others.{rumors about garrett}",
             "default" : "What's this? Doesn't look like something I can write about.",
             "lawrence accuses nathan" : "He's right. Take a look at this.{lawrence's documents}",
             "kevin jumped down" : "I'd love to see the gardener jump through a closed window. That window was shut tight.",
             "garrett left the party" : "I never got the chance to speak to him, and I'm glad I never got to.",
-            "denise accuses melissa" : "Garrett may be evil, but his staff are angels. Especially that maid. His wife on the other hand, eh...",
+            "denise accuses melissa" : "Garrett may be evil, but his staff are angels. Especially that maid. His wife on the other hand, eh…",
             "photograph 1" : "...Detective, this is out of the blue, but I have a feeling that the gardener was involved.{nathan accuses kevin}",
-            "sword" : "This is the murder weapon? Terrible."
+            "sword" : "This is the murder weapon? Terrible.",
+            "realities" : "core reality"
         },
         "joseph stewart" : {
             "where" : "I was at the party, looking for the master. I assumed he would be at his office, and that's where I went. I didn't expect the poor master dead in his own sanctuary.",
@@ -117,7 +121,7 @@
             "denise accuses melissa" : "That vixen should keep her claws away from Melissa. Tell her to stop with these baseless accusations.{denise stand down}",
             "melissa chased garrett" : "Outrageous! Melissa stayed at the party while I went looking for the master. That woman is overstepping her boundaries.{melissa did not chase garrett}",
             "kevin jumped down" : "The window was sealed completely shut in the office when I found the master's body. Mr. Edgar will have to concoct another fantasy.{kevin did not jump down}",
-            "alexander was early" : "When will Mr. Norman ever learn... Take his words with a grain of salt, he was late to the party.",
+            "alexander was early" : "When will Mr. Norman ever learn… Take his words with a grain of salt, he was late to the party.",
             "rumors about garrett" : "Everyone has had different experiences with the master, but I can assure you that the staff here have only had kind moments with him.",
             "photograph 1" : "Yes. This photograph captures exactly what I saw when I opened that door.",
             "sword" : "One of the master's most prized possessions. It's regretful that it's become the murder weapon."
@@ -127,11 +131,11 @@
             "relationship" : "Garrett wasn't just my employer, he saved my life. He paid off my debt, gave me a job, and gave me a home to stay in.",
             "default" : "My apologies, but I don't recognize this...",
             "garrett left the party" : "He's made a habit of leaving large gatherings, so I didn't question it at the time.",
-            "denise accuses melissa" : "I... I don't know what I've done to deserve this blame.",
+            "denise accuses melissa" : "I… I don't know what I've done to deserve this blame.",
             "melissa chased garrett" : "That's just silly! I never left the party, it was Joseph who went looking for the master!",
             "alexander was early" : "Oh, typical Mr. Norman. He claims to always be early, but he's always late.",
             "rumors about garrett" : "That's preposterous! The master is one of the nicest, kindest people I've met in my entire life!",
-            "photograph 1" : "Oh my god... Who could've done such a thing to him.",
+            "photograph 1" : "Oh my god… Who could've done such a thing to him.",
             "sword" : "That was one of his most prized possessions. He would never let me dust it off for him."
         },
         "kevin shepherd" : {
@@ -142,7 +146,7 @@
             "kevin jumped down" : "Huh? I didn't go in Mr. Gold's office, and especially not through his window. Mr. Gold's office window was closed the entire time.",
             "alexander was early" : "Mr. Norman, early? If he tells you that he's early, that means that he's late. I saw him sneaking through the front door late into the party.{alexander was late}",
             "rumors about garrett" : "He treated me fairly well. If he didn't, well, I would've thrashed his plants by now.",
-            "photograph 1" : "What an awful way to die...",
+            "photograph 1" : "What an awful way to die…",
             "sword" : "I've seen this in his office."
         },
         "kevin shepherd[ACCOMPLICE]" : {
@@ -151,8 +155,9 @@
             "default" : "I can't help you with this.",
             "nathan accuses kevin" : "Impossible, how did you know? Mr. Edgar promised me a suitcase of cash for burying his gloves. Here, I still have them.{lawrence's gloves}",
             "rumors about garrett" : "I don't have much to say about him.",
-            "photograph 1" : "I can't imagine how painful that must've been...",
-            "sword" : "I've seen this on the wall in his office."
+            "photograph 1" : "I can't imagine how painful that must've been…",
+            "sword" : "I've seen this on the wall in his office.",
+            "realities" : "core reality"
         },
         "guards" : {
             "where" : "We were called over to the party from the security room to throw out that reporter. Got promised a nice bonus for making it quick.",
@@ -161,6 +166,237 @@
             "rumors about garrett" : "He pays us. That's it.",
             "photograph 1" : "Impressive.",
             "sword" : "We thought he was crazy for holding onto that thing."
+        }
+    },
+    "affair reality" : {
+        "denise gold" : {
+            "where" : "I was at the party, attending to my husband's personal circus.",
+            "relationship" : "Garrett was my husband, but he'd marry Melissa in a heartbeat if he could.{garrett's marriage}",
+            "default" : "I have nothing to say about that.",
+            "photograph 2" : "I don't need a photograph to see something that already happened right in front of me.",
+            "glass" : "Melissa served my son a glass just like that. I'm glad he wasn't poisoned too.",
+            "letter[LIE]" : "[denise's letter]I've never seen this letter before.",
+            "letter[TRUTH]" : "So I did make that letter and give it to the maid, what are you going to make of it?{poisoned letter}"
+        },
+        "roy gold" : {
+            "where" : "I was at the party, sitting with my mother at that table over there.",
+            "relationship" : "Garrett was my father.{roy calls garrett by first name}",
+            "default" : "Never seen this in my life.",
+            "roy calls garrett by first name" : "Biologically, we may be related. But I never want to call that man my father any more than I have to.",
+            "glass" : "I called over Melissa for a drink, and she gave us a glass just like that.",
+            "fake glass" : "That glass? I think I saw my mother swap that glass with another one, right over here.{real glass}",
+            "denise's gloves" : "She poisoned Garrett?! I remember her giving me this document while murmuring something about ‘Romeo and Juliet…'{denise's will}",
+            "photograph 2" : "I saw him drop right in front of me. With a thud."
+        },
+        "roy gold[SCOUNDREL]" : {
+            "where [LIE]" : "[security footage]I never left my room.",
+            "where [TRUTH]" : "I was actually at the party with my mother, sitting at that table over there. I hope you don't find anything there.{real glass}",
+            "relationship" : "He was married to my mother and to the maid.{garrett's marriage}",
+            "default" : "Never seen this one.",
+            "photograph 2" : "Good riddance.",
+            "conflict[roy gold]" : "AFFECTION",
+            "realities" : "affair reality"
+        },
+        "alexander norman" : {
+            "where" : "I arrived a tad bit late to the party, traffic is quite the devil.",
+            "relationship" : "He was my finest client. I'm an art collector, you see, and Garrett was always hungry for my masterpieces.",
+            "default" : "Curious, but I'm not familiar...",
+            "garrett's marriage" : "That's an interesting story. He never looked at his wife the same way he looked at his maid. A story you should learn yourself. Here, take this receipt to the maid, she'll recognize it.{receipt}",
+            "glass" : "This glass. It's not Garrett's, it's Denise's. The craftsmanship mentions her name.{fake glass}",
+            "letter" : "I believe Denise had a hand in this.",
+            "photograph 2" : "Dead in front of so many people, what a pity."
+        },
+        "lawrence edgar" : {
+            "where" : "I was having a fantastic time at the party.",
+            "relationship" : "Garrett was my business partner, my best friend even! We've known each other since high school! I was the one who funded his company.",
+            "default" : "Never seen this. Can I pay you to take this away?",
+            "photograph 2" : "My friend… You didn't need to die like this.",
+            "glass" : "Everyone got a glass just like that one.",
+            "fake glass" : "That's a fake one? Well look at the one over here, this is the real one right?{real glass}"
+        },
+        "nathan colt" : {
+            "where" : "I was at the party the entire time.",
+            "relationship" : "I never knew him personally.",
+            "default" : "What's this? Is it important to your investigation?",
+            "garrett's marriage" : "I've heard some interesting things about that. I mean, look at what I found lying around. Looks like they weren't on the best terms.{divorce papers}",
+            "photograph 2" : "It happened with a crash. One second, he was laughing. And the next, he was cold on the ground.",
+            "glass" : "I was offered a glass by the maid, but I had to refuse."
+        },
+        "nathan colt [BASILISK]" : {
+            "where" : "I was at the party the entire time, keeping my eye on the maid.",
+            "relationship" : "I didn't know him, but I want to learn more about that maid.",
+            "default" : "What's this? Doesn't look like something I can write about.",
+            "garrett's marriage" : "I heard that the maid's been in an affair with Mr. Gold for the longest time.",
+            "photograph 2" : "I don't believe the maid would've done something like this.",
+            "glass" : "This isn't the same glass the maid brought into the room.{fake glass}",
+            "realities" : "affair reality"
+        },
+        "joseph stewart" : {
+            "where" : "I was at the party, attending to the guests.",
+            "relationship" : "The master and I have been working together for many, many long years.",
+            "default" : "I'm sorry but I cannot be of service to you. This item is unfamiliar.",
+            "photograph 2" : "The master… What an awful way to die.",
+            "glass" : "We have countless glassware exactly like this in the mansion."
+        },
+        "joseph stewart [ACCOMPLICE]" : {
+            "where" : "I was at the party, attending to all of the guests. Mrs. Gold urgently ordered me to throw out a trash bag into the garden without haste.{trash bag}",
+            "relationship" : "The master and I have been working together for many long years.",
+            "default" : "I'm sorry but I cannot be of help to you. This item is unfamiliar.",
+            "photograph 2" : "The master… What a terrible way to die.",
+            "glass" : "We have countless glassware exactly like this in the mansion.",
+            "realities" : "affair reality"
+        },
+        "melissa bailey" : {
+            "where" : "I was at the party, serving food and drinks to all the guests.",
+            "relationship" : "Garrett wasn't just my employer, he saved my life. He paid off my debt, gave me a job, gave me a home, he gave me everything!",
+            "default" : "My apologies, but I don't recognize this...",
+            "garrett's marriage[LIE]" : "[receipt]I didn't have any affair with him!",
+            "garrett's marriage[TRUTH]" : "It… It was true love. He bought me this beautiful wedding ring, and told me would be married. He told me not to worry about Mrs. Gold{wedding ring}",
+            "photograph 2" : "Oh my god… I remember this exact moment, it happened right in front of me..",
+            "glass" : "This isn't the same glass I brought to Mrs. Gold.{fake glass}",
+            "letter" : "This is the letter that Mrs. Gold told me to give to the master!{denise's letter}"
+        },
+        "kevin shepherd" : {
+            "where[LIE]" : "[trash bag]I was outside, didn't see anything happen.",
+            "where[TRUTH]" : "I did see a trash bag land on my head. It's over there, you can take a look at it.{denise's gloves}",
+            "relationship" : "I tended to his gardens, to every single leaf and branch and weed you can find out here.",
+            "default" : "I can't help you with this one.",
+            "photograph 2" : "He was poisoned, huh…",
+            "glass" : "I've seen this in the mansion."
+        },
+        "kevin shepherd[LOVERS]" : {
+            "where" : "I was outside. There was a trash bag, but I already burned it.",
+            "relationship" : "I tended to his gardens, to every single leaf and branch and weed you can find out here.",
+            "default" : "I can't help you with this.",
+            "garrett's marriage[LIE]" : "[divorce papers]I have nothing to do with his marriage.",
+            "garrett's marriage[TRUTH]" : "Where did you find those? It's true, Denise was going to divorce and we were going to get married together. She told me to dispose of the poison in the letter.{poisoned letter}",
+            "photograph 2" : "He's gone, huh…",
+            "glass" : "I've seen this in the mansion.",
+            "conflicts[DENISE GOLD]" : "LOVERS",
+            "realities" : "affair reality"
+        },
+        "guards" : {
+            "where" : "We were in the security room, you can look through the footage we have here.{security footage}",
+            "relationship" : "We worked for him, pay was good.",
+            "default" : "We don't know anything about that.",
+            "photograph 2" : "So much for our paycheck."
+        }
+    },
+    "revenge reality" : {
+        "denise gold" : {
+            "where" : "I was at the party, dealing with Garrett's party of clowns.",
+            "relationship" : "Garrett was my husband.",
+            "default" : "I have nothing to say about that.",
+            "photograph 3" : "That's awful. Right outside of this mansion too, none of us are safe."
+        },
+        "denise gold[DARLING]" : {
+            "where" : "I was at the party, dealing with the mess that Garrett left me. I just wanted to spend time with Kevin.",
+            "relationship" : "Garrett was my husband.",
+            "default" : "I have nothing to say about that.",
+            "kevin's jealousy" : "Oh, Kevin is such a sweet person. He is a much better person than Garrett.{denise and kevin}",
+            "photograph 3" : "That's awful. Right outside of this mansion too, none of us are safe.",
+            "conflicts[DENISE GOLD]" : "ACCOMPLICE",
+            "realities" : "revenge reality"
+        },
+        "denise gold[ACCOMPLICE]" : {
+            "where" : "I was at the party with Kevin the entire time. It took me forever to convince him to enjoy a break inside the mansion.",
+            "relationship" : "Garrett was my husband.",
+            "default" : "I have nothing to say about that.",
+            "foul play" : "I knew I was going to get caught eventually, here. These are the gloves that Kevin strangled Garrett with.{kevin's gloves}",
+            "photograph 3" : "That's terrible, look at those marks on his neck!",
+            "conflicts[DENISE GOLD]" : "DARLING",
+            "realities" : "revenge reality"
+        },
+        "roy gold" : {
+            "where" : "I was at the party, sitting in that corner over there with my video games.",
+            "relationship" : "Garrett was my father.{roy calls garrett by first name}",
+            "default" : "Never seen this in my life.",
+            "roy calls garrett by first name" : "Biologically, we may be related. But I never want to call that man my father any more than I have to.",
+            "denise and kevin" : "Ugh, they make me sick. Here, take this key to Joseph. He'll know what to do next.{key}",
+            "kevin and roy" : "Kevin has told me a couple of times that he wants to take me in, and replace my father.{roy's confession}",
+            "photograph 3" : "Good riddance."
+        },
+        "alexander norman" : {
+            "where[LIE]" : "[garrett left with alexander]I was having the most amazing time at the party.",
+            "where[TRUTH]" : "Ah, that. I left the party to discuss a secret business deal with Garrett. He wanted a wedding ring for Melissa. Keep this secret from the wife. He wanted to check on the gardens, so I left him and returned to the party.{garrett alone in gardens}",
+            "relationship" : "He was my finest client. I'm an art collector, you see, and Garrett was always hungry for my masterpieces.",
+            "default" : "Curious, but I'm not familiar...",
+            "photograph 3" : "My dear, good friend, who could have done this to you?"
+        },
+        "alexander norman[THIEF]" : {
+            "where[LIE]" : "[garrett left with alexander]I was having the most fine time at the party.",
+            "where[TRUTH]" : "Ah, that. I left the party to discuss a secret business deal with Garrett. Hear this, he wanted a wedding ring for his maid. Keep this secret from Denise. He wanted to check on the gardens, so I left him and returned to the party.{garrett alone in gardens}",
+            "relationship" : "He was my finest client. I'm an art collector, you see, and Garrett was always hungry for my masterpieces.",
+            "default" : "Curious, but I'm not familiar...",
+            "missing garden hose" : "That gardener is acting fishy, hmm? I happened to relieve him of this, I hope it's useful to your investigation.{USB drive}",
+            "photograph 3" : "My dear friend, who would have done this to you?",
+            "realities" : "revenge reality"
+        },
+        "lawrence edgar" : {
+            "where" : "I was having a fantastic time at the party.",
+            "relationship" : "Garrett was my business partner, my best friend even! We've known each other since high school! I was the one who funded his company.",
+            "default" : "Never seen this. Can I pay you to take this away?",
+            "missing shovel[LIE]" : "[investigation report]He should be looking for his brother instead of a shovel! I also don't know anything about his brother, just that he has one.",
+            "missing shovel[TRUTH]" : "Okay, so I do know about his brother, fine. It was his own fault for what happened to him.{hidden report}",
+            "photograph 3" : "I'm going to find who did this to him."
+        },
+        "nathan colt" : {
+            "where" : "I left the party to get some fresh air, and that's when I found the body half-buried in the garden.",
+            "relationship" : "I never knew him personally.",
+            "default" : "What's this? Is it important to your investigation?",
+            "kevin's brother" : "He has a brother? I think that's the guy mentioned in this old newspaper. Take a look.{newspaper}",
+            "missing shovel" : "I don't know anything about a shovel, but Lawrence Edgar? Take this to him the next time you talk to him.{investigation report}",
+            "photograph 3" : "This matches the exact scene I saw when I left the party."
+        },
+        "joseph stewart" : {
+            "where" : "I left the party to search for the master, but I couldn't find him anywhere in the mansion[garrett was not inside].",
+            "relationship" : "The master and I have been working together for many, many long years.",
+            "default" : "I'm sorry but I cannot be of service to you. This item is unfamiliar.",
+            "closed locket" : "Oh, Melissa doesn't know. That locket has the picture of his late brother. He died in an accident long ago.{kevin's brother}",
+            "key" : "Ah, the young master trusts you with this. I hope it's helpful to your investigation.{divorce papers}",
+            "photograph 3" : "The master… I hope you find the criminal that did this to him."
+        },
+        "melissa bailey" : {
+            "where" : "I was at the party, serving food and drinks to all the guests. I saw the master leave the party with Mr. Norman[garrett left with alexander]",
+            "relationship" : "I owe so much to the master. He paid off my debt, gave me a job, and gave me a place to call home.",
+            "default" : "My apologies, but I don't recognize this...",
+            "missing garden hose" : "The garden hose? I don't know about a garden hose but I do know that the gardener keeps a locket on him.{closed locket}",
+            "roses" : "Roses? That reminds me, those two were talking about getting married in the future. I thought it was strange, but I didn't want to get in trouble. There's no way the master would have approved.{secret marriage}",
+            "photograph 3" : "This is awful, to think that someone would do such a thing."
+        },
+        "kevin shepherd" : {
+            "where[LIE]" : "[security footage]I was at the party the entire time. It's nice to take a break from the garden every once in a while.",
+            "where[TRUTH]" : "I did happen to be outside for a little bit. I had to check on the missing garden hose.{missing garden hose}",
+            "relationship" : "I tended to his gardens, to every single leaf and branch and weed you can find out here.",
+            "default" : "I can't help you with this one.",
+            "kevin had the garden hose" : "I can't hide anything from you, huh? {garden hose}",
+            "kevin's brother" : "You learned about my brother? Here, this is my last memory of him.{open locket}",
+            "photograph 3" : "Makes you wonder who could get away with that."
+        },
+        "kevin shepherd[LOVERS]" : {
+            "where[LIE]" : "[security footage]I was at the party the entire time. I was looking for Denise, I had something to give to her.",
+            "where[TRUTH]" : "I did happen to be outside for a little bit. I was looking for some roses for Denise.{roses}",
+            "relationship" : "He didn't deserve someone like Denise.{kevin's jealousy}",
+            "default" : "I can't help you.",
+            "realities" : "revenge reality",
+            "conflicts[KEVIN SHEPHERD]" : "THIEF"
+        },
+        "kevin shepherd[THIEF]" : {
+            "where[LIE]" : "[security footage]I was at the party the entire time, looking after Roy. His own father wouldn't look after him.{kevin and roy}",
+            "where[TRUTH]" : "I did happen to be outside for a little bit. I was looking for the missing shovel.{missing shovel}",
+            "hidden report" : "That DAMN Edgar, he killed my brother! I'm going to kill him myself with that shovel!{shovel}",
+            "relationship" : "I tended to his gardens, to every single leaf and branch and weed you can find out here.",
+            "default" : "I can't help you with that.",
+            "realities" : "revenge reality",
+            "conflicts[KEVIN SHEPHERD]" : "LOVERS"
+        },
+        "guards" : {
+            "where" : "We were in the security room, but we suddenly lost power. Must've been one of the other staff, or one of his family.{foul play}",
+            "relationship" : "We worked for him, pay was good.",
+            "default" : "We don't know anything about that.",
+            "garrett alone in gardens" : "Wasn't that gardener outside? In the last bit of footage we got here, you can see him wandering around the gardens.{security footage}",
+            "missing garden hose" : "He says the garden hose was missing? We saw him lugging that thing around earlier. Hey, you don't think he killed the boss, right{kevin had the garden hose}?",
+            "photograph 3" : "Brutal."
         }
     }
 }

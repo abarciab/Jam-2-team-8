@@ -1,50 +1,60 @@
 {
     "The Basilisk" : {
-        "denise" : {
-            "denise" : "basilisk"
+        "denise gold" : {
+            "denise gold" : "basilisk"
         },
-        "nathan" : {
-            "nathan" : "basilisk"
+        "nathan colt" : {
+            "nathan colt" : "basilisk"
         }
     },
     "The Vengeance" : {
-        "roy" : {
-            "roy" : "vengeance"
+        "roy gold" : {
+            "roy gold" : "vengeance"
         },
-        "kevin" : {
+
+        "kevin shepherd" : {
             "reality" : "revenge reality"
         }
     },
     "The Scoundrel" : {
-        "alexander" : {
-            "alexander" : "scoundrel"
+        "alexander norman" : {
+            "alexander norman" : "scoundrel"
         },
-        "roy" : {
-            "roy" : "scoundrel"
+        "roy gold" : {
+            "roy gold" : "scoundrel"
         }
     },
     "The Accomplice" : {
-        "kevin" : {
-            "kevin" : "accomplice"
+        "kevin shepherd" : {
+            "kevin shepherd" : "accomplice"
         },
-        "joseph" : {
-            "joseph" : "accomplice"
+        "joseph stewart" : {
+            "joseph stewart" : "accomplice"
         }
     },
     "The Lovers" : {
-        "melissa" : {
+        "melissa bailey" : {
             "reality" : "affair reality"
         },
-        "kevin" : {
-            "kevin" : "lovers"
+        "kevin shepherd" : {
+            "kevin shepherd" : "lovers",
+        },
+        "kevin shepherd[VENGEANCE]" : {
+            "kevin shepherd" : "lovers",
+            "denise gold" : "darling"
         }
     },
     "The Thief" : {
-        "nathan" : {
-            "nathan" : "thief"
+        "nathan colt" : {
+            "nathan colt" : "thief"
+        },
+        "alexander norman" : {
+            "alexander norman" : "thief"
+        },
+        "kevin shepherd" : {
+            "kevin shepherd" : "thief"
         }
     }
 }
-
 
 

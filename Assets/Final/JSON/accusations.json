@@ -3,5 +3,16 @@
         "murderer" : "lawrence",
         "means" : "SWORD, LAWRENCE'S GLOVES, LAWRENCE'S DOCUMENTS, LAWRENCE WAS WITH GARRETT",
         "motive" : "LAWRENCE'S DOCUMENTS"
+    },
+    "affair reality" : {
+        "murderer" : "denise",
+        "means" : "REAL GLASS, POISONED LETTER, DENISE'S GLOVES",
+        "motive" : "WEDDING RING, DIVORCE PAPERS, DENISE'S WILL"
+    },
+    "revenge reality" : {
+        "murderer" : "kevin",
+        "means" : "KEVIN'S GLOVES, GARDEN HOSE, SHOVEL, USB DRIVE",
+        "motive" : "OPEN LOCKET, DIVORCE PAPERS, HIDDEN REPORT, NEWSPAPER, SECRET MARRIAGE, USB DRIVE, ROY'S CONFESSION"
     }
+
 }

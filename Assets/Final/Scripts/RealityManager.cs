@@ -224,7 +224,7 @@ public class RealityManager : MonoBehaviour
 
     public void ActivateVariant(string characterName, string variant)
     {
-        
+        print("activating variant: " + characterName + "/" + variant);
         if (GetVariantFromOtherReality(characterName, variant) != null) {
             VariantEntry newVariant = new VariantEntry();
             newVariant.name = characterName;
@@ -275,6 +275,9 @@ public class RealityManager : MonoBehaviour
             return null;
         }
         CardData selectedCard = validCards[UnityEngine.Random.Range(0, validCards.Count)];
+        foreach (var item in validCards) {
+            print(item.cardName + " is valid for " + characterName);
+        }
 
         return DrawCardManually(characterName, selectedCard.cardName);
     }
@@ -300,7 +303,7 @@ public class RealityManager : MonoBehaviour
             print("Tried to draw a card without checking if there were valid cards avaliable first. next time check with the CardsAvalible function");
             return null;
         }
-
+        
         //shift reality, deactivate old variants, and activate valid new ones
         if (!string.IsNullOrEmpty(selectedCardEffect.reality)) {
             shiftToNewReality(selectedCardEffect.reality);
@@ -331,7 +334,7 @@ public class RealityManager : MonoBehaviour
                 return cardRef;
             }
             else {
-                print(cardRef.cardName.ToLower() + " != " + cardName.ToLower());
+                //print(cardRef.cardName.ToLower() + " != " + cardName.ToLower());
             }
         }
         print("tried to get cardRef with invalid name: " + cardName);
@@ -359,9 +362,11 @@ public class RealityManager : MonoBehaviour
 
     bool CheckVariantExistsInReality(string characterName, string variant, string realityName, bool includeBase = true)
     {
+        print("checkign for " + characterName + "/" + variant + " in " + realityName);
         RealityData realityToCheck = getRealityByName(realityName);
         foreach (var character in realityToCheck.characters) {
             if (character.characterName.ToLower() == characterName.ToLower() && ( (string.IsNullOrEmpty(variant) && string.IsNullOrEmpty(variant)) || (!string.IsNullOrEmpty(character.variant) && !string.IsNullOrEmpty(variant) && (character.variant.ToLower() == variant.ToLower())) )) {
+                print("found it");
                 return true;
             }
         }
@@ -369,6 +374,7 @@ public class RealityManager : MonoBehaviour
             return CheckVariantExistsInReality(characterName, variant, baseReality.name, false);
         }
 
+        print("didn't find it :(");
         return false;
     }
 
@@ -413,7 +419,7 @@ public class RealityManager : MonoBehaviour
 
     List<CardData> getValidCards(string characterName)
     {
-        bool displayDebugInfo = false;
+        bool displayDebugInfo = true;
         //print("get valid cards");
 
         List<CardData> validCards = JSONParser.instance.cardData;
@@ -583,11 +589,11 @@ public class RealityManager : MonoBehaviour
                 }
             }
         }
-        /*string _invalidCards = "";
+        string _invalidCards = "";
         foreach (var card in invalidCards) {
             _invalidCards += (card.cardName + ", ");
-        }*/
-        //print("invalid cards: " + _invalidCards);
+        }
+        print("invalid cards: " + _invalidCards);
 
         return validCards.Except(invalidCards).ToList();
     }

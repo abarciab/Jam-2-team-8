@@ -10,6 +10,8 @@ public class CharacterResponseManager : MonoBehaviour
     public string currentCharacterName;
     public Sprite portraitSprite;
 
+    AudioSource source;
+
     private void Awake() {
         // if no duplicates
         if(instance == null) {
@@ -19,6 +21,9 @@ public class CharacterResponseManager : MonoBehaviour
         // if duplicates exist
         else if(instance != null && instance != this) {
             Destroy(gameObject);                // get rid of duplicate
+        }
+        if (source == null) {
+            source = gameObject.AddComponent<AudioSource>();
         }
     }
 /*
@@ -41,6 +46,7 @@ public class CharacterResponseManager : MonoBehaviour
 */
     // get the dialogue type from the character and display the text for it
     public void writeCharacterDialogue(string dialogueType) {
+        print("writing dialogue. type: " + dialogueType);
         //this is really unclean for now
         CharacterDialogueData character = RealityManager.instance.getCharacterDialogue(currentCharacterName);
         string text = "";
@@ -66,9 +72,6 @@ public class CharacterResponseManager : MonoBehaviour
                     found = true;
                     break;
                 }
-                else {
-                    print(response.item.ToUpper() + " != " + dialogueType.ToUpper());
-                }
             }
             if(!found) {
                 text = character.defaultResponse.text;
@@ -79,7 +82,7 @@ public class CharacterResponseManager : MonoBehaviour
         // log evidence and character name in evidence manager
         if(!string.IsNullOrEmpty(evidenceGained)) {
             EvidenceManager.instance.addEvidence(evidenceGained);
-            AudioManager.instance.PlayGlobal(12, restart: false);
+            AudioManager.instance.PlayHere(12, source: source, restart: false);
         }
         EvidenceManager.instance.addCharacter(currentCharacterName);
 

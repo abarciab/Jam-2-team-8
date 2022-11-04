@@ -214,7 +214,7 @@ public class DialogueLog : MonoBehaviour
 
     public void RecordDialogue(string dialogueType, CharacterDialogueData character)
     {
-        //print("added dialog");
+        print("recorded dialog! type: " + dialogueType);
         switch (dialogueType) {
             case "alibi":
                 JournalManager.instance.dialogueLog.RecordDialogue(character.alibi, character.characterName, alibi: true);
@@ -224,16 +224,19 @@ public class DialogueLog : MonoBehaviour
                 break;
             default:
                 foreach (var response in character.evidenceResponses) {
-                    if (response.item == dialogueType) {
+                    if (response.item.ToUpper() == dialogueType.ToUpper()) {
                         JournalManager.instance.dialogueLog.RecordDialogue(response.line, character.characterName, evidence: dialogueType);
                     }
                 }
+                //JournalManager.instance.dialogueLog.RecordDialogue(response.line, character.characterName, evidence: dialogueType);
                 break;
         }
     }
 
     public void RecordDialogue(DialogueLineData line, string speaker, bool alibi = false, bool relationship = false, string evidence = null)
     {
+        print("recorded dialogue. evidence: " + evidence);
+
         var newRecordedLine = new RecordedLines();
         foreach (var _speaker in characterLines) {
             if (_speaker.speaker == speaker) {
@@ -268,7 +271,7 @@ public class DialogueLog : MonoBehaviour
             newLine.dialogueType = "relationship";
         }
         else if (!string.IsNullOrEmpty(evidence)) {
-            newLine.question = "I " + "[VERB] " + speaker  + " ARTICLE " + evidence;
+            newLine.question = "I asked " + speaker  + " about " + evidence.ToLower() + ":";
         }
         newLine.line = line.text;
         newLine.lineData = line;

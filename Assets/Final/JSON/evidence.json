@@ -33,7 +33,7 @@
         "description" : "Roy and Garrett don't have the best father-son relationship.",
         "realities" : "core reality, affair reality, revenge reality",
     },
-    "GARRETT LEFT THE PARTY" : {
+    "GARRETT'S LEFT THE PARTY" : {
         "displayName" : "Garrett leaves",
         "description" : "It seems that Garrett left the party early.",
         "realities" : "core reality",
@@ -147,10 +147,10 @@
         "realities" : "affair reality",
         "motive" : "to die with Garrett."
     },
-    "CAMERA FOOTAGE" : {
+    "SECURITY FOOTAGE" : {
         "displayName" : "Footage",
         "description" : "A recording from the mansion's security cameras.",
-        "realities" : "affair reality"
+        "realities" : "affair reality, revenge reality"
     },
     "REAL GLASS" : {
         "displayName" : "Second Glass",
@@ -194,8 +194,142 @@
         "displayName" : "Letter",
         "description" : "A letter found on the victim.",
         "realities" : "affair reality"
+    },
+    "PHOTOGRAPH 3" : {
+        "displayName" : "Photograph",
+        "description" : "This is a photograph of the scene of the crime. The victim was found half-buried and strangled to death.",
+        "realities" : "revenge reality"
+    },
+    "KEVIN'S JEALOUSY" : {
+        "displayName" : "Kevin's jealousy",
+        "description" : "It seems like Kevin was jealous of Garrett's marriage to Denise.",
+        "realities" : "revenge reality"
+    },
+    "DENISE AND KEVIN" : {
+        "displayName" : "Denise and Kevin",
+        "description" : "Denise and Kevin seem to be a bit too close.",
+        "realities" : "revenge reality"
+    },
+    "FOUL PLAY" : {
+        "displayName" : "Foul play",
+        "description" : "Someone sabotaged the power to the security cameras.",
+        "realities" : "revenge reality"
+    },
+    "KEVIN'S GLOVES" : {
+        "displayName" : "Gloves",
+        "description" : "A pair of gardener gloves, covered with small streaks of blood.",
+        "realities" : "revenge reality",
+        "means" : "strangled Garrett"
+    },
+    "KEY" : {
+        "displayName" : "Key",
+        "description" : "A key that Roy trusted to you.",
+        "realities" : "revenge reality"
+    },
+    "KEVIN AND ROY" : {
+        "displayName" : "Kevin and Roy",
+        "description" : "Kevin seems very interested in Roy for some reason.",
+        "realities" : "revenge reality"
+    },
+    "ROY'S CONFESSION" : {
+        "displayName" : "Confession",
+        "description" : "Roy confessed that Kevin wants to replace Garrett as his father.",
+        "realities" : "revenge reality",
+        "motive" : "to replace Garrett as Roy's father."
+    },
+    "GARRETT LEFT WITH ALEXANDER" : {
+        "displayName" : "Garrett left with Alexander",
+        "description" : "Garrett left the party with Alexander, but why?",
+        "realities" : "revenge reality"
+    },
+    "GARRETT ALONE IN GARDENS" : {
+        "displayName" : "Garrett alone in gardens",
+        "description" : "Alexander left Garrett alone in the gardens.",
+        "realities" : "revenge reality"
+    },
+    "MISSING GARDEN HOSE" : {
+        "displayName" : "Missing garden hose",
+        "description" : "It seems like the garden hose is missing. That could be a possible murder weapon.",
+        "realities" : "revenge reality"
+    },
+    "USB DRIVE" : {
+        "displayName" : "USB drive",
+        "description" : "A USB drive containing Kevin's plan to strangle Garrett, to avenge his brother.",
+        "realities" : "revenge reality",
+        "means" : "strangled Garrett",
+        "motive" : "to avenge his brother."
+    },
+    "INVESTIGATION REPORT" : {
+        "displayName" : "Investigation report",
+        "description" : "A private investigation report on Lawrence Edgar and his connection to multiple workplace accidents",
+        "realities" : "revenge reality"
+    },
+    "HIDDEN REPORT" : {
+        "displayName" : "Hidden report",
+        "description" : "Lawrence Edgar's report on workplace accidents, including the death of Kevin's brother.",
+        "realities" : "revenge reality",
+        "motive" : "to avenge his brother."
+    },
+    "KEVIN'S BROTHER" : {
+        "displayName" : "Kevin's brother",
+        "description" : "It seems like Kevin has a brother.",
+        "realities" : "revenge reality"
+    },
+    "NEWSPAPER" : {
+        "displayName" : "Newspaper",
+        "description" : "A newspaper detailing an accident in Garrett's factory, involving the death of a ‘Billy Shepherd.'",
+        "realities" : "revenge reality",
+        "motive" : "to avenge his brother."
+    },
+    "GARRETT WAS NOT INSIDE" : {
+        "displayName" : "Garrett was not inside",
+        "description" : "It seems like Garrett was murdered outside of the party.",
+        "realities" : "revenge reality"
+    },
+    "CLOSED LOCKET" : {
+        "displayName" : "Missing locket",
+        "description" : "It seems like Kevin has a locket that's important to this case.",
+        "realities" : "revenge reality"
+    },
+    "DIVORCE PAPERS" : {
+        "displayName" : "Divorce papers",
+        "description" : "A pile of documents preparing Denise's divorce with Garrett.",
+        "realities" : "revenge reality",
+        "motive" : "to marry Denise."
+    },
+    "ROSES" : {
+        "displayName" : "Roses",
+        "description" : "A bundle of roses that Kevin wanted to give to Denise.",
+        "realities" : "revenge reality"
+    },
+    "SECRET MARRIAGE" : {
+        "displayName" : "Secret marriage",
+        "description" : "It seems like Kevin and Denise were planning to marry in secret, without Garrett's approval.",
+        "realities" : "revenge reality",
+        "motive" : "to marry Denise."
+    },
+    "GARDEN HOSE" : {
+        "displayName" : "Hose",
+        "description" : "The missing garden hose, found. It seems worn and damaged, it could've been used to strangle the victim.",
+        "realities" : "revenge reality",
+        "means" : "strangled Garrett with a hose"
+    },
+    "OPEN LOCKET" : {
+        "displayName" : "Locket",
+        "description" : "Kevin's locket. It has a picture of him and his brother, with the words ‘Garrett killed Billy Shepherd' etched on the back.",
+        "realities" : "revenge reality",
+        "means" : "to avenge his brother."
+    },
+    "MISSING SHOVEL" : {
+        "displayName" : "Missing shovel",
+        "description" : "It seems like a shovel is missing, which would be involved with the victim being half-buried.",
+        "realities" : "revenge reality"
+    },
+    "SHOVEL" : {
+        "displayName" : "Shovel",
+        "description" : "The missing shovel, found. The fresh dirt, and a little bit of blood, means that this was used to kill and bury the victim.",
+        "realities" : "revenge reality",
+        "means" : "bludgeoned Garrett to death"
     }
 }
-
-
 
