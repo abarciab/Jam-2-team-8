@@ -60,6 +60,6 @@ public class JournalManager : MonoBehaviour
         EvidenceTab.SetActive(index == 1 ? true : false);
         mapTab.SetActive(index == 2 ? true : false);
         AccusationTab.SetActive(index == 3 ? true : false);
-        
+        AudioManager.instance.PlayGlobal(10, restart: false);
     }
 }

@@ -134,6 +134,6 @@ public class RoomManager : MonoBehaviour
 
     public void transitionCoroutine(string roomName) {
         StartCoroutine(startRoomTransition(roomName));
-        AudioManager.instance.PlayGlobal(8, 1, false);
+        AudioManager.instance.PlayGlobal(8, restart: false);
     }
 }

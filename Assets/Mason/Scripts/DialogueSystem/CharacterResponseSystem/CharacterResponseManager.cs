@@ -77,8 +77,10 @@ public class CharacterResponseManager : MonoBehaviour
         }
 
         // log evidence and character name in evidence manager
-        if(!string.IsNullOrEmpty(evidenceGained))
+        if(!string.IsNullOrEmpty(evidenceGained)) {
             EvidenceManager.instance.addEvidence(evidenceGained);
+            AudioManager.instance.PlayGlobal(12, restart: false);
+        }
         EvidenceManager.instance.addCharacter(currentCharacterName);
 
         StartCoroutine(DialogueBase.instance.writeText(new DialogueLine(text)));
