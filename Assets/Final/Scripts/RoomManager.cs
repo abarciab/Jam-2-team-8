@@ -116,6 +116,9 @@ public class RoomManager : MonoBehaviour
     }
 
     public IEnumerator startRoomTransition(string roomName) {
+        if(roomName == currentRoomName || transitioning)
+            yield break;
+
         // begin fade transition
         UIManager.instance.hideDialogueUI(false);
         fade.gameObject.SetActive(true);
