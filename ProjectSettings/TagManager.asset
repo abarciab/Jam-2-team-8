@@ -11,6 +11,7 @@ TagManager:
   - fade
   - pickups
   - lying
+  - card
   layers:
   - Default
   - TransparentFX
