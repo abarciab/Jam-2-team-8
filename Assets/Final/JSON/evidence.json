@@ -33,7 +33,7 @@
         "description" : "Roy and Garrett don't have the best father-son relationship.",
         "realities" : "core reality, affair reality, revenge reality",
     },
-    "GARRETT'S LEFT THE PARTY" : {
+    "GARRETT LEFT THE PARTY" : {
         "displayName" : "Garrett leaves",
         "description" : "It seems that Garrett left the party early.",
         "realities" : "core reality",

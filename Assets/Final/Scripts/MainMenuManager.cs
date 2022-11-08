@@ -5,43 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    public bool startImmediatly;
-    bool loadedOtherScenes;
-
-    public string coreSceneName;
-    public string journalSceneName;
-    public string managerSceneName;
-    public string mainMenuSceneName;
+    public string IntroSceneName;
 
     public Transform menuFade;
+
+    private void Start()
+    {
+        AudioManager.instance.PlayMusic(0);
+    }
 
     public void startMenuTransition() {
         menuFade.gameObject.SetActive(true);
         menuFade.GetComponent<Animator>().SetTrigger("startFade");
+        GetComponent<Animator>().SetTrigger("fade");
     }
 
     public void startGame() {
-        startImmediatly = true;
+        SceneManager.LoadScene(IntroSceneName);
+    }
+    public void DisableAudioListener()
+    {
+        Camera.main.GetComponent<AudioListener>().enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayHoverSound()
     {
-        if (startImmediatly) {
-            startImmediatly = false;
-            if (!SceneManager.GetSceneByName(managerSceneName).isLoaded)
-                SceneManager.LoadScene(managerSceneName, LoadSceneMode.Additive);
-            if (!SceneManager.GetSceneByName(coreSceneName).isLoaded)
-                SceneManager.LoadScene(coreSceneName, LoadSceneMode.Additive);
-            if (!SceneManager.GetSceneByName(journalSceneName).isLoaded)
-                SceneManager.LoadScene(journalSceneName, LoadSceneMode.Additive);
-            loadedOtherScenes = true; 
-        }
-        if (loadedOtherScenes) {
-            if (SceneManager.GetSceneByName(coreSceneName).isLoaded) {
-                SceneManager.SetActiveScene(SceneManager.GetSceneByName(coreSceneName));
-                SceneManager.UnloadSceneAsync(mainMenuSceneName);
-            }
-        }
+        AudioManager.instance.PlayGlobal(1, restart:true);
+    }
+
+    public void PlayClickSound()
+    {
+        AudioManager.instance.PlayGlobal(2, restart: true);
     }
 }

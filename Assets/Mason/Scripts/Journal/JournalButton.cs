@@ -8,6 +8,7 @@ public class JournalButton : MonoBehaviour
 {
     [SerializeField] private Sprite journalSprite;
     [SerializeField] private Sprite exitSprite;
+    [SerializeField] private GameObject sparkles;
     private Button button;
     private bool journalOpen = false;
 
@@ -16,9 +17,18 @@ public class JournalButton : MonoBehaviour
         button.onClick.AddListener(toggleJournal);
     }
 
+    public void TurnOnSparkles()
+    {
+        sparkles.SetActive(true);
+        GetComponent<Animator>().SetBool("wiggle", true);
+    }
+
     public void toggleJournal() {
+        GetComponent<Animator>().SetBool("wiggle", false);
+        sparkles.SetActive(false);
         // close journal if open
-        if(journalOpen) {
+        if (journalOpen) {
+            
             //print("Journal is now closed");
             journalOpen = false;
             JournalManager.instance.CloseJournal();

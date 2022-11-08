@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class DialogueLog : MonoBehaviour
 {
+
     [Header("prefabs")]
     public GameObject characterPortraitPrefab;
     public GameObject suspectDialoguePrefab;
@@ -32,7 +33,9 @@ public class DialogueLog : MonoBehaviour
     public float totalHeightAllowed = 800;
     public float totalHeightAllowedpg0 = 800;
     public float rightPageHandicapp = 550;
+    public Color outdatedTextColor = new Color();
 
+    public static Action OnRecordNewLine;
     public int currentIndex;
     string currentCharacter;
     RecordedLines currentLines;
@@ -54,6 +57,7 @@ public class DialogueLog : MonoBehaviour
         [System.Serializable]
         public class lineDetails
         {
+            public bool outdated;
             public DialogueLineData lineData;
             public string question;
             public string line;
@@ -87,6 +91,38 @@ public class DialogueLog : MonoBehaviour
         //print("enanbled");
         clearLeftPage();
         clearRightPage();
+        OutdateAppropriateEvidence();
+    }
+
+    void OutdateAppropriateEvidence()
+    {
+        //go through every character and check their current dialogue vs their stored lines
+        for (int i = 0; i < characterLines.Count; i++) {
+            string speakerName = characterLines[i].speaker;
+            CharacterDialogueData currentDialogue = RealityManager.instance.getCharacterDialogue(speakerName);
+            foreach (var line in characterLines[i].lines) {
+                switch (line.dialogueType) {
+                    case "alibi":
+                        if (line.line != currentDialogue.alibi.text && line.line != currentDialogue.alibi.truth) {
+                            //print("outdated alibi. line.line: " + line.line + ", trueLine.Text: " + currentDialogue.alibi.text + ", line.truth: " + currentDialogue.alibi.truth);
+                            line.outdated = true;
+                        }
+                        break;
+                    case "relationship":
+                        if (line.line != currentDialogue.relationship.text && line.line != currentDialogue.relationship.truth) {
+                            //print("outdated relationship. line.line: " + line.line + ", trueLine.Text: " + currentDialogue.relationship.text + ", line.truth: " + currentDialogue.relationship.truth);
+                            line.outdated = true;
+                        }
+                        break;
+                    default:
+                        if (line.line != currentDialogue.getEvidenceResponse(line.dialogueType).text && line.line != currentDialogue.getEvidenceResponse(line.dialogueType).truth) {
+                            //print("outdated evidence. line.line: " + line.line + ", trueLine.Text: " + currentDialogue.getEvidenceResponse(line.dialogueType).text + ", line.truth: " + currentDialogue.getEvidenceResponse(line.dialogueType).truth);
+                            line.outdated = true;
+                        }
+                        break;
+                }
+            }
+        }
     }
 
     public void SelectPerson(string name)
@@ -151,11 +187,19 @@ public class DialogueLog : MonoBehaviour
             var question = Instantiate(detectivePrefab, currentPageParent.transform);
             question.GetComponent<TextMeshProUGUI>().text = line.question;
             currentTotalPrefferedHeight += LayoutUtility.GetPreferredHeight(question.GetComponent<RectTransform>());
+            if (characterLines.lines[i].outdated) {
+                question.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+                question.GetComponent<TextMeshProUGUI>().color = outdatedTextColor;
+            }
 
             var answer = Instantiate(suspectDialoguePrefab, currentPageParent.transform);
             answer.GetComponent<TextMeshProUGUI>().text = line.line;
             currentTotalPrefferedHeight += LayoutUtility.GetPreferredHeight(answer.GetComponent<RectTransform>());
-            
+            if (characterLines.lines[i].outdated) {
+                answer.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+                answer.GetComponent<TextMeshProUGUI>().color = outdatedTextColor;
+            }
+
             currentTotalPrefferedHeight += spacing * 2;
             LayoutRebuilder.ForceRebuildLayoutImmediate(currentPageParent.GetComponent<RectTransform>());
             currentPageIndexCount += 1;
@@ -163,16 +207,19 @@ public class DialogueLog : MonoBehaviour
 
             if (currentTotalPrefferedHeight >= (currentPage == 0 ? totalHeightAllowedpg0 : totalHeightAllowed) && currentPageParent == leftPageParent) {
                 currentPageParent = rightPageParent;
-                currentTotalPrefferedHeight = (currentPage == 0) ? rightPageHandicapp : 0;
+                currentTotalPrefferedHeight = 0;
                 nextPageButton.SetActive(false);
             }
-            else if (currentTotalPrefferedHeight >= (currentPage == 0 ? totalHeightAllowedpg0 : totalHeightAllowed) && currentPageParent == rightPageParent) {
+            else if (currentTotalPrefferedHeight >= totalHeightAllowed && currentPageParent == rightPageParent) {
                 break;
             }
         }
 
         if (!pagesToIndex.ContainsKey(currentPage))
             pagesToIndex.Add(currentPage, currentPageIndexCount);
+        else {
+            pagesToIndex[currentPage] = currentPageIndexCount;
+        }
 
         if (characterLines.lines.Count > currentIndex) {
             nextPageButton.SetActive(true);
@@ -214,7 +261,7 @@ public class DialogueLog : MonoBehaviour
 
     public void RecordDialogue(string dialogueType, CharacterDialogueData character)
     {
-        print("recorded dialog! type: " + dialogueType);
+        //print("recorded dialog! type: " + dialogueType);
         switch (dialogueType) {
             case "alibi":
                 JournalManager.instance.dialogueLog.RecordDialogue(character.alibi, character.characterName, alibi: true);
@@ -235,7 +282,7 @@ public class DialogueLog : MonoBehaviour
 
     public void RecordDialogue(DialogueLineData line, string speaker, bool alibi = false, bool relationship = false, string evidence = null)
     {
-        print("recorded dialogue. evidence: " + evidence);
+        //print("recorded dialogue. evidence: " + evidence);
 
         var newRecordedLine = new RecordedLines();
         foreach (var _speaker in characterLines) {
@@ -243,15 +290,27 @@ public class DialogueLog : MonoBehaviour
                 
                 for (int i = 0; i < _speaker.lines.Count; i++) {
                     if (_speaker.lines[i].question == alibiQuestion && alibi) {
-                        _speaker.lines.RemoveAt(i);
+                        if (_speaker.lines[i].line != line.text)
+                            _speaker.lines[i].outdated = true;
+                        else {
+                            return;
+                        }
                         break;
                     }
                     else if (_speaker.lines[i].question == relationshipQuestion && relationship) {
-                        _speaker.lines.RemoveAt(i);
+                        if (_speaker.lines[i].line != line.text)
+                            _speaker.lines[i].outdated = true;
+                        else {
+                            return;
+                        }
                         break;
                     }
                     else if (!string.IsNullOrEmpty(evidence) && _speaker.lines[i].question.Contains(evidence)) {
-                        _speaker.lines.RemoveAt(i);
+                        if (_speaker.lines[i].line != line.text)
+                            _speaker.lines[i].outdated = true;
+                        else {
+                            return;
+                        }
                         break;
                     }
                 }
@@ -271,11 +330,17 @@ public class DialogueLog : MonoBehaviour
             newLine.dialogueType = "relationship";
         }
         else if (!string.IsNullOrEmpty(evidence)) {
+            newLine.dialogueType = evidence;
             newLine.question = "I asked " + speaker  + " about " + evidence.ToLower() + ":";
         }
         newLine.line = line.text;
         newLine.lineData = line;
         newRecordedLine.lines.Add(newLine);
+
+        if (onDialogueLineAdded != null) {
+            print("recorded line");
+            onDialogueLineAdded();
+        }
 
         for (int i = 0; i < characterLines.Count; i++) {
             if (characterLines[i].speaker == speaker) {
@@ -284,6 +349,7 @@ public class DialogueLog : MonoBehaviour
             }
         }
         characterLines.Add(newRecordedLine);
+        
     }
 
 }

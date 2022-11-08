@@ -11,6 +11,7 @@ using JetBrains.Annotations;
 using UnityEngine.Rendering;
 using System.Linq;
 using UnityEditor;
+using Unity.VisualScripting.FullSerializer;
 
 [System.Serializable]
 public class AccusationData {
@@ -93,6 +94,16 @@ public class CharacterDialogueData {
     public DialogueLineData relationship;
     public List<EvidenceResponseData> evidenceResponses = new List<EvidenceResponseData>();
     public List<string> validRealities = new List<string>();            //all the realities that this character can exist in
+
+    public DialogueLineData getEvidenceResponse(string evidenceName)
+    {
+        foreach (var response in evidenceResponses) {
+            if ((!string.IsNullOrEmpty(response.item) && !string.IsNullOrEmpty(evidenceName)) && response.item.ToLower() == evidenceName.ToLower()) {
+                return response.line;
+            }
+        }
+        return new DialogueLineData();
+    }
 }
 [System.Serializable]
 public class RealityData {

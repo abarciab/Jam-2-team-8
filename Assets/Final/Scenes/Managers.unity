@@ -232,7 +232,7 @@ MonoBehaviour:
       validRealities:
       - core reality
     - characterName: denise gold
-      variant: TAUNT
+      variant: BASILISK
       conflicts: []
       defaultResponse:
         text: Shouldn't you be looking into Melissa?
@@ -681,10 +681,10 @@ MonoBehaviour:
           text: This thing's expensive. I've never seen it before in my life! I couldn't
             stand to get blood on my hands.
           lie: 1
-          evidenceGained: LAWRENCE THREW AWAY HIS GLOVES
+          evidenceGained: LAWRENCE'S DOCUMENTS
           requiredEvidence: lawrence's gloves
           truth: How did you find my gloves, I thought I got rid of them! That damn
-            gardener didn't do his job right!
+            gardener didn't do his job right! Hey, you can't take that!
       validRealities:
       - core reality
     - characterName: nathan colt
@@ -808,8 +808,8 @@ MonoBehaviour:
           truth: 
       - item: denise accuses melissa
         line:
-          text: Garrett may be evil, but his staff are angels. Especially that maid.
-            His wife on the other hand, eh...
+          text: "Garrett may be evil, but his staff are angels. Especially that maid.
+            His wife on the other hand, eh\uFFFD"
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -889,8 +889,8 @@ MonoBehaviour:
           truth: 
       - item: alexander was early
         line:
-          text: When will Mr. Norman ever learn... Take his words with a grain of
-            salt, he was late to the party.
+          text: "When will Mr. Norman ever learn\uFFFD Take his words with a grain
+            of salt, he was late to the party."
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -955,7 +955,7 @@ MonoBehaviour:
           truth: 
       - item: denise accuses melissa
         line:
-          text: I... I don't know what I've done to deserve this blame.
+          text: "I\uFFFD I don't know what I've done to deserve this blame."
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -986,7 +986,7 @@ MonoBehaviour:
           truth: 
       - item: photograph 1
         line:
-          text: Oh my god... Who could've done such a thing to him.
+          text: "Oh my god\uFFFD Who could've done such a thing to him."
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -1058,7 +1058,7 @@ MonoBehaviour:
           truth: 
       - item: photograph 1
         line:
-          text: What an awful way to die...
+          text: "What an awful way to die\uFFFD"
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -1113,7 +1113,7 @@ MonoBehaviour:
           truth: 
       - item: photograph 1
         line:
-          text: I can't imagine how painful that must've been...
+          text: "I can't imagine how painful that must've been\uFFFD"
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -1173,6 +1173,1203 @@ MonoBehaviour:
           truth: 
       validRealities:
       - core reality
+  - name: affair reality
+    characters:
+    - characterName: denise gold
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: I have nothing to say about that.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at the party, attending to my husband's personal circus.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Garrett was my husband, but he'd marry Melissa in a heartbeat if he
+          could.
+        lie: 0
+        evidenceGained: GARRETT'S MARRIAGE
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: photograph 2
+        line:
+          text: I don't need a photograph to see something that already happened
+            right in front of me.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: glass
+        line:
+          text: Melissa served my son a glass just like that. I'm glad he wasn't
+            poisoned too.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: letter
+        line:
+          text: I've never seen this letter before.
+          lie: 1
+          evidenceGained: POISONED LETTER
+          requiredEvidence: denise's letter
+          truth: So I did make that letter and give it to the maid, what are you
+            going to make of it?
+      validRealities:
+      - affair reality
+    - characterName: roy gold
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: Never seen this in my life.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at the party, sitting with my mother at that table over there.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Garrett was my father.
+        lie: 0
+        evidenceGained: ROY CALLS GARRETT BY FIRST NAME
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: roy calls garrett by first name
+        line:
+          text: Biologically, we may be related. But I never want to call that man
+            my father any more than I have to.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: glass
+        line:
+          text: I called over Melissa for a drink, and she gave us a glass just like
+            that.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: fake glass
+        line:
+          text: That glass? I think I saw my mother swap that glass with another
+            one, right over here.
+          lie: 0
+          evidenceGained: REAL GLASS
+          requiredEvidence: 
+          truth: 
+      - item: denise's gloves
+        line:
+          text: "She poisoned Garrett?! I remember her giving me this document while
+            murmuring something about \uFFFDRomeo and Juliet\uFFFD'"
+          lie: 0
+          evidenceGained: DENISE'S WILL
+          requiredEvidence: 
+          truth: 
+      - item: photograph 2
+        line:
+          text: I saw him drop right in front of me. With a thud.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - affair reality
+    - characterName: roy gold
+      variant: SCOUNDREL
+      conflicts:
+      - character: roy gold
+        variant: AFFECTION
+      defaultResponse:
+        text: Never seen this one.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: 
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: He was married to my mother and to the maid.
+        lie: 0
+        evidenceGained: GARRETT'S MARRIAGE
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: photograph 2
+        line:
+          text: Good riddance.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - affair reality
+    - characterName: alexander norman
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: Curious, but I'm not familiar...
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I arrived a tad bit late to the party, traffic is quite the devil.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: He was my finest client. I'm an art collector, you see, and Garrett
+          was always hungry for my masterpieces.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: garrett's marriage
+        line:
+          text: That's an interesting story. He never looked at his wife the same
+            way he looked at his maid. A story you should learn yourself. Here, take
+            this receipt to the maid, she'll recognize it.
+          lie: 0
+          evidenceGained: RECEIPT
+          requiredEvidence: 
+          truth: 
+      - item: glass
+        line:
+          text: This glass. It's not Garrett's, it's Denise's. The craftsmanship
+            mentions her name.
+          lie: 0
+          evidenceGained: FAKE GLASS
+          requiredEvidence: 
+          truth: 
+      - item: letter
+        line:
+          text: I believe Denise had a hand in this.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: photograph 2
+        line:
+          text: Dead in front of so many people, what a pity.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - affair reality
+    - characterName: lawrence edgar
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: Never seen this. Can I pay you to take this away?
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was having a fantastic time at the party.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Garrett was my business partner, my best friend even! We've known each
+          other since high school! I was the one who funded his company.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: photograph 2
+        line:
+          text: "My friend\uFFFD You didn't need to die like this."
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: glass
+        line:
+          text: Everyone got a glass just like that one.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: fake glass
+        line:
+          text: That's a fake one? Well look at the one over here, this is the real
+            one right?
+          lie: 0
+          evidenceGained: REAL GLASS
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - affair reality
+    - characterName: nathan colt
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: What's this? Is it important to your investigation?
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at the party the entire time.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: I never knew him personally.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: garrett's marriage
+        line:
+          text: I've heard some interesting things about that. I mean, look at what
+            I found lying around. Looks like they weren't on the best terms.
+          lie: 0
+          evidenceGained: DIVORCE PAPERS
+          requiredEvidence: 
+          truth: 
+      - item: photograph 2
+        line:
+          text: It happened with a crash. One second, he was laughing. And the next,
+            he was cold on the ground.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: glass
+        line:
+          text: I was offered a glass by the maid, but I had to refuse.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - affair reality
+    - characterName: 'nathan colt '
+      variant: BASILISK
+      conflicts: []
+      defaultResponse:
+        text: What's this? Doesn't look like something I can write about.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at the party the entire time, keeping my eye on the maid.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: I didn't know him, but I want to learn more about that maid.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: garrett's marriage
+        line:
+          text: I heard that the maid's been in an affair with Mr. Gold for the longest
+            time.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: photograph 2
+        line:
+          text: I don't believe the maid would've done something like this.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: glass
+        line:
+          text: This isn't the same glass the maid brought into the room.
+          lie: 0
+          evidenceGained: FAKE GLASS
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - affair reality
+    - characterName: joseph stewart
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: I'm sorry but I cannot be of service to you. This item is unfamiliar.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at the party, attending to the guests.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: The master and I have been working together for many, many long years.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: photograph 2
+        line:
+          text: "The master\uFFFD What an awful way to die."
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: glass
+        line:
+          text: We have countless glassware exactly like this in the mansion.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - affair reality
+    - characterName: 'joseph stewart '
+      variant: ACCOMPLICE
+      conflicts: []
+      defaultResponse:
+        text: I'm sorry but I cannot be of help to you. This item is unfamiliar.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at the party, attending to all of the guests. Mrs. Gold urgently
+          ordered me to throw out a trash bag into the garden without haste.
+        lie: 0
+        evidenceGained: TRASH BAG
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: The master and I have been working together for many long years.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: photograph 2
+        line:
+          text: "The master\uFFFD What a terrible way to die."
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: glass
+        line:
+          text: We have countless glassware exactly like this in the mansion.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - affair reality
+    - characterName: melissa bailey
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: My apologies, but I don't recognize this...
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at the party, serving food and drinks to all the guests.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Garrett wasn't just my employer, he was my one true love. He was going
+          to leve Denise for me...
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: garrett's marriage
+        line:
+          text: I didn't have any affair with him!
+          lie: 1
+          evidenceGained: WEDDING RING
+          requiredEvidence: receipt
+          truth: "It\uFFFD It was true love. He bought me this beautiful wedding
+            ring, and told me would be married. He told me not to worry about Mrs.
+            Gold"
+      - item: photograph 2
+        line:
+          text: "Oh my god\uFFFD I remember this exact moment, it happened right
+            in front of me.."
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: glass
+        line:
+          text: This isn't the same glass I brought to Mrs. Gold.
+          lie: 0
+          evidenceGained: FAKE GLASS
+          requiredEvidence: 
+          truth: 
+      - item: letter
+        line:
+          text: This is the letter that Mrs. Gold told me to give to the master!
+          lie: 0
+          evidenceGained: DENISE'S LETTER
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - affair reality
+    - characterName: kevin shepherd
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: I can't help you with this one.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was outside, didn't see anything happen.
+        lie: 1
+        evidenceGained: DENISE'S GLOVES
+        requiredEvidence: trash bag
+        truth: I did see a trash bag land on my head. It's over there, you can take
+          a look at it.
+      relationship:
+        text: I tended to his gardens, to every single leaf and branch and weed you
+          can find out here.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: photograph 2
+        line:
+          text: "He was poisoned, huh\uFFFD"
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: glass
+        line:
+          text: I've seen this in the mansion.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - affair reality
+    - characterName: kevin shepherd
+      variant: LOVERS
+      conflicts:
+      - character: DENISE GOLD
+        variant: LOVERS
+      defaultResponse:
+        text: I can't help you with this.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was outside. There was a trash bag, but I already burned it.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: I tended to his gardens, to every single leaf and branch and weed you
+          can find out here.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: garrett's marriage
+        line:
+          text: I have nothing to do with his marriage.
+          lie: 1
+          evidenceGained: POISONED LETTER
+          requiredEvidence: divorce papers
+          truth: Where did you find those? It's true, Denise was going to divorce
+            and we were going to get married together. She told me to dispose of
+            the poison in the letter.
+      - item: photograph 2
+        line:
+          text: "He's gone, huh\uFFFD"
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: glass
+        line:
+          text: I've seen this in the mansion.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - affair reality
+    - characterName: guards
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: We don't know anything about that.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: We were in the security room, you can look through the footage we have
+          here.
+        lie: 0
+        evidenceGained: SECURITY FOOTAGE
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: We worked for him, pay was good.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: photograph 2
+        line:
+          text: So much for our paycheck.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - affair reality
+  - name: revenge reality
+    characters:
+    - characterName: denise gold
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: I have nothing to say about that.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at the party, dealing with Garrett's party of clowns.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Garrett was my husband.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: photograph 3
+        line:
+          text: That's awful. Right outside of this mansion too, none of us are safe.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - revenge reality
+    - characterName: denise gold
+      variant: DARLING
+      conflicts:
+      - character: DENISE GOLD
+        variant: ACCOMPLICE
+      defaultResponse:
+        text: I have nothing to say about that.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at the party, dealing with the mess that Garrett left me. I just
+          wanted to spend time with Kevin.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Garrett was my husband.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: kevin's jealousy
+        line:
+          text: Oh, Kevin is such a sweet person. He is a much better person than
+            Garrett.
+          lie: 0
+          evidenceGained: DENISE AND KEVIN
+          requiredEvidence: 
+          truth: 
+      - item: photograph 3
+        line:
+          text: That's awful. Right outside of this mansion too, none of us are safe.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - revenge reality
+    - characterName: denise gold
+      variant: ACCOMPLICE
+      conflicts:
+      - character: DENISE GOLD
+        variant: DARLING
+      defaultResponse:
+        text: I have nothing to say about that.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at the party with Kevin the entire time. It took me forever to
+          convince him to enjoy a break inside the mansion.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Garrett was my husband.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: foul play
+        line:
+          text: I knew I was going to get caught eventually, here. These are the
+            gloves that Kevin strangled Garrett with.
+          lie: 0
+          evidenceGained: KEVIN'S GLOVES
+          requiredEvidence: 
+          truth: 
+      - item: photograph 3
+        line:
+          text: That's terrible, look at those marks on his neck!
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - revenge reality
+    - characterName: roy gold
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: Never seen this in my life.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at the party, sitting in that corner over there with my video
+          games.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Garrett was my father.
+        lie: 0
+        evidenceGained: ROY CALLS GARRETT BY FIRST NAME
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: roy calls garrett by first name
+        line:
+          text: Biologically, we may be related. But I never want to call that man
+            my father any more than I have to.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      - item: denise and kevin
+        line:
+          text: Ugh, they make me sick. Here, take this key to Joseph. He'll know
+            what to do next.
+          lie: 0
+          evidenceGained: KEY
+          requiredEvidence: 
+          truth: 
+      - item: kevin and roy
+        line:
+          text: Kevin has told me a couple of times that he wants to take me in,
+            and replace my father.
+          lie: 0
+          evidenceGained: ROY'S CONFESSION
+          requiredEvidence: 
+          truth: 
+      - item: photograph 3
+        line:
+          text: Good riddance.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - revenge reality
+    - characterName: alexander norman
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: Curious, but I'm not familiar...
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was having the most amazing time at the party.
+        lie: 1
+        evidenceGained: GARRETT ALONE IN GARDENS
+        requiredEvidence: garrett left with alexander
+        truth: Ah, that. I left the party to discuss a secret business deal with
+          Garrett. He wanted a wedding ring for Melissa. Keep this secret from the
+          wife. He wanted to check on the gardens, so I left him and returned to
+          the party.
+      relationship:
+        text: He was my finest client. I'm an art collector, you see, and Garrett
+          was always hungry for my masterpieces.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: photograph 3
+        line:
+          text: My dear, good friend, who could have done this to you?
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - revenge reality
+    - characterName: alexander norman
+      variant: THIEF
+      conflicts: []
+      defaultResponse:
+        text: Curious, but I'm not familiar...
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was having the most fine time at the party.
+        lie: 1
+        evidenceGained: GARRETT ALONE IN GARDENS
+        requiredEvidence: garrett left with alexander
+        truth: Ah, that. I left the party to discuss a secret business deal with
+          Garrett. Hear this, he wanted a wedding ring for his maid. Keep this secret
+          from Denise. He wanted to check on the gardens, so I left him and returned
+          to the party.
+      relationship:
+        text: He was my finest client. I'm an art collector, you see, and Garrett
+          was always hungry for my masterpieces.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: missing garden hose
+        line:
+          text: That gardener is acting fishy, hmm? I happened to relieve him of
+            this, I hope it's useful to your investigation.
+          lie: 0
+          evidenceGained: USB DRIVE
+          requiredEvidence: 
+          truth: 
+      - item: photograph 3
+        line:
+          text: My dear friend, who would have done this to you?
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - revenge reality
+    - characterName: lawrence edgar
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: Never seen this. Can I pay you to take this away?
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was having a fantastic time at the party.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: Garrett was my business partner, my best friend even! We've known each
+          other since high school! I was the one who funded his company.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: missing shovel
+        line:
+          text: He should be looking for his brother instead of a shovel! I also
+            don't know anything about his brother, just that he has one.
+          lie: 1
+          evidenceGained: HIDDEN REPORT
+          requiredEvidence: investigation report
+          truth: Okay, so I do know about his brother, fine. It was his own fault
+            for what happened to him.
+      - item: photograph 3
+        line:
+          text: I'm going to find who did this to him.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - revenge reality
+    - characterName: nathan colt
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: What's this? Is it important to your investigation?
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I left the party to get some fresh air, and that's when I found the
+          body half-buried in the garden.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: I never knew him personally.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: kevin's brother
+        line:
+          text: He has a brother? I think that's the guy mentioned in this old newspaper.
+            Take a look.
+          lie: 0
+          evidenceGained: NEWSPAPER
+          requiredEvidence: 
+          truth: 
+      - item: missing shovel
+        line:
+          text: I don't know anything about a shovel, but Lawrence Edgar? Take this
+            to him the next time you talk to him.
+          lie: 0
+          evidenceGained: INVESTIGATION REPORT
+          requiredEvidence: 
+          truth: 
+      - item: photograph 3
+        line:
+          text: This matches the exact scene I saw when I left the party.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - revenge reality
+    - characterName: joseph stewart
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: I'm sorry but I cannot be of service to you. This item is unfamiliar.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I left the party to search for the master, but I couldn't find him
+          anywhere in the mansion[garrett was not inside].
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: The master and I have been working together for many, many long years.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: closed locket
+        line:
+          text: Oh, Melissa doesn't know. That locket has the picture of his late
+            brother. He died in an accident long ago.
+          lie: 0
+          evidenceGained: KEVIN'S BROTHER
+          requiredEvidence: 
+          truth: 
+      - item: key
+        line:
+          text: Ah, the young master trusts you with this. I hope it's helpful to
+            your investigation.
+          lie: 0
+          evidenceGained: DIVORCE PAPERS
+          requiredEvidence: 
+          truth: 
+      - item: photograph 3
+        line:
+          text: "The master\uFFFD I hope you find the criminal that did this to him."
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - revenge reality
+    - characterName: melissa bailey
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: My apologies, but I don't recognize this...
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at the party, serving food and drinks to all the guests. I saw
+          the master leave the party with Mr. Norman[garrett left with alexander]
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: I owe so much to the master. He paid off my debt, gave me a job, and
+          gave me a place to call home.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: missing garden hose
+        line:
+          text: The garden hose? I don't know about a garden hose but I do know that
+            the gardener keeps a locket on him.
+          lie: 0
+          evidenceGained: CLOSED LOCKET
+          requiredEvidence: 
+          truth: 
+      - item: roses
+        line:
+          text: Roses? That reminds me, those two were talking about getting married
+            in the future. I thought it was strange, but I didn't want to get in
+            trouble. There's no way the master would have approved.
+          lie: 0
+          evidenceGained: SECRET MARRIAGE
+          requiredEvidence: 
+          truth: 
+      - item: photograph 3
+        line:
+          text: This is awful, to think that someone would do such a thing.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - revenge reality
+    - characterName: kevin shepherd
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: I can't help you with this one.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at the party the entire time. It's nice to take a break from
+          the garden every once in a while.
+        lie: 1
+        evidenceGained: MISSING GARDEN HOSE
+        requiredEvidence: security footage
+        truth: I did happen to be outside for a little bit. I had to check on the
+          missing garden hose.
+      relationship:
+        text: I tended to his gardens, to every single leaf and branch and weed you
+          can find out here.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: kevin had the garden hose
+        line:
+          text: 'I can''t hide anything from you, huh? '
+          lie: 0
+          evidenceGained: GARDEN HOSE
+          requiredEvidence: 
+          truth: 
+      - item: kevin's brother
+        line:
+          text: You learned about my brother? Here, this is my last memory of him.
+          lie: 0
+          evidenceGained: OPEN LOCKET
+          requiredEvidence: 
+          truth: 
+      - item: photograph 3
+        line:
+          text: Makes you wonder who could get away with that.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - revenge reality
+    - characterName: kevin shepherd
+      variant: LOVERS
+      conflicts:
+      - character: KEVIN SHEPHERD
+        variant: THIEF
+      defaultResponse:
+        text: I can't help you.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at the party the entire time. I was looking for Denise, I had
+          something to give to her.
+        lie: 1
+        evidenceGained: ROSES
+        requiredEvidence: security footage
+        truth: I did happen to be outside for a little bit. I was looking for some
+          roses for Denise.
+      relationship:
+        text: He didn't deserve someone like Denise.
+        lie: 0
+        evidenceGained: KEVIN'S JEALOUSY
+        requiredEvidence: 
+        truth: 
+      evidenceResponses: []
+      validRealities:
+      - revenge reality
+    - characterName: kevin shepherd
+      variant: THIEF
+      conflicts:
+      - character: KEVIN SHEPHERD
+        variant: LOVERS
+      defaultResponse:
+        text: I can't help you with that.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: I was at the party the entire time, looking after Roy. His own father
+          wouldn't look after him.
+        lie: 1
+        evidenceGained: KEVIN AND ROY
+        requiredEvidence: security footage
+        truth: I did happen to be outside for a little bit. I was looking for the
+          missing shovel.
+      relationship:
+        text: I tended to his gardens, to every single leaf and branch and weed you
+          can find out here.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: hidden report
+        line:
+          text: That DAMN Edgar, he killed my brother! I'm going to kill him myself
+            with that shovel!
+          lie: 0
+          evidenceGained: SHOVEL
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - revenge reality
+    - characterName: guards
+      variant: 
+      conflicts: []
+      defaultResponse:
+        text: We don't know anything about that.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      alibi:
+        text: We were in the security room, but we suddenly lost power. Must've been
+          one of the other staff, or one of his family.
+        lie: 0
+        evidenceGained: FOUL PLAY
+        requiredEvidence: 
+        truth: 
+      relationship:
+        text: We worked for him, pay was good.
+        lie: 0
+        evidenceGained: 
+        requiredEvidence: 
+        truth: 
+      evidenceResponses:
+      - item: garrett alone in gardens
+        line:
+          text: Wasn't that gardener outside? In the last bit of footage we got here,
+            you can see him wandering around the gardens.
+          lie: 0
+          evidenceGained: SECURITY FOOTAGE
+          requiredEvidence: 
+          truth: 
+      - item: missing garden hose
+        line:
+          text: He says the garden hose was missing? We saw him lugging that thing
+            around earlier. Hey, you don't think he killed the boss, right?
+          lie: 0
+          evidenceGained: KEVIN HAD THE GARDEN HOSE
+          requiredEvidence: 
+          truth: 
+      - item: photograph 3
+        line:
+          text: Brutal.
+          lie: 0
+          evidenceGained: 
+          requiredEvidence: 
+          truth: 
+      validRealities:
+      - revenge reality
   previousRealities: []
   baseReality:
     name: core reality
@@ -1254,7 +2451,7 @@ MonoBehaviour:
       validRealities:
       - core reality
     - characterName: denise gold
-      variant: TAUNT
+      variant: BASILISK
       conflicts: []
       defaultResponse:
         text: Shouldn't you be looking into Melissa?
@@ -1703,10 +2900,10 @@ MonoBehaviour:
           text: This thing's expensive. I've never seen it before in my life! I couldn't
             stand to get blood on my hands.
           lie: 1
-          evidenceGained: LAWRENCE THREW AWAY HIS GLOVES
+          evidenceGained: LAWRENCE'S DOCUMENTS
           requiredEvidence: lawrence's gloves
           truth: How did you find my gloves, I thought I got rid of them! That damn
-            gardener didn't do his job right!
+            gardener didn't do his job right! Hey, you can't take that!
       validRealities:
       - core reality
     - characterName: nathan colt
@@ -1830,8 +3027,8 @@ MonoBehaviour:
           truth: 
       - item: denise accuses melissa
         line:
-          text: Garrett may be evil, but his staff are angels. Especially that maid.
-            His wife on the other hand, eh...
+          text: "Garrett may be evil, but his staff are angels. Especially that maid.
+            His wife on the other hand, eh\uFFFD"
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -1911,8 +3108,8 @@ MonoBehaviour:
           truth: 
       - item: alexander was early
         line:
-          text: When will Mr. Norman ever learn... Take his words with a grain of
-            salt, he was late to the party.
+          text: "When will Mr. Norman ever learn\uFFFD Take his words with a grain
+            of salt, he was late to the party."
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -1977,7 +3174,7 @@ MonoBehaviour:
           truth: 
       - item: denise accuses melissa
         line:
-          text: I... I don't know what I've done to deserve this blame.
+          text: "I\uFFFD I don't know what I've done to deserve this blame."
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -2008,7 +3205,7 @@ MonoBehaviour:
           truth: 
       - item: photograph 1
         line:
-          text: Oh my god... Who could've done such a thing to him.
+          text: "Oh my god\uFFFD Who could've done such a thing to him."
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -2080,7 +3277,7 @@ MonoBehaviour:
           truth: 
       - item: photograph 1
         line:
-          text: What an awful way to die...
+          text: "What an awful way to die\uFFFD"
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -2135,7 +3332,7 @@ MonoBehaviour:
           truth: 
       - item: photograph 1
         line:
-          text: I can't imagine how painful that must've been...
+          text: "I can't imagine how painful that must've been\uFFFD"
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -2275,7 +3472,7 @@ MonoBehaviour:
       validRealities:
       - core reality
     - characterName: denise gold
-      variant: TAUNT
+      variant: BASILISK
       conflicts: []
       defaultResponse:
         text: Shouldn't you be looking into Melissa?
@@ -2724,10 +3921,10 @@ MonoBehaviour:
           text: This thing's expensive. I've never seen it before in my life! I couldn't
             stand to get blood on my hands.
           lie: 1
-          evidenceGained: LAWRENCE THREW AWAY HIS GLOVES
+          evidenceGained: LAWRENCE'S DOCUMENTS
           requiredEvidence: lawrence's gloves
           truth: How did you find my gloves, I thought I got rid of them! That damn
-            gardener didn't do his job right!
+            gardener didn't do his job right! Hey, you can't take that!
       validRealities:
       - core reality
     - characterName: nathan colt
@@ -2851,8 +4048,8 @@ MonoBehaviour:
           truth: 
       - item: denise accuses melissa
         line:
-          text: Garrett may be evil, but his staff are angels. Especially that maid.
-            His wife on the other hand, eh...
+          text: "Garrett may be evil, but his staff are angels. Especially that maid.
+            His wife on the other hand, eh\uFFFD"
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -2932,8 +4129,8 @@ MonoBehaviour:
           truth: 
       - item: alexander was early
         line:
-          text: When will Mr. Norman ever learn... Take his words with a grain of
-            salt, he was late to the party.
+          text: "When will Mr. Norman ever learn\uFFFD Take his words with a grain
+            of salt, he was late to the party."
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -2998,7 +4195,7 @@ MonoBehaviour:
           truth: 
       - item: denise accuses melissa
         line:
-          text: I... I don't know what I've done to deserve this blame.
+          text: "I\uFFFD I don't know what I've done to deserve this blame."
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -3029,7 +4226,7 @@ MonoBehaviour:
           truth: 
       - item: photograph 1
         line:
-          text: Oh my god... Who could've done such a thing to him.
+          text: "Oh my god\uFFFD Who could've done such a thing to him."
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -3101,7 +4298,7 @@ MonoBehaviour:
           truth: 
       - item: photograph 1
         line:
-          text: What an awful way to die...
+          text: "What an awful way to die\uFFFD"
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -3156,7 +4353,7 @@ MonoBehaviour:
           truth: 
       - item: photograph 1
         line:
-          text: I can't imagine how painful that must've been...
+          text: "I can't imagine how painful that must've been\uFFFD"
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -3442,37 +4639,36 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       alibi:
-        text: "I never left the party, all thanks to Garrett\uFFFDs personal circus."
+        text: I never left the party, all thanks to Garrett's personal circus.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       relationship:
-        text: "Garrett was my husband. That\uFFFDs it."
+        text: Garrett was my husband. That's it.
         lie: 0
-        evidenceGained: "GARRETT\uFFFDS MARRIAGE"
+        evidenceGained: GARRETT'S MARRIAGE
         requiredEvidence: 
         truth: 
       evidenceResponses:
-      - item: "garrett\uFFFDs marriage"
+      - item: garrett's marriage
         line:
-          text: "Don\uFFFDt stick your nose in my affairs. I know, go ask Melissa
-            how she killed Garrett. I know she did it."
+          text: Don't stick your nose in my affairs. I know, go ask Melissa how she
+            killed Garrett. I know she did it.
           lie: 0
           evidenceGained: DENISE ACCUSES MELISSA
           requiredEvidence: 
           truth: 
       - item: roy calls garrett by first name
         line:
-          text: "Those two never got along, they were always at each other\uFFFDs
-            throats."
+          text: Those two never got along, they were always at each other's throats.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: garrett left the party
         line:
-          text: "He leaves, he always leaves. It\uFFFDs what he does."
+          text: He leaves, he always leaves. It's what he does.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -3493,16 +4689,16 @@ MonoBehaviour:
           truth: 
       - item: photograph 1
         line:
-          text: "So, that\uFFFDs how he died... I told him to get rid of that sword,
-            but he\uFFFDd never let go of it."
+          text: So, that's how he died... I told him to get rid of that sword, but
+            he'd never let go of it.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: sword
         line:
-          text: "He should\uFFFDve gotten rid of that thing. I know, go ask Alexander
-            how he feels being the previous owner of the murder weapon."
+          text: He should've gotten rid of that thing. I know, go ask Alexander how
+            he feels being the previous owner of the murder weapon.
           lie: 0
           evidenceGained: DENISE ACCUSES ALEXANDER
           requiredEvidence: 
@@ -3513,7 +4709,7 @@ MonoBehaviour:
       variant: BASILISK
       conflicts: []
       defaultResponse:
-        text: "Shouldn\uFFFDt you be looking into Melissa?"
+        text: Shouldn't you be looking into Melissa?
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -3531,7 +4727,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses:
-      - item: "garrett\uFFFDs marriage"
+      - item: garrett's marriage
         line:
           text: Melissa destroyed everything. Go ask her how she killed Garrett,
             who else would?
@@ -3541,30 +4737,30 @@ MonoBehaviour:
           truth: 
       - item: roy calls garrett by first name
         line:
-          text: "Those two would\uFFFDve gotten along if the maid didn\uFFFDt poison
-            Garrett\uFFFDs mind."
+          text: Those two would've gotten along if the maid didn't poison Garrett's
+            mind.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: garrett left the party
         line:
-          text: "I\uFFFDm one-hundred-percent confident he left to go spend time
-            with his maid."
+          text: I'm one-hundred-percent confident he left to go spend time with his
+            maid.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: denise stand down
         line:
-          text: " Detective, don\uFFFDt listen to them, listen to me. I saw Melissa
-            chase after Garrett. I know she wanted to kill him."
+          text: ' Detective, don''t listen to them, listen to me. I saw Melissa chase
+            after Garrett. I know she wanted to kill him.'
           lie: 1
           evidenceGained: MELISSA CHASED GARRETT
           requiredEvidence: melissa did not chase garrett
-          truth: "Fine, listen to them. It\uFFFDs true, I didn\uFFFDt see Melissa
-            leave the party. But you want to make the mistake of trusting the witch
-            and her crow? Go ahead."
+          truth: Fine, listen to them. It's true, I didn't see Melissa leave the
+            party. But you want to make the mistake of trusting the witch and her
+            crow? Go ahead.
       - item: rumors about garrett
         line:
           text: They forgot to mention Melissa.
@@ -3574,8 +4770,8 @@ MonoBehaviour:
           truth: 
       - item: photograph 1
         line:
-          text: "I told him to get rid of that thing. Melissa must\uFFFDve convinced
-            him to hold onto it."
+          text: I told him to get rid of that thing. Melissa must've convinced him
+            to hold onto it.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -3599,8 +4795,8 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       alibi:
-        text: "I was sitting in that corner of the room during the party. I was playing
-          games the whole time. Didn\uFFFDt really see anything."
+        text: I was sitting in that corner of the room during the party. I was playing
+          games the whole time. Didn't really see anything.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -3622,8 +4818,8 @@ MonoBehaviour:
           truth: 
       - item: lawrence accuses roy
         line:
-          text: "Well, that\uFFFDs not very nice. Can I accuse him of being the rudest
-            person in this building?"
+          text: Well, that's not very nice. Can I accuse him of being the rudest
+            person in this building?
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -3635,10 +4831,10 @@ MonoBehaviour:
           evidenceGained: 
           requiredEvidence: 
           truth: 
-      - item: "garrett\uFFFDs marriage"
+      - item: garrett's marriage
         line:
-          text: "Those two have argued more than the hours I\uFFFDve put into my
-            video games. And video games are the only friends I have."
+          text: Those two have argued more than the hours I've put into my video
+            games. And video games are the only friends I have.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -3690,8 +4886,8 @@ MonoBehaviour:
       evidenceResponses:
       - item: roy calls garrett by first name
         line:
-          text: "Sure, look at the blood and we\uFFFDre related. But I get sick every
-            time I have to call that man my father."
+          text: Sure, look at the blood and we're related. But I get sick every time
+            I have to call that man my father.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -3703,16 +4899,16 @@ MonoBehaviour:
           evidenceGained: 
           requiredEvidence: 
           truth: 
-      - item: "garrett\uFFFDs marriage"
+      - item: garrett's marriage
         line:
-          text: "I\uFFFDd call their marriage a nightmare that never ends."
+          text: I'd call their marriage a nightmare that never ends.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: rumors about garrett
         line:
-          text: "Where can I read more of these? They\uFFFDre pretty accurate."
+          text: Where can I read more of these? They're pretty accurate.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -3737,7 +4933,7 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "Curious, but I\uFFFDm not familiar..."
+        text: Curious, but I'm not familiar...
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -3749,8 +4945,8 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       relationship:
-        text: "He was my finest client. I\uFFFDm an art collector, you see, and Garrett
-          was always hungry for my masterpieces."
+        text: He was my finest client. I'm an art collector, you see, and Garrett
+          was always hungry for my masterpieces.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -3772,7 +4968,7 @@ MonoBehaviour:
           evidenceGained: 
           requiredEvidence: 
           truth: 
-      - item: "garrett\uFFFDs marriage"
+      - item: garrett's marriage
         line:
           text: A downhill slope.
           lie: 0
@@ -3781,24 +4977,24 @@ MonoBehaviour:
           truth: 
       - item: rumors about garrett
         line:
-          text: "Everyone has their fair share of experiences with him. I\uFFFDve
-            had some of the better ones to myself."
+          text: Everyone has their fair share of experiences with him. I've had some
+            of the better ones to myself.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: photograph 1
         line:
-          text: "That poor soul. He didn\uFFFDt deserve to have his life severed
-            short in such a violent manner."
+          text: That poor soul. He didn't deserve to have his life severed short
+            in such a violent manner.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: sword
         line:
-          text: "Ah, this fine sword. I recognize this, I sold this fine specimen
-            to Garrett many years ago. Such a shame that it\uFFFDd take his life."
+          text: Ah, this fine sword. I recognize this, I sold this fine specimen
+            to Garrett many years ago. Such a shame that it'd take his life.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -3823,8 +5019,8 @@ MonoBehaviour:
           late to the party, but only because the devil of traffic would not let
           me be free.
       relationship:
-        text: "My finest client. You see, I\uFFFDm an art collector, and Garrett
-          was always interested in my masterpieces."
+        text: My finest client. You see, I'm an art collector, and Garrett was always
+          interested in my masterpieces.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -3832,21 +5028,21 @@ MonoBehaviour:
       evidenceResponses:
       - item: denise accuses alexander
         line:
-          text: "I wonder to myself if I should envy that woman\uFFFDs capacity for
-            wasteful anger and empty accusations."
+          text: I wonder to myself if I should envy that woman's capacity for wasteful
+            anger and empty accusations.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: garrett left the party
         line:
-          text: "Ah, what a pity. I didn\uFFFDt catch sight of that gentleman leaving
-            the party."
+          text: Ah, what a pity. I didn't catch sight of that gentleman leaving the
+            party.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
-      - item: "garrett\uFFFDs marriage"
+      - item: garrett's marriage
         line:
           text: A crash course with emphasis on crash.
           lie: 0
@@ -3855,15 +5051,14 @@ MonoBehaviour:
           truth: 
       - item: rumors about garrett
         line:
-          text: "I\uFFFDve enjoyed the kinder experiences with him. A luxury, to
-            be sure."
+          text: I've enjoyed the kinder experiences with him. A luxury, to be sure.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: photograph 1
         line:
-          text: "Poor Garrett. It shouldn\uFFFDt have been like this."
+          text: Poor Garrett. It shouldn't have been like this.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -3888,10 +5083,9 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       alibi:
-        text: "I was having a fantastic time at the party, and that\uFFFDs when I
-          noticed that reporter nosing around. He ruined the mood, so I called the
-          guards to throw that trash out! If anyone killed my best friend, it was
-          him."
+        text: I was having a fantastic time at the party, and that's when I noticed
+          that reporter nosing around. He ruined the mood, so I called the guards
+          to throw that trash out! If anyone killed my best friend, it was him.
         lie: 1
         evidenceGained: LAWRENCE ACCUSES NATHAN
         requiredEvidence: roy accuses lawrence
@@ -3899,8 +5093,8 @@ MonoBehaviour:
           Garrett during the party to talk business, to take his company to the next
           level.
       relationship:
-        text: "Garrett was my business partner, my best friend even! We\uFFFDve known
-          each other since high school! I was the one who funded his company."
+        text: Garrett was my business partner, my best friend even! We've known each
+          other since high school! I was the one who funded his company.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -3908,15 +5102,15 @@ MonoBehaviour:
       evidenceResponses:
       - item: lawrence accuses nathan
         line:
-          text: "Oh come on, you know it has to be that reporter. Why else would
-            he be snooping around here? If you want another idea, I\uFFFDll give
-            you the son. Hates his dad, wouldn\uFFFDt miss seeing him gone. Probably
-            wanted his inheritance early."
+          text: Oh come on, you know it has to be that reporter. Why else would he
+            be snooping around here? If you want another idea, I'll give you the
+            son. Hates his dad, wouldn't miss seeing him gone. Probably wanted his
+            inheritance early.
           lie: 1
           evidenceGained: LAWRENCE ACCUSES ROY
-          requiredEvidence: "lawrence\uFFFDs documents"
-          truth: "That\uFFFDs impossible, how did you find those! I thought I got
-            rid of them!"
+          requiredEvidence: lawrence's documents
+          truth: That's impossible, how did you find those! I thought I got rid of
+            them!
       - item: garrett left the party
         line:
           text: He went to his office. Hey, I bet that gardener jumped into his office
@@ -3927,13 +5121,13 @@ MonoBehaviour:
           truth: 
       - item: kevin did not jump down
         line:
-          text: "Okay, so the gardener didn\uFFFDt jump into the office. I was just
-            trying to help, throw some random ideas out there."
+          text: Okay, so the gardener didn't jump into the office. I was just trying
+            to help, throw some random ideas out there.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
-      - item: "garrett\uFFFDs marriage"
+      - item: garrett's marriage
         line:
           text: I keep telling him to find a different partner! Ditch the woman,
             ditch the son too!
@@ -3950,28 +5144,28 @@ MonoBehaviour:
           truth: 
       - item: photograph 1
         line:
-          text: "Wow. That\uFFFDs an awful sight, I\uFFFDm sorry for what happened
-            to him. I hope his death was painless."
+          text: Wow. That's an awful sight, I'm sorry for what happened to him. I
+            hope his death was painless.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: sword
         line:
-          text: "This thing\uFFFDs expensive. I\uFFFDve never seen it before in my
-            life! I couldn\uFFFDt stand to get blood on my hands."
+          text: This thing's expensive. I've never seen it before in my life! I couldn't
+            stand to get blood on my hands.
           lie: 1
-          evidenceGained: "LAWRENCE\uFFFDS DOCUMENTS"
-          requiredEvidence: "lawrence\uFFFDs gloves"
-          truth: "How did you find my gloves, I thought I got rid of them! That damn
-            gardener didn\uFFFDt do his job right! Hey, you can\uFFFDt take that!"
+          evidenceGained: LAWRENCE'S DOCUMENTS
+          requiredEvidence: lawrence's gloves
+          truth: How did you find my gloves, I thought I got rid of them! That damn
+            gardener didn't do his job right! Hey, you can't take that!
       validRealities:
       - core reality
     - characterName: nathan colt
       variant: 
       conflicts: []
       defaultResponse:
-        text: "What\uFFFDs this? Is it important to your investigation?"
+        text: What's this? Is it important to your investigation?
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -3984,8 +5178,8 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       relationship:
-        text: "I never knew him personally, but I heard rumors that he\uFFFDs a terrible
-          person. Ask the others about that."
+        text: I never knew him personally, but I heard rumors that he's a terrible
+          person. Ask the others about that.
         lie: 0
         evidenceGained: RUMORS ABOUT GARRETT
         requiredEvidence: 
@@ -3993,7 +5187,7 @@ MonoBehaviour:
       evidenceResponses:
       - item: lawrence accuses nathan
         line:
-          text: "Now that\uFFFDs just messed up. I\uFFFDm a reporter, not a thief."
+          text: Now that's just messed up. I'm a reporter, not a thief.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -4016,16 +5210,16 @@ MonoBehaviour:
           truth: 
       - item: denise accuses melissa
         line:
-          text: "That nice maid couldn\uFFFDt hurt a butterfly. That wife would crush
-            butterflies for fun though!"
+          text: That nice maid couldn't hurt a butterfly. That wife would crush butterflies
+            for fun though!
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: photograph 1
         line:
-          text: "This isn\uFFFDt the first murder I\uFFFDve seen, but this is a grisly
-            one. I\uFFFDm throwing a wild guess but maybe that gardener was involved."
+          text: This isn't the first murder I've seen, but this is a grisly one.
+            I'm throwing a wild guess but maybe that gardener was involved.
           lie: 0
           evidenceGained: NATHAN ACCUSES KEVIN
           requiredEvidence: 
@@ -4043,7 +5237,7 @@ MonoBehaviour:
       variant: THIEF
       conflicts: []
       defaultResponse:
-        text: "What\uFFFDs this? Doesn\uFFFDt look like something I can write about."
+        text: What's this? Doesn't look like something I can write about.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -4056,8 +5250,8 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       relationship:
-        text: "I never knew him, and I don\uFFFDt want to. He\uFFFDs a terrible person
-          connected to terrible people, ask the others."
+        text: I never knew him, and I don't want to. He's a terrible person connected
+          to terrible people, ask the others.
         lie: 0
         evidenceGained: RUMORS ABOUT GARRETT
         requiredEvidence: 
@@ -4065,23 +5259,23 @@ MonoBehaviour:
       evidenceResponses:
       - item: lawrence accuses nathan
         line:
-          text: "He\uFFFDs right. Take a look at this."
+          text: He's right. Take a look at this.
           lie: 0
-          evidenceGained: "LAWRENCE\uFFFDS DOCUMENTS"
+          evidenceGained: LAWRENCE'S DOCUMENTS
           requiredEvidence: 
           truth: 
       - item: kevin jumped down
         line:
-          text: "I\uFFFDd love to see the gardener jump through a closed window.
-            That window was shut tight."
+          text: I'd love to see the gardener jump through a closed window. That window
+            was shut tight.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: garrett left the party
         line:
-          text: "I never got the chance to speak to him, and I\uFFFDm glad I never
-            got to."
+          text: I never got the chance to speak to him, and I'm glad I never got
+            to.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -4115,15 +5309,15 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "I\uFFFDm sorry but I cannot be of service to you. This item is unfamiliar."
+        text: I'm sorry but I cannot be of service to you. This item is unfamiliar.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: "I was at the party, looking for the master. I assumed he would be
-          at his office, and that\uFFFDs where I went. I didn\uFFFDt expect the poor
-          master dead in his own sanctuary."
+        text: I was at the party, looking for the master. I assumed he would be at
+          his office, and that's where I went. I didn't expect the poor master dead
+          in his own sanctuary.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -4137,8 +5331,8 @@ MonoBehaviour:
       evidenceResponses:
       - item: garrett left the party
         line:
-          text: "Melissa was the person who informed me of the master\uFFFDs leave.
-            That\uFFFDs when I started to search for him."
+          text: Melissa was the person who informed me of the master's leave. That's
+            when I started to search for him.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -4161,8 +5355,8 @@ MonoBehaviour:
           truth: 
       - item: kevin jumped down
         line:
-          text: "The window was sealed completely shut in the office when I found
-            the master\uFFFDs body. Mr. Edgar will have to concoct another fantasy."
+          text: The window was sealed completely shut in the office when I found
+            the master's body. Mr. Edgar will have to concoct another fantasy.
           lie: 0
           evidenceGained: KEVIN DID NOT JUMP DOWN
           requiredEvidence: 
@@ -4193,8 +5387,8 @@ MonoBehaviour:
           truth: 
       - item: sword
         line:
-          text: "One of the master\uFFFDs most prized possessions. It\uFFFDs regretful
-            that it\uFFFDs become the murder weapon."
+          text: One of the master's most prized possessions. It's regretful that
+            it's become the murder weapon.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -4205,21 +5399,21 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "My apologies, but I don\uFFFDt recognize this..."
+        text: My apologies, but I don't recognize this...
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: "I was at the party, serving food and drinks to all the guests. That\uFFFDs
-          when I caught a glance of the master leaving the party."
+        text: I was at the party, serving food and drinks to all the guests. That's
+          when I caught a glance of the master leaving the party.
         lie: 0
         evidenceGained: GARRETT LEFT THE PARTY
         requiredEvidence: 
         truth: 
       relationship:
-        text: "Garrett wasn\uFFFDt just my employer, he saved my life. He paid off
-          my debt, gave me a job, and gave me a home to stay in."
+        text: Garrett wasn't just my employer, he was my one true love. He was going
+          to leve Denise for me...
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -4227,46 +5421,46 @@ MonoBehaviour:
       evidenceResponses:
       - item: garrett left the party
         line:
-          text: "He\uFFFDs made a habit of leaving large gatherings, so I didn\uFFFDt
-            question it at the time."
+          text: He's made a habit of leaving large gatherings, so I didn't question
+            it at the time.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: denise accuses melissa
         line:
-          text: "I\uFFFD I don\uFFFDt know what I\uFFFDve done to deserve this blame."
+          text: "I\uFFFD I don't know what I've done to deserve this blame."
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: melissa chased garrett
         line:
-          text: "That\uFFFDs just silly! I never left the party, it was Joseph who
-            went looking for the master!"
+          text: That's just silly! I never left the party, it was Joseph who went
+            looking for the master!
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: alexander was early
         line:
-          text: "Oh, typical Mr. Norman. He claims to always be early, but he\uFFFDs
-            always late."
+          text: Oh, typical Mr. Norman. He claims to always be early, but he's always
+            late.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: rumors about garrett
         line:
-          text: "That\uFFFDs preposterous! The master is one of the nicest, kindest
-            people I\uFFFDve met in my entire life!"
+          text: That's preposterous! The master is one of the nicest, kindest people
+            I've met in my entire life!
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: photograph 1
         line:
-          text: "Oh my god\uFFFD Who could\uFFFDve done such a thing to him."
+          text: "Oh my god\uFFFD Who could've done such a thing to him."
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -4285,14 +5479,14 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "I can\uFFFDt help you with this one."
+        text: I can't help you with this one.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: "I was outside, tending to the plants. They\uFFFDre very needy. I did
-          see Mr. Edgar and the guards throw out that reporter."
+        text: I was outside, tending to the plants. They're very needy. I did see
+          Mr. Edgar and the guards throw out that reporter.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -4307,33 +5501,31 @@ MonoBehaviour:
       evidenceResponses:
       - item: nathan accuses kevin
         line:
-          text: "What? I would never take a bribe! That\uFFFDs crazy!"
+          text: What? I would never take a bribe! That's crazy!
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: kevin jumped down
         line:
-          text: "Huh? I didn\uFFFDt go in Mr. Gold\uFFFDs office, and especially
-            not through his window. Mr. Gold\uFFFDs office window was closed the
-            entire time."
+          text: Huh? I didn't go in Mr. Gold's office, and especially not through
+            his window. Mr. Gold's office window was closed the entire time.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: alexander was early
         line:
-          text: "Mr. Norman, early? If he tells you that he\uFFFDs early, that means
-            that he\uFFFDs late. I saw him sneaking through the front door late into
-            the party."
+          text: Mr. Norman, early? If he tells you that he's early, that means that
+            he's late. I saw him sneaking through the front door late into the party.
           lie: 0
           evidenceGained: ALEXANDER WAS LATE
           requiredEvidence: 
           truth: 
       - item: rumors about garrett
         line:
-          text: "He treated me fairly well. If he didn\uFFFDt, well, I would\uFFFDve
-            thrashed his plants by now."
+          text: He treated me fairly well. If he didn't, well, I would've thrashed
+            his plants by now.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -4347,7 +5539,7 @@ MonoBehaviour:
           truth: 
       - item: sword
         line:
-          text: "I\uFFFDve seen this in his office."
+          text: I've seen this in his office.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -4358,14 +5550,14 @@ MonoBehaviour:
       variant: ACCOMPLICE
       conflicts: []
       defaultResponse:
-        text: "I can\uFFFDt help you with this."
+        text: I can't help you with this.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: "I wasn\uFFFDt in the mansion at all. I was outside, taking care of
-          the plants. I did see the guards throw out that reporter."
+        text: I wasn't in the mansion at all. I was outside, taking care of the plants.
+          I did see the guards throw out that reporter.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -4383,26 +5575,26 @@ MonoBehaviour:
           text: Impossible, how did you know? Mr. Edgar promised me a suitcase of
             cash for burying his gloves. Here, I still have them.
           lie: 0
-          evidenceGained: "LAWRENCE\uFFFDS GLOVES"
+          evidenceGained: LAWRENCE'S GLOVES
           requiredEvidence: 
           truth: 
       - item: rumors about garrett
         line:
-          text: "I don\uFFFDt have much to say about him."
+          text: I don't have much to say about him.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: photograph 1
         line:
-          text: "I can\uFFFDt imagine how painful that must\uFFFDve been\uFFFD"
+          text: "I can't imagine how painful that must've been\uFFFD"
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: sword
         line:
-          text: "I\uFFFDve seen this on the wall in his office."
+          text: I've seen this on the wall in his office.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -4413,7 +5605,7 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "We don\uFFFDt know anything about that."
+        text: We don't know anything about that.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -4434,7 +5626,7 @@ MonoBehaviour:
       evidenceResponses:
       - item: rumors about garrett
         line:
-          text: "He pays us. That\uFFFDs it."
+          text: He pays us. That's it.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -4467,41 +5659,41 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       alibi:
-        text: "I was at the party, attending to my husband\uFFFDs personal circus."
+        text: I was at the party, attending to my husband's personal circus.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       relationship:
-        text: "Garrett was my husband, but he\uFFFDd marry Melissa in a heartbeat
-          if he could."
+        text: Garrett was my husband, but he'd marry Melissa in a heartbeat if he
+          could.
         lie: 0
-        evidenceGained: "GARRETT\uFFFDS MARRIAGE"
+        evidenceGained: GARRETT'S MARRIAGE
         requiredEvidence: 
         truth: 
       evidenceResponses:
       - item: photograph 2
         line:
-          text: "I don\uFFFDt need a photograph to see something that already happened
-            right in front of me."
+          text: I don't need a photograph to see something that already happened
+            right in front of me.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: glass
         line:
-          text: "Melissa served my son a glass just like that. I\uFFFDm glad he wasn\uFFFDt
-            poisoned too."
+          text: Melissa served my son a glass just like that. I'm glad he wasn't
+            poisoned too.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: letter
         line:
-          text: "I\uFFFDve never seen this letter before."
+          text: I've never seen this letter before.
           lie: 1
           evidenceGained: POISONED LETTER
-          requiredEvidence: "denise\uFFFDs letter"
+          requiredEvidence: denise's letter
           truth: So I did make that letter and give it to the maid, what are you
             going to make of it?
       validRealities:
@@ -4552,12 +5744,12 @@ MonoBehaviour:
           evidenceGained: REAL GLASS
           requiredEvidence: 
           truth: 
-      - item: "denise\uFFFDs gloves"
+      - item: denise's gloves
         line:
           text: "She poisoned Garrett?! I remember her giving me this document while
-            murmuring something about \uFFFDRomeo and Juliet\uFFFD\uFFFD"
+            murmuring something about \uFFFDRomeo and Juliet\uFFFD'"
           lie: 0
-          evidenceGained: "DENISE\uFFFDS WILL"
+          evidenceGained: DENISE'S WILL
           requiredEvidence: 
           truth: 
       - item: photograph 2
@@ -4589,7 +5781,7 @@ MonoBehaviour:
       relationship:
         text: He was married to my mother and to the maid.
         lie: 0
-        evidenceGained: "GARRETT\uFFFDS MARRIAGE"
+        evidenceGained: GARRETT'S MARRIAGE
         requiredEvidence: 
         truth: 
       evidenceResponses:
@@ -4606,7 +5798,7 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "Curious, but I\uFFFDm not familiar..."
+        text: Curious, but I'm not familiar...
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -4618,26 +5810,26 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       relationship:
-        text: "He was my finest client. I\uFFFDm an art collector, you see, and Garrett
-          was always hungry for my masterpieces."
+        text: He was my finest client. I'm an art collector, you see, and Garrett
+          was always hungry for my masterpieces.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       evidenceResponses:
-      - item: "garrett\uFFFDs marriage"
+      - item: garrett's marriage
         line:
-          text: "That\uFFFDs an interesting story. He never looked at his wife the
-            same way he looked at his maid. A story you should learn yourself. Here,
-            take this receipt to the maid, she\uFFFDll recognize it."
+          text: That's an interesting story. He never looked at his wife the same
+            way he looked at his maid. A story you should learn yourself. Here, take
+            this receipt to the maid, she'll recognize it.
           lie: 0
           evidenceGained: RECEIPT
           requiredEvidence: 
           truth: 
       - item: glass
         line:
-          text: "This glass. It\uFFFDs not Garrett\uFFFDs, it\uFFFDs Denise\uFFFDs.
-            The craftsmanship mentions her name."
+          text: This glass. It's not Garrett's, it's Denise's. The craftsmanship
+            mentions her name.
           lie: 0
           evidenceGained: FAKE GLASS
           requiredEvidence: 
@@ -4674,8 +5866,8 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       relationship:
-        text: "Garrett was my business partner, my best friend even! We\uFFFDve known
-          each other since high school! I was the one who funded his company."
+        text: Garrett was my business partner, my best friend even! We've known each
+          other since high school! I was the one who funded his company.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -4683,7 +5875,7 @@ MonoBehaviour:
       evidenceResponses:
       - item: photograph 2
         line:
-          text: "My friend\uFFFD You didn\uFFFDt need to die like this."
+          text: "My friend\uFFFD You didn't need to die like this."
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -4697,8 +5889,8 @@ MonoBehaviour:
           truth: 
       - item: fake glass
         line:
-          text: "That\uFFFDs a fake one? Well look at the one over here, this is
-            the real one right?"
+          text: That's a fake one? Well look at the one over here, this is the real
+            one right?
           lie: 0
           evidenceGained: REAL GLASS
           requiredEvidence: 
@@ -4709,7 +5901,7 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "What\uFFFDs this? Is it important to your investigation?"
+        text: What's this? Is it important to your investigation?
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -4727,11 +5919,10 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses:
-      - item: "garrett\uFFFDs marriage"
+      - item: garrett's marriage
         line:
-          text: "I\uFFFDve heard some interesting things about that. I mean, look
-            at what I found lying around. Looks like they weren\uFFFDt on the best
-            terms."
+          text: I've heard some interesting things about that. I mean, look at what
+            I found lying around. Looks like they weren't on the best terms.
           lie: 0
           evidenceGained: DIVORCE PAPERS
           requiredEvidence: 
@@ -4757,7 +5948,7 @@ MonoBehaviour:
       variant: BASILISK
       conflicts: []
       defaultResponse:
-        text: "What\uFFFDs this? Doesn\uFFFDt look like something I can write about."
+        text: What's this? Doesn't look like something I can write about.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -4769,31 +5960,30 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       relationship:
-        text: "I didn\uFFFDt know him, but I want to learn more about that maid."
+        text: I didn't know him, but I want to learn more about that maid.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       evidenceResponses:
-      - item: "garrett\uFFFDs marriage"
+      - item: garrett's marriage
         line:
-          text: "I heard that the maid\uFFFDs been in an affair with Mr. Gold for
-            the longest time."
+          text: I heard that the maid's been in an affair with Mr. Gold for the longest
+            time.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: photograph 2
         line:
-          text: "I don\uFFFDt believe the maid would\uFFFDve done something like
-            this."
+          text: I don't believe the maid would've done something like this.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: glass
         line:
-          text: "This isn\uFFFDt the same glass the maid brought into the room."
+          text: This isn't the same glass the maid brought into the room.
           lie: 0
           evidenceGained: FAKE GLASS
           requiredEvidence: 
@@ -4804,7 +5994,7 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "I\uFFFDm sorry but I cannot be of service to you. This item is unfamiliar."
+        text: I'm sorry but I cannot be of service to you. This item is unfamiliar.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -4842,7 +6032,7 @@ MonoBehaviour:
       variant: ACCOMPLICE
       conflicts: []
       defaultResponse:
-        text: "I\uFFFDm sorry but I cannot be of help to you. This item is unfamiliar."
+        text: I'm sorry but I cannot be of help to you. This item is unfamiliar.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -4881,7 +6071,7 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "My apologies, but I don\uFFFDt recognize this..."
+        text: My apologies, but I don't recognize this...
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -4893,16 +6083,16 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       relationship:
-        text: "Garrett wasn\uFFFDt just my employer, he saved my life. He paid off
-          my debt, gave me a job, gave me a home, he gave me everything!"
+        text: Garrett wasn't just my employer, he was my one true love. He was going
+          to leve Denise for me...
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       evidenceResponses:
-      - item: "garrett\uFFFDs marriage"
+      - item: garrett's marriage
         line:
-          text: "I didn\uFFFDt have any affair with him!"
+          text: I didn't have any affair with him!
           lie: 1
           evidenceGained: WEDDING RING
           requiredEvidence: receipt
@@ -4919,7 +6109,7 @@ MonoBehaviour:
           truth: 
       - item: glass
         line:
-          text: "This isn\uFFFDt the same glass I brought to Mrs. Gold."
+          text: This isn't the same glass I brought to Mrs. Gold.
           lie: 0
           evidenceGained: FAKE GLASS
           requiredEvidence: 
@@ -4928,7 +6118,7 @@ MonoBehaviour:
         line:
           text: This is the letter that Mrs. Gold told me to give to the master!
           lie: 0
-          evidenceGained: "DENISE\uFFFDS LETTER"
+          evidenceGained: DENISE'S LETTER
           requiredEvidence: 
           truth: 
       validRealities:
@@ -4937,18 +6127,18 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "I can\uFFFDt help you with this one."
+        text: I can't help you with this one.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: "I was outside, didn\uFFFDt see anything happen."
+        text: I was outside, didn't see anything happen.
         lie: 1
-        evidenceGained: "DENISE\uFFFDS GLOVES"
+        evidenceGained: DENISE'S GLOVES
         requiredEvidence: trash bag
-        truth: "I did see a trash bag land on my head. It\uFFFDs over there, you
-          can take a look at it."
+        truth: I did see a trash bag land on my head. It's over there, you can take
+          a look at it.
       relationship:
         text: I tended to his gardens, to every single leaf and branch and weed you
           can find out here.
@@ -4966,7 +6156,7 @@ MonoBehaviour:
           truth: 
       - item: glass
         line:
-          text: "I\uFFFDve seen this in the mansion."
+          text: I've seen this in the mansion.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -4979,7 +6169,7 @@ MonoBehaviour:
       - character: DENISE GOLD
         variant: LOVERS
       defaultResponse:
-        text: "I can\uFFFDt help you with this."
+        text: I can't help you with this.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -4998,25 +6188,25 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses:
-      - item: "garrett\uFFFDs marriage"
+      - item: garrett's marriage
         line:
           text: I have nothing to do with his marriage.
           lie: 1
           evidenceGained: POISONED LETTER
           requiredEvidence: divorce papers
-          truth: "Where did you find those? It\uFFFDs true, Denise was going to divorce
+          truth: Where did you find those? It's true, Denise was going to divorce
             and we were going to get married together. She told me to dispose of
-            the poison in the letter."
+            the poison in the letter.
       - item: photograph 2
         line:
-          text: "He\uFFFDs gone, huh\uFFFD"
+          text: "He's gone, huh\uFFFD"
           lie: 0
           evidenceGained: 
           requiredEvidence: 
           truth: 
       - item: glass
         line:
-          text: "I\uFFFDve seen this in the mansion."
+          text: I've seen this in the mansion.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -5027,7 +6217,7 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "We don\uFFFDt know anything about that."
+        text: We don't know anything about that.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -5067,7 +6257,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       alibi:
-        text: "I was at the party, dealing with Garrett\uFFFDs party of clowns."
+        text: I was at the party, dealing with Garrett's party of clowns.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -5081,8 +6271,7 @@ MonoBehaviour:
       evidenceResponses:
       - item: photograph 3
         line:
-          text: "That\uFFFDs awful. Right outside of this mansion too, none of us
-            are safe."
+          text: That's awful. Right outside of this mansion too, none of us are safe.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -5114,7 +6303,7 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses:
-      - item: "kevin\uFFFDs jealousy"
+      - item: kevin's jealousy
         line:
           text: Oh, Kevin is such a sweet person. He is a much better person than
             Garrett.
@@ -5124,8 +6313,7 @@ MonoBehaviour:
           truth: 
       - item: photograph 3
         line:
-          text: "That\uFFFDs awful. Right outside of this mansion too, none of us
-            are safe."
+          text: That's awful. Right outside of this mansion too, none of us are safe.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -5162,12 +6350,12 @@ MonoBehaviour:
           text: I knew I was going to get caught eventually, here. These are the
             gloves that Kevin strangled Garrett with.
           lie: 0
-          evidenceGained: "KEVIN\uFFFDS GLOVES"
+          evidenceGained: KEVIN'S GLOVES
           requiredEvidence: 
           truth: 
       - item: photograph 3
         line:
-          text: "That\uFFFDs terrible, look at those marks on his neck!"
+          text: That's terrible, look at those marks on his neck!
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -5207,8 +6395,8 @@ MonoBehaviour:
           truth: 
       - item: denise and kevin
         line:
-          text: "Ugh, they make me sick. Here, take this key to Joseph. He\uFFFDll
-            know what to do next."
+          text: Ugh, they make me sick. Here, take this key to Joseph. He'll know
+            what to do next.
           lie: 0
           evidenceGained: KEY
           requiredEvidence: 
@@ -5218,7 +6406,7 @@ MonoBehaviour:
           text: Kevin has told me a couple of times that he wants to take me in,
             and replace my father.
           lie: 0
-          evidenceGained: "ROY\uFFFDS CONFESSION"
+          evidenceGained: ROY'S CONFESSION
           requiredEvidence: 
           truth: 
       - item: photograph 3
@@ -5234,7 +6422,7 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "Curious, but I\uFFFDm not familiar..."
+        text: Curious, but I'm not familiar...
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -5249,8 +6437,8 @@ MonoBehaviour:
           wife. He wanted to check on the gardens, so I left him and returned to
           the party.
       relationship:
-        text: "He was my finest client. I\uFFFDm an art collector, you see, and Garrett
-          was always hungry for my masterpieces."
+        text: He was my finest client. I'm an art collector, you see, and Garrett
+          was always hungry for my masterpieces.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -5269,7 +6457,7 @@ MonoBehaviour:
       variant: THIEF
       conflicts: []
       defaultResponse:
-        text: "Curious, but I\uFFFDm not familiar..."
+        text: Curious, but I'm not familiar...
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -5284,8 +6472,8 @@ MonoBehaviour:
           from Denise. He wanted to check on the gardens, so I left him and returned
           to the party.
       relationship:
-        text: "He was my finest client. I\uFFFDm an art collector, you see, and Garrett
-          was always hungry for my masterpieces."
+        text: He was my finest client. I'm an art collector, you see, and Garrett
+          was always hungry for my masterpieces.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -5293,8 +6481,8 @@ MonoBehaviour:
       evidenceResponses:
       - item: missing garden hose
         line:
-          text: "That gardener is acting fishy, hmm? I happened to relieve him of
-            this, I hope it\uFFFDs useful to your investigation."
+          text: That gardener is acting fishy, hmm? I happened to relieve him of
+            this, I hope it's useful to your investigation.
           lie: 0
           evidenceGained: USB DRIVE
           requiredEvidence: 
@@ -5324,8 +6512,8 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       relationship:
-        text: "Garrett was my business partner, my best friend even! We\uFFFDve known
-          each other since high school! I was the one who funded his company."
+        text: Garrett was my business partner, my best friend even! We've known each
+          other since high school! I was the one who funded his company.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -5333,8 +6521,8 @@ MonoBehaviour:
       evidenceResponses:
       - item: missing shovel
         line:
-          text: "He should be looking for his brother instead of a shovel! I also
-            don\uFFFDt know anything about his brother, just that he has one."
+          text: He should be looking for his brother instead of a shovel! I also
+            don't know anything about his brother, just that he has one.
           lie: 1
           evidenceGained: HIDDEN REPORT
           requiredEvidence: investigation report
@@ -5342,7 +6530,7 @@ MonoBehaviour:
             for what happened to him.
       - item: photograph 3
         line:
-          text: "I\uFFFDm going to find who did this to him."
+          text: I'm going to find who did this to him.
           lie: 0
           evidenceGained: 
           requiredEvidence: 
@@ -5353,14 +6541,14 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "What\uFFFDs this? Is it important to your investigation?"
+        text: What's this? Is it important to your investigation?
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: "I left the party to get some fresh air, and that\uFFFDs when I found
-          the body half-buried in the garden."
+        text: I left the party to get some fresh air, and that's when I found the
+          body half-buried in the garden.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -5372,18 +6560,18 @@ MonoBehaviour:
         requiredEvidence: 
         truth: 
       evidenceResponses:
-      - item: "kevin\uFFFDs brother"
+      - item: kevin's brother
         line:
-          text: "He has a brother? I think that\uFFFDs the guy mentioned in this
-            old newspaper. Take a look."
+          text: He has a brother? I think that's the guy mentioned in this old newspaper.
+            Take a look.
           lie: 0
           evidenceGained: NEWSPAPER
           requiredEvidence: 
           truth: 
       - item: missing shovel
         line:
-          text: "I don\uFFFDt know anything about a shovel, but Lawrence Edgar? Take
-            this to him the next time you talk to him."
+          text: I don't know anything about a shovel, but Lawrence Edgar? Take this
+            to him the next time you talk to him.
           lie: 0
           evidenceGained: INVESTIGATION REPORT
           requiredEvidence: 
@@ -5401,14 +6589,14 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "I\uFFFDm sorry but I cannot be of service to you. This item is unfamiliar."
+        text: I'm sorry but I cannot be of service to you. This item is unfamiliar.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: "I left the party to search for the master, but I couldn\uFFFDt find
-          him anywhere in the mansion[garrett was not inside]."
+        text: I left the party to search for the master, but I couldn't find him
+          anywhere in the mansion[garrett was not inside].
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -5422,16 +6610,16 @@ MonoBehaviour:
       evidenceResponses:
       - item: closed locket
         line:
-          text: "Oh, Melissa doesn\uFFFDt know. That locket has the picture of his
-            late brother. He died in an accident long ago."
+          text: Oh, Melissa doesn't know. That locket has the picture of his late
+            brother. He died in an accident long ago.
           lie: 0
-          evidenceGained: "KEVIN\uFFFDS BROTHER"
+          evidenceGained: KEVIN'S BROTHER
           requiredEvidence: 
           truth: 
       - item: key
         line:
-          text: "Ah, the young master trusts you with this. I hope it\uFFFDs helpful
-            to your investigation."
+          text: Ah, the young master trusts you with this. I hope it's helpful to
+            your investigation.
           lie: 0
           evidenceGained: DIVORCE PAPERS
           requiredEvidence: 
@@ -5449,7 +6637,7 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "My apologies, but I don\uFFFDt recognize this..."
+        text: My apologies, but I don't recognize this...
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -5471,17 +6659,17 @@ MonoBehaviour:
       evidenceResponses:
       - item: missing garden hose
         line:
-          text: "The garden hose? I don\uFFFDt know about a garden hose but I do
-            know that the gardener keeps a locket on him."
+          text: The garden hose? I don't know about a garden hose but I do know that
+            the gardener keeps a locket on him.
           lie: 0
           evidenceGained: CLOSED LOCKET
           requiredEvidence: 
           truth: 
       - item: roses
         line:
-          text: "Roses? That reminds me, those two were talking about getting married
-            in the future. I thought it was strange, but I didn\uFFFDt want to get
-            in trouble. There\uFFFDs no way the master would have approved."
+          text: Roses? That reminds me, those two were talking about getting married
+            in the future. I thought it was strange, but I didn't want to get in
+            trouble. There's no way the master would have approved.
           lie: 0
           evidenceGained: SECRET MARRIAGE
           requiredEvidence: 
@@ -5499,14 +6687,14 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "I can\uFFFDt help you with this one."
+        text: I can't help you with this one.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: "I was at the party the entire time. It\uFFFDs nice to take a break
-          from the garden every once in a while."
+        text: I was at the party the entire time. It's nice to take a break from
+          the garden every once in a while.
         lie: 1
         evidenceGained: MISSING GARDEN HOSE
         requiredEvidence: security footage
@@ -5522,12 +6710,12 @@ MonoBehaviour:
       evidenceResponses:
       - item: kevin had the garden hose
         line:
-          text: "I can\uFFFDt hide anything from you, huh? "
+          text: 'I can''t hide anything from you, huh? '
           lie: 0
           evidenceGained: GARDEN HOSE
           requiredEvidence: 
           truth: 
-      - item: "kevin\uFFFDs brother"
+      - item: kevin's brother
         line:
           text: You learned about my brother? Here, this is my last memory of him.
           lie: 0
@@ -5549,7 +6737,7 @@ MonoBehaviour:
       - character: KEVIN SHEPHERD
         variant: THIEF
       defaultResponse:
-        text: "I can\uFFFDt help you."
+        text: I can't help you.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
@@ -5563,9 +6751,9 @@ MonoBehaviour:
         truth: I did happen to be outside for a little bit. I was looking for some
           roses for Denise.
       relationship:
-        text: "He didn\uFFFDt deserve someone like Denise."
+        text: He didn't deserve someone like Denise.
         lie: 0
-        evidenceGained: "KEVIN\uFFFDS JEALOUSY"
+        evidenceGained: KEVIN'S JEALOUSY
         requiredEvidence: 
         truth: 
       evidenceResponses: []
@@ -5577,14 +6765,14 @@ MonoBehaviour:
       - character: KEVIN SHEPHERD
         variant: LOVERS
       defaultResponse:
-        text: "I can\uFFFDt help you with that."
+        text: I can't help you with that.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: "I was at the party the entire time, looking after Roy. His own father
-          wouldn\uFFFDt look after him."
+        text: I was at the party the entire time, looking after Roy. His own father
+          wouldn't look after him.
         lie: 1
         evidenceGained: KEVIN AND ROY
         requiredEvidence: security footage
@@ -5600,8 +6788,8 @@ MonoBehaviour:
       evidenceResponses:
       - item: hidden report
         line:
-          text: "That DAMN Edgar, he killed my brother! I\uFFFDm going to kill him
-            myself with that shovel!"
+          text: That DAMN Edgar, he killed my brother! I'm going to kill him myself
+            with that shovel!
           lie: 0
           evidenceGained: SHOVEL
           requiredEvidence: 
@@ -5612,14 +6800,14 @@ MonoBehaviour:
       variant: 
       conflicts: []
       defaultResponse:
-        text: "We don\uFFFDt know anything about that."
+        text: We don't know anything about that.
         lie: 0
         evidenceGained: 
         requiredEvidence: 
         truth: 
       alibi:
-        text: "We were in the security room, but we suddenly lost power. Must\uFFFDve
-          been one of the other staff, or one of his family."
+        text: We were in the security room, but we suddenly lost power. Must've been
+          one of the other staff, or one of his family.
         lie: 0
         evidenceGained: FOUL PLAY
         requiredEvidence: 
@@ -5633,16 +6821,16 @@ MonoBehaviour:
       evidenceResponses:
       - item: garrett alone in gardens
         line:
-          text: "Wasn\uFFFDt that gardener outside? In the last bit of footage we
-            got here, you can see him wandering around the gardens."
+          text: Wasn't that gardener outside? In the last bit of footage we got here,
+            you can see him wandering around the gardens.
           lie: 0
           evidenceGained: SECURITY FOOTAGE
           requiredEvidence: 
           truth: 
       - item: missing garden hose
         line:
-          text: "He says the garden hose was missing? We saw him lugging that thing
-            around earlier. Hey, you don\uFFFDt think he killed the boss, right?"
+          text: He says the garden hose was missing? We saw him lugging that thing
+            around earlier. Hey, you don't think he killed the boss, right?
           lie: 0
           evidenceGained: KEVIN HAD THE GARDEN HOSE
           requiredEvidence: 
@@ -5809,7 +6997,7 @@ MonoBehaviour:
     - revenge reality
     means: []
     motive: []
-  - name: GARRETT'S LEFT THE PARTY
+  - name: GARRETT LEFT THE PARTY
     displayName: Garrett leaves
     description: It seems that Garrett left the party early.
     allowedRealities:
@@ -6492,6 +7680,10 @@ MonoBehaviour:
     characterFullBody: {fileID: 0}
     pronoun: he
   - characterName: SHOVEL
+    characterPortrait: {fileID: 0}
+    characterFullBody: {fileID: 0}
+    pronoun: he
+  - characterName: GARRETT LEFT THE PARTY
     characterPortrait: {fileID: 0}
     characterFullBody: {fileID: 0}
     pronoun: he

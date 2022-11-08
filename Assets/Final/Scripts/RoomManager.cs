@@ -120,6 +120,7 @@ public class RoomManager : MonoBehaviour
         if(roomName == currentRoomName || transitioning)
             yield break;
 
+        //AudioManager.instance.PlayGlobal(8);
         // begin fade transition
         UIManager.instance.hideDialogueUI(false);
         fade.gameObject.SetActive(true);
@@ -134,6 +135,5 @@ public class RoomManager : MonoBehaviour
 
     public void transitionCoroutine(string roomName) {
         StartCoroutine(startRoomTransition(roomName));
-        AudioManager.instance.PlayGlobal(8, restart: false);
     }
 }

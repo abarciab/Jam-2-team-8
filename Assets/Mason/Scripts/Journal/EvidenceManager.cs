@@ -29,6 +29,11 @@ public class EvidenceManager : MonoBehaviour
         }
     }
 
+    public bool IsAlreadyCollected(string evidenceName)
+    {
+        return checkDuplicate(evidenceName);
+    }
+
     private bool checkDuplicate(string evidenceName) {
         foreach(EvidenceData evidence in evidenceList) {
             if(evidence.name.ToLower() == evidenceName.ToLower()) {

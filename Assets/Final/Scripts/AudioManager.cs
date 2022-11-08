@@ -10,9 +10,9 @@ public class AudioManager : MonoBehaviour
         public int ID;
         public AudioClip clip;
         [Range(0, 1)]
-        public float volume;
+        public float volume = 1;
         [Range(-3, 3)]
-        public float pitch;
+        public float pitch = 1;
         public bool looping;
     }
     public List<Sound> sounds = new List<Sound>();
@@ -57,6 +57,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayGlobal(int soundID, float volume = -1, bool restart = false)      //play given sound from global audiosource
     {
+        
         PlayHere(soundID, global, volume, restart);
     }
 
@@ -67,6 +68,9 @@ public class AudioManager : MonoBehaviour
 
     public void PlayHere(int soundID, AudioSource source, float volume = -1, bool restart = false)      //play given sound from given audiosource
     {
+        /*if (soundID != 5)
+            print("playing sound: " + soundID);*/
+
         Sound toPlay = getSoundFromID(soundID);
 
         source.volume = volume == -1 ? toPlay.volume : volume;

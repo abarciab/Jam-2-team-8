@@ -46,7 +46,7 @@ public class CharacterResponseManager : MonoBehaviour
 */
     // get the dialogue type from the character and display the text for it
     public void writeCharacterDialogue(string dialogueType) {
-        print("writing dialogue. type: " + dialogueType);
+        //print("writing dialogue. type: " + dialogueType);
         //this is really unclean for now
         CharacterDialogueData character = RealityManager.instance.getCharacterDialogue(currentCharacterName);
         string text = "";
@@ -81,8 +81,11 @@ public class CharacterResponseManager : MonoBehaviour
 
         // log evidence and character name in evidence manager
         if(!string.IsNullOrEmpty(evidenceGained)) {
-            EvidenceManager.instance.addEvidence(evidenceGained);
-            AudioManager.instance.PlayHere(12, source: source, restart: false);
+            if (!EvidenceManager.instance.IsAlreadyCollected(evidenceGained)) {
+                EvidenceManager.instance.addEvidence(evidenceGained);
+                AudioManager.instance.PlayHere(12, source: source);
+                FindObjectOfType<JournalButton>().TurnOnSparkles();
+            }
         }
         EvidenceManager.instance.addCharacter(currentCharacterName);
 

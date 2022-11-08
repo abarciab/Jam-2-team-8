@@ -16,6 +16,7 @@ public class EvidencePickup : MonoBehaviour
         collected = true;
         EvidenceManager.instance.addEvidence(evidence);
         AudioManager.instance.PlayGlobal(12, restart: false);
+        UIManager.instance.showOff.ShowOffEvidence(evidenceName);
         gameObject.SetActive(false);
     }
 }

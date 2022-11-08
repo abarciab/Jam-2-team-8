@@ -193,23 +193,27 @@ public class RealityManager : MonoBehaviour
                 if (activeVariants[i].name == characterName) {
                     variantSelected = true;
                     while (matches[0].variant != activeVariants[i].variant && matches.Count > 1) {
-                        print("we're looking for variant: " + activeVariants[i].variant + " for " + activeVariants[i].name + ", and this is variant " + matches[0].variant + " for " + matches[0].characterName + ", eliminating...");
+                        //print("we're looking for variant: " + activeVariants[i].variant + " for " + activeVariants[i].name + ", and this is variant " + matches[0].variant + " for " + matches[0].characterName + ", eliminating...");
                         matches.RemoveAt(0);
                     }
                     if (matches[0].variant == activeVariants[i].variant) {
-                        print("found variant: " + activeVariants[i].variant + " for character: " + activeVariants[i].name);
+                        //print("found variant: " + activeVariants[i].variant + " for character: " + activeVariants[i].name);
                         return matches[0];
                     }
                 }
             }
             if (!variantSelected) {
+               // CharacterDialogueData c = false;
+
                 for (int i = 0; i < matches.Count; i++) {
+                    //if ()
+
                     if (string.IsNullOrEmpty(matches[i].variant)) {
                         return matches[i];
                     }
                 }
             }
-            print("there were initially multiple matches, but I eliminated all of them.");
+            //print("there were initially multiple matches, but I eliminated all of them.");
             return null;
         }
         else if (realityToCheck != baseReality) {
@@ -419,7 +423,7 @@ public class RealityManager : MonoBehaviour
 
     List<CardData> getValidCards(string characterName)
     {
-        bool displayDebugInfo = true;
+        bool displayDebugInfo = false;
         //print("get valid cards");
 
         List<CardData> validCards = JSONParser.instance.cardData;
@@ -593,7 +597,7 @@ public class RealityManager : MonoBehaviour
         foreach (var card in invalidCards) {
             _invalidCards += (card.cardName + ", ");
         }
-        print("invalid cards: " + _invalidCards);
+        //print("invalid cards: " + _invalidCards);
 
         return validCards.Except(invalidCards).ToList();
     }
