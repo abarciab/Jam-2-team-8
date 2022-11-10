@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EvidencePickup : MonoBehaviour
 {
-    public string evidenceName;
+    public int evidenceID;
     public List<string> allowedRealities;
     public bool collected { get; private set;}
 
@@ -16,7 +16,7 @@ public class EvidencePickup : MonoBehaviour
         collected = true;
         EvidenceManager.instance.addEvidence(evidence);
         AudioManager.instance.PlayGlobal(12, restart: false);
-        UIManager.instance.showOff.ShowOffEvidence(evidenceName);
+        UIManager.instance.showOff.ShowOffEvidence(RoomManager.instance.getEvidenceNameByID(evidenceID));
         gameObject.SetActive(false);
     }
 }

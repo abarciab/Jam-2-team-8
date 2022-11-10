@@ -8,15 +8,24 @@ public class Room {
     public string name;
     public Sprite background;
     public List<string> characterNames = new List<string>();
-    public List<string> evidenceNames = new List<string>();
+    public List<int> evidenceIDs = new List<int>();
 }
 
 public class RoomManager : MonoBehaviour
 {
+    [System.Serializable]
+    public class evidenceData
+    {
+        public string evidenceName;
+        public int ID;
+        public List<string> realities = new List<string>();
+    }
+
     public static RoomManager instance;
     public int currentRoomNumber;
     public string currentRoomName;
     public List<Room> rooms = new List<Room>();
+    public List<evidenceData> allEvidence = new List<evidenceData>();
     public Transform characterHolder;
     public Transform fade;
     public Transform evidencePickups;
@@ -58,8 +67,8 @@ public class RoomManager : MonoBehaviour
         }
     }
 
-    private void toggleEvidencePickups(List<string> evidenceNames, bool active) {
-        if(evidenceNames.Count <= 0)
+    private void toggleEvidencePickups(List<int> evidenceID, bool active) {
+        if(evidenceID.Count <= 0)
             return;
 
         // loop through all evidence
@@ -67,20 +76,26 @@ public class RoomManager : MonoBehaviour
             EvidencePickup pickup = child.GetComponent<EvidencePickup>();
             
             // if activating evidence
-            if(active == true){
+            if(active){
                 // activate if pickup should be in the room and is not already collected
-                if(evidenceNames.Contains(pickup.evidenceName) && !pickup.collected && 
-                   pickup.allowedRealities.Contains(RealityManager.instance.currentReality.name))
+                if (evidenceID.Contains(pickup.evidenceID) && !pickup.collected && pickup.allowedRealities.Contains(RealityManager.instance.currentReality.name)) {
                     child.gameObject.SetActive(true);
-                print(RealityManager.instance.currentReality.name);
+                }
             }
             // if deactivating evidence
             else {
-                // deactivate if pickup is in room
-                if(evidenceNames.Contains(pickup.evidenceName))
-                    child.gameObject.SetActive(false);
+                child.gameObject.SetActive(false);
             }
         }
+    }
+
+    public string getEvidenceNameByID(int ID) {
+        foreach (var evidence in allEvidence) {
+            if (evidence.ID == ID) {
+                return evidence.evidenceName;
+            }
+        }
+        return null;
     }
 
     private void fitSpriteToScreen(Sprite spr) {
@@ -94,13 +109,13 @@ public class RoomManager : MonoBehaviour
         // disable characters every room
         foreach(Room room in rooms) {
             toggleCharacters(room.characterNames, false);
-            toggleEvidencePickups(room.evidenceNames, false);
+            toggleEvidencePickups(room.evidenceIDs, false);
         }
 
         // get new room, activate it's characters and evidence, and set background
         Room newRoom = getRoomByName(roomName);
         toggleCharacters(newRoom.characterNames, true);
-        toggleEvidencePickups(newRoom.evidenceNames, true);
+        toggleEvidencePickups(newRoom.evidenceIDs, true);
         setBackground(newRoom.background);
         if (newRoom.background == null) { return; }
         fitSpriteToScreen(newRoom.background);

@@ -30,6 +30,13 @@ public class EvidenceData {
     public List<string> allowedRealities = new List<string>();
     public List<StringPairData> means = new List<StringPairData>();        //"with poison", or "by pushing him off a roof", for example
     public List <StringPairData> motive = new List<StringPairData>();       //"owed him money", or "discovered he was having an affair", for example
+
+    [System.Serializable]
+    public class evidenceSprite
+    {
+        public string evidenceName;
+        public Sprite sprite;
+    }
 }
 [System.Serializable]
 public class StringPairData {
@@ -125,7 +132,8 @@ public class JSONParser : MonoBehaviour
     public List<RealityData> storyData = new List<RealityData>();
     public List<CardData> cardData = new List<CardData>();
     public List<EvidenceData> evidenceData = new List<EvidenceData>();
-    public List<RealityManager.characterData> evidenceSprites = new List<RealityManager.characterData>();
+    public List<EvidenceData.evidenceSprite> evidenceSprites = new List<EvidenceData.evidenceSprite>();
+    public Sprite defaultSprite;
     public List<AccusationData> accusationData = new List<AccusationData>();
     public static Action onStoryDataRefresh;
 
@@ -178,8 +186,9 @@ public class JSONParser : MonoBehaviour
 
     public EvidenceData GetEvidenceByName(string name)
     {
+        name = name == null ? name : name.ToUpper();
         for (int i = 0; i < evidenceData.Count; i++) {
-            if (evidenceData[i].name == name) {
+            if (evidenceData[i].name.ToUpper() == name) {
                 return evidenceData[i];
             }
         }
@@ -238,9 +247,10 @@ public class JSONParser : MonoBehaviour
 
     public Sprite getEvidenceSpriteByName(string evidenceName)
     {
+        evidenceName = evidenceName == null ? evidenceName : evidenceName.ToUpper();
         foreach (var evidence in evidenceSprites) {
-            if (evidence.characterName == evidenceName) {
-                return evidence.characterPortrait;
+            if (evidence.evidenceName.ToUpper() == evidenceName) {
+                return evidence.sprite;
             }
         }
         print("there's no sprite for " + evidenceName);
@@ -250,7 +260,7 @@ public class JSONParser : MonoBehaviour
     bool EvidenceInSpriteList(string evidenceName)
     {
         foreach (var evidence in evidenceSprites) {
-            if (evidence.characterName == evidenceName) {
+            if (evidence.evidenceName == evidenceName) {
                 return true;
             }
         }
@@ -270,8 +280,9 @@ public class JSONParser : MonoBehaviour
             newEvidence.name = evidence.Key;
 
             if (!EvidenceInSpriteList(newEvidence.name)) {
-                var newEvidenceSprite = new RealityManager.characterData();
-                newEvidenceSprite.characterName = newEvidence.name;
+                var newEvidenceSprite = new EvidenceData.evidenceSprite();
+                newEvidenceSprite.evidenceName = newEvidence.name;
+                newEvidenceSprite.sprite = defaultSprite;
                 evidenceSprites.Add(newEvidenceSprite);
             }
 
