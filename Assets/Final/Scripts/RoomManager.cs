@@ -33,6 +33,7 @@ public class RoomManager : MonoBehaviour
     public bool transitioning = false;
     public bool setNewRoom = false;
     public Transform journalButton;
+    public Image bgPanel;
     private SpriteRenderer sprRenderer;
 
     private void Awake()
@@ -54,6 +55,7 @@ public class RoomManager : MonoBehaviour
 
     private void setBackground(Sprite newBackground) {
         sprRenderer.sprite = newBackground;
+        bgPanel.sprite = newBackground;
     }
 
     private void toggleCharacters(List<string> names, bool active) {
