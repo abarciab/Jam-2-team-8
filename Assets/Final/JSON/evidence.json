@@ -8,7 +8,7 @@
     "PHOTOGRAPH 1" : {
         "displayName" : "Scene photograph",
         "description" : "This is a photograph of the scene of the crime. The victim was found dead, stabbed with a sword.",
-        "realities" : "core reality",
+        "realities" : "core reality"
     },
     "LAWRENCE'S GLOVES" : {
         "displayName" : "Gloves",
@@ -31,87 +31,87 @@
     "ROY CALLS GARRETT BY FIRST NAME" : {
         "displayName" : "Father-son troubles",
         "description" : "Roy and Garrett don't have the best father-son relationship.",
-        "realities" : "core reality, affair reality, revenge reality",
+        "realities" : "core reality, affair reality, revenge reality"
     },
     "GARRETT LEFT THE PARTY" : {
         "displayName" : "Garrett leaves",
         "description" : "It seems that Garrett left the party early.",
-        "realities" : "core reality",
+        "realities" : "core reality"
     },
     "DENISE STAND DOWN" : {
         "displayName" : "Family drama",
 "description" : "Denise seems to have calmed down after falsely accusing Melissa of the murder.",
-        "realities" : "core reality",
+        "realities" : "core reality"
     },
     "RUMORS ABOUT GARRETT" : {
         "displayName" : "Rumors",
         "description" : "There seem to be rumors that depict Garrett as an evil individual.",
-        "realities" : "core reality",
+        "realities" : "core reality"
     },
     "DENISE ACCUSES MELISSA" : {
         "displayName" : "Denise's accusation for Melissa",
         "description" : "Denise accused Melissa of involvement with the murder.",
-        "realities" : "core reality",
+        "realities" : "core reality"
     },
     "DENISE ACCUSES ALEXANDER" : {
         "displayName" : "Denise's accusation for Alexander",
         "description" : "Denise accused Alexander of involvement with the murder.",
-        "realities" : "core reality",
+        "realities" : "core reality"
     },
     "LAWRENCE ACCUSES ROY" : {
         "displayName" : "Lawrence's accusation for Roy",
         "description" : "Lawrence accused Roy of involvement with the murder.",
-        "realities" : "core reality",
+        "realities" : "core reality"
     },
     "ROY ACCUSES LAWRENCE" : {
         "displayName" : "Roy's accusation for Lawrence",
         "description" : "Roy accused Lawrence of being alone with Garrett outside the party.",
-        "realities" : "core reality",
+        "realities" : "core reality"
     },
     "LAWRENCE ACCUSES NATHAN" : {
         "displayName" : "Lawrence's accusation for Nathan",
         "description" : "Lawrence accused Nathan of involvement with the murder.",
-        "realities" : "core reality",
+        "realities" : "core reality"
     },
     "NATHAN ACCUSES KEVIN" : {
         "displayName" : "Nathan's accusation for Kevin",
         "description" : "Nathan accused Kevin of involvement with the murder.",
-        "realities" : "core reality",
+        "realities" : "core reality"
     },
     "ALEXANDER WAS LATE" : {
         "displayName" : "Alexander was early",
         "description" : "Alexander claims to be early to the party.",
-        "realities" : "core reality",
+        "realities" : "core reality"
     },
     "ALEXANDER WAS EARLY" : {
         "displayName" : "Alexander was late",
         "description" : "Alexander was in fact late to the party.",
-        "realities" : "core reality, affair reality",
+        "realities" : "core reality, affair reality"
     },
     "KEVIN JUMPED DOWN" : {
         "displayName" : "Kevin jumped out",
         "description" : "Lawrence claims that Kevin jumped out of the office through a window.",
-        "realities" : "core reality",
+        "realities" : "core reality"
     },
     "KEVIN DID NOT JUMP DOWN" : {
         "displayName" : "Kevin did not jump out",
         "description" : "Multiple sources have confirmed that the window was in fact closed, and that Kevin did not jump out.",
-        "realities" : "core reality, affair reality",
+        "realities" : "core reality, affair reality"
     },
     "MELISSA DID NOT CHASE GARRETT" : {
         "displayName" : "Melissa did not chase Garrett",
         "description" : "You don't know why you've been involved in this silly family drama.",
-        "realities" : "core reality",
+        "realities" : "core reality"
     },
     "MELISSA CHASED GARRETT" : {
         "displayName" : "Melissa chased Garrett",
         "description" : "Denise claims that Melissa chased after Garrett.",
-        "realities" : "core reality",
+        "realities" : "core reality"
     },
     "GARRETT'S MARRIAGE" : {
         "displayName" : "Marriage",
         "description" : "Denise and Garrett seemed to have a troubled marriage.",
-        "realities" : "core reality, affair reality",
+        "realities" : "core reality, affair reality"
     },
     "PHOTOGRAPH 2" : {
         "displayName" : "Photograph",
@@ -127,7 +127,7 @@
     "FAKE GLASS" : {
         "displayName" : "Glass",
         "description" : "The poisoned glass that Melissa did not originally enter the party with.",
-        "realities" : "affair reality",
+        "realities" : "affair reality"
     },
     "REAL GLASS" : {
         "displayName" : "Glass",
@@ -155,7 +155,7 @@
     "REAL GLASS" : {
         "displayName" : "Second Glass",
         "description" : "The actual glass that Melissa was going to bring to Garrett.",
-        "realities" : "affair reality",
+        "realities" : "affair reality"
     },
     "WEDDING RING" : {
         "displayName" : "Wedding ring",
@@ -277,7 +277,7 @@
     },
     "NEWSPAPER" : {
         "displayName" : "Newspaper",
-        "description" : "A newspaper detailing an accident in Garrett's factory, involving the death of a ‘Billy Shepherd.'",
+        "description" : "A newspaper detailing an accident in Garrett's factory, involving the death of a ï¿½Billy Shepherd.'",
         "realities" : "revenge reality",
         "motive" : "to avenge his brother."
     },
@@ -316,7 +316,7 @@
     },
     "OPEN LOCKET" : {
         "displayName" : "Locket",
-        "description" : "Kevin's locket. It has a picture of him and his brother, with the words ‘Garrett killed Billy Shepherd' etched on the back.",
+        "description" : "Kevin's locket. It has a picture of him and his brother, with the words ï¿½Garrett killed Billy Shepherd' etched on the back.",
         "realities" : "revenge reality",
         "means" : "to avenge his brother."
     },
