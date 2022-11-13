@@ -27,7 +27,12 @@ public class accusationUI : MonoBehaviour
     public GameObject lineEnd;
     public Vector3 murdererLineStart;
     public Vector3 meansLineStart;
-    public Vector3 motiveLineStart; 
+    public Vector3 motiveLineStart;
+    public Vector3 selectedSuspectEndPoint = Vector3.one * -1;
+    public Vector3 selectedMeansEndPoint = Vector3.one * -1;
+    public Vector3 selectedMotiveEndPoint = Vector3.one * -1;
+
+
     [Header("offsets")]
     public Vector3 murdererPinOffset;
     public Vector3 meansPinOffset;
@@ -99,6 +104,9 @@ public class accusationUI : MonoBehaviour
         }
         lineStart.GetComponent<RectTransform>().localPosition = murdererLineStart; 
         lineEnd.GetComponent<RectTransform>().localPosition = murdererLineStart;
+        if (selectedSuspectEndPoint != Vector3.one * -1) {
+            lineEnd.transform.position = selectedSuspectEndPoint;
+        }
 
         closePages();
         suspectSelectionPage.SetActive(true);
@@ -130,6 +138,9 @@ public class accusationUI : MonoBehaviour
         }
         lineStart.GetComponent<RectTransform>().localPosition = meansLineStart;
         lineEnd.GetComponent<RectTransform>().localPosition = meansLineStart;
+        if (selectedMeansEndPoint != Vector3.one * -1) {
+            lineEnd.transform.position = selectedMeansEndPoint;
+        }
 
         closePages();
         meansSelectionPage.SetActive(true);
@@ -158,6 +169,9 @@ public class accusationUI : MonoBehaviour
         }
         lineStart.GetComponent<RectTransform>().localPosition = motiveLineStart;
         lineEnd.GetComponent<RectTransform>().localPosition = motiveLineStart;
+        if (selectedMotiveEndPoint != Vector3.one * -1) {
+            lineEnd.transform.position = selectedMotiveEndPoint;
+        }
 
         closePages();
         motiveSelectionPage.SetActive(true);
@@ -168,12 +182,15 @@ public class accusationUI : MonoBehaviour
         Vector3 offset = Vector3.zero;
         if (suspectSelectionPage.activeInHierarchy) {
             offset = murdererPinOffset;
+            selectedSuspectEndPoint = newEnd.transform.position + offset;
         }
         else if (meansSelectionPage.activeInHierarchy) {
             offset = meansPinOffset;
+            selectedMeansEndPoint = newEnd.transform.position + offset;
         }
         else if (motiveSelectionPage.activeInHierarchy) {
-            offset = motivePinOffset;
+            offset = motivePinOffset; 
+            selectedMotiveEndPoint = newEnd.transform.position + offset;
         }
         lineEnd.transform.position = newEnd.transform.position + offset;
     }

@@ -278,11 +278,10 @@ public class RealityManager : MonoBehaviour
             print("Tried to draw a card without checking if there were valid cards avaliable first. next time check with the CardsAvalible function");
             return null;
         }
-        CardData selectedCard = validCards[UnityEngine.Random.Range(0, validCards.Count)];
         foreach (var item in validCards) {
             print(item.cardName + " is valid for " + characterName);
         }
-
+        CardData selectedCard = validCards[UnityEngine.Random.Range(0, validCards.Count)];
         return DrawCardManually(characterName, selectedCard.cardName);
     }
 
@@ -576,13 +575,13 @@ public class RealityManager : MonoBehaviour
                 }
             }
             foreach (var character in realityUnderConsideration.characters) {
-                if (character.characterName == characterName && ((string.IsNullOrEmpty(recipientVariant) && string.IsNullOrEmpty(character.variant)) || (!string.IsNullOrEmpty(recipientVariant) && recipientVariant.ToLower() == "any") || character.variant == recipientVariant) ) {
+                if (character.characterName == characterName && ( (string.IsNullOrEmpty(targetVariant) && string.IsNullOrEmpty(character.variant)) || (!string.IsNullOrEmpty(targetVariant) && targetVariant.ToLower() == "any") || character.variant == targetVariant) ) {
                     targetVariantExists = true;
                 }
             }
             if (!targetVariantExists) {
                 // * UNLESS the variant exists in another reality and is allowed to exist in the current or base one
-                if (GetVariantFromOtherReality(characterName, recipientVariant) == null) {
+                if (GetVariantFromOtherReality(characterName, targetVariant) == null) {
                     if (displayDebugInfo)
                         print("invalided card case 5: " + cardData.cardName);
                     invalidCards.Add(cardData);

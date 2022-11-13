@@ -2243,10 +2243,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1269822091}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: hideUIElement
-        m_Mode: 5
+      - m_Target: {fileID: 2014736631}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4313,7 +4313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &606033977
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5550,8 +5550,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineCounter: 0
-  eagerThreshold: 5
-  forceDrawThreshold: 10
+  minThreshold: 10
+  eagerThreshold: 20
 --- !u!1 &739792103
 GameObject:
   m_ObjectHideFlags: 0
@@ -18534,6 +18534,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2014736633}
         m_TargetAssemblyTypeName: cardDrawInterface, Assembly-CSharp
         m_MethodName: DrawCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 736683317}
+        m_TargetAssemblyTypeName: CardButtonAnimationCoordinator, Assembly-CSharp
+        m_MethodName: cardDrawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

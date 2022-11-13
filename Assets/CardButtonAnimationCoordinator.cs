@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardButtonAnimationCoordinator : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class CardButtonAnimationCoordinator : MonoBehaviour
     int numValidCards;
     public int lineCounter;
 
+    public int minThreshold;
     public int eagerThreshold;
-    public int forceDrawThreshold;
 
     bool listenerAdded;
+
+    Button buttonComponent;
 
     private void Start()
     {
@@ -22,6 +25,7 @@ public class CardButtonAnimationCoordinator : MonoBehaviour
             listenerAdded = true;
         }
         animator = GetComponent<Animator>();
+        buttonComponent = GetComponent<Button>();
     }
 
     void IncrementCounter()
@@ -38,9 +42,12 @@ public class CardButtonAnimationCoordinator : MonoBehaviour
         }
 
         animator.SetBool("disabled", numValidCards == 0);
-        if (numValidCards == 0) { return; }
-        animator.SetBool("eager", lineCounter >= eagerThreshold);
-        if (lineCounter >= forceDrawThreshold) { ForceDraw(); }
+        buttonComponent.enabled = false;
+
+        if (numValidCards == 0 || lineCounter < minThreshold) { return; }
+        
+        buttonComponent.enabled = true;
+        animator.SetBool("eager", lineCounter >= eagerThreshold);      
     }
 
     public void PointerEnter()
@@ -52,11 +59,7 @@ public class CardButtonAnimationCoordinator : MonoBehaviour
         animator.SetBool("hover", false);
     }
 
-    void ForceDraw()
-    {
-        print("I'm forcing you to draw a card");
+    public void cardDrawn() {
         lineCounter = 0;
     }
-
-
 }

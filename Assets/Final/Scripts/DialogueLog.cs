@@ -305,7 +305,8 @@ public class DialogueLog : MonoBehaviour
                         }
                         break;
                     }
-                    else if (!string.IsNullOrEmpty(evidence) && _speaker.lines[i].question.Contains(evidence)) {
+                    else if (!string.IsNullOrEmpty(evidence) && _speaker.lines[i].question.ToUpper().Contains(evidence.ToUpper())) {
+                        
                         if (_speaker.lines[i].line != line.text)
                             _speaker.lines[i].outdated = true;
                         else {
@@ -338,7 +339,7 @@ public class DialogueLog : MonoBehaviour
         newRecordedLine.lines.Add(newLine);
 
         if (onDialogueLineAdded != null) {
-            print("recorded line");
+            //print("recorded line");
             onDialogueLineAdded();
         }
 

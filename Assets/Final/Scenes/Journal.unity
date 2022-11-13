@@ -266,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4724078360670915320, guid: c0027d1567b509b45ab263a253b8d73f, type: 3}
       propertyPath: m_text
-      value: Joseph
+      value: Joseph Stewart
       objectReference: {fileID: 0}
     - target: {fileID: 8874331297479906336, guid: c0027d1567b509b45ab263a253b8d73f, type: 3}
       propertyPath: m_Pivot.x
@@ -4889,7 +4889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4724078360670915320, guid: c0027d1567b509b45ab263a253b8d73f, type: 3}
       propertyPath: m_text
-      value: Melissa
+      value: Melissa bailey
       objectReference: {fileID: 0}
     - target: {fileID: 8874331297479906336, guid: c0027d1567b509b45ab263a253b8d73f, type: 3}
       propertyPath: m_Pivot.x
@@ -7871,7 +7871,7 @@ MonoBehaviour:
   totalHeightAllowed: 700
   totalHeightAllowedpg0: 550
   rightPageHandicapp: 500
-  outdatedTextColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  outdatedTextColor: {r: 0.6509434, g: 0.19344072, b: 0.19344072, a: 1}
   currentIndex: 0
   currentPageIndexCount: 0
   testCreateText: 0
@@ -10743,14 +10743,17 @@ MonoBehaviour:
   murdererText: {fileID: 1848767732}
   meansText: {fileID: 1601657223}
   motiveText: {fileID: 1968865751}
-  selectedMurderer: ???
-  selectedMeans: ???
-  selectedMotive: ???
+  selectedMurderer: 
+  selectedMeans: 
+  selectedMotive: 
   lineStart: {fileID: 1571951858}
   lineEnd: {fileID: 723313542}
   murdererLineStart: {x: -172, y: 350, z: 0}
   meansLineStart: {x: -92, y: 122, z: 0}
   motiveLineStart: {x: -63, y: -123, z: 0}
+  selectedSuspectEndPoint: {x: -1, y: -1, z: -1}
+  selectedMeansEndPoint: {x: -1, y: -1, z: -1}
+  selectedMotiveEndPoint: {x: -1, y: -1, z: -1}
   murdererPinOffset: {x: 0, y: 135, z: 0}
   meansPinOffset: {x: 0, y: 30, z: 0}
   motivePinOffset: {x: 0, y: 0, z: 0}
