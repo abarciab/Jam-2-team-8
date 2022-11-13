@@ -4558,22 +4558,22 @@ MonoBehaviour:
   cards:
   - cardName: The Basilisk
     description: 
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 578ff196b6cdbdc48af618f44d0b7181, type: 3}
   - cardName: The Vengeance
     description: 
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: b0bde42236007174d952a2b11d233c5a, type: 3}
   - cardName: The Scoundrel
     description: 
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 52b081ec59b476f46ba55f5568659da6, type: 3}
   - cardName: The Accomplice
     description: 
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: a42295a237fc1c946a3cc8d1fad7d472, type: 3}
   - cardName: The Lovers
     description: 
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: d01367d5219e5d74498e98fc216fc46e, type: 3}
   - cardName: The Thief
     description: 
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 62e9ee6463048af4d95946134ac11e74, type: 3}
   testRecipient: john
   testCard: The Fighter
   testDrawCard: 0

@@ -37,4 +37,8 @@ public class MainMenuManager : MonoBehaviour
     {
         AudioManager.instance.PlayGlobal(2, restart: true);
     }
+
+    public void quit() {
+        Application.Quit(0);
+    }
 }
